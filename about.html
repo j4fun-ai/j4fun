@@ -1,93 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>关于 j4fun · 中文小玩意合集</title>
-<meta name="description" content="了解 j4fun：一个为海外华人家庭和中文学习者打造的中文互动小项目合集。">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/main.css">
-<script src="assets/site-nav.js" defer></script>
-</head>
-<body class="page-about">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>关于 j4fun · 中文小玩意合集</title>
+    <meta
+      name="description"
+      content="了解 j4fun：一个为海外华人家庭和中文学习者打造的中文互动小项目合集。"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/main.css" />
+    <script src="assets/site-nav.js" defer></script>
+  </head>
+  <body class="page-about">
+    <div id="petals" aria-hidden="true"></div>
 
-<div id="petals" aria-hidden="true"></div>
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="index.html" aria-label="j4fun 首页">
+          <img
+            class="brand-logo"
+            src="assets/images/logo.png?083026"
+            alt="j4fun"
+          />
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span>菜单</span
+          ><span class="menu-icon" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="poetry.html">诗词</a>
+          <a href="sudoku.html">汉字数独</a>
+          <a href="strands.html">字踪</a>
+          <a href="about.html" aria-current="page">关于</a>
+          <a class="related-project" href="shiben/"
+            ><img
+              src="shiben/images/huawen-textbook-mark.svg"
+              alt=""
+              aria-hidden="true"
+            />识本</a
+          >
+        </nav>
+      </div>
+    </header>
 
-<header class="site">
-  <div class="wrap topbar">
-    <a class="brand" href="index.html" aria-label="j4fun 首页">
-      <img class="brand-logo" src="assets/images/logo.png" alt="j4fun">
-    </a>
-    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-    <nav class="top-links" id="site-navigation" aria-label="主导航">
-      <a href="poetry.html">诗词</a>
-      <a href="sudoku.html">汉字数独</a>
-      <a href="strands.html">字踪</a>
-      <a href="about.html" aria-current="page">关于</a>
-      <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true">识本</a>
-    </nav>
-  </div>
-</header>
+    <section class="hero wrap">
+      <p class="eyebrow">Just For Fun</p>
+      <h1>让中文多一点<span class="accent">好玩</span></h1>
+      <p class="lede">
+        j4fun
+        是一个中文互动小项目合集，把诗词、汉字和传统文化变成打开网页就能玩的轻量体验。
+      </p>
+    </section>
 
-<section class="hero wrap">
-  <p class="eyebrow">Just For Fun</p>
-  <h1>让中文多一点<span class="accent">好玩</span></h1>
-  <p class="lede">j4fun 是一个中文互动小项目合集，把诗词、汉字和传统文化变成打开网页就能玩的轻量体验。</p>
-</section>
+    <main class="wrap about-page-content">
+      <section class="about-intro" aria-labelledby="about-title">
+        <h2 id="about-title">关于 j4fun</h2>
+        <p>
+          我们希望为海外华人家庭和中文学习者提供一种轻松接触中文的方式：不用先学一套复杂规则，也不需要安装
+          App，点开一个小项目，就能从游戏和探索中认识一些字、诗句与文化线索。
+        </p>
+        <p>
+          这里的项目规模不一定很大，但每一个都应该简单、清楚、可以直接玩。新的想法会继续加入，旧的项目也会慢慢打磨。
+        </p>
+        <p class="build-info">当前版本：v1.0 · build local</p>
+      </section>
 
-<main class="wrap about-page-content">
-  <section class="about-intro" aria-labelledby="about-title">
-    <h2 id="about-title">关于 j4fun</h2>
-    <p>我们希望为海外华人家庭和中文学习者提供一种轻松接触中文的方式：不用先学一套复杂规则，也不需要安装 App，点开一个小项目，就能从游戏和探索中认识一些字、诗句与文化线索。</p>
-    <p>这里的项目规模不一定很大，但每一个都应该简单、清楚、可以直接玩。新的想法会继续加入，旧的项目也会慢慢打磨。</p>
-    <p class="build-info">当前版本：v1.0 · build local</p>
-  </section>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>打开就玩</h3>
+          <p>无需注册或下载，主要功能直接在浏览器中运行。</p>
+        </div>
+        <div class="about-card">
+          <h3>中文优先</h3>
+          <p>
+            界面和内容以简体中文为主，同时照顾海外家庭和中文学习者的使用习惯。
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>尊重隐私</h3>
+          <p>
+            游戏输入在浏览器本地处理；如需使用外部服务，页面会明确说明并由用户主动打开。
+          </p>
+        </div>
+      </div>
+    </main>
 
-  <div class="about-grid">
-    <div class="about-card">
-      <h3>打开就玩</h3>
-      <p>无需注册或下载，主要功能直接在浏览器中运行。</p>
-    </div>
-    <div class="about-card">
-      <h3>中文优先</h3>
-      <p>界面和内容以简体中文为主，同时照顾海外家庭和中文学习者的使用习惯。</p>
-    </div>
-    <div class="about-card">
-      <h3>尊重隐私</h3>
-      <p>游戏输入在浏览器本地处理；如需使用外部服务，页面会明确说明并由用户主动打开。</p>
-    </div>
-  </div>
-</main>
+    <footer class="wrap">
+      <div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
 
-<footer class="wrap">
-  <div class="footer-brand">j4fun - Just For Fun<br>中文小玩意合集</div>
-  <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
-</footer>
-
-<script>
-(function(){
-  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-  var PETAL_CHARS = ['❀','✿','❁','☘'];
-  function spawnPetal(){
-    var el = document.createElement('span');
-    el.className = 'petal';
-    el.textContent = randChoice(PETAL_CHARS);
-    el.style.left = (Math.random()*100) + 'vw';
-    el.style.fontSize = (14 + Math.random()*14) + 'px';
-    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
-    var dur = 7 + Math.random()*6;
-    el.style.animationDuration = dur + 's';
-    document.getElementById('petals').appendChild(el);
-    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
-  }
-  setInterval(spawnPetal, 1600);
-  for(var i=0;i<3;i++) setTimeout(spawnPetal, i*500);
-})();
-</script>
-
-</body>
+    <script>
+      (function(){
+        function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+        var PETAL_CHARS = ['❀','✿','❁','☘'];
+        function spawnPetal(){
+          var el = document.createElement('span');
+          el.className = 'petal';
+          el.textContent = randChoice(PETAL_CHARS);
+          el.style.left = (Math.random()*100) + 'vw';
+          el.style.fontSize = (14 + Math.random()*14) + 'px';
+          el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+          var dur = 7 + Math.random()*6;
+          el.style.animationDuration = dur + 's';
+          document.getElementById('petals').appendChild(el);
+          setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+        }
+        setInterval(spawnPetal, 1600);
+        for(var i=0;i<3;i++) setTimeout(spawnPetal, i*500);
+      })();
+    </script>
+  </body>
 </html>

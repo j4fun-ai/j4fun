@@ -1,743 +1,838 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>飞花 · j4fun 诗词好玩局</title>
-<meta name="description" content="飞花令、诗句接龙 —— 用真实的唐诗宋词数据做成的中文趣味小游戏，海外华人家庭也能轻松玩起来。">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/main.css">
-<script src="assets/site-nav.js" defer></script>
-</head>
-<body class="page-poetry">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>飞花 · j4fun 诗词好玩局</title>
+    <meta
+      name="description"
+      content="飞花令、诗句接龙 —— 用真实的唐诗宋词数据做成的中文趣味小游戏，海外华人家庭也能轻松玩起来。"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/main.css" />
+    <script src="assets/site-nav.js" defer></script>
+  </head>
+  <body class="page-poetry">
+    <div id="petals" aria-hidden="true"></div>
 
-<div id="petals" aria-hidden="true"></div>
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="index.html" aria-label="j4fun 首页">
+          <img
+            class="brand-logo"
+            src="assets/images/logo.png?083026"
+            alt="j4fun"
+          />
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span>菜单</span
+          ><span class="menu-icon" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="poetry.html" aria-current="page">诗词</a>
+          <a href="sudoku.html">汉字数独</a>
+          <a href="strands.html">字踪</a>
+          <a href="about.html">关于</a>
+          <a class="related-project" href="shiben/"
+            ><img
+              src="shiben/images/huawen-textbook-mark.svg"
+              alt=""
+              aria-hidden="true"
+            />识本</a
+          >
+        </nav>
+      </div>
+    </header>
 
-<header class="site">
-  <div class="wrap topbar">
-    <a class="brand" href="index.html" aria-label="j4fun 首页">
-      <img class="brand-logo" src="assets/images/logo.png" alt="j4fun">
-    </a>
-    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-    <nav class="top-links" id="site-navigation" aria-label="主导航">
-      <a href="poetry.html" aria-current="page">诗词</a>
-      <a href="sudoku.html">汉字数独</a>
-      <a href="strands.html">字踪</a>
-      <a href="about.html">关于</a>
-      <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true">识本</a>
-    </nav>
-  </div>
-</header>
+    <section class="hero wrap">
+      <p class="eyebrow">给海外华人家庭的中文小游戏</p>
+      <h1>一句诗接一句诗，<span class="accent">玩</span>着玩着就记住了</h1>
+      <p class="lede">
+        从唐诗宋词精选开始，也可以切换到更大的全唐诗、全宋诗和全宋词题库。飞花令考关键字，诗句接龙考记忆链，全部在浏览器里就能玩。
+      </p>
+    </section>
 
-<section class="hero wrap">
-  <p class="eyebrow">给海外华人家庭的中文小游戏</p>
-  <h1>一句诗接一句诗，<span class="accent">玩</span>着玩着就记住了</h1>
-  <p class="lede">从唐诗宋词精选开始，也可以切换到更大的全唐诗、全宋诗和全宋词题库。飞花令考关键字，诗句接龙考记忆链，全部在浏览器里就能玩。</p>
-</section>
-
-<div class="wrap">
-  <section class="corpus-picker" aria-labelledby="corpusTitle">
-    <div class="corpus-copy">
-      <h2 id="corpusTitle">选择题库</h2>
-      <p id="corpusStatus" aria-live="polite">正在载入精选题库…</p>
+    <div class="wrap">
+      <section class="corpus-picker" aria-labelledby="corpusTitle">
+        <div class="corpus-copy">
+          <h2 id="corpusTitle">选择题库</h2>
+          <p id="corpusStatus" aria-live="polite">正在载入精选题库…</p>
+        </div>
+        <div class="corpus-actions" id="corpusActions">
+          <button
+            class="corpus-btn active"
+            type="button"
+            data-corpus="featured"
+          >
+            精选
+          </button>
+          <button class="corpus-btn" type="button" data-corpus="tang">
+            全唐诗
+          </button>
+          <button class="corpus-btn" type="button" data-corpus="song">
+            全宋诗
+          </button>
+          <button class="corpus-btn" type="button" data-corpus="ci">
+            全宋词
+          </button>
+          <button
+            class="corpus-refresh"
+            id="corpusRefresh"
+            type="button"
+            hidden
+          >
+            换一批
+          </button>
+          <span class="corpus-divider" aria-hidden="true"></span>
+          <span class="script-label">诗词文字</span>
+          <button
+            class="script-btn active"
+            type="button"
+            data-script="simplified"
+          >
+            简体
+          </button>
+          <button class="script-btn" type="button" data-script="traditional">
+            繁體
+          </button>
+        </div>
+      </section>
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="feihua">飞花令</button>
+        <button class="mode-tab" data-mode="chain">诗句接龙</button>
+        <button class="mode-tab" data-mode="explore">随便读读</button>
+        <button class="mode-tab" data-mode="favorites">
+          我的收藏 <span id="favoriteTabCount">0</span>
+        </button>
+      </div>
     </div>
-    <div class="corpus-actions" id="corpusActions">
-      <button class="corpus-btn active" type="button" data-corpus="featured">精选</button>
-      <button class="corpus-btn" type="button" data-corpus="tang">全唐诗</button>
-      <button class="corpus-btn" type="button" data-corpus="song">全宋诗</button>
-      <button class="corpus-btn" type="button" data-corpus="ci">全宋词</button>
-      <button class="corpus-refresh" id="corpusRefresh" type="button" hidden>换一批</button>
-      <span class="corpus-divider" aria-hidden="true"></span>
-      <span class="script-label">诗词文字</span>
-      <button class="script-btn active" type="button" data-script="simplified">简体</button>
-      <button class="script-btn" type="button" data-script="traditional">繁體</button>
-    </div>
-  </section>
-  <div class="mode-tabs" id="modeTabs">
-    <button class="mode-tab active" data-mode="feihua">飞花令</button>
-    <button class="mode-tab" data-mode="chain">诗句接龙</button>
-    <button class="mode-tab" data-mode="explore">随便读读</button>
-    <button class="mode-tab" data-mode="favorites">我的收藏 <span id="favoriteTabCount">0</span></button>
-  </div>
-</div>
-
-<main class="wrap">
-
-  <!-- 飞花令 -->
-  <section class="panel" id="panel-feihua">
-    <div class="panel-head">
-      <h2>飞花令</h2>
-      <p>选一个字，写出一句包含这个字的诗词 —— 传统酒令玩法，这里换成打字版。</p>
-    </div>
-
-    <div class="kw-grid" id="kwGrid"></div>
-
-    <div class="target-wrap">
-      <div class="target-char" id="fhTarget">花</div>
-      <div class="target-label">本轮关键字</div>
-    </div>
-
-    <div class="score-row">
-      <div><b id="fhScore">0</b>答对</div>
-      <div><b id="fhSkip">0</b>看答案</div>
-    </div>
-
-    <div class="input-row">
-      <input id="fhInput" type="text" placeholder="输入一句含有这个字的诗句…" autocomplete="off">
-      <button id="fhSubmit">提交</button>
-    </div>
-    <div class="helper-row">
-      <button class="ghost-btn" id="fhReveal">不会，看一句答案</button>
-      <button class="ghost-btn" id="fhNext">换一个字</button>
-    </div>
-
-    <div class="feedback" id="fhFeedback"></div>
-    <div id="fhCardHolder"></div>
-  </section>
-
-  <!-- 诗句接龙 -->
-  <section class="panel" id="panel-chain" hidden>
-    <div class="panel-head">
-      <h2>诗句接龙</h2>
-      <p>上一句最后一个字，就是下一句要开头的字 —— 看你能接多长。</p>
-    </div>
-
-    <div class="score-row">
-      <div><b id="chainScore">1</b>已接句数</div>
-    </div>
-
-    <div class="chain-list" id="chainList"></div>
-
-    <div class="input-row" style="margin-top:20px;">
-      <input id="chainInput" type="text" placeholder="输入下一句…" autocomplete="off">
-      <button id="chainSubmit">接上</button>
-    </div>
-    <div class="helper-row">
-      <button class="ghost-btn" id="chainHint">给点提示</button>
-      <button class="ghost-btn" id="chainRestart">重新开始</button>
-    </div>
-
-    <div class="feedback" id="chainFeedback"></div>
-  </section>
-
-  <!-- 随便读读 -->
-  <section class="panel" id="panel-explore" hidden>
-    <div class="panel-head">
-      <h2>随便读读</h2>
-      <p>不想玩游戏？随便翻几首，纯欣赏。</p>
-    </div>
-    <div class="explore-card" id="exploreCard"></div>
-    <div class="feedback" id="favoriteFeedback" aria-live="polite"></div>
-    <div class="explore-nav">
-      <button class="secondary" id="exPrev">上一首</button>
-      <button id="exNext">下一首</button>
-    </div>
-  </section>
-
-  <!-- 我的收藏 -->
-  <section class="panel" id="panel-favorites" hidden>
-    <div class="panel-head">
-      <h2>我的收藏</h2>
-      <p>收藏保存在当前浏览器，最多 50 首。清除浏览器数据后收藏也会消失。</p>
-    </div>
-    <div class="favorites-status" id="favoritesStatus" aria-live="polite"></div>
-    <div class="favorites-list" id="favoritesList"></div>
-  </section>
-
-</main>
-
-<section class="about wrap" id="details">
-  <h2>游戏说明</h2>
-  <p>诗词数据来自开源项目 <a href="https://github.com/chinese-poetry/chinese-poetry" target="_blank" rel="noopener" style="color:var(--gold)">chinese-poetry</a>。默认精选题库以《唐诗三百首》和《宋词三百首》为主；全唐诗、全宋诗和全宋词按原库分批载入，并可统一切换为简体或繁体。所有转换与判题都在浏览器本地完成，不上传任何输入内容。</p>
-  <div class="about-grid">
-    <div class="about-card">
-      <h3>飞花令怎么玩</h3>
-      <p>选一个字，写出任意一句包含它的诗词原句即可，系统会在语料库里核对。</p>
-    </div>
-    <div class="about-card">
-      <h3>接龙怎么玩</h3>
-      <p>下一句必须以上一句的最后一个字开头，能接多久全看记忆和词汇量。</p>
-    </div>
-    <div class="about-card">
-      <h3>数据范围</h3>
-      <p>默认精选题库收录 624 首经典篇目；也可选择全唐诗、全宋诗或全宋词，每次随机载入约 2000 首，随时换一批。</p>
-    </div>
-  </div>
-</section>
-
-<footer class="wrap">
-  <div class="footer-brand">j4fun - Just For Fun<br>中文小玩意合集</div>
-  <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/opencc-js@1.4.2/dist/umd/full.js"></script>
-<script>
-(function(){
-  var SPLIT_RE = /[，。！？；、]/;
-  var PUNCT_RE = /[，。！？；、,.!?;:\s'""''()（）\-—]/g;
-
-  var poems = [];
-  var verses = []; // {text, norm, poemIdx}
-  var containIndex = {}; // char -> [verseIdx,...]
-  var firstCharIndex = {}; // char -> [verseIdx,...]
-  var activeCorpus = 'featured';
-  var activeCorpusNote = '';
-  var activeRawData = [];
-  var scriptMode = 'simplified';
-  var loadSequence = 0;
-  var featuredCache = null;
-  var FAVORITES_KEY = 'j4fun-poetry-favorites-v1';
-  var FAVORITES_LIMIT = 50;
-  var favorites = loadFavorites();
-  var toSimplified = window.OpenCC ? OpenCC.Converter({ from:'t', to:'cn' }) : function(text){ return text; };
-  var toTraditional = window.OpenCC ? OpenCC.Converter({ from:'cn', to:'tw' }) : function(text){ return text; };
-
-  var CORPORA = {
-    featured: { label:'精选题库', local:true, dynasty:'唐宋', type:'诗词' },
-    tang: { label:'全唐诗', folder:'全唐诗', prefix:'poet.tang.', maxShard:57, dynasty:'唐', type:'诗' },
-    song: { label:'全宋诗', folder:'全唐诗', prefix:'poet.song.', maxShard:254, dynasty:'宋', type:'诗' },
-    ci: { label:'全宋词', folder:'宋词', prefix:'ci.song.', maxShard:21, dynasty:'宋', type:'词' }
-  };
-
-  var KEYWORDS = ['花','月','酒','风','雪','山','水','春','秋','愁','人','归','梦','心','天','云','夜','江','雨','柳','红'];
-
-  function norm(s){ return s.replace(PUNCT_RE, ''); }
-  function convertText(text){
-    text = String(text || '');
-    return scriptMode === 'traditional' ? toTraditional(text) : toSimplified(text);
-  }
-
-  function buildData(data){
-    poems = data;
-    verses = [];
-    containIndex = {};
-    firstCharIndex = {};
-    function addVerse(text, poemIdx){
-      text = text.trim();
-      if(text.length < 2) return;
-      var idx = verses.length;
-      var n = norm(text);
-      verses.push({ text: text, norm: n, poemIdx: poemIdx });
-      var indexedChars = {};
-      for(var i=0;i<n.length;i++){
-        var ch = n[i];
-        if(indexedChars[ch]) continue;
-        indexedChars[ch] = true;
-        (containIndex[ch] = containIndex[ch] || []).push(idx);
-      }
-      var fc = n[0];
-      (firstCharIndex[fc] = firstCharIndex[fc] || []).push(idx);
-    }
-    poems.forEach(function(poem, pi){
-      poem.lines.forEach(function(line){
-        var segments = line.split(SPLIT_RE).map(function(seg){ return seg.trim(); }).filter(function(seg){ return seg.length >= 2; });
-        segments.forEach(function(seg){ addVerse(seg, pi); });
-        if(segments.length > 1) addVerse(line, pi);
-      });
-    });
-  }
-
-  function poemSrc(poemIdx){
-    var p = poems[poemIdx];
-    return p.author + '《' + p.title + '》· ' + p.dynasty + p.type;
-  }
-
-  function escapeHtml(text){
-    return String(text).replace(/[&<>"']/g, function(char){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char];
-    });
-  }
-
-  function loadFavorites(){
-    try {
-      var saved = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
-      return Array.isArray(saved) ? saved.slice(0, FAVORITES_LIMIT) : [];
-    } catch(error){
-      console.error(error);
-      return [];
-    }
-  }
-
-  function saveFavorites(){
-    try {
-      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
-      return true;
-    } catch(error){
-      console.error(error);
-      return false;
-    }
-  }
-
-  function poemKey(p){
-    return toSimplified([p.dynasty,p.type,p.author,p.title].concat(p.lines).join('|'));
-  }
-
-  function isFavorite(p){
-    var key = poemKey(p);
-    return favorites.some(function(item){ return item.id === key; });
-  }
-
-  function poemForCurrentScript(p){
-    return {
-      dynasty: convertText(p.dynasty), type: convertText(p.type),
-      author: convertText(p.author), title: convertText(p.title),
-      lines: p.lines.map(convertText)
-    };
-  }
-
-  function poemLookupUrlFor(p){
-    return 'https://www.google.com/search?q=' + encodeURIComponent(p.author + ' ' + p.title + ' 古诗词');
-  }
-
-  function poemTranslateUrlFor(p){
-    var text = [p.dynasty + p.type, p.title, p.author].concat(p.lines).join(' ');
-    return 'https://translate.google.com/?sl=auto&tl=zh-CN&text=' + encodeURIComponent(text) + '&op=translate';
-  }
-
-  function poemLookupUrl(poemIdx){
-    return poemLookupUrlFor(poems[poemIdx]);
-  }
-
-  function poemFullAiUrlFor(p){
-    var text = p.lines.join('');
-    if(text.length > 900) text = text.slice(0, 900) + '……';
-    var prompt = '请解释这首古诗词：' + p.author + '《' + p.title + '》。原文：' + text + '。请用适合中文学习者的方式说明全文大意、关键词、意象、情感、写作背景和值得学习的名句。';
-    return 'https://www.google.com/search?udm=50&q=' + encodeURIComponent(prompt);
-  }
-
-  function poemFullAiUrl(poemIdx){ return poemFullAiUrlFor(poems[poemIdx]); }
-
-  function poemSrcLink(poemIdx, withLabel){
-    var label = escapeHtml(poemSrc(poemIdx));
-    var extra = withLabel ? '<span>查看原诗 ↗</span>' : '<span aria-hidden="true">↗</span>';
-    return '<a href="' + poemLookupUrl(poemIdx) + '" target="_blank" rel="noopener noreferrer" aria-label="查看' + label + '原诗">' + label + extra + '</a>';
-  }
-
-  function poemFullAiLink(poemIdx){
-    return '<a class="ai-explain-link" href="' + poemFullAiUrl(poemIdx) + '" target="_blank" rel="noopener noreferrer" aria-label="用 Google AI Mode 解释这首诗词">AI 解释全文 ↗</a>';
-  }
-
-  function poemSourceActionLink(poemIdx){
-    var p = poems[poemIdx];
-    return '<a href="' + poemTranslateUrlFor(p) + '" target="_blank" rel="noopener noreferrer" aria-label="用谷歌翻译查看' + escapeHtml(p.title) + '">谷歌翻译 ↗</a>';
-  }
-
-  function poemActionsFor(p){
-    return '<a href="' + poemTranslateUrlFor(p) + '" target="_blank" rel="noopener noreferrer">谷歌翻译 ↗</a>' +
-      '<a class="ai-explain-link" href="' + poemFullAiUrlFor(p) + '" target="_blank" rel="noopener noreferrer">AI 解释全文 ↗</a>';
-  }
-
-  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
-
-  function remoteShardUrl(config, shard){
-    var path = encodeURIComponent(config.folder) + '/' + config.prefix + (shard * 1000) + '.json';
-    return 'https://cdn.jsdelivr.net/gh/chinese-poetry/chinese-poetry@master/' + path;
-  }
-
-  function normalizeCorpus(data, config){
-    return data.map(function(item){
-      return {
-        dynasty: convertText(item.dynasty || config.dynasty),
-        type: convertText(item.type || config.type),
-        title: convertText(item.title || item.rhythmic || '无题'),
-        author: convertText(item.author || '佚名'),
-        lines: (item.lines || item.paragraphs || []).map(convertText)
-      };
-    }).filter(function(item){ return item.lines.length; });
-  }
-
-  function corpusStatus(text, loading){
-    var status = document.getElementById('corpusStatus');
-    status.textContent = text;
-    status.classList.toggle('loading', !!loading);
-    document.querySelectorAll('.corpus-btn, .corpus-refresh, .script-btn').forEach(function(button){ button.disabled = !!loading; });
-  }
-
-  function applyCorpus(key, data, note){
-    var config = CORPORA[key];
-    activeCorpus = key;
-    activeCorpusNote = note || '';
-    activeRawData = data;
-    buildData(normalizeCorpus(data, config));
-    document.querySelectorAll('.corpus-btn').forEach(function(button){
-      button.classList.toggle('active', button.dataset.corpus === key);
-    });
-    document.getElementById('corpusRefresh').hidden = config.local;
-    document.documentElement.lang = scriptMode === 'traditional' ? 'zh-TW' : 'zh-CN';
-    document.querySelectorAll('.script-btn').forEach(function(button){
-      button.classList.toggle('active', button.dataset.script === scriptMode);
-    });
-    corpusStatus(config.label + ' · ' + poems.length.toLocaleString('zh-CN') + ' 首，' + verses.length.toLocaleString('zh-CN') + ' 条可匹配诗句' + (note ? ' · ' + note : ''), false);
-    fh.target = convertText('花');
-    fh.score = 0; fh.skip = 0; fh.usedVerses = {};
-    document.getElementById('fhScore').textContent = '0';
-    document.getElementById('fhSkip').textContent = '0';
-    renderKwGrid();
-    chainStart();
-    exploreShuffle();
-    renderExplore();
-    renderFavorites();
-    setFeedback('fhFeedback','','');
-    document.getElementById('fhCardHolder').innerHTML = '';
-  }
-
-  function handleCorpusError(error){
-    console.error(error);
-    corpusStatus('在线题库暂时无法载入，正在回到本地精选题库…', true);
-    loadCorpus('featured');
-  }
-
-  function loadCorpus(key){
-    var config = CORPORA[key];
-    var sequence = ++loadSequence;
-    corpusStatus('正在载入' + config.label + '…', true);
-    if(config.local){
-      var localPromise = featuredCache ? Promise.resolve(featuredCache) : fetch('poems.json').then(function(response){
-        if(!response.ok) throw new Error('本地题库载入失败');
-        return response.json();
-      }).then(function(data){ featuredCache = data; return data; });
-      localPromise.then(function(data){ if(sequence === loadSequence) applyCorpus(key, data, '本地默认'); }).catch(function(error){
-        console.error(error);
-        corpusStatus('精选题库载入失败，请刷新页面重试。', false);
-      });
-      return;
-    }
-
-    var shardA = Math.floor(Math.random() * (config.maxShard + 1));
-    var shardB = Math.floor(Math.random() * (config.maxShard + 1));
-    if(shardB === shardA) shardB = (shardA + 1) % (config.maxShard + 1);
-    Promise.all([shardA, shardB].map(function(shard){
-      return fetch(remoteShardUrl(config, shard)).then(function(response){
-        if(!response.ok) throw new Error(config.label + '载入失败');
-        return response.json();
-      });
-    })).then(function(groups){
-      if(sequence !== loadSequence) return;
-      applyCorpus(key, groups[0].concat(groups[1]), '当前随机批次');
-    }).catch(handleCorpusError);
-  }
-
-  /* petals */
-  var PETAL_CHARS = ['❀','✿','❁','☘'];
-  function spawnPetal(){
-    var el = document.createElement('span');
-    el.className = 'petal';
-    el.textContent = randChoice(PETAL_CHARS);
-    el.style.left = (Math.random()*100) + 'vw';
-    el.style.fontSize = (14 + Math.random()*14) + 'px';
-    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
-    var dur = 7 + Math.random()*6;
-    el.style.animationDuration = dur + 's';
-    document.getElementById('petals').appendChild(el);
-    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
-  }
-  setInterval(spawnPetal, 1400);
-  for(var i=0;i<4;i++) setTimeout(spawnPetal, i*400);
-
-  function burst(){
-    for(var i=0;i<10;i++) setTimeout(spawnPetal, i*60);
-  }
-
-  /* ---------- mode switching ---------- */
-  var modes = ['feihua','chain','explore','favorites'];
-  document.getElementById('modeTabs').addEventListener('click', function(e){
-    var btn = e.target.closest('.mode-tab');
-    if(!btn) return;
-    var mode = btn.dataset.mode;
-    modes.forEach(function(m){
-      document.getElementById('panel-'+m).hidden = (m !== mode);
-    });
-    document.querySelectorAll('.mode-tab').forEach(function(b){ b.classList.toggle('active', b===btn); });
-  });
-
-  /* ---------- 飞花令 ---------- */
-  var fh = { score:0, skip:0, target:'花', usedVerses:{} };
-
-  function renderKwGrid(){
-    var grid = document.getElementById('kwGrid');
-    grid.innerHTML = '';
-    KEYWORDS.map(convertText).forEach(function(k){
-      var chip = document.createElement('button');
-      chip.className = 'kw-chip' + (k===fh.target ? ' active' : '');
-      chip.type = 'button';
-      chip.textContent = k;
-      chip.addEventListener('click', function(){
-        fh.target = k;
-        fh.usedVerses = {};
-        document.getElementById('fhTarget').textContent = k;
-        renderKwGrid();
-        setFeedback('fhFeedback', '', '');
-        document.getElementById('fhCardHolder').innerHTML = '';
-      });
-      grid.appendChild(chip);
-    });
-  }
-
-  function setFeedback(id, cls, text){
-    var el = document.getElementById(id);
-    el.className = 'feedback' + (cls ? ' '+cls : '');
-    el.textContent = text;
-  }
-
-  function fhNextChar(){
-    var pool = KEYWORDS.map(convertText).filter(function(k){ return k !== fh.target; });
-    fh.target = randChoice(pool);
-    fh.usedVerses = {};
-    document.getElementById('fhTarget').textContent = fh.target;
-    renderKwGrid();
-    setFeedback('fhFeedback','','');
-    document.getElementById('fhCardHolder').innerHTML = '';
-    document.getElementById('fhInput').value = '';
-  }
-
-  function showPoemCard(holderId, verseIdx, tagText){
-    var v = verses[verseIdx];
-    var holder = document.getElementById(holderId);
-    holder.innerHTML =
-      '<div class="poem-card"><span class="tag">'+escapeHtml(tagText)+'</span>' +
-      '<div class="verse-row"><div class="verse">'+escapeHtml(v.text)+'</div></div>' +
-      '<div class="src">'+poemSrcLink(v.poemIdx, true)+'</div></div>';
-  }
-
-  document.getElementById('fhSubmit').addEventListener('click', function(){
-    var raw = document.getElementById('fhInput').value.trim();
-    if(!raw){ return; }
-    var n = norm(convertText(raw));
-    if(n.indexOf(fh.target) === -1){
-      setFeedback('fhFeedback','bad','这句里没有「'+fh.target+'」字哦，再看看？');
-      return;
-    }
-    var candidates = containIndex[fh.target] || [];
-    var hit = -1;
-    for(var i=0;i<candidates.length;i++){
-      var vi = candidates[i];
-      if(verses[vi].norm === n && !fh.usedVerses[vi]){ hit = vi; break; }
-    }
-    if(hit === -1){
-      var batchHint = activeCorpus === 'featured' ? '' : '；也可能不在当前随机批次，可以点「换一批」再试';
-      setFeedback('fhFeedback','bad','当前载入的题库里没找到完全一致的诗句，请检查字词'+batchHint+'。');
-      return;
-    }
-    fh.usedVerses[hit] = true;
-    fh.score++;
-    document.getElementById('fhScore').textContent = fh.score;
-    setFeedback('fhFeedback','ok','对上了！');
-    showPoemCard('fhCardHolder', hit, '✓ 命中');
-    document.getElementById('fhInput').value = '';
-    burst();
-  });
-  document.getElementById('fhInput').addEventListener('keydown', function(e){
-    if(e.key === 'Enter') document.getElementById('fhSubmit').click();
-  });
-  document.getElementById('fhReveal').addEventListener('click', function(){
-    var candidates = (containIndex[fh.target] || []).filter(function(vi){ return !fh.usedVerses[vi]; });
-    if(!candidates.length){ setFeedback('fhFeedback','bad','这个字的库存都被你用完啦，换个字吧！'); return; }
-    var vi = randChoice(candidates);
-    fh.usedVerses[vi] = true;
-    fh.skip++;
-    document.getElementById('fhSkip').textContent = fh.skip;
-    setFeedback('fhFeedback','','给你看一句：');
-    showPoemCard('fhCardHolder', vi, '答案');
-  });
-  document.getElementById('fhNext').addEventListener('click', fhNextChar);
-
-  /* ---------- 诗句接龙 ---------- */
-  var chain = { list: [], lastChar: '', usedVerses: {} };
-
-  function chainStart(){
-    var allIdx = verses.map(function(_,i){ return i; });
-    var vi = randChoice(allIdx);
-    chain.list = [{ verseIdx: vi, who: 'start' }];
-    chain.usedVerses = {}; chain.usedVerses[vi] = true;
-    chain.lastChar = verses[vi].text.slice(-1);
-    document.getElementById('chainScore').textContent = '1';
-    renderChainList();
-    setFeedback('chainFeedback','','下一句要以「'+chain.lastChar+'」开头');
-    document.getElementById('chainInput').value = '';
-  }
-
-  function renderChainList(){
-    var el = document.getElementById('chainList');
-    el.innerHTML = '';
-    chain.list.forEach(function(item){
-      var v = verses[item.verseIdx];
-      var div = document.createElement('div');
-      div.className = 'chain-item ' + (item.who === 'start' ? 'start' : 'player');
-      div.innerHTML =
-        '<span class="txt">'+escapeHtml(v.text)+'</span>' +
-        '<span class="who">'+poemSrcLink(v.poemIdx, false)+'</span>';
-      el.appendChild(div);
-    });
-  }
-
-  document.getElementById('chainSubmit').addEventListener('click', function(){
-    var raw = document.getElementById('chainInput').value.trim();
-    if(!raw) return;
-    var n = norm(convertText(raw));
-    if(n[0] !== chain.lastChar){
-      setFeedback('chainFeedback','bad','要以「'+chain.lastChar+'」开头才行～');
-      return;
-    }
-    var candidates = firstCharIndex[chain.lastChar] || [];
-    var hit = -1;
-    for(var i=0;i<candidates.length;i++){
-      var vi = candidates[i];
-      if(verses[vi].norm === n && !chain.usedVerses[vi]){ hit = vi; break; }
-    }
-    if(hit === -1){
-      var batchHint = activeCorpus === 'featured' ? '' : '；也可能不在当前随机批次，可以点「换一批」再试';
-      setFeedback('chainFeedback','bad','当前载入的题库里没找到完全一致的诗句，请检查字词'+batchHint+'。');
-      return;
-    }
-    chain.usedVerses[hit] = true;
-    chain.list.push({ verseIdx: hit, who: 'player' });
-    chain.lastChar = verses[hit].text.slice(-1);
-    document.getElementById('chainScore').textContent = chain.list.length;
-    renderChainList();
-    setFeedback('chainFeedback','ok','接上了！下一句要以「'+chain.lastChar+'」开头');
-    document.getElementById('chainInput').value = '';
-    burst();
-  });
-  document.getElementById('chainInput').addEventListener('keydown', function(e){
-    if(e.key === 'Enter') document.getElementById('chainSubmit').click();
-  });
-  document.getElementById('chainHint').addEventListener('click', function(){
-    var candidates = (firstCharIndex[chain.lastChar] || []).filter(function(vi){ return !chain.usedVerses[vi]; });
-    if(!candidates.length){
-      setFeedback('chainFeedback','bad','这个字开头的句子都用完了，算你厉害，重新开始吧！');
-      return;
-    }
-    var sample = candidates.slice(0, 4).map(function(vi){ return verses[vi].text; }).join('；');
-    setFeedback('chainFeedback','','提示：'+sample);
-  });
-  document.getElementById('chainRestart').addEventListener('click', chainStart);
-
-  /* ---------- 随便读读 ---------- */
-  var explore = { idx: 0, order: [] };
-  function updateFavoriteCount(){
-    document.getElementById('favoriteTabCount').textContent = favorites.length;
-  }
-
-  function setFavoriteMessage(text, bad){
-    setFeedback('favoriteFeedback', bad ? 'bad' : 'ok', text);
-  }
-
-  function toggleFavorite(p){
-    var key = poemKey(p);
-    var existing = favorites.findIndex(function(item){ return item.id === key; });
-    var previous = favorites.slice();
-    if(existing !== -1){
-      favorites.splice(existing, 1);
-      setFavoriteMessage('已从收藏中移除。', false);
-    } else {
-      if(favorites.length >= FAVORITES_LIMIT){
-        setFavoriteMessage('收藏已满 50 首，请先到「我的收藏」移除一些。', true);
-        return;
-      }
-      favorites.unshift({
-        id:key, dynasty:p.dynasty, type:p.type, author:p.author,
-        title:p.title, lines:p.lines.slice(), savedAt:Date.now()
-      });
-      setFavoriteMessage('已加入我的收藏 ❤️', false);
-    }
-    if(!saveFavorites()){
-      favorites = previous;
-      setFavoriteMessage('浏览器存储空间不足，暂时无法保存。', true);
-    }
-    updateFavoriteCount();
-    renderExplore();
-    renderFavorites();
-  }
-
-  function renderFavorites(){
-    var list = document.getElementById('favoritesList');
-    var status = document.getElementById('favoritesStatus');
-    status.textContent = '已收藏 ' + favorites.length + ' / ' + FAVORITES_LIMIT + ' 首';
-    if(!favorites.length){
-      list.innerHTML = '<div class="favorites-empty">还没有收藏。到「随便读读」遇见喜欢的诗词时，点一下 🤍 吧。</div>';
-      return;
-    }
-    list.innerHTML = favorites.map(function(saved, index){
-      var p = poemForCurrentScript(saved);
-      return '<article class="favorite-card">' +
-        '<button class="favorite-remove" type="button" data-favorite-index="'+index+'" aria-label="移除'+escapeHtml(p.title)+'">移除</button>' +
-        '<span class="dynasty-tag">'+escapeHtml(p.dynasty+p.type)+'</span>' +
-        '<h3>'+escapeHtml(p.title)+'</h3><div class="author">'+escapeHtml(p.author)+'</div>' +
-        '<div class="lines">'+p.lines.map(escapeHtml).join('<br>')+'</div>' +
-        '<div class="explore-actions">'+poemActionsFor(p)+'</div></article>';
-    }).join('');
-  }
-  function exploreShuffle(){
-    explore.order = poems.map(function(_,i){return i;});
-    for(var i=explore.order.length-1;i>0;i--){
-      var j = Math.floor(Math.random()*(i+1));
-      var t = explore.order[i]; explore.order[i]=explore.order[j]; explore.order[j]=t;
-    }
-    explore.idx = 0;
-  }
-  function renderExplore(){
-    var poemIdx = explore.order[explore.idx];
-    var p = poems[poemIdx];
-    var favorite = isFavorite(p);
-    var card = document.getElementById('exploreCard');
-    card.innerHTML =
-      '<button class="favorite-button'+(favorite ? ' active' : '')+'" id="favoriteButton" type="button" aria-label="'+(favorite ? '取消收藏' : '加入收藏')+'" title="'+(favorite ? '取消收藏' : '加入我的收藏')+'">'+(favorite ? '❤️' : '🤍')+'</button>' +
-      '<span class="dynasty-tag">'+escapeHtml(p.dynasty+p.type)+'</span>' +
-      '<div class="title">'+escapeHtml(p.title)+'</div>' +
-      '<div class="author">'+escapeHtml(p.author)+'</div>' +
-      '<div class="lines">'+p.lines.map(escapeHtml).join('<br>')+'</div>' +
-      '<div class="explore-actions">'+poemSourceActionLink(poemIdx)+poemFullAiLink(poemIdx)+'</div>';
-  }
-  document.getElementById('exNext').addEventListener('click', function(){
-    explore.idx = (explore.idx + 1) % explore.order.length;
-    renderExplore();
-  });
-  document.getElementById('exPrev').addEventListener('click', function(){
-    explore.idx = (explore.idx - 1 + explore.order.length) % explore.order.length;
-    renderExplore();
-  });
-  document.getElementById('exploreCard').addEventListener('click', function(event){
-    if(event.target.closest('#favoriteButton')) toggleFavorite(poems[explore.order[explore.idx]]);
-  });
-  document.getElementById('favoritesList').addEventListener('click', function(event){
-    var button = event.target.closest('.favorite-remove');
-    if(!button) return;
-    var index = Number(button.dataset.favoriteIndex);
-    var removed = favorites.splice(index, 1)[0];
-    if(!saveFavorites()){
-      favorites.splice(index, 0, removed);
-      document.getElementById('favoritesStatus').textContent = '移除失败，请检查浏览器存储设置。';
-      return;
-    }
-    updateFavoriteCount();
-    renderFavorites();
-    renderExplore();
-  });
-  document.getElementById('corpusActions').addEventListener('click', function(event){
-    var button = event.target.closest('.corpus-btn');
-    if(button && !button.disabled && button.dataset.corpus !== activeCorpus) loadCorpus(button.dataset.corpus);
-  });
-  document.getElementById('corpusRefresh').addEventListener('click', function(){ loadCorpus(activeCorpus); });
-  document.getElementById('corpusActions').addEventListener('click', function(event){
-    var button = event.target.closest('.script-btn');
-    if(!button || button.disabled || button.dataset.script === scriptMode) return;
-    if(!window.OpenCC){
-      corpusStatus('简繁转换组件载入失败，请刷新页面重试。', false);
-      return;
-    }
-    scriptMode = button.dataset.script;
-    applyCorpus(activeCorpus, activeRawData, activeCorpusNote);
-  });
-  /* ---------- init ---------- */
-  updateFavoriteCount();
-  renderFavorites();
-  loadCorpus('featured');
-})();
-</script>
-
-</body>
+
+    <main class="wrap">
+      <!-- 飞花令 -->
+      <section class="panel" id="panel-feihua">
+        <div class="panel-head">
+          <h2>飞花令</h2>
+          <p>
+            选一个字，写出一句包含这个字的诗词 —— 传统酒令玩法，这里换成打字版。
+          </p>
+        </div>
+
+        <div class="kw-grid" id="kwGrid"></div>
+
+        <div class="target-wrap">
+          <div class="target-char" id="fhTarget">花</div>
+          <div class="target-label">本轮关键字</div>
+        </div>
+
+        <div class="score-row">
+          <div><b id="fhScore">0</b>答对</div>
+          <div><b id="fhSkip">0</b>看答案</div>
+        </div>
+
+        <div class="input-row">
+          <input
+            id="fhInput"
+            type="text"
+            placeholder="输入一句含有这个字的诗句…"
+            autocomplete="off"
+          />
+          <button id="fhSubmit">提交</button>
+        </div>
+        <div class="helper-row">
+          <button class="ghost-btn" id="fhReveal">不会，看一句答案</button>
+          <button class="ghost-btn" id="fhNext">换一个字</button>
+        </div>
+
+        <div class="feedback" id="fhFeedback"></div>
+        <div id="fhCardHolder"></div>
+      </section>
+
+      <!-- 诗句接龙 -->
+      <section class="panel" id="panel-chain" hidden>
+        <div class="panel-head">
+          <h2>诗句接龙</h2>
+          <p>上一句最后一个字，就是下一句要开头的字 —— 看你能接多长。</p>
+        </div>
+
+        <div class="score-row">
+          <div><b id="chainScore">1</b>已接句数</div>
+        </div>
+
+        <div class="chain-list" id="chainList"></div>
+
+        <div class="input-row" style="margin-top:20px;">
+          <input
+            id="chainInput"
+            type="text"
+            placeholder="输入下一句…"
+            autocomplete="off"
+          />
+          <button id="chainSubmit">接上</button>
+        </div>
+        <div class="helper-row">
+          <button class="ghost-btn" id="chainHint">给点提示</button>
+          <button class="ghost-btn" id="chainRestart">重新开始</button>
+        </div>
+
+        <div class="feedback" id="chainFeedback"></div>
+      </section>
+
+      <!-- 随便读读 -->
+      <section class="panel" id="panel-explore" hidden>
+        <div class="panel-head">
+          <h2>随便读读</h2>
+          <p>不想玩游戏？随便翻几首，纯欣赏。</p>
+        </div>
+        <div class="explore-card" id="exploreCard"></div>
+        <div class="feedback" id="favoriteFeedback" aria-live="polite"></div>
+        <div class="explore-nav">
+          <button class="secondary" id="exPrev">上一首</button>
+          <button id="exNext">下一首</button>
+        </div>
+      </section>
+
+      <!-- 我的收藏 -->
+      <section class="panel" id="panel-favorites" hidden>
+        <div class="panel-head">
+          <h2>我的收藏</h2>
+          <p>
+            收藏保存在当前浏览器，最多 50 首。清除浏览器数据后收藏也会消失。
+          </p>
+        </div>
+        <div
+          class="favorites-status"
+          id="favoritesStatus"
+          aria-live="polite"
+        ></div>
+        <div class="favorites-list" id="favoritesList"></div>
+      </section>
+    </main>
+
+    <section class="about wrap" id="details">
+      <h2>游戏说明</h2>
+      <p>
+        诗词数据来自开源项目
+        <a
+          href="https://github.com/chinese-poetry/chinese-poetry"
+          target="_blank"
+          rel="noopener"
+          style="color:var(--gold)"
+          >chinese-poetry</a
+        >。默认精选题库以《唐诗三百首》和《宋词三百首》为主；全唐诗、全宋诗和全宋词按原库分批载入，并可统一切换为简体或繁体。所有转换与判题都在浏览器本地完成，不上传任何输入内容。
+      </p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>飞花令怎么玩</h3>
+          <p>
+            选一个字，写出任意一句包含它的诗词原句即可，系统会在语料库里核对。
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>接龙怎么玩</h3>
+          <p>下一句必须以上一句的最后一个字开头，能接多久全看记忆和词汇量。</p>
+        </div>
+        <div class="about-card">
+          <h3>数据范围</h3>
+          <p>
+            默认精选题库收录 624
+            首经典篇目；也可选择全唐诗、全宋诗或全宋词，每次随机载入约 2000
+            首，随时换一批。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.4.2/dist/umd/full.js"></script>
+    <script>
+      (function(){
+        var SPLIT_RE = /[，。！？；、]/;
+        var PUNCT_RE = /[，。！？；、,.!?;:\s'""''()（）\-—]/g;
+
+        var poems = [];
+        var verses = []; // {text, norm, poemIdx}
+        var containIndex = {}; // char -> [verseIdx,...]
+        var firstCharIndex = {}; // char -> [verseIdx,...]
+        var activeCorpus = 'featured';
+        var activeCorpusNote = '';
+        var activeRawData = [];
+        var scriptMode = 'simplified';
+        var loadSequence = 0;
+        var featuredCache = null;
+        var FAVORITES_KEY = 'j4fun-poetry-favorites-v1';
+        var FAVORITES_LIMIT = 50;
+        var favorites = loadFavorites();
+        var toSimplified = window.OpenCC ? OpenCC.Converter({ from:'t', to:'cn' }) : function(text){ return text; };
+        var toTraditional = window.OpenCC ? OpenCC.Converter({ from:'cn', to:'tw' }) : function(text){ return text; };
+
+        var CORPORA = {
+          featured: { label:'精选题库', local:true, dynasty:'唐宋', type:'诗词' },
+          tang: { label:'全唐诗', folder:'全唐诗', prefix:'poet.tang.', maxShard:57, dynasty:'唐', type:'诗' },
+          song: { label:'全宋诗', folder:'全唐诗', prefix:'poet.song.', maxShard:254, dynasty:'宋', type:'诗' },
+          ci: { label:'全宋词', folder:'宋词', prefix:'ci.song.', maxShard:21, dynasty:'宋', type:'词' }
+        };
+
+        var KEYWORDS = ['花','月','酒','风','雪','山','水','春','秋','愁','人','归','梦','心','天','云','夜','江','雨','柳','红'];
+
+        function norm(s){ return s.replace(PUNCT_RE, ''); }
+        function convertText(text){
+          text = String(text || '');
+          return scriptMode === 'traditional' ? toTraditional(text) : toSimplified(text);
+        }
+
+        function buildData(data){
+          poems = data;
+          verses = [];
+          containIndex = {};
+          firstCharIndex = {};
+          function addVerse(text, poemIdx){
+            text = text.trim();
+            if(text.length < 2) return;
+            var idx = verses.length;
+            var n = norm(text);
+            verses.push({ text: text, norm: n, poemIdx: poemIdx });
+            var indexedChars = {};
+            for(var i=0;i<n.length;i++){
+              var ch = n[i];
+              if(indexedChars[ch]) continue;
+              indexedChars[ch] = true;
+              (containIndex[ch] = containIndex[ch] || []).push(idx);
+            }
+            var fc = n[0];
+            (firstCharIndex[fc] = firstCharIndex[fc] || []).push(idx);
+          }
+          poems.forEach(function(poem, pi){
+            poem.lines.forEach(function(line){
+              var segments = line.split(SPLIT_RE).map(function(seg){ return seg.trim(); }).filter(function(seg){ return seg.length >= 2; });
+              segments.forEach(function(seg){ addVerse(seg, pi); });
+              if(segments.length > 1) addVerse(line, pi);
+            });
+          });
+        }
+
+        function poemSrc(poemIdx){
+          var p = poems[poemIdx];
+          return p.author + '《' + p.title + '》· ' + p.dynasty + p.type;
+        }
+
+        function escapeHtml(text){
+          return String(text).replace(/[&<>"']/g, function(char){
+            return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char];
+          });
+        }
+
+        function loadFavorites(){
+          try {
+            var saved = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
+            return Array.isArray(saved) ? saved.slice(0, FAVORITES_LIMIT) : [];
+          } catch(error){
+            console.error(error);
+            return [];
+          }
+        }
+
+        function saveFavorites(){
+          try {
+            localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+            return true;
+          } catch(error){
+            console.error(error);
+            return false;
+          }
+        }
+
+        function poemKey(p){
+          return toSimplified([p.dynasty,p.type,p.author,p.title].concat(p.lines).join('|'));
+        }
+
+        function isFavorite(p){
+          var key = poemKey(p);
+          return favorites.some(function(item){ return item.id === key; });
+        }
+
+        function poemForCurrentScript(p){
+          return {
+            dynasty: convertText(p.dynasty), type: convertText(p.type),
+            author: convertText(p.author), title: convertText(p.title),
+            lines: p.lines.map(convertText)
+          };
+        }
+
+        function poemLookupUrlFor(p){
+          return 'https://www.google.com/search?q=' + encodeURIComponent(p.author + ' ' + p.title + ' 古诗词');
+        }
+
+        function poemTranslateUrlFor(p){
+          var text = [p.dynasty + p.type, p.title, p.author].concat(p.lines).join(' ');
+          return 'https://translate.google.com/?sl=auto&tl=zh-CN&text=' + encodeURIComponent(text) + '&op=translate';
+        }
+
+        function poemLookupUrl(poemIdx){
+          return poemLookupUrlFor(poems[poemIdx]);
+        }
+
+        function poemFullAiUrlFor(p){
+          var text = p.lines.join('');
+          if(text.length > 900) text = text.slice(0, 900) + '……';
+          var prompt = '请解释这首古诗词：' + p.author + '《' + p.title + '》。原文：' + text + '。请用适合中文学习者的方式说明全文大意、关键词、意象、情感、写作背景和值得学习的名句。';
+          return 'https://www.google.com/search?udm=50&q=' + encodeURIComponent(prompt);
+        }
+
+        function poemFullAiUrl(poemIdx){ return poemFullAiUrlFor(poems[poemIdx]); }
+
+        function poemSrcLink(poemIdx, withLabel){
+          var label = escapeHtml(poemSrc(poemIdx));
+          var extra = withLabel ? '<span>查看原诗 ↗</span>' : '<span aria-hidden="true">↗</span>';
+          return '<a href="' + poemLookupUrl(poemIdx) + '" target="_blank" rel="noopener noreferrer" aria-label="查看' + label + '原诗">' + label + extra + '</a>';
+        }
+
+        function poemFullAiLink(poemIdx){
+          return '<a class="ai-explain-link" href="' + poemFullAiUrl(poemIdx) + '" target="_blank" rel="noopener noreferrer" aria-label="用 Google AI Mode 解释这首诗词">AI 解释全文 ↗</a>';
+        }
+
+        function poemSourceActionLink(poemIdx){
+          var p = poems[poemIdx];
+          return '<a href="' + poemTranslateUrlFor(p) + '" target="_blank" rel="noopener noreferrer" aria-label="用谷歌翻译查看' + escapeHtml(p.title) + '">谷歌翻译 ↗</a>';
+        }
+
+        function poemActionsFor(p){
+          return '<a href="' + poemTranslateUrlFor(p) + '" target="_blank" rel="noopener noreferrer">谷歌翻译 ↗</a>' +
+            '<a class="ai-explain-link" href="' + poemFullAiUrlFor(p) + '" target="_blank" rel="noopener noreferrer">AI 解释全文 ↗</a>';
+        }
+
+        function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+        function remoteShardUrl(config, shard){
+          var path = encodeURIComponent(config.folder) + '/' + config.prefix + (shard * 1000) + '.json';
+          return 'https://cdn.jsdelivr.net/gh/chinese-poetry/chinese-poetry@master/' + path;
+        }
+
+        function normalizeCorpus(data, config){
+          return data.map(function(item){
+            return {
+              dynasty: convertText(item.dynasty || config.dynasty),
+              type: convertText(item.type || config.type),
+              title: convertText(item.title || item.rhythmic || '无题'),
+              author: convertText(item.author || '佚名'),
+              lines: (item.lines || item.paragraphs || []).map(convertText)
+            };
+          }).filter(function(item){ return item.lines.length; });
+        }
+
+        function corpusStatus(text, loading){
+          var status = document.getElementById('corpusStatus');
+          status.textContent = text;
+          status.classList.toggle('loading', !!loading);
+          document.querySelectorAll('.corpus-btn, .corpus-refresh, .script-btn').forEach(function(button){ button.disabled = !!loading; });
+        }
+
+        function applyCorpus(key, data, note){
+          var config = CORPORA[key];
+          activeCorpus = key;
+          activeCorpusNote = note || '';
+          activeRawData = data;
+          buildData(normalizeCorpus(data, config));
+          document.querySelectorAll('.corpus-btn').forEach(function(button){
+            button.classList.toggle('active', button.dataset.corpus === key);
+          });
+          document.getElementById('corpusRefresh').hidden = config.local;
+          document.documentElement.lang = scriptMode === 'traditional' ? 'zh-TW' : 'zh-CN';
+          document.querySelectorAll('.script-btn').forEach(function(button){
+            button.classList.toggle('active', button.dataset.script === scriptMode);
+          });
+          corpusStatus(config.label + ' · ' + poems.length.toLocaleString('zh-CN') + ' 首，' + verses.length.toLocaleString('zh-CN') + ' 条可匹配诗句' + (note ? ' · ' + note : ''), false);
+          fh.target = convertText('花');
+          fh.score = 0; fh.skip = 0; fh.usedVerses = {};
+          document.getElementById('fhScore').textContent = '0';
+          document.getElementById('fhSkip').textContent = '0';
+          renderKwGrid();
+          chainStart();
+          exploreShuffle();
+          renderExplore();
+          renderFavorites();
+          setFeedback('fhFeedback','','');
+          document.getElementById('fhCardHolder').innerHTML = '';
+        }
+
+        function handleCorpusError(error){
+          console.error(error);
+          corpusStatus('在线题库暂时无法载入，正在回到本地精选题库…', true);
+          loadCorpus('featured');
+        }
+
+        function loadCorpus(key){
+          var config = CORPORA[key];
+          var sequence = ++loadSequence;
+          corpusStatus('正在载入' + config.label + '…', true);
+          if(config.local){
+            var localPromise = featuredCache ? Promise.resolve(featuredCache) : fetch('poems.json').then(function(response){
+              if(!response.ok) throw new Error('本地题库载入失败');
+              return response.json();
+            }).then(function(data){ featuredCache = data; return data; });
+            localPromise.then(function(data){ if(sequence === loadSequence) applyCorpus(key, data, '本地默认'); }).catch(function(error){
+              console.error(error);
+              corpusStatus('精选题库载入失败，请刷新页面重试。', false);
+            });
+            return;
+          }
+
+          var shardA = Math.floor(Math.random() * (config.maxShard + 1));
+          var shardB = Math.floor(Math.random() * (config.maxShard + 1));
+          if(shardB === shardA) shardB = (shardA + 1) % (config.maxShard + 1);
+          Promise.all([shardA, shardB].map(function(shard){
+            return fetch(remoteShardUrl(config, shard)).then(function(response){
+              if(!response.ok) throw new Error(config.label + '载入失败');
+              return response.json();
+            });
+          })).then(function(groups){
+            if(sequence !== loadSequence) return;
+            applyCorpus(key, groups[0].concat(groups[1]), '当前随机批次');
+          }).catch(handleCorpusError);
+        }
+
+        /* petals */
+        var PETAL_CHARS = ['❀','✿','❁','☘'];
+        function spawnPetal(){
+          var el = document.createElement('span');
+          el.className = 'petal';
+          el.textContent = randChoice(PETAL_CHARS);
+          el.style.left = (Math.random()*100) + 'vw';
+          el.style.fontSize = (14 + Math.random()*14) + 'px';
+          el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+          var dur = 7 + Math.random()*6;
+          el.style.animationDuration = dur + 's';
+          document.getElementById('petals').appendChild(el);
+          setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+        }
+        setInterval(spawnPetal, 1400);
+        for(var i=0;i<4;i++) setTimeout(spawnPetal, i*400);
+
+        function burst(){
+          for(var i=0;i<10;i++) setTimeout(spawnPetal, i*60);
+        }
+
+        /* ---------- mode switching ---------- */
+        var modes = ['feihua','chain','explore','favorites'];
+        document.getElementById('modeTabs').addEventListener('click', function(e){
+          var btn = e.target.closest('.mode-tab');
+          if(!btn) return;
+          var mode = btn.dataset.mode;
+          modes.forEach(function(m){
+            document.getElementById('panel-'+m).hidden = (m !== mode);
+          });
+          document.querySelectorAll('.mode-tab').forEach(function(b){ b.classList.toggle('active', b===btn); });
+        });
+
+        /* ---------- 飞花令 ---------- */
+        var fh = { score:0, skip:0, target:'花', usedVerses:{} };
+
+        function renderKwGrid(){
+          var grid = document.getElementById('kwGrid');
+          grid.innerHTML = '';
+          KEYWORDS.map(convertText).forEach(function(k){
+            var chip = document.createElement('button');
+            chip.className = 'kw-chip' + (k===fh.target ? ' active' : '');
+            chip.type = 'button';
+            chip.textContent = k;
+            chip.addEventListener('click', function(){
+              fh.target = k;
+              fh.usedVerses = {};
+              document.getElementById('fhTarget').textContent = k;
+              renderKwGrid();
+              setFeedback('fhFeedback', '', '');
+              document.getElementById('fhCardHolder').innerHTML = '';
+            });
+            grid.appendChild(chip);
+          });
+        }
+
+        function setFeedback(id, cls, text){
+          var el = document.getElementById(id);
+          el.className = 'feedback' + (cls ? ' '+cls : '');
+          el.textContent = text;
+        }
+
+        function fhNextChar(){
+          var pool = KEYWORDS.map(convertText).filter(function(k){ return k !== fh.target; });
+          fh.target = randChoice(pool);
+          fh.usedVerses = {};
+          document.getElementById('fhTarget').textContent = fh.target;
+          renderKwGrid();
+          setFeedback('fhFeedback','','');
+          document.getElementById('fhCardHolder').innerHTML = '';
+          document.getElementById('fhInput').value = '';
+        }
+
+        function showPoemCard(holderId, verseIdx, tagText){
+          var v = verses[verseIdx];
+          var holder = document.getElementById(holderId);
+          holder.innerHTML =
+            '<div class="poem-card"><span class="tag">'+escapeHtml(tagText)+'</span>' +
+            '<div class="verse-row"><div class="verse">'+escapeHtml(v.text)+'</div></div>' +
+            '<div class="src">'+poemSrcLink(v.poemIdx, true)+'</div></div>';
+        }
+
+        document.getElementById('fhSubmit').addEventListener('click', function(){
+          var raw = document.getElementById('fhInput').value.trim();
+          if(!raw){ return; }
+          var n = norm(convertText(raw));
+          if(n.indexOf(fh.target) === -1){
+            setFeedback('fhFeedback','bad','这句里没有「'+fh.target+'」字哦，再看看？');
+            return;
+          }
+          var candidates = containIndex[fh.target] || [];
+          var hit = -1;
+          for(var i=0;i<candidates.length;i++){
+            var vi = candidates[i];
+            if(verses[vi].norm === n && !fh.usedVerses[vi]){ hit = vi; break; }
+          }
+          if(hit === -1){
+            var batchHint = activeCorpus === 'featured' ? '' : '；也可能不在当前随机批次，可以点「换一批」再试';
+            setFeedback('fhFeedback','bad','当前载入的题库里没找到完全一致的诗句，请检查字词'+batchHint+'。');
+            return;
+          }
+          fh.usedVerses[hit] = true;
+          fh.score++;
+          document.getElementById('fhScore').textContent = fh.score;
+          setFeedback('fhFeedback','ok','对上了！');
+          showPoemCard('fhCardHolder', hit, '✓ 命中');
+          document.getElementById('fhInput').value = '';
+          burst();
+        });
+        document.getElementById('fhInput').addEventListener('keydown', function(e){
+          if(e.key === 'Enter') document.getElementById('fhSubmit').click();
+        });
+        document.getElementById('fhReveal').addEventListener('click', function(){
+          var candidates = (containIndex[fh.target] || []).filter(function(vi){ return !fh.usedVerses[vi]; });
+          if(!candidates.length){ setFeedback('fhFeedback','bad','这个字的库存都被你用完啦，换个字吧！'); return; }
+          var vi = randChoice(candidates);
+          fh.usedVerses[vi] = true;
+          fh.skip++;
+          document.getElementById('fhSkip').textContent = fh.skip;
+          setFeedback('fhFeedback','','给你看一句：');
+          showPoemCard('fhCardHolder', vi, '答案');
+        });
+        document.getElementById('fhNext').addEventListener('click', fhNextChar);
+
+        /* ---------- 诗句接龙 ---------- */
+        var chain = { list: [], lastChar: '', usedVerses: {} };
+
+        function chainStart(){
+          var allIdx = verses.map(function(_,i){ return i; });
+          var vi = randChoice(allIdx);
+          chain.list = [{ verseIdx: vi, who: 'start' }];
+          chain.usedVerses = {}; chain.usedVerses[vi] = true;
+          chain.lastChar = verses[vi].text.slice(-1);
+          document.getElementById('chainScore').textContent = '1';
+          renderChainList();
+          setFeedback('chainFeedback','','下一句要以「'+chain.lastChar+'」开头');
+          document.getElementById('chainInput').value = '';
+        }
+
+        function renderChainList(){
+          var el = document.getElementById('chainList');
+          el.innerHTML = '';
+          chain.list.forEach(function(item){
+            var v = verses[item.verseIdx];
+            var div = document.createElement('div');
+            div.className = 'chain-item ' + (item.who === 'start' ? 'start' : 'player');
+            div.innerHTML =
+              '<span class="txt">'+escapeHtml(v.text)+'</span>' +
+              '<span class="who">'+poemSrcLink(v.poemIdx, false)+'</span>';
+            el.appendChild(div);
+          });
+        }
+
+        document.getElementById('chainSubmit').addEventListener('click', function(){
+          var raw = document.getElementById('chainInput').value.trim();
+          if(!raw) return;
+          var n = norm(convertText(raw));
+          if(n[0] !== chain.lastChar){
+            setFeedback('chainFeedback','bad','要以「'+chain.lastChar+'」开头才行～');
+            return;
+          }
+          var candidates = firstCharIndex[chain.lastChar] || [];
+          var hit = -1;
+          for(var i=0;i<candidates.length;i++){
+            var vi = candidates[i];
+            if(verses[vi].norm === n && !chain.usedVerses[vi]){ hit = vi; break; }
+          }
+          if(hit === -1){
+            var batchHint = activeCorpus === 'featured' ? '' : '；也可能不在当前随机批次，可以点「换一批」再试';
+            setFeedback('chainFeedback','bad','当前载入的题库里没找到完全一致的诗句，请检查字词'+batchHint+'。');
+            return;
+          }
+          chain.usedVerses[hit] = true;
+          chain.list.push({ verseIdx: hit, who: 'player' });
+          chain.lastChar = verses[hit].text.slice(-1);
+          document.getElementById('chainScore').textContent = chain.list.length;
+          renderChainList();
+          setFeedback('chainFeedback','ok','接上了！下一句要以「'+chain.lastChar+'」开头');
+          document.getElementById('chainInput').value = '';
+          burst();
+        });
+        document.getElementById('chainInput').addEventListener('keydown', function(e){
+          if(e.key === 'Enter') document.getElementById('chainSubmit').click();
+        });
+        document.getElementById('chainHint').addEventListener('click', function(){
+          var candidates = (firstCharIndex[chain.lastChar] || []).filter(function(vi){ return !chain.usedVerses[vi]; });
+          if(!candidates.length){
+            setFeedback('chainFeedback','bad','这个字开头的句子都用完了，算你厉害，重新开始吧！');
+            return;
+          }
+          var sample = candidates.slice(0, 4).map(function(vi){ return verses[vi].text; }).join('；');
+          setFeedback('chainFeedback','','提示：'+sample);
+        });
+        document.getElementById('chainRestart').addEventListener('click', chainStart);
+
+        /* ---------- 随便读读 ---------- */
+        var explore = { idx: 0, order: [] };
+        function updateFavoriteCount(){
+          document.getElementById('favoriteTabCount').textContent = favorites.length;
+        }
+
+        function setFavoriteMessage(text, bad){
+          setFeedback('favoriteFeedback', bad ? 'bad' : 'ok', text);
+        }
+
+        function toggleFavorite(p){
+          var key = poemKey(p);
+          var existing = favorites.findIndex(function(item){ return item.id === key; });
+          var previous = favorites.slice();
+          if(existing !== -1){
+            favorites.splice(existing, 1);
+            setFavoriteMessage('已从收藏中移除。', false);
+          } else {
+            if(favorites.length >= FAVORITES_LIMIT){
+              setFavoriteMessage('收藏已满 50 首，请先到「我的收藏」移除一些。', true);
+              return;
+            }
+            favorites.unshift({
+              id:key, dynasty:p.dynasty, type:p.type, author:p.author,
+              title:p.title, lines:p.lines.slice(), savedAt:Date.now()
+            });
+            setFavoriteMessage('已加入我的收藏 ❤️', false);
+          }
+          if(!saveFavorites()){
+            favorites = previous;
+            setFavoriteMessage('浏览器存储空间不足，暂时无法保存。', true);
+          }
+          updateFavoriteCount();
+          renderExplore();
+          renderFavorites();
+        }
+
+        function renderFavorites(){
+          var list = document.getElementById('favoritesList');
+          var status = document.getElementById('favoritesStatus');
+          status.textContent = '已收藏 ' + favorites.length + ' / ' + FAVORITES_LIMIT + ' 首';
+          if(!favorites.length){
+            list.innerHTML = '<div class="favorites-empty">还没有收藏。到「随便读读」遇见喜欢的诗词时，点一下 🤍 吧。</div>';
+            return;
+          }
+          list.innerHTML = favorites.map(function(saved, index){
+            var p = poemForCurrentScript(saved);
+            return '<article class="favorite-card">' +
+              '<button class="favorite-remove" type="button" data-favorite-index="'+index+'" aria-label="移除'+escapeHtml(p.title)+'">移除</button>' +
+              '<span class="dynasty-tag">'+escapeHtml(p.dynasty+p.type)+'</span>' +
+              '<h3>'+escapeHtml(p.title)+'</h3><div class="author">'+escapeHtml(p.author)+'</div>' +
+              '<div class="lines">'+p.lines.map(escapeHtml).join('<br>')+'</div>' +
+              '<div class="explore-actions">'+poemActionsFor(p)+'</div></article>';
+          }).join('');
+        }
+        function exploreShuffle(){
+          explore.order = poems.map(function(_,i){return i;});
+          for(var i=explore.order.length-1;i>0;i--){
+            var j = Math.floor(Math.random()*(i+1));
+            var t = explore.order[i]; explore.order[i]=explore.order[j]; explore.order[j]=t;
+          }
+          explore.idx = 0;
+        }
+        function renderExplore(){
+          var poemIdx = explore.order[explore.idx];
+          var p = poems[poemIdx];
+          var favorite = isFavorite(p);
+          var card = document.getElementById('exploreCard');
+          card.innerHTML =
+            '<button class="favorite-button'+(favorite ? ' active' : '')+'" id="favoriteButton" type="button" aria-label="'+(favorite ? '取消收藏' : '加入收藏')+'" title="'+(favorite ? '取消收藏' : '加入我的收藏')+'">'+(favorite ? '❤️' : '🤍')+'</button>' +
+            '<span class="dynasty-tag">'+escapeHtml(p.dynasty+p.type)+'</span>' +
+            '<div class="title">'+escapeHtml(p.title)+'</div>' +
+            '<div class="author">'+escapeHtml(p.author)+'</div>' +
+            '<div class="lines">'+p.lines.map(escapeHtml).join('<br>')+'</div>' +
+            '<div class="explore-actions">'+poemSourceActionLink(poemIdx)+poemFullAiLink(poemIdx)+'</div>';
+        }
+        document.getElementById('exNext').addEventListener('click', function(){
+          explore.idx = (explore.idx + 1) % explore.order.length;
+          renderExplore();
+        });
+        document.getElementById('exPrev').addEventListener('click', function(){
+          explore.idx = (explore.idx - 1 + explore.order.length) % explore.order.length;
+          renderExplore();
+        });
+        document.getElementById('exploreCard').addEventListener('click', function(event){
+          if(event.target.closest('#favoriteButton')) toggleFavorite(poems[explore.order[explore.idx]]);
+        });
+        document.getElementById('favoritesList').addEventListener('click', function(event){
+          var button = event.target.closest('.favorite-remove');
+          if(!button) return;
+          var index = Number(button.dataset.favoriteIndex);
+          var removed = favorites.splice(index, 1)[0];
+          if(!saveFavorites()){
+            favorites.splice(index, 0, removed);
+            document.getElementById('favoritesStatus').textContent = '移除失败，请检查浏览器存储设置。';
+            return;
+          }
+          updateFavoriteCount();
+          renderFavorites();
+          renderExplore();
+        });
+        document.getElementById('corpusActions').addEventListener('click', function(event){
+          var button = event.target.closest('.corpus-btn');
+          if(button && !button.disabled && button.dataset.corpus !== activeCorpus) loadCorpus(button.dataset.corpus);
+        });
+        document.getElementById('corpusRefresh').addEventListener('click', function(){ loadCorpus(activeCorpus); });
+        document.getElementById('corpusActions').addEventListener('click', function(event){
+          var button = event.target.closest('.script-btn');
+          if(!button || button.disabled || button.dataset.script === scriptMode) return;
+          if(!window.OpenCC){
+            corpusStatus('简繁转换组件载入失败，请刷新页面重试。', false);
+            return;
+          }
+          scriptMode = button.dataset.script;
+          applyCorpus(activeCorpus, activeRawData, activeCorpusNote);
+        });
+        /* ---------- init ---------- */
+        updateFavoriteCount();
+        renderFavorites();
+        loadCorpus('featured');
+      })();
+    </script>
+  </body>
 </html>

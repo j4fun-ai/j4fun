@@ -1,4 +1,4 @@
-[![J4FUN](./assets/images/logo.png)](https://j4fun.com)
+[![J4FUN](./assets/images/logo.png?083026)](https://j4fun.com)
 
 # J4FUN
 
