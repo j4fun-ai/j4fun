@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飞花 · j4fun 诗词好玩局</title>
+<meta name="description" content="飞花令、诗句接龙 —— 用真实的唐诗宋词数据做成的中文趣味小游戏，海外华人家庭也能轻松玩起来。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0f3630;
+    --bg-deep: #0a2723;
+    --bg-card: #133f38;
+    --gold: #e3b23c;
+    --gold-deep: #b8862a;
+    --red: #d6444f;
+    --red-deep: #a9313a;
+    --paper: #f6efe0;
+    --paper-line: #e2d7bc;
+    --ink: #241f16;
+    --ink-soft: #57503f;
+    --text: #f3efe4;
+    --text-dim: #9fc0b7;
+    --text-faint: #6f9089;
+
+    --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --serif: "Noto Serif SC", "Songti SC", serif;
+    --display: "ZCOOL KuaiLe", var(--sans);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background: var(--bg); color: var(--text); font-family: var(--sans);
+    line-height:1.6; position:relative; overflow-x:hidden;
+    background-image: radial-gradient(circle at 15% 8%, rgba(227,178,60,0.10), transparent 40%),
+                       radial-gradient(circle at 85% 90%, rgba(214,68,79,0.10), transparent 45%);
+  }
+  a{ color:inherit; }
+  ::selection{ background: var(--gold); color: var(--ink); }
+  :focus-visible{ outline: 3px solid var(--gold); outline-offset:2px; }
+  .wrap{ max-width: 980px; margin:0 auto; padding: 0 22px; }
+  [hidden]{ display:none !important; }
+
+  /* petals */
+  #petals{ position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden; }
+  .petal{
+    position:absolute; top:-24px; font-size: 18px; opacity:.85;
+    animation: fall linear forwards;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.2));
+  }
+  @keyframes fall{
+    to{ transform: translateY(105vh) rotate(340deg); opacity:.15; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .petal{ animation: none; display:none; }
+  }
+
+  /* header */
+  header.site{ padding: 22px 0 6px; position:relative; z-index:2; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding-bottom:16px; }
+  .brand{ display:flex; align-items:baseline; gap:10px; }
+  .brand .name{ font-family: var(--display); font-size:26px; color: var(--gold); letter-spacing:.03em; }
+  .brand .sub{ font-size:11px; color: var(--text-faint); letter-spacing:.14em; text-transform:uppercase; }
+  nav.top-links{ display:flex; gap:18px; font-size:13px; color: var(--text-dim); }
+  nav.top-links a{ text-decoration:none; border-bottom:1px dotted var(--text-faint); padding-bottom:2px; }
+  nav.top-links a:hover{ color: var(--gold); border-color: var(--gold); }
+
+  /* hero */
+  .hero{ padding: 30px 0 20px; text-align:center; position:relative; z-index:2; }
+  .hero .eyebrow{ font-size:12px; letter-spacing:.2em; color: var(--gold); text-transform:uppercase; font-weight:700; margin:0 0 12px; }
+  .hero h1{
+    font-family: var(--display); font-weight:400; font-size: clamp(30px, 6vw, 50px);
+    margin: 0 0 14px; color: var(--text); line-height:1.3;
+  }
+  .hero h1 .accent{ color: var(--red); }
+  .hero p.lede{ color: var(--text-dim); max-width: 52ch; margin: 0 auto 8px; font-size:15px; }
+
+  /* mode tabs */
+  .mode-tabs{
+    display:flex; justify-content:center; gap:10px; margin: 26px 0 8px; flex-wrap:wrap;
+  }
+  .mode-tab{
+    font-family: var(--display); font-size:16px; padding: 11px 22px;
+    background: var(--bg-card); border: 2px solid transparent; color: var(--text-dim);
+    border-radius: 999px; cursor:pointer; transition: all .15s ease;
+  }
+  .mode-tab:hover{ color: var(--text); }
+  .mode-tab.active{ background: var(--gold); color: var(--ink); box-shadow: 0 4px 0 var(--gold-deep); }
+
+  main{ position:relative; z-index:2; padding-bottom: 60px; }
+
+  /* game panel shared */
+  .panel{
+    background: var(--bg-card); border-radius: 18px; padding: 30px 26px;
+    margin-top: 18px; border: 1px solid rgba(227,178,60,0.18);
+  }
+  .panel-head{ text-align:center; margin-bottom: 22px; }
+  .panel-head h2{ font-family: var(--display); font-weight:400; font-size:22px; color: var(--text); margin:0 0 6px; }
+  .panel-head p{ font-size:13px; color: var(--text-dim); margin:0; }
+
+  /* target char badge */
+  .target-wrap{ display:flex; flex-direction:column; align-items:center; gap:10px; margin: 8px 0 22px; }
+  .target-char{
+    width: 96px; height:96px; border-radius: 20px; background: var(--red);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--serif); font-size:52px; font-weight:700; color: var(--paper);
+    box-shadow: 0 6px 0 var(--red-deep);
+    transform: rotate(-2deg);
+  }
+  .target-label{ font-size:12px; color: var(--text-dim); }
+
+  .score-row{
+    display:flex; justify-content:center; gap: 26px; margin-bottom: 20px; font-size:13px; color: var(--text-dim);
+  }
+  .score-row b{ font-family: var(--display); font-size: 20px; color: var(--gold); display:block; }
+
+  .input-row{ display:flex; gap:10px; max-width: 480px; margin: 0 auto; }
+  .input-row input{
+    flex:1; min-width:0; font-family: var(--serif); font-size:17px; padding: 13px 16px;
+    border-radius: 12px; border: none; background: var(--paper); color: var(--ink);
+  }
+  .input-row button{
+    font-family: var(--display); font-size:15px; padding: 0 22px; border-radius: 12px;
+    background: var(--gold); color: var(--ink); border:none; cursor:pointer; box-shadow: 0 4px 0 var(--gold-deep);
+  }
+  .input-row button:hover{ filter: brightness(1.06); }
+  .input-row button:active{ transform: translateY(2px); box-shadow: 0 2px 0 var(--gold-deep); }
+
+  .helper-row{ display:flex; justify-content:center; gap: 14px; margin-top:14px; flex-wrap:wrap; }
+  .ghost-btn{
+    font-size:12.5px; color: var(--text-dim); background:transparent; border: 1px solid rgba(159,192,183,0.35);
+    padding: 7px 14px; border-radius: 999px; cursor:pointer;
+  }
+  .ghost-btn:hover{ color: var(--text); border-color: var(--gold); }
+
+  /* feedback area */
+  .feedback{ margin-top: 22px; text-align:center; min-height: 30px; }
+  .feedback.ok{ color: #a8e6b8; }
+  .feedback.bad{ color: #f0a3a3; }
+
+  /* poem card (paper) */
+  .poem-card{
+    background: var(--paper); color: var(--ink); border-radius: 14px; padding: 20px 22px;
+    max-width: 480px; margin: 16px auto 0; box-shadow: 0 8px 0 var(--paper-line);
+    text-align:left; position:relative;
+  }
+  .poem-card .verse{ font-family: var(--serif); font-size: 18px; font-weight:600; line-height:1.7; }
+  .poem-card .src{ font-size:12px; color: var(--ink-soft); margin-top:8px; }
+  .poem-card .tag{
+    position:absolute; top:-10px; right:16px; background: var(--red); color:#fff;
+    font-size:11px; padding: 3px 10px; border-radius: 999px; font-weight:700;
+  }
+
+  /* chain list */
+  .chain-list{ max-width: 520px; margin: 20px auto 0; display:flex; flex-direction:column; gap:10px; }
+  .chain-item{
+    background: var(--paper); color: var(--ink); border-radius: 10px; padding: 12px 16px;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+  }
+  .chain-item .txt{ font-family: var(--serif); font-size:15.5px; }
+  .chain-item .who{ font-size:11px; color: var(--ink-soft); flex:none; }
+  .chain-item.start{ border-left: 5px solid var(--gold); }
+  .chain-item.player{ border-left: 5px solid var(--red); }
+
+  /* explore mode */
+  .explore-card{
+    background: var(--paper); color: var(--ink); border-radius: 18px; padding: 34px 32px;
+    max-width: 560px; margin: 10px auto 0; text-align:center; box-shadow: 0 10px 0 var(--paper-line);
+  }
+  .explore-card .dynasty-tag{
+    display:inline-block; background: var(--gold); color: var(--ink); font-size:11px; font-weight:700;
+    padding: 4px 12px; border-radius:999px; margin-bottom:14px;
+  }
+  .explore-card .title{ font-family: var(--serif); font-weight:900; font-size:24px; margin: 0 0 4px; }
+  .explore-card .author{ font-size:13px; color: var(--ink-soft); margin-bottom: 18px; }
+  .explore-card .lines{ font-family: var(--serif); font-size:17px; line-height:2; }
+  .explore-nav{ display:flex; justify-content:center; gap:12px; margin-top:22px; }
+  .explore-nav button{
+    font-family: var(--display); font-size:15px; padding: 10px 24px; border-radius: 999px;
+    background: var(--gold); color: var(--ink); border:none; cursor:pointer; box-shadow: 0 4px 0 var(--gold-deep);
+  }
+  .explore-nav button.secondary{ background: transparent; color: var(--text); border: 1px solid rgba(227,178,60,0.4); box-shadow:none; }
+  .speed-row{ display:flex; justify-content:center; align-items:center; gap:8px; margin-top:14px; font-size:12px; color: var(--text-dim); }
+  .speed-btn{
+    font-size:12px; padding: 5px 12px; border-radius: 999px; background:transparent;
+    border: 1px solid rgba(159,192,183,0.35); color: var(--text-dim); cursor:pointer;
+  }
+  .speed-btn.active{ background: var(--gold); color: var(--ink); border-color: var(--gold); }
+  .speak-btn{
+    font-size:11px; padding: 4px 10px; border-radius: 999px; background: rgba(36,31,22,0.08);
+    border: 1px solid rgba(36,31,22,0.25); color: var(--ink-soft); cursor:pointer; flex:none;
+  }
+  .speak-btn:hover{ background: rgba(36,31,22,0.16); }
+  .poem-card .verse-row, .chain-item{ display:flex; align-items:center; gap:10px; justify-content:space-between; }
+
+  /* sudoku */
+  .sd-theme-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:10px; }
+  .sd-theme-btn{
+    font-family: var(--serif); font-size:13px; padding: 7px 14px; border-radius: 999px;
+    background: rgba(227,178,60,0.12); color: var(--gold); border: 1px solid rgba(227,178,60,0.3); cursor:pointer;
+  }
+  .sd-theme-btn.active{ background: var(--gold); color: var(--ink); }
+  .sd-custom-row{ display:flex; gap:8px; justify-content:center; max-width:340px; margin: 0 auto 18px; }
+  .sd-custom-row input{
+    flex:1; min-width:0; font-family: var(--serif); font-size:15px; padding: 8px 12px;
+    border-radius: 10px; border:none; background: var(--paper); color: var(--ink);
+  }
+  .sd-custom-row button{
+    font-size:12.5px; padding: 0 14px; border-radius: 10px; background: rgba(227,178,60,0.18);
+    color: var(--gold); border: 1px solid rgba(227,178,60,0.3); cursor:pointer; white-space:nowrap;
+  }
+  .sd-diff-row{ display:flex; justify-content:center; gap:8px; margin-bottom:20px; }
+  .sd-diff-btn{
+    font-size:12.5px; padding: 6px 16px; border-radius: 999px; background:transparent;
+    border: 1px solid rgba(159,192,183,0.35); color: var(--text-dim); cursor:pointer;
+  }
+  .sd-diff-btn.active{ background: var(--red); color:#fff; border-color: var(--red); }
+
+  .sd-board{
+    display:grid; grid-template-columns: repeat(9, 1fr);
+    max-width: 396px; margin: 0 auto; background: var(--ink); gap:1px;
+    border: 3px solid var(--ink); border-radius: 8px; overflow:hidden;
+  }
+  .sd-cell{
+    aspect-ratio: 1; background: var(--paper); display:flex; align-items:center; justify-content:center;
+    font-family: var(--serif); font-size: 20px; color: var(--ink); cursor:pointer; position:relative;
+    user-select:none;
+  }
+  .sd-cell.given{ color: var(--ink); font-weight:900; cursor:default; background:#efe4c9; }
+  .sd-cell.selected{ background: rgba(227,178,60,0.55); }
+  .sd-cell.peer{ background: rgba(227,178,60,0.18); }
+  .sd-cell.error{ color: var(--red); background: rgba(214,68,79,0.22); }
+  .sd-cell.hinted{ animation: hintpop .5s ease; }
+  @keyframes hintpop{ 0%{ transform:scale(1.3); } 100%{ transform:scale(1); } }
+  .sd-cell:nth-child(3n){ border-right: 2.5px solid var(--ink); }
+  .sd-cell:nth-child(9n){ border-right:none; }
+  .sd-row-thick{ border-bottom: 2.5px solid var(--ink); }
+
+  .sd-palette{
+    display:flex; justify-content:center; gap:8px; margin: 20px 0 4px; flex-wrap:wrap;
+  }
+  .sd-pal-btn{
+    width: 42px; height:42px; border-radius: 10px; background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size:19px; border: none; cursor:pointer; font-weight:700;
+  }
+  .sd-pal-btn:hover{ background: var(--gold); }
+
+  @media (max-width: 520px){
+    .sd-board{ max-width: 100%; }
+    .sd-cell{ font-size: 16px; }
+  }
+
+  /* keyword picker */
+  .kw-grid{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin: 4px 0 24px; }
+  .kw-chip{
+    font-family: var(--serif); font-size:15px; padding: 7px 16px; border-radius: 999px;
+    background: rgba(227,178,60,0.12); color: var(--gold); border: 1px solid rgba(227,178,60,0.3); cursor:pointer;
+  }
+  .kw-chip:hover{ background: rgba(227,178,60,0.25); }
+  .kw-chip.active{ background: var(--gold); color: var(--ink); }
+
+  section.about{ padding: 50px 0 20px; position:relative; z-index:2; }
+  section.about h2{ font-family: var(--display); font-weight:400; font-size:22px; color: var(--gold); margin:0 0 14px; }
+  section.about p{ color: var(--text-dim); max-width: 66ch; font-size:14px; }
+  .about-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:18px; margin-top:22px; }
+  .about-card{ border-left: 3px solid var(--gold); padding-left:14px; }
+  .about-card h3{ font-family: var(--display); font-weight:400; font-size:15px; margin:0 0 6px; color: var(--text); }
+  .about-card p{ font-size:12.5px; margin:0; color: var(--text-dim); }
+
+  footer{ padding: 24px 0 46px; font-size:12px; color: var(--text-faint); position:relative; z-index:2; }
+  footer a{ color: var(--text-dim); text-decoration: underline dotted; }
+  footer .fine{ margin-top:8px; line-height:1.7; }
+
+  @media (max-width: 560px){
+    .input-row{ flex-direction:column; }
+    .input-row button{ padding:12px; }
+    .score-row{ gap:16px; }
+    .target-char{ width:78px; height:78px; font-size:42px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="petals" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="wrap topbar">
+    <div class="brand">
+      <span class="name">飞花</span>
+      <span class="sub">j4fun · 诗词好玩局</span>
+    </div>
+    <nav class="top-links">
+      <a href="#about">关于</a>
+      <a href="https://github.com/chinese-poetry/chinese-poetry" target="_blank" rel="noopener">数据来源</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">给海外华人家庭的中文小游戏</p>
+  <h1>一句诗接一句诗，<span class="accent">玩</span>着玩着就记住了</h1>
+  <p class="lede">用唐诗三百首 + 宋词三百首的真实数据做的两个小游戏：飞花令考关键字，诗句接龙考记忆链，全部在浏览器里就能玩，不用下载 App。</p>
+</section>
+
+<div class="wrap">
+  <div class="mode-tabs" id="modeTabs">
+    <button class="mode-tab active" data-mode="feihua">飞花令</button>
+    <button class="mode-tab" data-mode="chain">诗句接龙</button>
+    <button class="mode-tab" data-mode="explore">随便读读</button>
+    <button class="mode-tab" data-mode="sudoku">汉字数独</button>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- 飞花令 -->
+  <section class="panel" id="panel-feihua">
+    <div class="panel-head">
+      <h2>飞花令</h2>
+      <p>选一个字，写出一句包含这个字的诗词 —— 传统酒令玩法，这里换成打字版。</p>
+    </div>
+
+    <div class="kw-grid" id="kwGrid"></div>
+
+    <div class="target-wrap">
+      <div class="target-char" id="fhTarget">花</div>
+      <div class="target-label">本轮关键字</div>
+    </div>
+
+    <div class="score-row">
+      <div><b id="fhScore">0</b>答对</div>
+      <div><b id="fhSkip">0</b>看答案</div>
+    </div>
+
+    <div class="input-row">
+      <input id="fhInput" type="text" placeholder="输入一句含有这个字的诗句…" autocomplete="off">
+      <button id="fhSubmit">提交</button>
+    </div>
+    <div class="helper-row">
+      <button class="ghost-btn" id="fhReveal">不会，看一句答案</button>
+      <button class="ghost-btn" id="fhNext">换一个字</button>
+    </div>
+
+    <div class="feedback" id="fhFeedback"></div>
+    <div id="fhCardHolder"></div>
+  </section>
+
+  <!-- 诗句接龙 -->
+  <section class="panel" id="panel-chain" hidden>
+    <div class="panel-head">
+      <h2>诗句接龙</h2>
+      <p>上一句最后一个字，就是下一句要开头的字 —— 看你能接多长。</p>
+    </div>
+
+    <div class="score-row">
+      <div><b id="chainScore">1</b>已接句数</div>
+    </div>
+
+    <div class="chain-list" id="chainList"></div>
+
+    <div class="input-row" style="margin-top:20px;">
+      <input id="chainInput" type="text" placeholder="输入下一句…" autocomplete="off">
+      <button id="chainSubmit">接上</button>
+    </div>
+    <div class="helper-row">
+      <button class="ghost-btn" id="chainHint">给点提示</button>
+      <button class="ghost-btn" id="chainRestart">重新开始</button>
+    </div>
+
+    <div class="feedback" id="chainFeedback"></div>
+  </section>
+
+  <!-- 随便读读 -->
+  <section class="panel" id="panel-explore" hidden>
+    <div class="panel-head">
+      <h2>随便读读</h2>
+      <p>不想玩游戏？随便翻几首，纯欣赏。</p>
+    </div>
+    <div class="explore-card" id="exploreCard"></div>
+    <div class="explore-nav">
+      <button class="secondary" id="exPrev">上一首</button>
+      <button class="secondary" id="exSpeak">🔊 朗读</button>
+      <button id="exNext">下一首</button>
+    </div>
+    <div class="speed-row">
+      <span>语速</span>
+      <button class="speed-btn active" data-rate="0.75" type="button">慢速</button>
+      <button class="speed-btn" data-rate="1" type="button">正常</button>
+    </div>
+  </section>
+
+  <!-- 汉字数独 -->
+  <section class="panel" id="panel-sudoku" hidden>
+    <div class="panel-head">
+      <h2>汉字数独</h2>
+      <p>规则和普通数独一样，只是把 1-9 换成了九个汉字 —— 每行每列每宫都不能重复。</p>
+    </div>
+
+    <div class="sd-theme-row" id="sdThemeRow"></div>
+    <div class="sd-custom-row" id="sdCustomRow">
+      <input id="sdCustomInput" type="text" maxlength="9" placeholder="输入 9 个不重复的汉字…" autocomplete="off">
+      <button id="sdCustomApply" type="button">用这组字</button>
+    </div>
+
+    <div class="sd-diff-row" id="sdDiffRow">
+      <button class="sd-diff-btn active" data-diff="easy">简单</button>
+      <button class="sd-diff-btn" data-diff="mid">普通</button>
+      <button class="sd-diff-btn" data-diff="hard">困难</button>
+    </div>
+
+    <div class="score-row">
+      <div><b id="sdTimer">00:00</b>用时</div>
+      <div><b id="sdMistakes">0</b>出错</div>
+    </div>
+
+    <div class="sd-board" id="sdBoard"></div>
+
+    <div class="sd-palette" id="sdPalette"></div>
+
+    <div class="helper-row">
+      <button class="ghost-btn" id="sdErase">擦除</button>
+      <button class="ghost-btn" id="sdCheck">检查</button>
+      <button class="ghost-btn" id="sdHint">提示一格</button>
+      <button class="ghost-btn" id="sdNew">换一局</button>
+    </div>
+
+    <div class="feedback" id="sdFeedback"></div>
+  </section>
+
+</main>
+
+<section class="about wrap" id="about">
+  <h2>关于这个页面</h2>
+  <p>诗词数据来自开源项目 <a href="https://github.com/chinese-poetry/chinese-poetry" target="_blank" rel="noopener" style="color:var(--gold)">chinese-poetry</a>，取了其中最经典的《唐诗三百首》与《宋词三百首》两个子集，转成简体后整理成这两个小游戏。所有判题都在浏览器本地完成，不上传任何输入内容。</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>飞花令怎么玩</h3>
+      <p>选一个字，写出任意一句包含它的诗词原句即可，系统会在语料库里核对。</p>
+    </div>
+    <div class="about-card">
+      <h3>接龙怎么玩</h3>
+      <p>下一句必须以上一句的最后一个字开头，能接多久全看记忆和词汇量。</p>
+    </div>
+    <div class="about-card">
+      <h3>数据范围</h3>
+      <p>目前收录 624 首、约 8500 句诗词，都是流传最广的经典篇目。</p>
+    </div>
+    <div class="about-card">
+      <h3>朗读功能</h3>
+      <p>点 🔊 即可听发音，用的是浏览器自带的语音朗读，可以切换慢速方便跟读，不依赖任何外部服务。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>诗词原文年代久远，不受版权限制；整理数据来自开源项目，游戏逻辑与页面为本站原创。</div>
+  <div class="fine">数据来源：<a href="https://github.com/chinese-poetry/chinese-poetry" target="_blank" rel="noopener">github.com/chinese-poetry/chinese-poetry</a>（MIT 协议）。</div>
+</footer>
+
+<script>
+(function(){
+  var SPLIT_RE = /[，。！？；、]/;
+  var PUNCT_RE = /[，。！？；、,.!?;:\s'""''()（）\-—]/g;
+
+  var poems = [];
+  var verses = []; // {text, norm, poemIdx}
+  var containIndex = {}; // char -> [verseIdx,...]
+  var firstCharIndex = {}; // char -> [verseIdx,...]
+
+  var KEYWORDS = ['花','月','酒','风','雪','山','水','春','秋','愁','人','归','梦','心','天','云','夜','江','雨','柳','红'];
+
+  function norm(s){ return s.replace(PUNCT_RE, ''); }
+
+  function buildData(data){
+    poems = data;
+    poems.forEach(function(poem, pi){
+      poem.lines.forEach(function(line){
+        line.split(SPLIT_RE).forEach(function(seg){
+          seg = seg.trim();
+          if(seg.length < 2) return;
+          var idx = verses.length;
+          var n = norm(seg);
+          verses.push({ text: seg, norm: n, poemIdx: pi });
+          for(var i=0;i<seg.length;i++){
+            var ch = seg[i];
+            (containIndex[ch] = containIndex[ch] || []).push(idx);
+          }
+          var fc = seg[0];
+          (firstCharIndex[fc] = firstCharIndex[fc] || []).push(idx);
+        });
+      });
+    });
+  }
+
+  function poemSrc(poemIdx){
+    var p = poems[poemIdx];
+    return p.author + '《' + p.title + '》· ' + p.dynasty + p.type;
+  }
+
+  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+  /* ---------- read-aloud ---------- */
+  var speechRate = 0.75;
+  var speechSupported = ('speechSynthesis' in window);
+  function speak(text){
+    if(!speechSupported) return;
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = speechRate;
+    window.speechSynthesis.speak(u);
+  }
+  document.querySelectorAll('.speed-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      speechRate = parseFloat(btn.dataset.rate);
+      document.querySelectorAll('.speed-btn').forEach(function(b){ b.classList.toggle('active', b===btn); });
+    });
+  });
+
+  /* petals */
+  var PETAL_CHARS = ['❀','✿','❁','☘'];
+  function spawnPetal(){
+    var el = document.createElement('span');
+    el.className = 'petal';
+    el.textContent = randChoice(PETAL_CHARS);
+    el.style.left = (Math.random()*100) + 'vw';
+    el.style.fontSize = (14 + Math.random()*14) + 'px';
+    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+    var dur = 7 + Math.random()*6;
+    el.style.animationDuration = dur + 's';
+    document.getElementById('petals').appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+  }
+  setInterval(spawnPetal, 1400);
+  for(var i=0;i<4;i++) setTimeout(spawnPetal, i*400);
+
+  function burst(){
+    for(var i=0;i<10;i++) setTimeout(spawnPetal, i*60);
+  }
+
+  /* ---------- mode switching ---------- */
+  var modes = ['feihua','chain','explore','sudoku'];
+  document.getElementById('modeTabs').addEventListener('click', function(e){
+    var btn = e.target.closest('.mode-tab');
+    if(!btn) return;
+    var mode = btn.dataset.mode;
+    modes.forEach(function(m){
+      document.getElementById('panel-'+m).hidden = (m !== mode);
+    });
+    document.querySelectorAll('.mode-tab').forEach(function(b){ b.classList.toggle('active', b===btn); });
+    if(window.speechSynthesis) window.speechSynthesis.cancel();
+  });
+
+  /* ---------- 飞花令 ---------- */
+  var fh = { score:0, skip:0, target:'花', usedVerses:{} };
+
+  function renderKwGrid(){
+    var grid = document.getElementById('kwGrid');
+    grid.innerHTML = '';
+    KEYWORDS.forEach(function(k){
+      var chip = document.createElement('button');
+      chip.className = 'kw-chip' + (k===fh.target ? ' active' : '');
+      chip.type = 'button';
+      chip.textContent = k;
+      chip.addEventListener('click', function(){
+        fh.target = k;
+        fh.usedVerses = {};
+        document.getElementById('fhTarget').textContent = k;
+        renderKwGrid();
+        setFeedback('fhFeedback', '', '');
+        document.getElementById('fhCardHolder').innerHTML = '';
+      });
+      grid.appendChild(chip);
+    });
+  }
+
+  function setFeedback(id, cls, text){
+    var el = document.getElementById(id);
+    el.className = 'feedback' + (cls ? ' '+cls : '');
+    el.textContent = text;
+  }
+
+  function fhNextChar(){
+    var pool = KEYWORDS.filter(function(k){ return k !== fh.target; });
+    fh.target = randChoice(pool);
+    fh.usedVerses = {};
+    document.getElementById('fhTarget').textContent = fh.target;
+    renderKwGrid();
+    setFeedback('fhFeedback','','');
+    document.getElementById('fhCardHolder').innerHTML = '';
+    document.getElementById('fhInput').value = '';
+  }
+
+  function showPoemCard(holderId, verseIdx, tagText){
+    var v = verses[verseIdx];
+    var holder = document.getElementById(holderId);
+    holder.innerHTML =
+      '<div class="poem-card"><span class="tag">'+tagText+'</span>' +
+      '<div class="verse-row"><div class="verse">'+v.text+'</div>' +
+      (speechSupported ? '<button class="speak-btn" type="button">🔊</button>' : '') + '</div>' +
+      '<div class="src">'+poemSrc(v.poemIdx)+'</div></div>';
+    var sb = holder.querySelector('.speak-btn');
+    if(sb) sb.addEventListener('click', function(){ speak(v.text); });
+  }
+
+  document.getElementById('fhSubmit').addEventListener('click', function(){
+    var raw = document.getElementById('fhInput').value.trim();
+    if(!raw){ return; }
+    var n = norm(raw);
+    if(n.indexOf(fh.target) === -1){
+      setFeedback('fhFeedback','bad','这句里没有「'+fh.target+'」字哦，再看看？');
+      return;
+    }
+    var candidates = containIndex[fh.target] || [];
+    var hit = -1;
+    for(var i=0;i<candidates.length;i++){
+      var vi = candidates[i];
+      if(verses[vi].norm === n && !fh.usedVerses[vi]){ hit = vi; break; }
+    }
+    if(hit === -1){
+      setFeedback('fhFeedback','bad','语料库里没找到完全一致的这句，检查下字词，或者换一句试试。');
+      return;
+    }
+    fh.usedVerses[hit] = true;
+    fh.score++;
+    document.getElementById('fhScore').textContent = fh.score;
+    setFeedback('fhFeedback','ok','对上了！');
+    showPoemCard('fhCardHolder', hit, '✓ 命中');
+    document.getElementById('fhInput').value = '';
+    burst();
+  });
+  document.getElementById('fhInput').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') document.getElementById('fhSubmit').click();
+  });
+  document.getElementById('fhReveal').addEventListener('click', function(){
+    var candidates = (containIndex[fh.target] || []).filter(function(vi){ return !fh.usedVerses[vi]; });
+    if(!candidates.length){ setFeedback('fhFeedback','bad','这个字的库存都被你用完啦，换个字吧！'); return; }
+    var vi = randChoice(candidates);
+    fh.usedVerses[vi] = true;
+    fh.skip++;
+    document.getElementById('fhSkip').textContent = fh.skip;
+    setFeedback('fhFeedback','','给你看一句：');
+    showPoemCard('fhCardHolder', vi, '答案');
+  });
+  document.getElementById('fhNext').addEventListener('click', fhNextChar);
+
+  /* ---------- 诗句接龙 ---------- */
+  var chain = { list: [], lastChar: '', usedVerses: {} };
+
+  function chainStart(){
+    var allIdx = verses.map(function(_,i){ return i; });
+    var vi = randChoice(allIdx);
+    chain.list = [{ verseIdx: vi, who: 'start' }];
+    chain.usedVerses = {}; chain.usedVerses[vi] = true;
+    chain.lastChar = verses[vi].text.slice(-1);
+    document.getElementById('chainScore').textContent = '1';
+    renderChainList();
+    setFeedback('chainFeedback','','下一句要以「'+chain.lastChar+'」开头');
+    document.getElementById('chainInput').value = '';
+  }
+
+  function renderChainList(){
+    var el = document.getElementById('chainList');
+    el.innerHTML = '';
+    chain.list.forEach(function(item){
+      var v = verses[item.verseIdx];
+      var div = document.createElement('div');
+      div.className = 'chain-item ' + (item.who === 'start' ? 'start' : 'player');
+      div.innerHTML =
+        '<span class="txt">'+v.text+'</span>' +
+        (speechSupported ? '<button class="speak-btn" type="button">🔊</button>' : '') +
+        '<span class="who">'+poemSrc(v.poemIdx)+'</span>';
+      el.appendChild(div);
+      var sb = div.querySelector('.speak-btn');
+      if(sb) sb.addEventListener('click', function(){ speak(v.text); });
+    });
+  }
+
+  document.getElementById('chainSubmit').addEventListener('click', function(){
+    var raw = document.getElementById('chainInput').value.trim();
+    if(!raw) return;
+    var n = norm(raw);
+    if(n[0] !== chain.lastChar){
+      setFeedback('chainFeedback','bad','要以「'+chain.lastChar+'」开头才行～');
+      return;
+    }
+    var candidates = firstCharIndex[chain.lastChar] || [];
+    var hit = -1;
+    for(var i=0;i<candidates.length;i++){
+      var vi = candidates[i];
+      if(verses[vi].norm === n && !chain.usedVerses[vi]){ hit = vi; break; }
+    }
+    if(hit === -1){
+      setFeedback('chainFeedback','bad','语料库里没找到完全一致的这句，检查下字词，或者换一句。');
+      return;
+    }
+    chain.usedVerses[hit] = true;
+    chain.list.push({ verseIdx: hit, who: 'player' });
+    chain.lastChar = verses[hit].text.slice(-1);
+    document.getElementById('chainScore').textContent = chain.list.length;
+    renderChainList();
+    setFeedback('chainFeedback','ok','接上了！下一句要以「'+chain.lastChar+'」开头');
+    document.getElementById('chainInput').value = '';
+    burst();
+  });
+  document.getElementById('chainInput').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') document.getElementById('chainSubmit').click();
+  });
+  document.getElementById('chainHint').addEventListener('click', function(){
+    var candidates = (firstCharIndex[chain.lastChar] || []).filter(function(vi){ return !chain.usedVerses[vi]; });
+    if(!candidates.length){
+      setFeedback('chainFeedback','bad','这个字开头的句子都用完了，算你厉害，重新开始吧！');
+      return;
+    }
+    var sample = candidates.slice(0, 4).map(function(vi){ return verses[vi].text; }).join('；');
+    setFeedback('chainFeedback','','提示：'+sample);
+  });
+  document.getElementById('chainRestart').addEventListener('click', chainStart);
+
+  /* ---------- 随便读读 ---------- */
+  var explore = { idx: 0, order: [] };
+  function exploreShuffle(){
+    explore.order = poems.map(function(_,i){return i;});
+    for(var i=explore.order.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var t = explore.order[i]; explore.order[i]=explore.order[j]; explore.order[j]=t;
+    }
+    explore.idx = 0;
+  }
+  function renderExplore(){
+    var p = poems[explore.order[explore.idx]];
+    var card = document.getElementById('exploreCard');
+    card.innerHTML =
+      '<span class="dynasty-tag">'+p.dynasty+p.type+'</span>' +
+      '<div class="title">'+p.title+'</div>' +
+      '<div class="author">'+p.author+'</div>' +
+      '<div class="lines">'+p.lines.join('<br>')+'</div>';
+  }
+  document.getElementById('exNext').addEventListener('click', function(){
+    window.speechSynthesis && window.speechSynthesis.cancel();
+    explore.idx = (explore.idx + 1) % explore.order.length;
+    renderExplore();
+  });
+  document.getElementById('exPrev').addEventListener('click', function(){
+    window.speechSynthesis && window.speechSynthesis.cancel();
+    explore.idx = (explore.idx - 1 + explore.order.length) % explore.order.length;
+    renderExplore();
+  });
+  var exSpeakBtn = document.getElementById('exSpeak');
+  if(speechSupported){
+    exSpeakBtn.addEventListener('click', function(){
+      var p = poems[explore.order[explore.idx]];
+      speak(p.title + '。' + p.author + '。' + p.lines.join(''));
+    });
+  } else {
+    exSpeakBtn.disabled = true;
+    exSpeakBtn.title = '当前浏览器不支持语音朗读';
+    exSpeakBtn.style.opacity = '0.4';
+  }
+
+  /* ---------- 汉字数独 ---------- */
+  var THEMES = {
+    nums:  { label:'数字大写', chars:['一','二','三','四','五','六','七','八','九'] },
+    stems: { label:'天干',    chars:['甲','乙','丙','丁','戊','己','庚','辛','壬'] },
+    lucky: { label:'吉祥语',  chars:['福','禄','寿','喜','财','吉','祥','如','意'] },
+    zodiac:{ label:'生肖',    chars:['鼠','牛','虎','兔','龙','蛇','马','羊','猴'] }
+  };
+  var DIFF_CLUES = { easy: 40, mid: 32, hard: 26 };
+
+  var sd = {
+    theme: 'nums', themeKey: 'nums', chars: THEMES.nums.chars.slice(),
+    diff: 'easy',
+    solution: null, puzzle: null, grid: null,
+    selected: null,
+    mistakes: 0, seconds: 0, timerId: null, done: false
+  };
+
+  function sdShuffle(arr){
+    for(var i=arr.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var t = arr[i]; arr[i]=arr[j]; arr[j]=t;
+    }
+    return arr;
+  }
+  function sdMakeEmpty(){
+    var g = [];
+    for(var i=0;i<9;i++) g.push([0,0,0,0,0,0,0,0,0]);
+    return g;
+  }
+  function sdValid(g, row, col, num){
+    for(var x=0;x<9;x++){
+      if(g[row][x]===num) return false;
+      if(g[x][col]===num) return false;
+    }
+    var br = row-row%3, bc = col-col%3;
+    for(var i=0;i<3;i++) for(var j=0;j<3;j++) if(g[br+i][bc+j]===num) return false;
+    return true;
+  }
+  function sdFill(g){
+    for(var r=0;r<9;r++){
+      for(var c=0;c<9;c++){
+        if(g[r][c]===0){
+          var nums = sdShuffle([1,2,3,4,5,6,7,8,9]);
+          for(var k=0;k<nums.length;k++){
+            var n = nums[k];
+            if(sdValid(g,r,c,n)){
+              g[r][c]=n;
+              if(sdFill(g)) return true;
+              g[r][c]=0;
+            }
+          }
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  function sdCountSolutions(g, limit){
+    var count = 0;
+    function solve(){
+      if(count>=limit) return;
+      for(var r=0;r<9;r++){
+        for(var c=0;c<9;c++){
+          if(g[r][c]===0){
+            for(var n=1;n<=9;n++){
+              if(sdValid(g,r,c,n)){
+                g[r][c]=n;
+                solve();
+                g[r][c]=0;
+                if(count>=limit) return;
+              }
+            }
+            return;
+          }
+        }
+      }
+      count++;
+    }
+    solve();
+    return count;
+  }
+  function sdGenerate(clues){
+    var solution = sdMakeEmpty();
+    sdFill(solution);
+    var puzzle = solution.map(function(row){ return row.slice(); });
+    var cells = [];
+    for(var r=0;r<9;r++) for(var c=0;c<9;c++) cells.push([r,c]);
+    sdShuffle(cells);
+    var target = 81 - clues;
+    var removed = 0;
+    for(var idx=0; idx<cells.length && removed<target; idx++){
+      var rc = cells[idx], rr=rc[0], cc=rc[1];
+      var backup = puzzle[rr][cc];
+      if(backup===0) continue;
+      puzzle[rr][cc] = 0;
+      var copy = puzzle.map(function(row){ return row.slice(); });
+      var solCount = sdCountSolutions(copy, 2);
+      if(solCount !== 1){
+        puzzle[rr][cc] = backup;
+      } else {
+        removed++;
+      }
+    }
+    return { solution: solution, puzzle: puzzle };
+  }
+
+  function sdFormatTime(s){
+    var m = Math.floor(s/60), sec = s%60;
+    return (m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+  }
+  function sdStartTimer(){
+    if(sd.timerId) clearInterval(sd.timerId);
+    sd.timerId = setInterval(function(){
+      sd.seconds++;
+      document.getElementById('sdTimer').textContent = sdFormatTime(sd.seconds);
+    }, 1000);
+  }
+  function sdStopTimer(){
+    if(sd.timerId){ clearInterval(sd.timerId); sd.timerId = null; }
+  }
+
+  function sdRenderThemeRow(){
+    var row = document.getElementById('sdThemeRow');
+    row.innerHTML = '';
+    Object.keys(THEMES).forEach(function(key){
+      var t = THEMES[key];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'sd-theme-btn' + (sd.themeKey===key ? ' active' : '');
+      btn.textContent = t.label + '（' + t.chars.join('') + '）';
+      btn.addEventListener('click', function(){
+        sd.themeKey = key;
+        sd.chars = t.chars.slice();
+        sdRenderThemeRow();
+        sdRenderPalette();
+        sdRenderBoard();
+      });
+      row.appendChild(btn);
+    });
+  }
+  document.getElementById('sdCustomApply').addEventListener('click', function(){
+    var raw = document.getElementById('sdCustomInput').value.trim();
+    var chars = Array.from(raw);
+    var uniq = Array.from(new Set(chars));
+    if(uniq.length !== 9 || chars.length !== 9){
+      setFeedback('sdFeedback','bad','请输入正好 9 个不重复的汉字～');
+      return;
+    }
+    sd.themeKey = 'custom';
+    sd.chars = uniq;
+    sdRenderThemeRow();
+    sdRenderPalette();
+    sdRenderBoard();
+    setFeedback('sdFeedback','ok','已切换为自定义字组');
+  });
+
+  document.getElementById('sdDiffRow').addEventListener('click', function(e){
+    var btn = e.target.closest('.sd-diff-btn');
+    if(!btn) return;
+    sd.diff = btn.dataset.diff;
+    document.querySelectorAll('.sd-diff-btn').forEach(function(b){ b.classList.toggle('active', b===btn); });
+    sdNewGame();
+  });
+
+  function sdNewGame(){
+    setFeedback('sdFeedback','','生成中…棋盘马上就好');
+    setTimeout(function(){
+      var result = sdGenerate(DIFF_CLUES[sd.diff] || 34);
+      sd.solution = result.solution;
+      sd.puzzle = result.puzzle;
+      sd.grid = result.puzzle.map(function(row){ return row.slice(); });
+      sd.selected = null;
+      sd.mistakes = 0;
+      sd.seconds = 0;
+      sd.done = false;
+      document.getElementById('sdMistakes').textContent = '0';
+      document.getElementById('sdTimer').textContent = '00:00';
+      sdStartTimer();
+      sdRenderBoard();
+      setFeedback('sdFeedback','','');
+    }, 30);
+  }
+
+  function sdRenderPalette(){
+    var pal = document.getElementById('sdPalette');
+    pal.innerHTML = '';
+    sd.chars.forEach(function(ch, i){
+      var btn = document.createElement('button');
+      btn.className = 'sd-pal-btn';
+      btn.type = 'button';
+      btn.textContent = ch;
+      btn.addEventListener('click', function(){ sdFillSelected(i+1); });
+      pal.appendChild(btn);
+    });
+  }
+
+  function sdFillSelected(num){
+    if(sd.done || !sd.selected) return;
+    var r = sd.selected[0], c = sd.selected[1];
+    if(sd.puzzle[r][c] !== 0) return; // given cell
+    sd.grid[r][c] = num;
+    sdRenderBoard();
+    sdCheckComplete();
+  }
+
+  document.getElementById('sdErase').addEventListener('click', function(){
+    if(!sd.selected) return;
+    var r = sd.selected[0], c = sd.selected[1];
+    if(sd.puzzle[r][c] !== 0) return;
+    sd.grid[r][c] = 0;
+    sdRenderBoard();
+  });
+
+  document.getElementById('sdCheck').addEventListener('click', function(){
+    var wrong = 0;
+    for(var r=0;r<9;r++){
+      for(var c=0;c<9;c++){
+        if(sd.grid[r][c] !== 0 && sd.puzzle[r][c]===0 && sd.grid[r][c] !== sd.solution[r][c]){
+          wrong++;
+        }
+      }
+    }
+    sd.mistakes += wrong;
+    document.getElementById('sdMistakes').textContent = sd.mistakes;
+    sdRenderBoard(true);
+    setFeedback('sdFeedback', wrong ? 'bad' : 'ok', wrong ? ('发现 '+wrong+' 处不对，已用红色标出') : '目前填的都对，继续加油！');
+  });
+
+  document.getElementById('sdHint').addEventListener('click', function(){
+    var empties = [];
+    for(var r=0;r<9;r++) for(var c=0;c<9;c++) if(sd.grid[r][c]===0) empties.push([r,c]);
+    if(!empties.length){ setFeedback('sdFeedback','','格子都填满啦，点"检查"看看对不对～'); return; }
+    var pick = empties[Math.floor(Math.random()*empties.length)];
+    sd.grid[pick[0]][pick[1]] = sd.solution[pick[0]][pick[1]];
+    sd.hintCell = pick;
+    sdRenderBoard();
+    sdCheckComplete();
+  });
+
+  document.getElementById('sdNew').addEventListener('click', sdNewGame);
+
+  function sdCheckComplete(){
+    for(var r=0;r<9;r++) for(var c=0;c<9;c++) if(sd.grid[r][c]===0) return;
+    var allCorrect = true;
+    for(var r2=0;r2<9;r2++) for(var c2=0;c2<9;c2++) if(sd.grid[r2][c2] !== sd.solution[r2][c2]) allCorrect = false;
+    if(allCorrect){
+      sd.done = true;
+      sdStopTimer();
+      setFeedback('sdFeedback','ok','🎉 完成！用时 '+sdFormatTime(sd.seconds)+'，出错 '+sd.mistakes+' 次');
+      burst();
+    }
+  }
+
+  function sdRenderBoard(showErrors){
+    var board = document.getElementById('sdBoard');
+    board.innerHTML = '';
+    for(var r=0;r<9;r++){
+      for(var c=0;c<9;c++){
+        var cell = document.createElement('div');
+        var isGiven = sd.puzzle[r][c] !== 0;
+        var val = sd.grid[r][c];
+        var cls = 'sd-cell';
+        if(isGiven) cls += ' given';
+        if(r===2 || r===5) cls += ' sd-row-thick';
+        if(sd.selected){
+          var sr=sd.selected[0], sc=sd.selected[1];
+          if(sr===r && sc===c) cls += ' selected';
+          else if(sr===r || sc===c || (Math.floor(sr/3)===Math.floor(r/3) && Math.floor(sc/3)===Math.floor(c/3))) cls += ' peer';
+        }
+        if(showErrors && val !== 0 && !isGiven && val !== sd.solution[r][c]) cls += ' error';
+        if(sd.hintCell && sd.hintCell[0]===r && sd.hintCell[1]===c) cls += ' hinted';
+        cell.className = cls;
+        cell.textContent = val ? sd.chars[val-1] : '';
+        (function(rr,cc,given){
+          cell.addEventListener('click', function(){
+            if(given) return;
+            sd.selected = [rr,cc];
+            sd.hintCell = null;
+            sdRenderBoard();
+          });
+        })(r,c,isGiven);
+        board.appendChild(cell);
+      }
+    }
+  }
+
+  function sdInit(){
+    sdRenderThemeRow();
+    sdRenderPalette();
+    sdNewGame();
+  }
+
+  /* ---------- init ---------- */
+  sdInit();
+  fetch('poems.json').then(function(r){ return r.json(); }).then(function(data){
+    buildData(data);
+    renderKwGrid();
+    chainStart();
+    exploreShuffle();
+    renderExplore();
+  }).catch(function(err){
+    document.querySelector('main').innerHTML = '<div class="panel"><div class="panel-head"><h2>数据加载失败</h2><p>请稍后刷新重试。</p></div></div>';
+    console.error(err);
+  });
+})();
+</script>
+
+</body>
+</html>

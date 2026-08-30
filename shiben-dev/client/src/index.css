@@ -1,0 +1,95 @@
+/* 纸上远航：宣纸米白作为阅读底色；墨海蓝组织文字结构；远航青指引路径；朱砂红仅作页签强调。 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", ui-serif, Georgia, serif;
+  --radius: 0.85rem;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: oklch(0.96 0.012 82);
+  --foreground: oklch(0.25 0.028 208);
+  --card: oklch(0.985 0.008 86);
+  --card-foreground: oklch(0.25 0.028 208);
+  --popover: oklch(0.985 0.008 86);
+  --popover-foreground: oklch(0.25 0.028 208);
+  --primary: oklch(0.5 0.08 187);
+  --primary-foreground: oklch(0.985 0.008 86);
+  --secondary: oklch(0.92 0.026 83);
+  --secondary-foreground: oklch(0.25 0.028 208);
+  --muted: oklch(0.91 0.016 82);
+  --muted-foreground: oklch(0.48 0.026 188);
+  --accent: oklch(0.87 0.05 178);
+  --accent-foreground: oklch(0.25 0.028 208);
+  --destructive: oklch(0.58 0.17 29);
+  --destructive-foreground: oklch(0.985 0.008 86);
+  --border: oklch(0.81 0.018 81);
+  --input: oklch(0.81 0.018 81);
+  --ring: oklch(0.5 0.08 187);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  button:not(:disabled), a[href] { @apply cursor-pointer; }
+  ::selection { background: #a6d9cf; color: #172f39; }
+}
+
+@layer components {
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em]; }
+  .nav-link { @apply relative text-[#425a5d] transition-colors hover:text-[#167b78] after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-[#167b78] after:transition-all hover:after:w-full; }
+  .action-button { @apply inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition duration-200 active:scale-[0.97]; }
+  .text-link { @apply inline-flex items-center gap-1 border-b border-[#167b78]/50 font-semibold text-[#167b78] transition hover:border-[#167b78] hover:text-[#0e6562]; }
+  .reveal { opacity: 0; transform: translateY(12px); animation: lift-in 640ms cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+  .catalog-shelf { background-image: linear-gradient(to right, transparent 0, transparent 28px, rgba(121, 196, 184, 0.25) 29px, transparent 30px); }
+  .book-spine { position: relative; min-height: 76px; }
+  .book-spine::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; background: #167b78; opacity: 0; transition: opacity 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .book-spine[aria-pressed="true"]::before { opacity: 1; }
+  .book-spine[aria-pressed="true"]::after { content: ""; position: absolute; right: 16px; top: 50%; height: 26px; width: 2px; transform: translateY(-50%); background: repeating-linear-gradient(to bottom, #c9523e 0 3px, transparent 3px 7px); }
+  .catalog-shelf + div i { height: 8px; width: 8px; border-radius: 999px; background: #167b78; opacity: 0.45; }
+  .browser-panel { background-image: linear-gradient(90deg, rgba(22, 123, 120, 0.06) 1px, transparent 1px), linear-gradient(rgba(22, 123, 120, 0.04) 1px, transparent 1px); background-size: 20px 20px; }
+  .reader-icon { @apply inline-flex h-7 w-7 items-center justify-center rounded border border-[#17303b]/15 bg-white text-[#53686b] transition hover:border-[#167b78] hover:text-[#167b78] active:scale-[0.96]; }
+  .reader-page-control { @apply inline-flex items-center gap-1 rounded px-2 py-1.5 text-xs font-semibold text-[#167b78] transition hover:bg-[#e2f1ed] disabled:cursor-not-allowed disabled:opacity-35; }
+  .reader-layout-control { @apply inline-flex h-9 items-center justify-center gap-1.5 rounded border border-[#17303b]/15 bg-white px-2.5 text-xs font-semibold text-[#167b78] transition hover:border-[#167b78] hover:bg-[#e2f1ed] active:scale-[0.97]; }
+  .shortcut-key { @apply inline-flex min-w-5 items-center justify-center rounded border border-[#17303b]/20 bg-white px-1.5 py-0.5 font-mono text-xs font-bold text-[#53686b]; }
+  .shortcut-key-inverse { @apply border-white/35 bg-white/15 text-white; }
+  .shortcut-panel { @apply flex flex-wrap items-center gap-x-3 gap-y-2; }
+  .shortcut-panel kbd { @apply mr-0.5 inline-flex min-w-5 items-center justify-center rounded border border-[#167b78]/25 bg-white px-1.5 py-0.5 font-mono text-xs font-bold text-[#167b78]; }
+  .delay-1 { animation-delay: 80ms; }
+  .delay-2 { animation-delay: 150ms; }
+  .delay-3 { animation-delay: 220ms; }
+  .delay-4 { animation-delay: 290ms; }
+}
+
+@keyframes lift-in { to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { animation: none; opacity: 1; transform: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

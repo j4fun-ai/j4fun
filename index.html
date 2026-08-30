@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>j4fun · 好玩的中文小玩意合集</title>
+<meta name="description" content="j4fun 是一个不断添加中文趣味小项目的合集站，目前收录诗词好玩局(飞花令/接龙)和汉字数独。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="page-home">
+
+<div id="petals" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html" aria-label="j4fun 首页">
+      <img class="brand-logo" src="assets/images/logo.png" alt="j4fun">
+    </a>
+    <nav class="top-links" aria-label="主导航">
+      <a href="poetry.html">诗词</a>
+      <a href="sudoku.html">汉字数独</a>
+      <a href="strands.html">字踪</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">Just For Fun</p>
+  <h1>中文小玩意<span class="accent">合集</span></h1>
+  <p class="lede">把诗词、汉字和传统文化做成轻松好玩的互动小项目。无需下载，不用注册，打开网页就能玩。</p>
+</section>
+
+<main class="wrap">
+  <div class="card-grid">
+
+    <a class="item-card" href="poetry.html">
+      <div class="emoji">🌸</div>
+      <h3>诗词好玩局</h3>
+      <p>飞花令 + 诗句接龙 + 随便读读，用真实的唐诗宋词数据做的中文小游戏。</p>
+      <div class="tag-row"><span class="tag">飞花令</span><span class="tag">接龙</span></div>
+      <div class="cta">进去玩</div>
+    </a>
+
+    <a class="item-card" href="sudoku.html">
+      <div class="emoji">🧩</div>
+      <h3>汉字数独</h3>
+      <p>规则和普通数独一样，只是把 1-9 换成了汉字 —— 数字大写、天干、生肖、吉祥语，还能自定义。</p>
+      <div class="tag-row"><span class="tag">益智</span><span class="tag">可自定义</span></div>
+      <div class="cta">进去玩</div>
+    </a>
+
+    <a class="item-card" href="strands.html">
+      <div class="emoji">🕸️</div>
+      <h3>字踪 · 藏字连连看</h3>
+      <p>参考纽约时报 Strands 的玩法，连出的成语和诗句正好铺满整个棋盘，找到贯穿全局的"通关词"。</p>
+      <div class="tag-row"><span class="tag">连线</span><span class="tag">成语</span></div>
+      <div class="cta">进去玩</div>
+    </a>
+
+  </div>
+
+  <section class="shiben-feature" aria-labelledby="shiben-title">
+    <div class="shiben-copy">
+      <p class="shiben-kicker">另一个项目</p>
+      <h2 id="shiben-title">识本 · 华文教材库</h2>
+      <p>面向海外华人家庭的国内教材导览。从小学到大学，按学段、年级和版本浏览公开目录，更轻松地找到想了解的教材。</p>
+      <div class="shiben-note">非官方界面 · 目录来自 TapXWorld/ChinaTextbook</div>
+    </div>
+    <a class="shiben-link" href="shiben/">打开识本 <span aria-hidden="true">→</span></a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="footer-brand">j4fun - Just For Fun<br>中文小玩意合集</div>
+  <div class="footer-made">made with ❤️ (ai)</div>
+</footer>
+
+<script>
+(function(){
+  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  var PETAL_CHARS = ['❀','✿','❁','☘'];
+  function spawnPetal(){
+    var el = document.createElement('span');
+    el.className = 'petal';
+    el.textContent = randChoice(PETAL_CHARS);
+    el.style.left = (Math.random()*100) + 'vw';
+    el.style.fontSize = (14 + Math.random()*14) + 'px';
+    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+    var dur = 7 + Math.random()*6;
+    el.style.animationDuration = dur + 's';
+    document.getElementById('petals').appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+  }
+  setInterval(spawnPetal, 1600);
+  for(var i=0;i<3;i++) setTimeout(spawnPetal, i*500);
+})();
+</script>
+
+</body>
+</html>

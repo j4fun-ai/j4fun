@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>j4fun · 好玩的中文小玩意合集</title>
+<meta name="description" content="j4fun 是一个不断添加中文趣味小项目的合集站，目前收录诗词好玩局(飞花令/接龙)和汉字数独。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0f3630;
+    --bg-card: #133f38;
+    --gold: #e3b23c;
+    --gold-deep: #b8862a;
+    --red: #d6444f;
+    --red-deep: #a9313a;
+    --paper: #f6efe0;
+    --paper-line: #e2d7bc;
+    --ink: #241f16;
+    --ink-soft: #57503f;
+    --text: #f3efe4;
+    --text-dim: #9fc0b7;
+    --text-faint: #6f9089;
+
+    --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --serif: "Noto Serif SC", "Songti SC", serif;
+    --display: "ZCOOL KuaiLe", var(--sans);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background: var(--bg); color: var(--text); font-family: var(--sans);
+    line-height:1.6; position:relative; overflow-x:hidden;
+    background-image: radial-gradient(circle at 15% 8%, rgba(227,178,60,0.10), transparent 40%),
+                       radial-gradient(circle at 85% 90%, rgba(214,68,79,0.10), transparent 45%);
+  }
+  a{ color:inherit; }
+  ::selection{ background: var(--gold); color: var(--ink); }
+  :focus-visible{ outline: 3px solid var(--gold); outline-offset:2px; }
+  .wrap{ max-width: 980px; margin:0 auto; padding: 0 22px; }
+
+  #petals{ position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden; }
+  .petal{ position:absolute; top:-24px; font-size: 18px; opacity:.85; animation: fall linear forwards; filter: drop-shadow(0 0 3px rgba(0,0,0,.2)); }
+  @keyframes fall{ to{ transform: translateY(105vh) rotate(340deg); opacity:.15; } }
+  @media (prefers-reduced-motion: reduce){ .petal{ animation: none; display:none; } }
+
+  header.site{ padding: 22px 0 6px; position:relative; z-index:2; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; padding-bottom:16px; }
+  .brand{ display:flex; align-items:baseline; gap:10px; }
+  .brand .name{ font-family: var(--display); font-size:26px; color: var(--gold); letter-spacing:.03em; }
+  .brand .sub{ font-size:11px; color: var(--text-faint); letter-spacing:.14em; text-transform:uppercase; }
+  nav.top-links{ display:flex; gap:18px; font-size:13px; color: var(--text-dim); }
+  nav.top-links a{ text-decoration:none; border-bottom:1px dotted var(--text-faint); padding-bottom:2px; }
+  nav.top-links a:hover{ color: var(--gold); border-color: var(--gold); }
+
+  .hero{ padding: 40px 0 10px; text-align:center; position:relative; z-index:2; }
+  .hero .eyebrow{ font-size:12px; letter-spacing:.2em; color: var(--gold); text-transform:uppercase; font-weight:700; margin:0 0 12px; }
+  .hero h1{ font-family: var(--display); font-weight:400; font-size: clamp(30px, 6vw, 52px); margin: 0 0 14px; color: var(--text); line-height:1.3; }
+  .hero h1 .accent{ color: var(--red); }
+  .hero p.lede{ color: var(--text-dim); max-width: 54ch; margin: 0 auto 8px; font-size:15px; }
+
+  main{ position:relative; z-index:2; padding: 30px 0 70px; }
+
+  .card-grid{
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 10px;
+  }
+  .item-card{
+    background: var(--bg-card); border-radius: 18px; padding: 26px 24px;
+    border: 1px solid rgba(227,178,60,0.18); text-decoration:none; color: var(--text);
+    display:flex; flex-direction:column; gap: 14px; transition: transform .12s ease, border-color .12s ease;
+    position:relative; overflow:hidden;
+  }
+  .item-card:hover{ transform: translateY(-3px); border-color: var(--gold); }
+  .item-card .emoji{ font-size: 34px; line-height:1; }
+  .item-card h3{ font-family: var(--display); font-weight:400; font-size:20px; margin:0; color: var(--text); }
+  .item-card p{ font-size:13px; color: var(--text-dim); margin:0; flex:1; }
+  .item-card .tag-row{ display:flex; gap:8px; flex-wrap:wrap; }
+  .item-card .tag{
+    font-size:11px; padding: 3px 10px; border-radius: 999px; background: rgba(227,178,60,0.14);
+    color: var(--gold); border: 1px solid rgba(227,178,60,0.3);
+  }
+  .item-card .cta{ font-family: var(--display); font-size:14px; color: var(--gold); }
+  .item-card .cta::after{ content: ' →'; }
+
+  .item-card.soon{ cursor:default; opacity:.82; }
+  .item-card.soon:hover{ transform:none; border-color: rgba(227,178,60,0.18); }
+  .item-card.soon .tag.soon-tag{ background: rgba(214,68,79,0.18); color:#f0a3a3; border-color: rgba(214,68,79,0.3); }
+  .item-card.soon .cta{ color: var(--text-faint); }
+  .item-card.soon .cta::after{ content: ''; }
+
+  .item-card.study{ border-style: dashed; }
+  .item-card.study .emoji{ filter: grayscale(0.15); }
+
+  section.about{ padding: 30px 0 20px; position:relative; z-index:2; }
+  section.about h2{ font-family: var(--display); font-weight:400; font-size:20px; color: var(--gold); margin:0 0 12px; }
+  section.about p{ color: var(--text-dim); max-width: 66ch; font-size:14px; }
+
+  footer{ padding: 24px 0 46px; font-size:12px; color: var(--text-faint); position:relative; z-index:2; }
+  footer a{ color: var(--text-dim); text-decoration: underline dotted; }
+</style>
+</head>
+<body>
+
+<div id="petals" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="wrap topbar">
+    <div class="brand">
+      <span class="name">j4fun</span>
+      <span class="sub">just for fun · 中文小玩意合集</span>
+    </div>
+    <nav class="top-links">
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">给海外华人家庭的中文小项目</p>
+  <h1>不正经，但<span class="accent">好玩</span>，会一直加新的进来</h1>
+  <p class="lede">j4fun 是个持续更新的合集站，每个格子都是一个独立的小项目，点进去直接玩，不用下载 App、不用注册。</p>
+</section>
+
+<main class="wrap">
+  <div class="card-grid">
+
+    <a class="item-card" href="poetry.html">
+      <div class="emoji">🌸</div>
+      <h3>诗词好玩局</h3>
+      <p>飞花令 + 诗句接龙 + 随便读读，用真实的唐诗宋词数据做的中文小游戏，还带朗读功能。</p>
+      <div class="tag-row"><span class="tag">飞花令</span><span class="tag">接龙</span><span class="tag">朗读</span></div>
+      <div class="cta">进去玩</div>
+    </a>
+
+    <a class="item-card" href="sudoku.html">
+      <div class="emoji">🧩</div>
+      <h3>汉字数独</h3>
+      <p>规则和普通数独一样，只是把 1-9 换成了汉字 —— 数字大写、天干、生肖、吉祥语，还能自定义。</p>
+      <div class="tag-row"><span class="tag">益智</span><span class="tag">可自定义</span></div>
+      <div class="cta">进去玩</div>
+    </a>
+
+    <div class="item-card soon study">
+      <div class="emoji">📖</div>
+      <h3>识本 · 华文教材导览</h3>
+      <p>正经的那一半 —— 国内小学到大学各版本教材的浏览与检索，放在独立的子域名下，跟这里的"好玩"分开。</p>
+      <div class="tag-row"><span class="tag soon-tag">另一个站点</span></div>
+      <div class="cta">即将链接</div>
+    </div>
+
+  </div>
+</main>
+
+<section class="about wrap" id="about">
+  <h2>关于 j4fun</h2>
+  <p>这里放的都是些不追求"有用"、只追求"好玩"的小项目，主要面向海外华人家庭，希望孩子们能在轻松的互动里接触到一点中文和传统文化。所有项目都是纯前端、开源数据驱动，玩的时候不需要注册账号，输入内容也不会被上传。</p>
+</section>
+
+<footer class="wrap">
+  <div>各项目使用的数据来源见各自页面内的说明；页面设计与交互逻辑为本站原创。</div>
+</footer>
+
+<script>
+(function(){
+  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  var PETAL_CHARS = ['❀','✿','❁','☘'];
+  function spawnPetal(){
+    var el = document.createElement('span');
+    el.className = 'petal';
+    el.textContent = randChoice(PETAL_CHARS);
+    el.style.left = (Math.random()*100) + 'vw';
+    el.style.fontSize = (14 + Math.random()*14) + 'px';
+    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+    var dur = 7 + Math.random()*6;
+    el.style.animationDuration = dur + 's';
+    document.getElementById('petals').appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+  }
+  setInterval(spawnPetal, 1600);
+  for(var i=0;i<3;i++) setTimeout(spawnPetal, i*500);
+})();
+</script>
+
+</body>
+</html>

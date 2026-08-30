@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+shiben-dev/node_modules/
+shiben-dev/dist/
+shiben-dev/.manus-logs/
+.env
+.env.*
+AI/
+/dist/

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>字踪 · j4fun 藏字连连看</title>
+<meta name="description" content="用成语和诗句做的连线找词游戏，规则参考纽约时报 Strands：连出的字正好铺满整个棋盘，找到贯穿全局的主题词。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="page-strands">
+
+<div id="petals" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html" aria-label="j4fun 首页">
+      <img class="brand-logo" src="assets/images/logo.png" alt="j4fun">
+    </a>
+    <nav class="top-links" aria-label="主导航">
+      <a href="poetry.html">诗词</a>
+      <a href="sudoku.html">汉字数独</a>
+      <a href="strands.html" aria-current="page">字踪</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">规则参考 NYT Strands</p>
+  <h1>连出的词，正好<span class="accent">铺满</span>整个棋盘</h1>
+  <p class="lede">棋盘上藏着若干成语和诗句，连对一个就会点亮；找到那个贯穿棋盘、点明主题的"通关词"，会亮金色。第三关"学"棋盘更大、路径更绕，比前两关难不少。</p>
+</section>
+
+<main class="wrap">
+  <div class="level-tabs" id="levelTabs"></div>
+
+  <div class="panel">
+    <div class="status-row">
+      <span>已找到 <b id="foundCount">0</b> / <span id="totalCount">0</span></span>
+      <span id="themeLabel"></span>
+    </div>
+    <div class="compose-bar" id="composeBar"><span class="ph">点击或拖动连字</span></div>
+
+    <div class="board" id="board"></div>
+
+    <div class="helper-row">
+      <button class="ghost-btn" id="btnClear">清空当前选择</button>
+      <button class="ghost-btn" id="btnHint">提示一个字</button>
+      <button class="ghost-btn" id="btnReset">重玩本关</button>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+    <div class="found-list" id="foundList"></div>
+  </div>
+</main>
+
+<section class="about wrap" id="details">
+  <h2>游戏说明</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>连字</h3>
+      <p>点相邻的字一个个连(横竖斜都算相邻)，或者按住拖动手指/鼠标划过去，也一样。</p>
+    </div>
+    <div class="about-card">
+      <h3>确认</h3>
+      <p>拖动的话松手就自动提交；一个个点的话，再点一次最后那个字就算提交。</p>
+    </div>
+    <div class="about-card">
+      <h3>通关词</h3>
+      <p>棋盘里有一个词是"通关词"，两端会碰到棋盘相对的两条边，点出主题；找到它会亮金色。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="footer-brand">j4fun - Just For Fun<br>中文小玩意合集</div>
+  <div class="footer-made">made with ❤️ (ai)</div>
+</footer>
+
+<script>
+(function(){
+  var LEVELS = [{"name":"月 · 月相与团圆","width":6,"height":6,"words":[{"text":"花好月圆","path":[[0,0],[0,1],[0,2],[0,3]],"spangram":false},{"text":"皓月当空","path":[[0,4],[0,5],[1,5],[1,4]],"spangram":false},{"text":"海上生明月","path":[[1,3],[1,2],[1,1],[1,0],[2,0]],"spangram":false},{"text":"千里共婵娟","path":[[2,1],[2,2],[2,3],[2,4],[2,5]],"spangram":false},{"text":"月有阴晴圆缺","path":[[3,5],[3,4],[3,3],[3,2],[3,1],[3,0]],"spangram":true},{"text":"镜花水月","path":[[4,0],[4,1],[4,2],[4,3]],"spangram":false},{"text":"众星捧月","path":[[4,4],[4,5],[5,5],[5,4]],"spangram":false},{"text":"明月清风","path":[[5,3],[5,2],[5,1],[5,0]],"spangram":false}]},{"name":"春 · 春意盎然","width":5,"height":6,"words":[{"text":"春眠不觉晓","path":[[0,0],[0,1],[0,2],[0,3],[0,4]],"spangram":true},{"text":"处处闻啼鸟","path":[[1,4],[1,3],[1,2],[1,1],[1,0]],"spangram":false},{"text":"春暖花开","path":[[2,0],[2,1],[2,2],[2,3]],"spangram":false},{"text":"鸟语花香","path":[[2,4],[3,4],[3,3],[3,2]],"spangram":false},{"text":"万紫千红","path":[[3,1],[3,0],[4,0],[4,1]],"spangram":false},{"text":"春意盎然","path":[[4,2],[4,3],[4,4],[5,4]],"spangram":false},{"text":"花红柳绿","path":[[5,3],[5,2],[5,1],[5,0]],"spangram":false}]},{"name":"学 · 韦编三绝","width":6,"height":8,"words":[{"text":"学富五车","path":[[1,4],[0,3],[0,4],[0,5]],"spangram":false},{"text":"温故知新","path":[[1,5],[2,5],[3,5],[2,4]],"spangram":false},{"text":"见多识广","path":[[1,3],[2,2],[1,1],[1,0]],"spangram":false},{"text":"融会贯通","path":[[2,0],[2,1],[3,0],[3,1]],"spangram":false},{"text":"活到老学到老","path":[[4,0],[5,0],[4,1],[3,2],[3,3],[4,2]],"spangram":false},{"text":"博览群书","path":[[4,3],[5,2],[5,1],[6,0]],"spangram":false},{"text":"孜孜不倦","path":[[7,0],[6,1],[7,1],[6,2]],"spangram":false},{"text":"学以致用","path":[[7,2],[6,3],[7,4],[7,5]],"spangram":false},{"text":"韦编三绝","path":[[6,5],[5,4],[4,5],[5,5]],"spangram":false},{"text":"读书破万卷下笔如有神","path":[[0,0],[0,1],[0,2],[1,2],[2,3],[3,4],[4,4],[5,3],[6,4],[7,3]],"spangram":true}]}];
+
+  var curLevelIdx = 0;
+  var grid = {};          // "r,c" -> char
+  var cellEls = {};       // "r,c" -> DOM el
+  var foundWords = [];    // words matched so far (by text)
+  var selected = [];      // array of [r,c]
+  var isDragging = false;
+  var pointerActive = false;
+
+  function key(r,c){ return r+','+c; }
+
+  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  var PETAL_CHARS = ['❀','✿','❁','☘'];
+  function spawnPetal(){
+    var el = document.createElement('span');
+    el.className = 'petal';
+    el.textContent = randChoice(PETAL_CHARS);
+    el.style.left = (Math.random()*100) + 'vw';
+    el.style.fontSize = (14 + Math.random()*14) + 'px';
+    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+    var dur = 7 + Math.random()*6;
+    el.style.animationDuration = dur + 's';
+    document.getElementById('petals').appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+  }
+  setInterval(spawnPetal, 1700);
+  function burst(){ for(var i=0;i<12;i++) setTimeout(spawnPetal, i*55); }
+
+  function setFeedback(cls, text){
+    var el = document.getElementById('feedback');
+    el.className = 'feedback' + (cls ? ' '+cls : '');
+    el.textContent = text;
+  }
+
+  function renderLevelTabs(){
+    var box = document.getElementById('levelTabs');
+    box.innerHTML = '';
+    LEVELS.forEach(function(lv, i){
+      var btn = document.createElement('button');
+      btn.className = 'level-tab' + (i===curLevelIdx ? ' active' : '');
+      var doneAll = isLevelComplete(i);
+      btn.innerHTML = lv.name.split(' ')[0] + (doneAll ? '<span class="done-mark">✓</span>' : '');
+      btn.addEventListener('click', function(){
+        curLevelIdx = i;
+        loadLevel();
+      });
+      box.appendChild(btn);
+    });
+  }
+
+  var levelProgress = {}; // idx -> array of found word texts
+
+  function isLevelComplete(i){
+    var lv = LEVELS[i];
+    var found = levelProgress[i] || [];
+    return found.length === lv.words.length;
+  }
+
+  function loadLevel(){
+    var lv = LEVELS[curLevelIdx];
+    grid = {}; cellEls = {};
+    selected = []; isDragging = false;
+    foundWords = (levelProgress[curLevelIdx] || []).slice();
+
+    lv.words.forEach(function(w){
+      w.path.forEach(function(rc, i){
+        grid[key(rc[0],rc[1])] = w.text[i];
+      });
+    });
+
+    document.getElementById('totalCount').textContent = lv.words.length;
+    document.getElementById('themeLabel').textContent = lv.name;
+    renderBoard();
+    renderFoundList();
+    updateFoundCount();
+    updateComposeBar();
+    setFeedback('','');
+    renderLevelTabs();
+  }
+
+  function renderBoard(){
+    var lv = LEVELS[curLevelIdx];
+    var board = document.getElementById('board');
+    board.style.gridTemplateColumns = 'repeat('+lv.width+', 1fr)';
+    board.innerHTML = '';
+    cellEls = {};
+    for(var r=0;r<lv.height;r++){
+      for(var c=0;c<lv.width;c++){
+        var el = document.createElement('div');
+        el.className = 'cell';
+        el.textContent = grid[key(r,c)] || '';
+        el.dataset.r = r; el.dataset.c = c;
+        board.appendChild(el);
+        cellEls[key(r,c)] = el;
+      }
+    }
+    applyFoundStyles();
+  }
+
+  function wordPathFor(text){
+    var lv = LEVELS[curLevelIdx];
+    for(var i=0;i<lv.words.length;i++){
+      if(lv.words[i].text === text) return lv.words[i];
+    }
+    return null;
+  }
+
+  function applyFoundStyles(){
+    foundWords.forEach(function(text){
+      var w = wordPathFor(text);
+      if(!w) return;
+      w.path.forEach(function(rc){
+        var el = cellEls[key(rc[0],rc[1])];
+        if(el){ el.classList.add(w.spangram ? 'found-span' : 'found-word'); }
+      });
+    });
+  }
+
+  function renderFoundList(){
+    var box = document.getElementById('foundList');
+    box.innerHTML = '';
+    var lv = LEVELS[curLevelIdx];
+    foundWords.forEach(function(text){
+      var w = wordPathFor(text);
+      var chip = document.createElement('span');
+      chip.className = 'found-chip' + (w && w.spangram ? ' spangram' : '');
+      chip.textContent = text;
+      box.appendChild(chip);
+    });
+  }
+
+  function updateFoundCount(){
+    document.getElementById('foundCount').textContent = foundWords.length;
+  }
+
+  function updateComposeBar(){
+    var bar = document.getElementById('composeBar');
+    if(!selected.length){
+      bar.innerHTML = '<span class="ph">点击或拖动连字</span>';
+      return;
+    }
+    var lv = LEVELS[curLevelIdx];
+    var str = selected.map(function(rc){ return grid[key(rc[0],rc[1])]; }).join('');
+    bar.textContent = str;
+  }
+
+  function isAdjacent(a, b){
+    return Math.abs(a[0]-b[0])<=1 && Math.abs(a[1]-b[1])<=1 && !(a[0]===b[0] && a[1]===b[1]);
+  }
+  function cellInSelected(rc){
+    return selected.some(function(s){ return s[0]===rc[0] && s[1]===rc[1]; });
+  }
+  function isCellFound(rc){
+    return foundWords.some(function(text){
+      var w = wordPathFor(text);
+      return w && w.path.some(function(p){ return p[0]===rc[0] && p[1]===rc[1]; });
+    });
+  }
+
+  function renderSelection(){
+    Object.keys(cellEls).forEach(function(k){
+      cellEls[k].classList.remove('active');
+    });
+    selected.forEach(function(rc){
+      var el = cellEls[key(rc[0],rc[1])];
+      if(el) el.classList.add('active');
+    });
+    updateComposeBar();
+  }
+
+  function clearSelection(){
+    selected = [];
+    isDragging = false;
+    renderSelection();
+  }
+
+  function flashWrong(){
+    selected.forEach(function(rc){
+      var el = cellEls[key(rc[0],rc[1])];
+      if(el){ el.classList.add('wrong'); setTimeout(function(){ el.classList.remove('wrong'); }, 380); }
+    });
+  }
+
+  function trySubmit(){
+    var lv = LEVELS[curLevelIdx];
+    var str = selected.map(function(rc){ return grid[key(rc[0],rc[1])]; }).join('');
+    var match = lv.words.find(function(w){ return w.text === str && foundWords.indexOf(w.text) === -1; });
+    if(match){
+      foundWords.push(match.text);
+      levelProgress[curLevelIdx] = foundWords.slice();
+      clearSelection();
+      applyFoundStyles();
+      renderFoundList();
+      updateFoundCount();
+      setFeedback(match.spangram ? 'win' : 'ok', match.spangram ? '✨ 找到通关词："'+match.text+'"' : '找到了："'+match.text+'"');
+      renderLevelTabs();
+      if(foundWords.length === lv.words.length){
+        setTimeout(function(){
+          setFeedback('win', '🎉 本关全部找到！棋盘正好被填满。');
+          burst();
+        }, 300);
+      }
+    } else {
+      flashWrong();
+      setFeedback('bad', str.length>1 ? '"'+str+'" 不对，再试试' : '');
+      setTimeout(clearSelection, 320);
+    }
+  }
+
+  function handleCellPointerDown(r, c){
+    var rc = [r,c];
+    if(isCellFound(rc)) return;
+    if(!selected.length){
+      selected = [rc];
+      pointerActive = true;
+      isDragging = false;
+      renderSelection();
+      return;
+    }
+    var last = selected[selected.length-1];
+    if(last[0]===r && last[1]===c){
+      // tapped same cell again -> submit (double-tap semantics)
+      pointerActive = false;
+      trySubmit();
+      return;
+    }
+    if(isAdjacent(last, rc) && !cellInSelected(rc) && !isCellFound(rc)){
+      selected.push(rc);
+      pointerActive = true;
+      renderSelection();
+    } else {
+      // start fresh from this cell
+      selected = [rc];
+      pointerActive = true;
+      isDragging = false;
+      renderSelection();
+    }
+  }
+
+  function handleCellPointerEnter(r, c){
+    if(!pointerActive || !selected.length) return;
+    var rc = [r,c];
+    if(isCellFound(rc)) return;
+    var last = selected[selected.length-1];
+    if(last[0]===r && last[1]===c) return;
+    if(isAdjacent(last, rc) && !cellInSelected(rc)){
+      selected.push(rc);
+      isDragging = true;
+      renderSelection();
+    }
+  }
+
+  function handlePointerUp(){
+    if(pointerActive && isDragging && selected.length){
+      trySubmit();
+    }
+    pointerActive = false;
+  }
+
+  function attachBoardEvents(){
+    var board = document.getElementById('board');
+    board.addEventListener('pointerdown', function(e){
+      var cell = e.target.closest('.cell');
+      if(!cell) return;
+      e.preventDefault();
+      handleCellPointerDown(parseInt(cell.dataset.r), parseInt(cell.dataset.c));
+    });
+    board.addEventListener('pointermove', function(e){
+      if(!pointerActive) return;
+      var el = document.elementFromPoint(e.clientX, e.clientY);
+      var cell = el && el.closest ? el.closest('.cell') : null;
+      if(!cell) return;
+      handleCellPointerEnter(parseInt(cell.dataset.r), parseInt(cell.dataset.c));
+    });
+    window.addEventListener('pointerup', handlePointerUp);
+    window.addEventListener('pointercancel', handlePointerUp);
+  }
+
+  document.getElementById('btnClear').addEventListener('click', clearSelection);
+  document.getElementById('btnReset').addEventListener('click', function(){
+    foundWords = [];
+    levelProgress[curLevelIdx] = [];
+    loadLevel();
+  });
+  document.getElementById('btnHint').addEventListener('click', function(){
+    var lv = LEVELS[curLevelIdx];
+    var remaining = lv.words.filter(function(w){ return foundWords.indexOf(w.text) === -1; });
+    if(!remaining.length){ setFeedback('','本关已经全部找到啦'); return; }
+    var w = remaining[0];
+    setFeedback('', '提示：有一个'+w.text.length+'字的'+(w.spangram?'通关词':'词')+'，开头是「'+w.text[0]+'」');
+  });
+
+  attachBoardEvents();
+  renderLevelTabs();
+  loadLevel();
+})();
+</script>
+
+</body>
+</html>

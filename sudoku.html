@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汉字数独 · j4fun</title>
+<meta name="description" content="用汉字代替数字的数独 —— 数字大写、天干、生肖、吉祥语，还能自己输入 9 个字做专属题目。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="page-sudoku">
+
+<div id="petals" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html" aria-label="j4fun 首页">
+      <img class="brand-logo" src="assets/images/logo.png" alt="j4fun">
+    </a>
+    <nav class="top-links" aria-label="主导航">
+      <a href="poetry.html">诗词</a>
+      <a href="sudoku.html" aria-current="page">汉字数独</a>
+      <a href="strands.html">字踪</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <p class="eyebrow">规则一样，字不一样</p>
+  <h1>把 1-9 换成<span class="accent">汉字</span>的数独</h1>
+  <p class="lede">数字大写、天干、生肖、吉祥语四组现成的字，也可以自己输入 9 个不重复的汉字做专属题目 —— 每行每列每宫，字都不能重复。</p>
+</section>
+
+<main class="wrap">
+  <section class="panel" id="panel-sudoku">
+    <div class="panel-head">
+      <h2>选一组字，开始吧</h2>
+      <p>点格子选中，再点下面的字填进去。</p>
+    </div>
+
+    <div class="sd-theme-row" id="sdThemeRow"></div>
+    <div class="sd-custom-row" id="sdCustomRow">
+      <input id="sdCustomInput" type="text" maxlength="9" placeholder="输入 9 个不重复的汉字…" autocomplete="off">
+      <button id="sdCustomApply" type="button">用这组字</button>
+    </div>
+
+    <div class="sd-diff-row" id="sdDiffRow">
+      <button class="sd-diff-btn active" data-diff="easy">简单</button>
+      <button class="sd-diff-btn" data-diff="mid">普通</button>
+      <button class="sd-diff-btn" data-diff="hard">困难</button>
+    </div>
+
+    <div class="score-row">
+      <div><b id="sdTimer">00:00</b>用时</div>
+      <div><b id="sdMistakes">0</b>出错</div>
+    </div>
+
+    <div class="sd-board" id="sdBoard"></div>
+
+    <div class="sd-palette" id="sdPalette"></div>
+
+    <div class="helper-row">
+      <button class="ghost-btn" id="sdErase">擦除</button>
+      <button class="ghost-btn" id="sdCheck">检查</button>
+      <button class="ghost-btn" id="sdHint">提示一格</button>
+      <button class="ghost-btn" id="sdNew">换一局</button>
+    </div>
+
+    <div class="feedback" id="sdFeedback"></div>
+  </section>
+</main>
+
+<section class="about wrap" id="details">
+  <h2>游戏说明</h2>
+  <p>数独的生成算法是标准的回溯算法：先随机填出一个完整合法解，再逐格挖空，每挖一格都会检查剩下的题目是否仍然只有唯一解，保证每一局都是正经能解的数独，不是瞎挖的。所有计算都在浏览器本地完成。</p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>怎么玩</h3>
+      <p>点一个空格选中，再点下方的字填进去；每行、每列、每个 3×3 宫格里九个字都不能重复。</p>
+    </div>
+    <div class="about-card">
+      <h3>字组怎么选</h3>
+      <p>四组现成的可以直接点，也可以在上面输入框里打 9 个不重复的汉字，生成专属题目。</p>
+    </div>
+    <div class="about-card">
+      <h3>卡住了怎么办</h3>
+      <p>"检查"会标红当前错误的格子，"提示一格"会直接帮你填对一格。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="footer-brand">j4fun - Just For Fun<br>中文小玩意合集</div>
+  <div class="footer-made">made with ❤️ (ai)</div>
+</footer>
+
+<script>
+(function(){
+  function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+  /* petals */
+  var PETAL_CHARS = ['❀','✿','❁','☘'];
+  function spawnPetal(){
+    var el = document.createElement('span');
+    el.className = 'petal';
+    el.textContent = randChoice(PETAL_CHARS);
+    el.style.left = (Math.random()*100) + 'vw';
+    el.style.fontSize = (14 + Math.random()*14) + 'px';
+    el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.7)' : 'rgba(214,68,79,0.55)';
+    var dur = 7 + Math.random()*6;
+    el.style.animationDuration = dur + 's';
+    document.getElementById('petals').appendChild(el);
+    setTimeout(function(){ el.remove(); }, dur*1000 + 200);
+  }
+  setInterval(spawnPetal, 1400);
+  for(var i=0;i<4;i++) setTimeout(spawnPetal, i*400);
+  function burst(){ for(var i=0;i<10;i++) setTimeout(spawnPetal, i*60); }
+
+  function setFeedback(id, cls, text){
+    var el = document.getElementById(id);
+    el.className = 'feedback' + (cls ? ' '+cls : '');
+    el.textContent = text;
+  }
+
+  /* ---------- 汉字数独 ---------- */
+  var THEMES = {
+    nums:  { label:'数字大写', chars:['一','二','三','四','五','六','七','八','九'] },
+    stems: { label:'天干',    chars:['甲','乙','丙','丁','戊','己','庚','辛','壬'] },
+    lucky: { label:'吉祥语',  chars:['福','禄','寿','喜','财','吉','祥','如','意'] },
+    zodiac:{ label:'生肖',    chars:['鼠','牛','虎','兔','龙','蛇','马','羊','猴'] }
+  };
+  var DIFF_CLUES = { easy: 40, mid: 32, hard: 26 };
+
+  var sd = {
+    themeKey: 'nums', chars: THEMES.nums.chars.slice(),
+    diff: 'easy',
+    solution: null, puzzle: null, grid: null,
+    selected: null, hintCell: null,
+    mistakes: 0, seconds: 0, timerId: null, done: false
+  };
+
+  function sdShuffle(arr){
+    for(var i=arr.length-1;i>0;i--){
+      var j = Math.floor(Math.random()*(i+1));
+      var t = arr[i]; arr[i]=arr[j]; arr[j]=t;
+    }
+    return arr;
+  }
+  function sdMakeEmpty(){
+    var g = [];
+    for(var i=0;i<9;i++) g.push([0,0,0,0,0,0,0,0,0]);
+    return g;
+  }
+  function sdValid(g, row, col, num){
+    for(var x=0;x<9;x++){
+      if(g[row][x]===num) return false;
+      if(g[x][col]===num) return false;
+    }
+    var br = row-row%3, bc = col-col%3;
+    for(var i=0;i<3;i++) for(var j=0;j<3;j++) if(g[br+i][bc+j]===num) return false;
+    return true;
+  }
+  function sdFill(g){
+    for(var r=0;r<9;r++){
+      for(var c=0;c<9;c++){
+        if(g[r][c]===0){
+          var nums = sdShuffle([1,2,3,4,5,6,7,8,9]);
+          for(var k=0;k<nums.length;k++){
+            var n = nums[k];
+            if(sdValid(g,r,c,n)){
+              g[r][c]=n;
+              if(sdFill(g)) return true;
+              g[r][c]=0;
+            }
+          }
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  function sdCountSolutions(g, limit){
+    var count = 0;
+    function solve(){
+      if(count>=limit) return;
+      for(var r=0;r<9;r++){
+        for(var c=0;c<9;c++){
+          if(g[r][c]===0){
+            for(var n=1;n<=9;n++){
+              if(sdValid(g,r,c,n)){
+                g[r][c]=n;
+                solve();
+                g[r][c]=0;
+                if(count>=limit) return;
+              }
+            }
+            return;
+          }
+        }
+      }
+      count++;
+    }
+    solve();
+    return count;
+  }
+  function sdGenerate(clues){
+    var solution = sdMakeEmpty();
+    sdFill(solution);
+    var puzzle = solution.map(function(row){ return row.slice(); });
+    var cells = [];
+    for(var r=0;r<9;r++) for(var c=0;c<9;c++) cells.push([r,c]);
+    sdShuffle(cells);
+    var target = 81 - clues;
+    var removed = 0;
+    for(var idx=0; idx<cells.length && removed<target; idx++){
+      var rc = cells[idx], rr=rc[0], cc=rc[1];
+      var backup = puzzle[rr][cc];
+      if(backup===0) continue;
+      puzzle[rr][cc] = 0;
+      var copy = puzzle.map(function(row){ return row.slice(); });
+      var solCount = sdCountSolutions(copy, 2);
+      if(solCount !== 1){
+        puzzle[rr][cc] = backup;
+      } else {
+        removed++;
+      }
+    }
+    return { solution: solution, puzzle: puzzle };
+  }
+
+  function sdFormatTime(s){
+    var m = Math.floor(s/60), sec = s%60;
+    return (m<10?'0':'')+m+':'+(sec<10?'0':'')+sec;
+  }
+  function sdStartTimer(){
+    if(sd.timerId) clearInterval(sd.timerId);
+    sd.timerId = setInterval(function(){
+      sd.seconds++;
+      document.getElementById('sdTimer').textContent = sdFormatTime(sd.seconds);
+    }, 1000);
+  }
+  function sdStopTimer(){
+    if(sd.timerId){ clearInterval(sd.timerId); sd.timerId = null; }
+  }
+
+  function sdRenderThemeRow(){
+    var row = document.getElementById('sdThemeRow');
+    row.innerHTML = '';
+    Object.keys(THEMES).forEach(function(key){
+      var t = THEMES[key];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'sd-theme-btn' + (sd.themeKey===key ? ' active' : '');
+      btn.textContent = t.label + '（' + t.chars.join('') + '）';
+      btn.addEventListener('click', function(){
+        sd.themeKey = key;
+        sd.chars = t.chars.slice();
+        sdRenderThemeRow();
+        sdRenderPalette();
+        sdRenderBoard();
+      });
+      row.appendChild(btn);
+    });
+  }
+  document.getElementById('sdCustomApply').addEventListener('click', function(){
+    var raw = document.getElementById('sdCustomInput').value.trim();
+    var chars = Array.from(raw);
+    var uniq = Array.from(new Set(chars));
+    if(uniq.length !== 9 || chars.length !== 9){
+      setFeedback('sdFeedback','bad','请输入正好 9 个不重复的汉字～');
+      return;
+    }
+    sd.themeKey = 'custom';
+    sd.chars = uniq;
+    sdRenderThemeRow();
+    sdRenderPalette();
+    sdRenderBoard();
+    setFeedback('sdFeedback','ok','已切换为自定义字组');
+  });
+
+  document.getElementById('sdDiffRow').addEventListener('click', function(e){
+    var btn = e.target.closest('.sd-diff-btn');
+    if(!btn) return;
+    sd.diff = btn.dataset.diff;
+    document.querySelectorAll('.sd-diff-btn').forEach(function(b){ b.classList.toggle('active', b===btn); });
+    sdNewGame();
+  });
+
+  function sdNewGame(){
+    setFeedback('sdFeedback','','生成中…棋盘马上就好');
+    setTimeout(function(){
+      var result = sdGenerate(DIFF_CLUES[sd.diff] || 34);
+      sd.solution = result.solution;
+      sd.puzzle = result.puzzle;
+      sd.grid = result.puzzle.map(function(row){ return row.slice(); });
+      sd.selected = null;
+      sd.hintCell = null;
+      sd.mistakes = 0;
+      sd.seconds = 0;
+      sd.done = false;
+      document.getElementById('sdMistakes').textContent = '0';
+      document.getElementById('sdTimer').textContent = '00:00';
+      sdStartTimer();
+      sdRenderBoard();
+      setFeedback('sdFeedback','','');
+    }, 30);
+  }
+
+  function sdRenderPalette(){
+    var pal = document.getElementById('sdPalette');
+    pal.innerHTML = '';
+    sd.chars.forEach(function(ch, i){
+      var btn = document.createElement('button');
+      btn.className = 'sd-pal-btn';
+      btn.type = 'button';
+      btn.textContent = ch;
+      btn.addEventListener('click', function(){ sdFillSelected(i+1); });
+      pal.appendChild(btn);
+    });
+  }
+
+  function sdFillSelected(num){
+    if(sd.done || !sd.selected) return;
+    var r = sd.selected[0], c = sd.selected[1];
+    if(sd.puzzle[r][c] !== 0) return;
+    sd.grid[r][c] = num;
+    sdRenderBoard();
+    sdCheckComplete();
+  }
+
+  document.getElementById('sdErase').addEventListener('click', function(){
+    if(!sd.selected) return;
+    var r = sd.selected[0], c = sd.selected[1];
+    if(sd.puzzle[r][c] !== 0) return;
+    sd.grid[r][c] = 0;
+    sdRenderBoard();
+  });
+
+  document.getElementById('sdCheck').addEventListener('click', function(){
+    var wrong = 0;
+    for(var r=0;r<9;r++){
+      for(var c=0;c<9;c++){
+        if(sd.grid[r][c] !== 0 && sd.puzzle[r][c]===0 && sd.grid[r][c] !== sd.solution[r][c]){
+          wrong++;
+        }
+      }
+    }
+    sd.mistakes += wrong;
+    document.getElementById('sdMistakes').textContent = sd.mistakes;
+    sdRenderBoard(true);
+    setFeedback('sdFeedback', wrong ? 'bad' : 'ok', wrong ? ('发现 '+wrong+' 处不对，已用红色标出') : '目前填的都对，继续加油！');
+  });
+
+  document.getElementById('sdHint').addEventListener('click', function(){
+    var empties = [];
+    for(var r=0;r<9;r++) for(var c=0;c<9;c++) if(sd.grid[r][c]===0) empties.push([r,c]);
+    if(!empties.length){ setFeedback('sdFeedback','','格子都填满啦，点"检查"看看对不对～'); return; }
+    var pick = empties[Math.floor(Math.random()*empties.length)];
+    sd.grid[pick[0]][pick[1]] = sd.solution[pick[0]][pick[1]];
+    sd.hintCell = pick;
+    sdRenderBoard();
+    sdCheckComplete();
+  });
+
+  document.getElementById('sdNew').addEventListener('click', sdNewGame);
+
+  function sdCheckComplete(){
+    for(var r=0;r<9;r++) for(var c=0;c<9;c++) if(sd.grid[r][c]===0) return;
+    var allCorrect = true;
+    for(var r2=0;r2<9;r2++) for(var c2=0;c2<9;c2++) if(sd.grid[r2][c2] !== sd.solution[r2][c2]) allCorrect = false;
+    if(allCorrect){
+      sd.done = true;
+      sdStopTimer();
+      setFeedback('sdFeedback','ok','🎉 完成！用时 '+sdFormatTime(sd.seconds)+'，出错 '+sd.mistakes+' 次');
+      burst();
+    }
+  }
+
+  function sdRenderBoard(showErrors){
+    var board = document.getElementById('sdBoard');
+    board.innerHTML = '';
+    for(var r=0;r<9;r++){
+      for(var c=0;c<9;c++){
+        var cell = document.createElement('div');
+        var isGiven = sd.puzzle[r][c] !== 0;
+        var val = sd.grid[r][c];
+        var cls = 'sd-cell';
+        if(isGiven) cls += ' given';
+        if(r===2 || r===5) cls += ' sd-row-thick';
+        if(sd.selected){
+          var sr=sd.selected[0], sc=sd.selected[1];
+          if(sr===r && sc===c) cls += ' selected';
+          else if(sr===r || sc===c || (Math.floor(sr/3)===Math.floor(r/3) && Math.floor(sc/3)===Math.floor(c/3))) cls += ' peer';
+        }
+        if(showErrors && val !== 0 && !isGiven && val !== sd.solution[r][c]) cls += ' error';
+        if(sd.hintCell && sd.hintCell[0]===r && sd.hintCell[1]===c) cls += ' hinted';
+        cell.className = cls;
+        cell.textContent = val ? sd.chars[val-1] : '';
+        (function(rr,cc,given){
+          cell.addEventListener('click', function(){
+            if(given) return;
+            sd.selected = [rr,cc];
+            sd.hintCell = null;
+            sdRenderBoard();
+          });
+        })(r,c,isGiven);
+        board.appendChild(cell);
+      }
+    }
+  }
+
+  sdRenderThemeRow();
+  sdRenderPalette();
+  sdNewGame();
+})();
+</script>
+
+</body>
+</html>
