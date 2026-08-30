@@ -47,5 +47,5 @@
 
 - 完成修改后只做必要的本地检查，保留改动不提交，方便用户先在本地测试。
 - 不要在每次修改后自动 commit、push 或部署。
-- 只有用户明确说“deploy”时，才检查待提交改动、撰写合适的 commit message、提交到本地 Git，并运行 `deploy.sh` 发布到 Cloudflare Pages。
-- 默认不 push 到 GitHub；只有用户明确要求时才执行 `git push`。
+- 只有用户明确说“deploy”时，才检查待提交改动、撰写合适的 commit message、提交到本地 Git、push 到 GitHub，并运行 `deploy.sh` 发布到 Cloudflare Pages。
+- “deploy”默认同时包含 GitHub push 和 Cloudflare Pages 部署，不需要用户分别说明。
