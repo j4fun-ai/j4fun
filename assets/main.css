@@ -2101,6 +2101,10 @@ nav.top-links a[aria-current="page"] {
   color: var(--text-dim);
   font-size: 15px;
 }
+.about-intro .build-info {
+  margin-bottom: 0;
+  font-size: 14px;
+}
 .about-page-content .about-grid {
   margin-top: 34px;
 }

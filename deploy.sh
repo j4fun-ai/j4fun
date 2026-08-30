@@ -4,7 +4,7 @@ set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DEPLOY_DIR="$(mktemp -d "${TMPDIR:-/tmp}/j4fun-pages.XXXXXX")"
-RELEASE_VERSION="1.0.0"
+RELEASE_VERSION="1.0"
 GIT_REVISION="$(git -C "$PROJECT_DIR" rev-parse --short=7 HEAD)"
 
 if [[ -n "$(git -C "$PROJECT_DIR" status --short)" ]]; then
@@ -28,7 +28,7 @@ pnpm --dir "$PROJECT_DIR/shiben-dev" build:static
 
 echo "Collecting production files…"
 for page in index.html about.html poetry.html sudoku.html strands.html; do
-  sed "s/v1\.0\.0/${BUILD_VERSION}/g" "$PROJECT_DIR/$page" > "$DEPLOY_DIR/$page"
+  sed "s/build local/build ${GIT_REVISION}/g" "$PROJECT_DIR/$page" > "$DEPLOY_DIR/$page"
 done
 cp "$PROJECT_DIR/poems.json" "$DEPLOY_DIR/"
 cp -R "$PROJECT_DIR/assets" "$DEPLOY_DIR/assets"
