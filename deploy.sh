@@ -4,6 +4,14 @@ set -euo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DEPLOY_DIR="$(mktemp -d "${TMPDIR:-/tmp}/j4fun-pages.XXXXXX")"
+RELEASE_VERSION="1.0.0"
+GIT_REVISION="$(git -C "$PROJECT_DIR" rev-parse --short=7 HEAD)"
+
+if [[ -n "$(git -C "$PROJECT_DIR" status --short)" ]]; then
+  GIT_REVISION="${GIT_REVISION}-dirty"
+fi
+
+BUILD_VERSION="v${RELEASE_VERSION} · build ${GIT_REVISION}"
 
 cleanup() {
   rm -rf "$DEPLOY_DIR"
@@ -19,13 +27,13 @@ SHIBEN_OUT_DIR="$DEPLOY_DIR/shiben" \
 pnpm --dir "$PROJECT_DIR/shiben-dev" build:static
 
 echo "Collecting production files…"
-cp "$PROJECT_DIR/index.html" "$DEPLOY_DIR/"
-cp "$PROJECT_DIR/about.html" "$DEPLOY_DIR/"
-cp "$PROJECT_DIR/poetry.html" "$DEPLOY_DIR/"
-cp "$PROJECT_DIR/sudoku.html" "$DEPLOY_DIR/"
-cp "$PROJECT_DIR/strands.html" "$DEPLOY_DIR/"
+for page in index.html about.html poetry.html sudoku.html strands.html; do
+  sed "s/v1\.0\.0/${BUILD_VERSION}/g" "$PROJECT_DIR/$page" > "$DEPLOY_DIR/$page"
+done
 cp "$PROJECT_DIR/poems.json" "$DEPLOY_DIR/"
 cp -R "$PROJECT_DIR/assets" "$DEPLOY_DIR/assets"
+
+echo "Build version: $BUILD_VERSION"
 
 echo "Deploying to Cloudflare Pages…"
 npx wrangler pages deploy "$DEPLOY_DIR" \
