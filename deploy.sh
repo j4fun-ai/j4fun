@@ -28,7 +28,13 @@ pnpm --dir "$PROJECT_DIR/shiben-dev" build:static
 
 echo "Collecting production files…"
 for page in index.html about.html poetry.html sudoku.html strands.html; do
-  sed "s/build local/build ${GIT_REVISION}/g" "$PROJECT_DIR/$page" > "$DEPLOY_DIR/$page"
+  sed \
+    -e "s/build local/build ${GIT_REVISION}/g" \
+    -e "s#assets/main.css#assets/main.css?v=${GIT_REVISION}#g" \
+    -e "s#assets/site-nav.js#assets/site-nav.js?v=${GIT_REVISION}#g" \
+    -e "s#assets/images/favicon-32.png#assets/images/favicon-32.png?v=${GIT_REVISION}#g" \
+    -e "s#assets/images/apple-touch-icon.png#assets/images/apple-touch-icon.png?v=${GIT_REVISION}#g" \
+    "$PROJECT_DIR/$page" > "$DEPLOY_DIR/$page"
 done
 cp "$PROJECT_DIR/poems.json" "$DEPLOY_DIR/"
 cp -R "$PROJECT_DIR/assets" "$DEPLOY_DIR/assets"
