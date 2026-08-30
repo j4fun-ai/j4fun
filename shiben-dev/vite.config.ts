@@ -154,7 +154,7 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig(({ mode }) => ({
   // The static build is served by the parent j4fun site from this subdirectory.
-  base: mode === "static" ? "/j4fun/shiben/" : "/",
+  base: mode === "static" ? (process.env.SHIBEN_BASE_PATH ?? "/j4fun/shiben/") : "/",
   plugins,
   resolve: {
     alias: {
@@ -167,7 +167,9 @@ export default defineConfig(({ mode }) => ({
   root: path.resolve(import.meta.dirname, "client"),
   build: {
     // Static deployments use j4fun/shiben; the regular build keeps the Node server layout.
-    outDir: path.resolve(import.meta.dirname, mode === "static" ? "../shiben" : "dist/public"),
+    outDir: mode === "static" && process.env.SHIBEN_OUT_DIR
+      ? path.resolve(process.env.SHIBEN_OUT_DIR)
+      : path.resolve(import.meta.dirname, mode === "static" ? "../shiben" : "dist/public"),
     emptyOutDir: true,
   },
   server: {

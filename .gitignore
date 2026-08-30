@@ -7,3 +7,4 @@ shiben-dev/.manus-logs/
 .env.*
 AI/
 /dist/
+.wrangler/
