@@ -123,12 +123,10 @@ nav.top-links {
 }
 nav.top-links a {
   text-decoration: none;
-  border-bottom: 1px dotted var(--text-faint);
-  padding-bottom: 2px;
+  padding: 5px 0;
 }
 nav.top-links a:hover {
   color: var(--gold);
-  border-color: var(--gold);
 }
 
 /* hero */
@@ -2063,24 +2061,25 @@ nav.top-links,
   flex-wrap: wrap;
   row-gap: 8px;
 }
+nav.top-links a,
+.page-home nav.top-links a,
+.page-sudoku nav.top-links a,
+.page-strands nav.top-links a {
+  border-bottom: 0;
+  padding: 5px 0;
+}
 nav.top-links a[aria-current="page"] {
   color: var(--gold);
-  border-color: var(--gold);
 }
 nav.top-links .related-project {
-  position: relative;
-  margin-left: 4px;
-  padding-left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--gold);
 }
-nav.top-links .related-project::before {
-  position: absolute;
-  top: 1px;
-  bottom: 3px;
-  left: 0;
-  width: 1px;
-  background: rgba(159, 192, 183, 0.28);
-  content: "";
+nav.top-links .related-project img {
+  width: 24px;
+  height: 24px;
 }
 .mobile-menu-toggle {
   display: none;
@@ -2230,19 +2229,14 @@ nav.top-links .related-project::before {
   .page-sudoku nav.top-links a,
   .page-strands nav.top-links a {
     min-height: 44px;
-    padding: 13px 4px 11px;
-    border-bottom-color: rgba(159, 192, 183, 0.18);
+    padding: 13px 4px;
   }
   nav.top-links .related-project,
   .page-home nav.top-links .related-project,
   .page-sudoku nav.top-links .related-project,
   .page-strands nav.top-links .related-project {
-    margin: 6px 0 0;
+    margin: 4px 0 0;
     padding-left: 4px;
-    border-top: 1px solid rgba(159, 192, 183, 0.28);
-  }
-  nav.top-links .related-project::before {
-    display: none;
   }
   footer.wrap {
     align-items: center;
