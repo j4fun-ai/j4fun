@@ -378,8 +378,8 @@ export default function TextbookBrowser() {
       </main>
 
       <footer className="border-t border-[#17303b]/10 bg-[#172f39] px-4 py-7 text-[#c7d2cf] sm:px-6 lg:px-9">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-1 text-xs leading-relaxed sm:items-end">
-          <a className="font-semibold tracking-[0.08em] hover:text-white" href={J4FUN_HOME_URL}>J4FUN 出品</a>
+        <div className="mx-auto flex max-w-[1600px] flex-col items-center gap-1 text-center text-xs leading-relaxed sm:items-end sm:text-right">
+          <a className="font-semibold tracking-[0.08em] hover:text-white" href={J4FUN_HOME_URL}>© 2026 J4FUN</a>
           <span className="text-[#9bafae]">Made with ❤️ (AI)</span>
         </div>
       </footer>

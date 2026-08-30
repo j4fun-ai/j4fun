@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>j4fun · 好玩的中文小玩意合集</title>
 <meta name="description" content="j4fun 是一个不断添加中文趣味小项目的合集站，目前收录诗词好玩局(飞花令/接龙)和汉字数独。">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/main.css">
+<script src="assets/site-nav.js" defer></script>
 </head>
 <body class="page-home">
 
@@ -19,11 +22,13 @@
     <a class="brand" href="index.html" aria-label="j4fun 首页">
       <img class="brand-logo" src="assets/images/logo.png" alt="j4fun">
     </a>
-    <nav class="top-links" aria-label="主导航">
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <nav class="top-links" id="site-navigation" aria-label="主导航">
       <a href="poetry.html">诗词</a>
       <a href="sudoku.html">汉字数独</a>
       <a href="strands.html">字踪</a>
       <a href="about.html">关于</a>
+      <a class="related-project" href="shiben/">识本</a>
     </nav>
   </div>
 </header>

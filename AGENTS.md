@@ -42,3 +42,10 @@
 - 先阅读当前实现，再做最小且完整的修改。
 - 不覆盖无关的用户改动，不随意修改 `playground/` 历史稿。
 - 保持静态页面无需构建即可运行；若修改识本，则遵循 `shiben-dev/package.json` 中已有的工具链。
+
+## Git 与部署流程
+
+- 完成修改后只做必要的本地检查，保留改动不提交，方便用户先在本地测试。
+- 不要在每次修改后自动 commit、push 或部署。
+- 只有用户明确说“deploy”时，才检查待提交改动、撰写合适的 commit message、提交到本地 Git，并运行 `deploy.sh` 发布到 Cloudflare Pages。
+- 默认不 push 到 GitHub；只有用户明确要求时才执行 `git push`。
