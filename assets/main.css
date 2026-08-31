@@ -570,7 +570,9 @@ main {
   background: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   font-size: 21px;
-  transition: transform 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
 }
 .favorite-button:hover {
   background: #fff;
@@ -2025,6 +2027,14 @@ section.about.wrap {
 .page-sudoku section.about > p,
 .page-strands section.about > p {
   max-width: none;
+}
+
+.page-poetry footer {
+  padding: 24px 0 46px;
+  font-size: 12px;
+  color: var(--text-faint);
+  position: relative;
+  z-index: 2;
 }
 
 footer.wrap {
