@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Pool Snake · 随手玩 · j4fun</title>
+    <meta name="description" content="落叶掉进泳池了，用不断变长的泳道绳把它们全部清走。" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/main.css?v=20260906h" />
+    <script src="assets/site-nav.js?v=20260906" defer></script>
+  </head>
+  <body class="page-game page-pool-snake">
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="index.html" aria-label="j4fun 首页"><img class="brand-logo" src="assets/images/logo.png?083026" alt="j4fun" /></a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="fun.html">中文小玩意</a>
+          <a href="games.html" aria-current="page">随手玩</a>
+          <a href="quiz.html">知识挑战</a>
+          <a href="about.html">关于</a>
+          <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap game-page-hero">
+      <p class="eyebrow">Clean the Pool. Grow the Rope.</p>
+      <div class="game-title-row">
+        <h1>Pool <span class="accent">Snake</span></h1>
+        <a id="gameLanguageLink" class="game-language-link" href="?lang=en">🌐 English</a>
+      </div>
+      <p class="lede" id="gameDesc">落叶掉进泳池了！转动泳道绳把它们全部清走，但别让绳子撞墙或缠到自己。</p>
+    </section>
+
+    <main class="wrap game-page-main">
+      <div id="wrap" class="pool-snake-shell">
+        <canvas id="game" role="img" aria-label="Pool Snake 游戏区"></canvas>
+        <div id="snakeHud">
+          <span><span id="cleanLabel">已清理</span> <strong id="cleanVal">0</strong>/<span id="goalVal">12</span></span>
+          <span><span id="bestLabel">最佳</span> <strong id="bestVal">0</strong></span>
+        </div>
+        <div class="hint" id="gameHint">方向键 / WASD / 滑动 · 空格暂停</div>
+        <div id="overlay">
+          <h1>POOL SNAKE</h1>
+          <p id="gameIntro">控制泳道绳收走 12 片落叶。每清理一片，绳子就会更长一点。</p>
+          <button id="startBtn">开始清理</button>
+        </div>
+        <button id="fullscreenBtn" class="game-fullscreen-button" type="button">⛶ 全屏</button>
+      </div>
+    </main>
+
+    <footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+
+    <script>
+      (function () {
+        const language = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'zh';
+        const translations = {
+          zh: {
+            pageTitle: 'Pool Snake · 随手玩 · j4fun',
+            metaDescription: '落叶掉进泳池了，用不断变长的泳道绳把它们全部清走。',
+            description: '落叶掉进泳池了！转动泳道绳把它们全部清走，但别让绳子撞墙或缠到自己。',
+            clean: '已清理', best: '最佳',
+            hint: '方向键 / WASD / 滑动 · 空格暂停',
+            canvasLabel: 'Pool Snake 游戏区',
+            intro: '控制泳道绳收走 12 片落叶。每清理一片，绳子就会更长一点。',
+            start: '开始清理', paused: '暂停中', pauseNote: '泳池很安静，准备好再继续。', resume: '继续清理',
+            tangled: '泳道绳打结了！', cleared: '泳池清干净了！', cleaned: '这次清理：', leaves: ' 片',
+            retry: '再来一次', fullscreen: '⛶ 全屏', exitFullscreen: '✕ 退出全屏',
+            switchLabel: '🌐 English', switchAria: 'Switch game to English'
+          },
+          en: {
+            pageTitle: 'Pool Snake · Quick Game · j4fun',
+            metaDescription: 'Use a growing lane rope to clear every fallen leaf from the pool.',
+            description: 'Leaves fell into the pool! Steer the lane rope to clear them all, but do not hit the wall or tangle the rope.',
+            clean: 'CLEANED', best: 'BEST',
+            hint: 'Arrow keys / WASD / swipe · Space to pause',
+            canvasLabel: 'Pool Snake game area',
+            intro: 'Guide the lane rope through 12 fallen leaves. The rope grows longer with every leaf you collect.',
+            start: 'START CLEANING', paused: 'PAUSED', pauseNote: 'The water is still. Continue when you are ready.', resume: 'KEEP CLEANING',
+            tangled: 'ROPE TANGLED!', cleared: 'POOL CLEARED!', cleaned: 'Leaves cleaned: ', leaves: '',
+            retry: 'PLAY AGAIN', fullscreen: '⛶ Fullscreen', exitFullscreen: '✕ Exit Fullscreen',
+            switchLabel: '🌐 中文', switchAria: '切换游戏为中文'
+          }
+        };
+        const copy = translations[language];
+        const GOAL = 12;
+        const COLS = 18;
+        const ROWS = 24;
+
+        const gameShell = document.getElementById('wrap');
+        const canvas = document.getElementById('game');
+        const ctx = canvas.getContext('2d');
+        const overlay = document.getElementById('overlay');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const cleanVal = document.getElementById('cleanVal');
+        const bestVal = document.getElementById('bestVal');
+        const languageLink = document.getElementById('gameLanguageLink');
+
+        const languageUrl = new URL(window.location.href);
+        if (language === 'en') languageUrl.searchParams.delete('lang');
+        else languageUrl.searchParams.set('lang', 'en');
+        document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+        document.title = copy.pageTitle;
+        document.querySelector('meta[name="description"]').setAttribute('content', copy.metaDescription);
+        document.getElementById('gameDesc').textContent = copy.description;
+        document.getElementById('cleanLabel').textContent = copy.clean;
+        document.getElementById('bestLabel').textContent = copy.best;
+        document.getElementById('gameHint').textContent = copy.hint;
+        document.getElementById('gameIntro').textContent = copy.intro;
+        document.getElementById('startBtn').textContent = copy.start;
+        canvas.setAttribute('aria-label', copy.canvasLabel);
+        languageLink.textContent = copy.switchLabel;
+        languageLink.setAttribute('aria-label', copy.switchAria);
+        languageLink.href = languageUrl.pathname + languageUrl.search + languageUrl.hash;
+
+        let state = 'idle';
+        let rope = [];
+        let direction = { x: 1, y: 0 };
+        let directionQueue = [];
+        let leaf = { x: 0, y: 0, angle: 0, color: '#e46a3a' };
+        let cleaned = 0;
+        let best = 0;
+        let lastStep = 0;
+        let raf = 0;
+        let width = 0;
+        let height = 0;
+        let cell = 0;
+        let boardX = 0;
+        let boardY = 0;
+        const leafColors = ['#e45c36', '#ed9f2d', '#c94d45', '#d8b438', '#9b5f36'];
+
+        try { best = parseInt(localStorage.getItem('poolSnakeBest') || '0', 10) || 0; } catch (error) { best = 0; }
+        bestVal.textContent = best;
+        document.getElementById('goalVal').textContent = GOAL;
+
+        function isFocusMode() {
+          return document.fullscreenElement === gameShell || gameShell.classList.contains('is-focus-mode');
+        }
+
+        function resize() {
+          const ratio = Math.min(window.devicePixelRatio || 1, 2);
+          width = gameShell.clientWidth;
+          height = gameShell.clientHeight;
+          canvas.width = Math.max(1, Math.round(width * ratio));
+          canvas.height = Math.max(1, Math.round(height * ratio));
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+          cell = Math.min(width / COLS, height / ROWS);
+          boardX = (width - COLS * cell) / 2;
+          boardY = (height - ROWS * cell) / 2;
+          draw();
+        }
+
+        function updateFullscreenButton() {
+          const active = isFocusMode();
+          fullscreenBtn.textContent = active ? copy.exitFullscreen : copy.fullscreen;
+          fullscreenBtn.setAttribute('aria-pressed', String(active));
+          document.body.classList.toggle('pool-focus-active', active);
+        }
+
+        async function toggleFullscreen() {
+          if (isFocusMode()) {
+            if (document.fullscreenElement) await document.exitFullscreen();
+            gameShell.classList.remove('is-focus-mode');
+          } else if (gameShell.requestFullscreen) {
+            try { await gameShell.requestFullscreen(); }
+            catch (error) { gameShell.classList.add('is-focus-mode'); }
+          } else {
+            gameShell.classList.add('is-focus-mode');
+          }
+          updateFullscreenButton();
+          resize();
+          if (state === 'playing') lastStep = performance.now();
+        }
+
+        function reset() {
+          const startX = Math.floor(COLS / 2);
+          const startY = Math.floor(ROWS / 2);
+          rope = [0, 1, 2, 3, 4].map(function (offset) { return { x: startX - offset, y: startY }; });
+          direction = { x: 1, y: 0 };
+          directionQueue = [];
+          cleaned = 0;
+          cleanVal.textContent = cleaned;
+          placeLeaf();
+        }
+
+        function placeLeaf() {
+          let candidate;
+          do {
+            candidate = { x: Math.floor(Math.random() * COLS), y: Math.floor(Math.random() * ROWS) };
+          } while (rope.some(function (part) { return part.x === candidate.x && part.y === candidate.y; }));
+          leaf = {
+            x: candidate.x,
+            y: candidate.y,
+            angle: Math.random() * Math.PI * 2,
+            color: leafColors[Math.floor(Math.random() * leafColors.length)]
+          };
+        }
+
+        function startGame() {
+          reset();
+          state = 'playing';
+          overlay.style.display = 'none';
+          lastStep = performance.now();
+          cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(loop);
+        }
+
+        function finish(won) {
+          state = won ? 'won' : 'dead';
+          if (cleaned > best) {
+            best = cleaned;
+            try { localStorage.setItem('poolSnakeBest', String(best)); } catch (error) {}
+          }
+          bestVal.textContent = best;
+          overlay.innerHTML = `
+            <h1>${won ? copy.cleared : copy.tangled}</h1>
+            <div class="score-final">${copy.cleaned}${cleaned}${copy.leaves}</div>
+            <button id="startBtn">${copy.retry}</button>
+          `;
+          overlay.style.display = 'flex';
+          const retryButton = document.getElementById('startBtn');
+          retryButton.addEventListener('click', startGame);
+          retryButton.focus();
+        }
+
+        function pauseGame() {
+          if (state !== 'playing') return;
+          state = 'paused';
+          overlay.innerHTML = `<h1>${copy.paused}</h1><p>${copy.pauseNote}</p><button id="startBtn">${copy.resume}</button>`;
+          overlay.style.display = 'flex';
+          const resumeButton = document.getElementById('startBtn');
+          resumeButton.addEventListener('click', resumeGame);
+          resumeButton.focus();
+        }
+
+        function resumeGame() {
+          if (state !== 'paused') return;
+          state = 'playing';
+          overlay.style.display = 'none';
+          lastStep = performance.now();
+        }
+
+        function turn(x, y) {
+          if (state !== 'playing') return;
+          const previous = directionQueue.length ? directionQueue[directionQueue.length - 1] : direction;
+          if ((x === previous.x && y === previous.y) || (x === -previous.x && y === -previous.y)) return;
+          if (directionQueue.length < 2) directionQueue.push({ x: x, y: y });
+        }
+
+        function step() {
+          if (directionQueue.length) direction = directionQueue.shift();
+          const head = { x: rope[0].x + direction.x, y: rope[0].y + direction.y };
+          const hitWall = head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS;
+          const grows = head.x === leaf.x && head.y === leaf.y;
+          const occupiedRope = grows ? rope : rope.slice(0, -1);
+          const hitSelf = occupiedRope.some(function (part) { return part.x === head.x && part.y === head.y; });
+          if (hitWall || hitSelf) { finish(false); return; }
+          rope.unshift(head);
+          if (grows) {
+            cleaned += 1;
+            cleanVal.textContent = cleaned;
+            if (cleaned > best) bestVal.textContent = cleaned;
+            if (cleaned >= GOAL) { finish(true); return; }
+            placeLeaf();
+          } else {
+            rope.pop();
+          }
+        }
+
+        function point(part) {
+          return { x: boardX + (part.x + 0.5) * cell, y: boardY + (part.y + 0.5) * cell };
+        }
+
+        function drawWater() {
+          const gradient = ctx.createLinearGradient(0, 0, 0, height);
+          gradient.addColorStop(0, '#2585ad');
+          gradient.addColorStop(1, '#075071');
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+
+          const boardWidth = COLS * cell;
+          const boardHeight = ROWS * cell;
+          ctx.fillStyle = 'rgba(2, 30, 45, 0.46)';
+          if (boardX > 0.5) {
+            ctx.fillRect(0, 0, boardX, height);
+            ctx.fillRect(boardX + boardWidth, 0, width - boardX - boardWidth, height);
+          }
+          if (boardY > 0.5) {
+            ctx.fillRect(0, 0, width, boardY);
+            ctx.fillRect(0, boardY + boardHeight, width, height - boardY - boardHeight);
+          }
+
+          ctx.strokeStyle = 'rgba(255,255,255,0.075)';
+          ctx.lineWidth = 1;
+          for (let x = boardX; x <= boardX + boardWidth; x += cell * 3) {
+            ctx.beginPath(); ctx.moveTo(x, boardY); ctx.lineTo(x, boardY + boardHeight); ctx.stroke();
+          }
+          for (let y = boardY; y <= boardY + boardHeight; y += cell * 3) {
+            ctx.beginPath(); ctx.moveTo(boardX, y); ctx.lineTo(boardX + boardWidth, y); ctx.stroke();
+          }
+
+          ctx.strokeStyle = 'rgba(226, 244, 249, 0.72)';
+          ctx.lineWidth = Math.max(2, cell * 0.1);
+          ctx.strokeRect(
+            boardX + ctx.lineWidth / 2,
+            boardY + ctx.lineWidth / 2,
+            boardWidth - ctx.lineWidth,
+            boardHeight - ctx.lineWidth
+          );
+        }
+
+        function drawLeaf() {
+          const center = point(leaf);
+          ctx.save();
+          ctx.translate(center.x, center.y);
+          ctx.rotate(leaf.angle);
+          const scale = Math.max(0.72, cell / 22);
+          ctx.scale(scale, scale);
+          ctx.fillStyle = 'rgba(2,38,54,0.22)';
+          ctx.beginPath(); ctx.ellipse(2, 4, 10, 7, 0.5, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = leaf.color;
+          ctx.beginPath();
+          ctx.moveTo(-1, -11);
+          ctx.bezierCurveTo(11, -8, 13, 2, 1, 11);
+          ctx.bezierCurveTo(-12, 5, -12, -5, -1, -11);
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(92,46,24,0.72)';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.moveTo(-7, 12); ctx.lineTo(5, -7); ctx.stroke();
+          ctx.restore();
+        }
+
+        function drawRope() {
+          if (!rope.length) return;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+
+          // A soft offset shadow makes the lane line look as if it is floating on the water.
+          ctx.strokeStyle = 'rgba(1, 31, 49, 0.3)';
+          ctx.lineWidth = Math.max(5, cell * 0.32);
+          ctx.beginPath();
+          rope.forEach(function (part, index) {
+            const p = point(part);
+            if (index === 0) ctx.moveTo(p.x + 2, p.y + 3); else ctx.lineTo(p.x + 2, p.y + 3);
+          });
+          ctx.stroke();
+
+          // The braided cable remains visible between individual plastic floats.
+          ctx.strokeStyle = '#dbeaf0';
+          ctx.lineWidth = Math.max(2, cell * 0.13);
+          ctx.beginPath();
+          rope.forEach(function (part, index) {
+            const p = point(part);
+            if (index === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y);
+          });
+          ctx.stroke();
+
+          rope.forEach(function (part, index) {
+            const p = point(part);
+            const radius = Math.max(4.5, cell * 0.36);
+            const isBlue = index % 2 === 0;
+            const floatGradient = ctx.createRadialGradient(
+              p.x - radius * 0.35, p.y - radius * 0.45, radius * 0.08,
+              p.x, p.y, radius
+            );
+            if (isBlue) {
+              floatGradient.addColorStop(0, '#7fd8f2');
+              floatGradient.addColorStop(0.42, '#168cc0');
+              floatGradient.addColorStop(1, '#07527d');
+            } else {
+              floatGradient.addColorStop(0, '#ffffff');
+              floatGradient.addColorStop(0.5, '#eef6f8');
+              floatGradient.addColorStop(1, '#a9c6d0');
+            }
+            ctx.fillStyle = floatGradient;
+            ctx.beginPath(); ctx.arc(p.x, p.y, radius, 0, Math.PI * 2); ctx.fill();
+            ctx.strokeStyle = isBlue ? '#06466c' : '#8fb1bd';
+            ctx.lineWidth = Math.max(1, cell * 0.055);
+            ctx.stroke();
+
+            ctx.strokeStyle = isBlue ? 'rgba(190, 239, 252, 0.52)' : 'rgba(255, 255, 255, 0.9)';
+            ctx.lineWidth = Math.max(1, cell * 0.045);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, radius * 0.66, Math.PI * 1.08, Math.PI * 1.82);
+            ctx.stroke();
+
+            ctx.fillStyle = isBlue ? '#dceff4' : '#177fab';
+            ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(1.25, radius * 0.18), 0, Math.PI * 2); ctx.fill();
+          });
+
+          const head = point(rope[0]);
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath(); ctx.arc(head.x, head.y, Math.max(2, cell * 0.14), 0, Math.PI * 2); ctx.fill();
+          ctx.strokeStyle = '#07527d';
+          ctx.lineWidth = Math.max(1, cell * 0.06);
+          ctx.stroke();
+        }
+
+        function draw() {
+          if (!width || !height) return;
+          ctx.clearRect(0, 0, width, height);
+          drawWater();
+          drawLeaf();
+          drawRope();
+        }
+
+        function loop(now) {
+          if (state === 'playing' && now - lastStep >= Math.max(72, 145 - cleaned * 4)) {
+            step();
+            lastStep = now;
+          }
+          draw();
+          raf = requestAnimationFrame(loop);
+        }
+
+        document.getElementById('startBtn').addEventListener('click', startGame);
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+        window.addEventListener('resize', resize);
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(function () { resize(); }).observe(gameShell);
+        }
+        document.addEventListener('fullscreenchange', function () {
+          if (!document.fullscreenElement) gameShell.classList.remove('is-focus-mode');
+          updateFullscreenButton();
+          if (state === 'playing') lastStep = performance.now();
+          requestAnimationFrame(resize);
+        });
+        window.addEventListener('keydown', function (event) {
+          const key = event.key.toLowerCase();
+          if (event.code === 'Space' && !event.repeat && (state === 'playing' || state === 'paused')) {
+            event.preventDefault();
+            if (state === 'playing') pauseGame(); else resumeGame();
+            return;
+          }
+          if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(key)) event.preventDefault();
+          if (key === 'arrowup' || key === 'w') turn(0, -1);
+          if (key === 'arrowdown' || key === 's') turn(0, 1);
+          if (key === 'arrowleft' || key === 'a') turn(-1, 0);
+          if (key === 'arrowright' || key === 'd') turn(1, 0);
+          if (event.key === 'Escape' && gameShell.classList.contains('is-focus-mode')) {
+            gameShell.classList.remove('is-focus-mode');
+            updateFullscreenButton();
+            resize();
+          }
+        });
+
+        let touchStart = null;
+        canvas.addEventListener('pointerdown', function (event) {
+          touchStart = { x: event.clientX, y: event.clientY };
+        });
+        canvas.addEventListener('pointerup', function (event) {
+          if (!touchStart) return;
+          const dx = event.clientX - touchStart.x;
+          const dy = event.clientY - touchStart.y;
+          if (Math.max(Math.abs(dx), Math.abs(dy)) > 18) {
+            if (Math.abs(dx) > Math.abs(dy)) turn(dx > 0 ? 1 : -1, 0);
+            else turn(0, dy > 0 ? 1 : -1);
+          }
+          touchStart = null;
+        });
+        canvas.addEventListener('pointercancel', function () { touchStart = null; });
+
+        reset();
+        updateFullscreenButton();
+        resize();
+        raf = requestAnimationFrame(loop);
+      })();
+    </script>
+  </body>
+</html>

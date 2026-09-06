@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每日数学测试 · j4fun 中文小玩意合集</title>
+    <meta
+      name="description"
+      content="每天固定 10 道双语数学能力挑战，五档难度可选，题目来自 TAL-SCQ5K 开放竞赛数学题库。"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/main.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+    <script src="../../assets/site-nav.js" defer></script>
+  </head>
+  <body class="page-math-test">
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="../../index.html" aria-label="j4fun 首页">
+          <img class="brand-logo" src="../../assets/images/logo.png?083026" alt="j4fun" />
+        </a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="../../poetry.html">诗词</a>
+          <a href="math.html" aria-current="page">数学</a>
+          <a href="../../sudoku.html">汉字数独</a>
+          <a href="../../strands.html">字踪</a>
+          <a href="../../about.html">关于</a>
+          <a class="related-project" href="../../shiben/"><img src="../../shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap">
+      <p class="eyebrow" data-i18n="eyebrow">每天十题 · 双语数学能力挑战</p>
+      <h1 data-i18n="title">你的数学能力，能走到<span class="accent">第几关</span>？</h1>
+      <p class="lede" data-i18n="lede">从基础思维到高阶竞赛，选择难度完成今天固定的 10 道题。每天回来，都有一条新的挑战路线。</p>
+    </section>
+
+    <main class="wrap math-test-main">
+      <section class="panel test-setup" aria-labelledby="testSetupTitle">
+        <div class="test-toolbar">
+          <div>
+            <span class="control-label" id="testSetupTitle" data-i18n="chooseLevel">选择挑战难度</span>
+            <div class="level-picker" id="levelPicker"></div>
+          </div>
+          <div>
+            <span class="control-label" data-i18n="chooseLanguage">题目语言</span>
+            <div class="language-picker" role="group" aria-label="题目语言">
+              <button type="button" data-language="zh" aria-pressed="true">中文</button>
+              <button type="button" data-language="en" aria-pressed="false">English</button>
+            </div>
+          </div>
+        </div>
+        <div class="level-description" id="levelDescription"></div>
+        <p class="test-source-status" id="testSourceStatus" aria-live="polite" data-i18n="loading">正在载入本地题库…</p>
+      </section>
+
+      <section class="panel test-intro" id="testIntro">
+        <div class="test-intro-mark" aria-hidden="true">10</div>
+        <div>
+          <h2 data-i18n="introTitle">今天的测试已经准备好了</h2>
+          <p data-i18n="introCopy">同一天、同一难度的 10 道题保持不变。中英文切换不会改变题目、答案或进度。</p>
+          <button type="button" id="startTest" data-i18n="start">开始今日测试</button>
+        </div>
+      </section>
+
+      <section class="panel test-run" id="testRun" hidden aria-live="polite">
+        <div class="test-progress-head">
+          <span id="questionCounter"></span>
+          <span id="answeredCounter"></span>
+        </div>
+        <div class="test-progress-track" aria-hidden="true"><span id="testProgressBar"></span></div>
+        <article class="test-question-card">
+          <div class="question-category" id="questionLevel"></div>
+          <h2 class="test-question" id="testQuestion"></h2>
+          <div class="test-choices" id="testChoices"></div>
+        </article>
+        <div class="test-actions">
+          <button type="button" class="secondary" id="previousQuestion" data-i18n="previous">上一题</button>
+          <button type="button" id="nextQuestion" data-i18n="next">下一题</button>
+          <button type="button" id="submitTest" data-i18n="submit" hidden>提交测试</button>
+        </div>
+      </section>
+
+      <section class="panel test-results" id="testResults" hidden>
+        <div class="result-score-ring"><strong id="resultScore">0</strong><span>/ 10</span></div>
+        <h2 id="resultHeadline"></h2>
+        <p id="resultSummary"></p>
+        <div class="result-actions">
+          <button type="button" id="reviewTest" data-i18n="review">查看逐题解析</button>
+          <a class="test-secondary-link" href="math.html" data-i18n="backDaily">返回每日一题</a>
+        </div>
+        <div class="test-review" id="testReview" hidden></div>
+      </section>
+    </main>
+
+    <section class="about wrap">
+      <h2 data-i18n="sourceTitle">题库与说明</h2>
+      <p data-i18n="sourceCopy">本测试精选自 TAL-SCQ5K 开放竞赛数学题库。原库提供难度、选项、标准答案与解析；英文为同一批中文题的机器翻译，标准答案键保持不变。</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 data-i18n="dailyRuleTitle">每日规则</h3>
+          <p data-i18n="dailyRuleCopy">题目由日期和难度共同决定；切换语言不会换题。答题记录只保存在当前浏览器。</p>
+        </div>
+        <div class="about-card">
+          <h3>License</h3>
+          <p>TAL-SCQ5K 标注为 MIT License。<a href="https://github.com/math-eval/TAL-SCQ5K" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://huggingface.co/datasets/math-eval/TAL-SCQ5K" target="_blank" rel="noopener noreferrer">Hugging Face</a></p>
+        </div>
+        <div class="about-card">
+          <h3 data-i18n="levelNoticeTitle">第三方难度标签</h3>
+          <p data-i18n="levelNoticeCopy">Level 1–5 是本站使用的相对难度，不代表 SAT、AMC、AIME 或任何竞赛主办方的等级。本站与数据集维护者及相关竞赛主办方没有隶属、合作或认可关系。</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
+
+    <script>
+      (function () {
+        var REMOTE_DATA_URL = 'https://raw.githubusercontent.com/j4fun-ai/j4fun/main/math_test_problems.json';
+        var LOCAL_DATA_URL = 'math_test_problems.json';
+        var CACHE_KEY = 'j4fun-math-test-data-v1';
+        var PREF_KEY = 'j4fun-math-test-prefs-v1';
+        var TEST_KEY_PREFIX = 'j4fun-math-test-v1-';
+        var LETTERS = ['A', 'B', 'C', 'D', 'E'];
+        var LEVELS = {
+          1: { zh: ['Level 1', '基础', '基础数学思维与直接推理'], en: ['Level 1', 'Foundation', 'Core mathematical thinking and direct reasoning'] },
+          2: { zh: ['Level 2', '进阶', '多步骤运算与进阶应用'], en: ['Level 2', 'Developing', 'Multi-step calculation and applied reasoning'] },
+          3: { zh: ['Level 3', '挑战', '综合推理与灵活解题'], en: ['Level 3', 'Challenge', 'Integrated reasoning and flexible problem solving'] },
+          4: { zh: ['Level 4', '竞赛', '较高难度的竞赛数学'], en: ['Level 4', 'Competition', 'Higher-difficulty competition mathematics'] },
+          5: { zh: ['Level 5', '高阶竞赛', '需要深入推理的高阶问题'], en: ['Level 5', 'Advanced', 'Advanced problems requiring deeper reasoning'] }
+        };
+        var I18N = {
+          zh: {
+            eyebrow: '每天十题 · 双语数学能力挑战',
+            title: '你的数学能力，能走到<span class="accent">第几关</span>？',
+            lede: '从基础思维到高阶竞赛，选择难度完成今天固定的 10 道题。每天回来，都有一条新的挑战路线。',
+            chooseLevel: '选择挑战难度', chooseLanguage: '题目语言', loading: '正在载入本地题库…',
+            introTitle: '今天的测试已经准备好了', introCopy: '同一天、同一难度的 10 道题保持不变。中英文切换不会改变题目、答案或进度。',
+            start: '开始今日测试', previous: '上一题', next: '下一题', submit: '提交测试', review: '查看逐题解析', backDaily: '返回每日一题',
+            sourceTitle: '题库与说明', sourceCopy: '本测试精选自 TAL-SCQ5K 开放竞赛数学题库。原库提供难度、选项、标准答案与解析；英文为同一批中文题的机器翻译，标准答案键保持不变。',
+            dailyRuleTitle: '每日规则', dailyRuleCopy: '题目由日期和难度共同决定；切换语言不会换题。答题记录只保存在当前浏览器。',
+            levelNoticeTitle: '第三方难度标签', levelNoticeCopy: 'Level 1–5 是本站使用的相对难度，不代表 SAT、AMC、AIME 或任何竞赛主办方的等级。本站与数据集维护者及相关竞赛主办方没有隶属、合作或认可关系。',
+            answered: '已答', question: '第 {current} / 10 题', score: '答对 {score} 题，正确率 {percent}%。',
+            sourceRemote: '在线题库已更新 · 本地缓存可离线使用', sourceLocal: '正在使用本地缓存 · 在线题库暂不可用',
+            needAnswer: '请先选择一个答案', resultHigh: '太强了，今天的挑战完成！', resultMid: '很不错，再看一遍解析会更稳。', resultLow: '这一级很有挑战，解析会带你找到突破口。',
+            yourAnswer: '你的答案', correctAnswer: '正确答案', explanation: '解析', unanswered: '未作答', correct: '正确', wrong: '错误'
+          },
+          en: {
+            eyebrow: 'Ten questions a day · Bilingual math challenge',
+            title: 'How far can your <span class="accent">math skills</span> go?',
+            lede: 'Choose a level and complete today’s fixed set of 10 questions, from foundational thinking to advanced competition math.',
+            chooseLevel: 'Choose a challenge level', chooseLanguage: 'Question language', loading: 'Loading the local question bank…',
+            introTitle: 'Today<span class="math-test-apostrophe">’</span>s test is ready', introCopy: 'The same date and level always produce the same 10 questions. Switching languages keeps every answer and your progress.',
+            start: 'Start today’s test', previous: 'Previous', next: 'Next', submit: 'Submit test', review: 'Review every solution', backDaily: 'Back to Daily Question',
+            sourceTitle: 'Question bank and notes', sourceCopy: 'This test is curated from the open TAL-SCQ5K competition-math dataset. The English text is a machine translation of the same selected Chinese questions; the source answer keys are unchanged.',
+            dailyRuleTitle: 'Daily rules', dailyRuleCopy: 'The date and level determine the questions. Language switching never changes the set. Progress stays only in this browser.',
+            levelNoticeTitle: 'Third-party difficulty labels', levelNoticeCopy: 'Levels 1–5 are relative labels used by this site and do not represent classifications from SAT, AMC, AIME, or any competition organizer. This site is not affiliated with, partnered with, or endorsed by the dataset maintainers or relevant competition organizers.',
+            answered: 'Answered', question: 'Question {current} / 10', score: '{score} correct · {percent}% accuracy.',
+            sourceRemote: 'Online bank updated · offline cache is ready', sourceLocal: 'Using the local cache · online bank is unavailable',
+            needAnswer: 'Choose an answer before continuing', resultHigh: 'Excellent—today’s challenge is complete!', resultMid: 'Nice work. Review the solutions to make it stick.', resultLow: 'This level is a real challenge. The solutions will show you the way through.',
+            yourAnswer: 'Your answer', correctAnswer: 'Correct answer', explanation: 'Solution', unanswered: 'Unanswered', correct: 'Correct', wrong: 'Incorrect'
+          }
+        };
+
+        var data = [];
+        var testQuestions = [];
+        var level = 1;
+        var language = 'zh';
+        var current = 0;
+        var answers = {};
+        var submitted = false;
+
+        function todayKey() {
+          var d = new Date();
+          return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        }
+        function t(key, values) {
+          var text = I18N[language][key] || key;
+          Object.keys(values || {}).forEach(function (name) { text = text.replace('{' + name + '}', values[name]); });
+          return text;
+        }
+        function hash(text) {
+          var value = 2166136261;
+          for (var i = 0; i < text.length; i++) { value ^= text.charCodeAt(i); value = Math.imul(value, 16777619); }
+          return value >>> 0;
+        }
+        function seededSample(items, seedText, count) {
+          var list = items.slice();
+          var seed = hash(seedText);
+          for (var i = list.length - 1; i > 0; i--) {
+            seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+            var j = seed % (i + 1);
+            var temp = list[i]; list[i] = list[j]; list[j] = temp;
+          }
+          return list.slice(0, count);
+        }
+        function stateKey() { return TEST_KEY_PREFIX + todayKey() + '-level-' + level; }
+        function loadPreferences() {
+          try {
+            var prefs = JSON.parse(localStorage.getItem(PREF_KEY) || '{}');
+            level = Number(prefs.level) || 1;
+            language = prefs.language === 'en' ? 'en' : 'zh';
+          } catch (error) {}
+        }
+        function savePreferences() {
+          try { localStorage.setItem(PREF_KEY, JSON.stringify({ level: level, language: language })); } catch (error) {}
+        }
+        function loadTestState() {
+          answers = {}; submitted = false; current = 0;
+          try {
+            var saved = JSON.parse(localStorage.getItem(stateKey()) || '{}');
+            answers = saved.answers || {};
+            submitted = Boolean(saved.submitted);
+            current = Math.min(9, Math.max(0, Number(saved.current) || 0));
+          } catch (error) {}
+        }
+        function saveTestState() {
+          try { localStorage.setItem(stateKey(), JSON.stringify({ answers: answers, submitted: submitted, current: current })); } catch (error) {}
+        }
+        function typeset(container) {
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetClear([container]);
+            window.MathJax.typesetPromise([container]).catch(function () {});
+          }
+        }
+        function compactMath(text) {
+          return String(text || '')
+            .replace(/~*\\uline\{[^}]*\}~*/g, ' __________ ')
+            .replace(/\\textgreater\s*(?:\{\})?/g, '>')
+            .replace(/\\textless\s*(?:\{\})?/g, '<')
+            .replace(/\\textbar\s*(?:\{\})?/g, '|')
+            .replace(/\$\$([\s\S]*?)\$\$/g, function (_, formula) {
+            return '$' + formula.trim() + '$';
+          });
+        }
+        function escapeHtml(text) {
+          return String(text).replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+        }
+        function selectDailyQuestions() {
+          var pool = data.filter(function (item) { return item.level === level; });
+          testQuestions = seededSample(pool, todayKey() + '-level-' + level, 10);
+        }
+        function renderI18n() {
+          document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-i18n]').forEach(function (element) {
+            var key = element.dataset.i18n;
+            if (I18N[language][key]) element.innerHTML = I18N[language][key];
+          });
+          document.querySelectorAll('[data-language]').forEach(function (button) {
+            var active = button.dataset.language === language;
+            button.setAttribute('aria-pressed', String(active));
+            button.classList.toggle('active', active);
+          });
+          renderLevels();
+          if (!document.getElementById('testRun').hidden) renderQuestion();
+          if (!document.getElementById('testResults').hidden) renderResults();
+        }
+        function renderLevels() {
+          var picker = document.getElementById('levelPicker');
+          picker.innerHTML = '';
+          Object.keys(LEVELS).forEach(function (key) {
+            var number = Number(key);
+            var copy = LEVELS[number][language];
+            var button = document.createElement('button');
+            button.type = 'button'; button.className = number === level ? 'active' : '';
+            button.setAttribute('aria-pressed', String(number === level));
+            button.innerHTML = '<strong>' + copy[0] + '</strong><span>' + copy[1] + '</span>';
+            button.addEventListener('click', function () { changeLevel(number); });
+            picker.appendChild(button);
+          });
+          document.getElementById('levelDescription').textContent = LEVELS[level][language][2];
+        }
+        function changeLevel(nextLevel) {
+          level = nextLevel; savePreferences(); selectDailyQuestions(); loadTestState(); renderLevels(); showCurrentView();
+        }
+        function showCurrentView() {
+          var intro = document.getElementById('testIntro');
+          var run = document.getElementById('testRun');
+          var results = document.getElementById('testResults');
+          intro.hidden = submitted || Object.keys(answers).length > 0;
+          run.hidden = submitted || intro.hidden === false;
+          results.hidden = !submitted;
+          if (!run.hidden) renderQuestion();
+          if (!results.hidden) renderResults();
+        }
+        function renderQuestion() {
+          var item = testQuestions[current];
+          if (!item) return;
+          var localized = item[language];
+          document.getElementById('questionCounter').textContent = t('question', { current: current + 1 });
+          document.getElementById('answeredCounter').textContent = t('answered') + ' ' + Object.keys(answers).length + ' / 10';
+          document.getElementById('testProgressBar').style.width = ((current + 1) * 10) + '%';
+          document.getElementById('questionLevel').textContent = LEVELS[level][language][0] + ' · ' + LEVELS[level][language][1];
+          document.getElementById('testQuestion').textContent = compactMath(localized.problem);
+          var choices = document.getElementById('testChoices');
+          choices.innerHTML = '';
+          localized.choices.forEach(function (choice, index) {
+            var letter = LETTERS[index];
+            var button = document.createElement('button');
+            button.type = 'button'; button.className = answers[item.id] === letter ? 'selected' : '';
+            button.setAttribute('aria-pressed', String(answers[item.id] === letter));
+            button.innerHTML = '<span class="choice-letter">' + letter + '</span><span class="choice-copy"></span>';
+            button.querySelector('.choice-copy').textContent = compactMath(choice);
+            button.addEventListener('click', function () {
+              answers[item.id] = letter; saveTestState(); renderQuestion();
+            });
+            choices.appendChild(button);
+          });
+          document.getElementById('previousQuestion').disabled = current === 0;
+          document.getElementById('nextQuestion').hidden = current === 9;
+          document.getElementById('submitTest').hidden = current !== 9;
+          typeset(document.getElementById('testRun'));
+        }
+        function nextQuestion() {
+          var item = testQuestions[current];
+          if (!answers[item.id]) {
+            document.getElementById('answeredCounter').textContent = t('needAnswer');
+            return;
+          }
+          current = Math.min(9, current + 1); saveTestState(); renderQuestion();
+        }
+        function scoreTest() {
+          return testQuestions.reduce(function (score, item) { return score + (answers[item.id] === item.answer ? 1 : 0); }, 0);
+        }
+        function submitTest() {
+          submitted = true; saveTestState(); showCurrentView();
+        }
+        function renderResults() {
+          var score = scoreTest();
+          var percent = score * 10;
+          document.getElementById('resultScore').textContent = score;
+          document.getElementById('resultHeadline').textContent = score >= 8 ? t('resultHigh') : score >= 5 ? t('resultMid') : t('resultLow');
+          document.getElementById('resultSummary').textContent = t('score', { score: score, percent: percent });
+          renderReview();
+        }
+        function renderReview() {
+          var review = document.getElementById('testReview');
+          review.innerHTML = '';
+          testQuestions.forEach(function (item, index) {
+            var localized = item[language];
+            var picked = answers[item.id];
+            var correct = picked === item.answer;
+            var article = document.createElement('article');
+            article.className = 'review-item ' + (correct ? 'correct' : 'wrong');
+            article.innerHTML = '<div class="review-heading"><strong>' + (index + 1) + '</strong><span>' + t(correct ? 'correct' : 'wrong') + '</span></div>' +
+              '<div class="review-problem"></div>' +
+              '<p><b>' + t('yourAnswer') + '：</b>' + (picked ? picked + '. ' + escapeHtml(compactMath(localized.choices[LETTERS.indexOf(picked)])) : t('unanswered')) + '</p>' +
+              '<p><b>' + t('correctAnswer') + '：</b>' + item.answer + '. ' + escapeHtml(compactMath(localized.choices[LETTERS.indexOf(item.answer)])) + '</p>' +
+              '<div class="review-analysis"><b>' + t('explanation') + '：</b><span></span></div>';
+            article.querySelector('.review-problem').textContent = compactMath(localized.problem);
+            article.querySelector('.review-analysis span').textContent = compactMath(localized.analysis);
+            review.appendChild(article);
+          });
+          if (!review.hidden) typeset(review);
+        }
+        function fetchData(url) {
+          return fetch(url).then(function (response) { if (!response.ok) throw new Error('load failed'); return response.json(); });
+        }
+        function validDataset(rows) {
+          return Array.isArray(rows) && rows.length >= 50 && rows.every(function (item) { return item.zh && item.en && item.answer && item.level; });
+        }
+        function installData(rows, statusKey) {
+          if (!validDataset(rows)) throw new Error('invalid dataset');
+          data = rows; selectDailyQuestions(); loadTestState(); renderI18n(); showCurrentView();
+          document.getElementById('testSourceStatus').textContent = t(statusKey);
+        }
+
+        document.querySelectorAll('[data-language]').forEach(function (button) {
+          button.addEventListener('click', function () { language = button.dataset.language; savePreferences(); renderI18n(); });
+        });
+        document.getElementById('startTest').addEventListener('click', function () {
+          document.getElementById('testIntro').hidden = true; document.getElementById('testRun').hidden = false; renderQuestion();
+        });
+        document.getElementById('previousQuestion').addEventListener('click', function () { current = Math.max(0, current - 1); saveTestState(); renderQuestion(); });
+        document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
+        document.getElementById('submitTest').addEventListener('click', submitTest);
+        document.getElementById('reviewTest').addEventListener('click', function () {
+          var review = document.getElementById('testReview'); review.hidden = !review.hidden;
+          if (!review.hidden) { renderReview(); review.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+
+        loadPreferences(); renderI18n();
+        fetchData(LOCAL_DATA_URL).then(function (localRows) {
+          var cached = null;
+          try { cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null'); } catch (error) {}
+          installData(validDataset(cached) ? cached : localRows, 'sourceLocal');
+          return fetchData(REMOTE_DATA_URL).then(function (remoteRows) {
+            if (!validDataset(remoteRows)) throw new Error('invalid remote dataset');
+            try { localStorage.setItem(CACHE_KEY, JSON.stringify(remoteRows)); } catch (error) {}
+            installData(remoteRows, 'sourceRemote');
+          }).catch(function () {
+            document.getElementById('testSourceStatus').textContent = t('sourceLocal');
+          });
+        }).catch(function () {
+          document.getElementById('testSourceStatus').textContent = language === 'zh' ? '题库载入失败，请刷新页面重试。' : 'The question bank failed to load. Please refresh.';
+        });
+      })();
+    </script>
+  </body>
+</html>

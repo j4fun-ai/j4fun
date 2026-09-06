@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每日数学一题 · MathBench 双语挑战 · j4fun</title>
+    <meta name="description" content="每天一道来自 MathBench 的中英双语数学题，五个学习阶段可选，从基础计算到大学数学。" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/main.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+    <script src="../../assets/site-nav.js" defer></script>
+  </head>
+  <body class="page-math-test page-mathbench">
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="../../index.html" aria-label="j4fun 首页">
+          <img class="brand-logo" src="../../assets/images/logo.png?083026" alt="j4fun" />
+        </a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="../../poetry.html">诗词</a>
+          <a href="math.html" aria-current="page">数学</a>
+          <a href="../../sudoku.html">汉字数独</a>
+          <a href="../../strands.html">字踪</a>
+          <a href="../../about.html">关于</a>
+          <a class="related-project" href="../../shiben/"><img src="../../shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap">
+      <p class="eyebrow" data-i18n="eyebrow">每天一题 · MathBench 双语挑战</p>
+      <h1 data-i18n="title">今天，来解一道<span class="accent">真正的数学题</span></h1>
+      <p class="lede" data-i18n="lede">从基础计算到大学数学，每个阶段每天固定一道；切换中英文，题目和进度都不会改变。</p>
+    </section>
+
+    <main class="wrap math-test-main mathbench-main">
+      <section class="panel test-setup" aria-labelledby="stageTitle">
+        <div class="test-toolbar">
+          <div>
+            <span class="control-label" id="stageTitle" data-i18n="chooseStage">选择学习阶段</span>
+            <div class="level-picker mathbench-stage-picker" id="stagePicker"></div>
+          </div>
+          <div>
+            <span class="control-label" data-i18n="chooseLanguage">题目语言</span>
+            <div class="language-picker" role="group" aria-label="题目语言">
+              <button type="button" data-language="zh" aria-pressed="true">中文</button>
+              <button type="button" data-language="en" aria-pressed="false">English</button>
+            </div>
+          </div>
+        </div>
+        <p class="level-description" id="stageDescription"></p>
+        <p class="test-source-status" id="sourceStatus" aria-live="polite" data-i18n="loading">正在载入 MathBench 本地题库…</p>
+      </section>
+
+      <section class="panel daily-question-panel" id="questionPanel" aria-live="polite">
+        <div class="daily-question-head">
+          <div>
+            <p class="question-category" id="questionStage"></p>
+            <div class="topic-trail" id="topicTrail"></div>
+          </div>
+          <time id="dailyDate"></time>
+        </div>
+        <article class="test-question-card mathbench-question-card">
+          <h2 class="test-question" id="dailyQuestion"></h2>
+          <div class="test-choices" id="dailyChoices"></div>
+          <form class="cloze-answer" id="clozeForm" hidden>
+            <label for="clozeInput" data-i18n="yourAnswer">你的答案</label>
+            <div><input id="clozeInput" type="text" autocomplete="off" inputmode="text" /><button type="submit" data-i18n="submit">提交答案</button></div>
+          </form>
+          <p class="answer-hint" id="answerHint" hidden></p>
+        </article>
+        <div class="daily-feedback" id="dailyFeedback" hidden>
+          <strong id="feedbackTitle"></strong>
+          <p><span data-i18n="correctAnswer">标准答案</span>：<span id="correctAnswer"></span></p>
+          <p class="feedback-note" data-i18n="noSolution">MathBench 本题仅提供标准答案，不含逐步解析。</p>
+        </div>
+        <div class="daily-links">
+          <a href="math-test.html" data-i18n="tenQuestionTest">去做每日 10 题测试</a>
+          <a href="math-cn.html" data-i18n="archive">查看小学每日一题存档</a>
+        </div>
+      </section>
+    </main>
+
+    <section class="about wrap mathbench-about">
+      <h2 data-i18n="sourceTitle">题库与说明</h2>
+      <p data-i18n="sourceCopy">本站从 MathBench 项目公开发布的数据中筛选适合纯网页作答、无需图片的题目，覆盖计算、应用与数学概念。中英文切换使用同一题和同一答案键。</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 data-i18n="dailyRuleTitle">每日规则</h3>
+          <p data-i18n="dailyRuleCopy">日期与学习阶段共同决定当天题目。作答状态只保存在当前浏览器，不上传输入内容。</p>
+        </div>
+        <div class="about-card">
+          <h3>MathBench · Apache-2.0</h3>
+          <p><a href="https://github.com/open-compass/MathBench" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/open-compass/MathBench/releases/tag/v0.1.0" target="_blank" rel="noopener noreferrer">v0.1.0</a> · <a href="https://github.com/open-compass/MathBench/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">License</a></p>
+        </div>
+        <div class="about-card">
+          <h3 data-i18n="translationTitle">双语与第三方说明</h3>
+          <p data-i18n="translationCopy">原始发布包的中英文题并非逐题配对。本站保留所选原题和答案，并为另一语言提供机器翻译；本页面由 j4fun 独立制作，与 MathBench 作者或维护者没有隶属、合作或认可关系。</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
+
+    <script>
+      (function () {
+        var REMOTE_DATA_URL = 'https://raw.githubusercontent.com/j4fun-ai/j4fun/main/mathbench_daily_problems.json';
+        var LOCAL_DATA_URL = 'mathbench_daily_problems.json';
+        var CACHE_KEY = 'j4fun-mathbench-data-v1';
+        var PREF_KEY = 'j4fun-mathbench-prefs-v1';
+        var STATE_PREFIX = 'j4fun-mathbench-daily-v1-';
+        var LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+        var STAGE_ORDER = ['arithmetic', 'primary', 'middle', 'high', 'college'];
+        var STAGES = {
+          arithmetic: { zh: ['计算', '基础运算与数感'], en: ['Arithmetic', 'Core calculation and number sense'] },
+          primary: { zh: ['小学', '小学数学应用与概念'], en: ['Primary', 'Primary-school applications and concepts'] },
+          middle: { zh: ['初中', '代数、几何与综合推理'], en: ['Middle', 'Algebra, geometry, and integrated reasoning'] },
+          high: { zh: ['高中', '高中数学知识与应用'], en: ['High', 'High-school mathematics and applications'] },
+          college: { zh: ['大学', '高等数学与大学数学概念'], en: ['College', 'Advanced and college-level mathematics'] }
+        };
+        var I18N = {
+          zh: {
+            eyebrow: '每天一题 · MathBench 双语挑战', title: '今天，来解一道<span class="accent">真正的数学题</span>',
+            lede: '从基础计算到大学数学，每个阶段每天固定一道；切换中英文，题目和进度都不会改变。', chooseStage: '选择学习阶段', chooseLanguage: '题目语言',
+            loading: '正在载入 MathBench 本地题库…', sourceRemote: 'MathBench 在线缓存已更新 · 本地题库可离线回退', sourceLocal: '正在使用本地 MathBench 缓存 · 在线版本暂不可用',
+            yourAnswer: '你的答案', submit: '提交答案', correctAnswer: '标准答案', noSolution: 'MathBench 本题仅提供标准答案，不含逐步解析。',
+            tenQuestionTest: '去做每日 10 题测试', archive: '查看小学每日一题存档', sourceTitle: '题库与说明',
+            sourceCopy: '本站从 MathBench 项目公开发布的数据中筛选适合纯网页作答、无需图片的题目，覆盖计算、应用与数学概念。中英文切换使用同一题和同一答案键。',
+            dailyRuleTitle: '每日规则', dailyRuleCopy: '日期与学习阶段共同决定当天题目。作答状态只保存在当前浏览器，不上传输入内容。',
+            translationTitle: '双语与第三方说明', translationCopy: '原始发布包的中英文题并非逐题配对。本站保留所选原题和答案，并为另一语言提供机器翻译；本页面由 j4fun 独立制作，与 MathBench 作者或维护者没有隶属、合作或认可关系。',
+            kindCalculation: '基础计算', kindApplication: '应用题', kindTheory: '数学概念', correct: '答对了！', wrong: '再想一步', alreadyAnswered: '今天这一阶段已经作答。明天会有新题。', inputPlaceholder: '输入答案', emptyAnswer: '请先输入答案。'
+          },
+          en: {
+            eyebrow: 'One a day · Bilingual MathBench challenge', title: 'Solve one <span class="accent">real math problem</span> today',
+            lede: 'Choose a stage from arithmetic through college. Each stage has one fixed question per day, and language switching keeps your progress.', chooseStage: 'Choose a learning stage', chooseLanguage: 'Question language',
+            loading: 'Loading the local MathBench bank…', sourceRemote: 'Online MathBench cache updated · local fallback is ready', sourceLocal: 'Using the local MathBench cache · online version is unavailable',
+            yourAnswer: 'Your answer', submit: 'Submit answer', correctAnswer: 'Answer', noSolution: 'MathBench supplies the answer key for this item, but no step-by-step solution.',
+            tenQuestionTest: 'Take the daily 10-question test', archive: 'Open the primary daily archive', sourceTitle: 'Question bank and notes',
+            sourceCopy: 'This site selects image-free, browser-friendly questions from MathBench’s publicly released data, including calculation, applications, and mathematical concepts. Both languages use the same item and answer key.',
+            dailyRuleTitle: 'Daily rule', dailyRuleCopy: 'The date and learning stage determine today’s item. Your answer stays in this browser and is never uploaded.',
+            translationTitle: 'Bilingual and third-party notice', translationCopy: 'The original Chinese and English release files are not paired translations. This site preserves each selected source item and answer, with a machine translation for the other language. It is independently made by j4fun and is not affiliated with, partnered with, or endorsed by the MathBench authors or maintainers.',
+            kindCalculation: 'Calculation', kindApplication: 'Application', kindTheory: 'Math concept', correct: 'Correct!', wrong: 'Not quite', alreadyAnswered: 'You have answered this stage today. A new question arrives tomorrow.', inputPlaceholder: 'Enter your answer', emptyAnswer: 'Enter an answer first.'
+          }
+        };
+
+        var problems = [];
+        var stage = 'arithmetic';
+        var language = 'zh';
+        var currentProblem = null;
+        var currentState = null;
+
+        function todayKey() {
+          var d = new Date();
+          return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        }
+        function hash(text) {
+          var value = 2166136261;
+          for (var i = 0; i < text.length; i++) { value ^= text.charCodeAt(i); value = Math.imul(value, 16777619); }
+          return value >>> 0;
+        }
+        function stateKey() { return STATE_PREFIX + todayKey() + '-' + stage; }
+        function t(key) { return I18N[language][key] || key; }
+        function savePreferences() { localStorage.setItem(PREF_KEY, JSON.stringify({ stage: stage, language: language })); }
+        function loadPreferences() {
+          try {
+            var saved = JSON.parse(localStorage.getItem(PREF_KEY) || '{}');
+            if (STAGES[saved.stage]) stage = saved.stage;
+            if (saved.language === 'en') language = 'en';
+          } catch (error) { /* Ignore invalid local preferences. */ }
+        }
+        function loadState() {
+          try { return JSON.parse(localStorage.getItem(stateKey()) || 'null'); }
+          catch (error) { return null; }
+        }
+        function normalizeAnswer(value) {
+          var normalized = String(value || '').trim().toLowerCase()
+            .replace(/[，,\s]/g, '').replace(/[−–—]/g, '-').replace(/^\$|\$$/g, '')
+            .replace(/\\left|\\right/g, '').replace(/\\dfrac|\\tfrac/g, '\\frac');
+          var fraction = normalized.match(/^\\frac\{(-?\d+(?:\.\d+)?)\}\{(-?\d+(?:\.\d+)?)\}$/);
+          if (fraction && Number(fraction[2]) !== 0) return String(Number(fraction[1]) / Number(fraction[2]));
+          if (normalized !== '' && Number.isFinite(Number(normalized))) return String(Number(normalized));
+          return normalized;
+        }
+        function answersMatch(given, expected) { return normalizeAnswer(given) === normalizeAnswer(expected); }
+        function typeset(nodes) {
+          if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise(nodes).catch(function () {});
+        }
+        function applyLanguage() {
+          document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-i18n]').forEach(function (node) {
+            var key = node.getAttribute('data-i18n');
+            if (I18N[language][key]) node.innerHTML = I18N[language][key];
+          });
+          document.querySelectorAll('[data-language]').forEach(function (button) {
+            var active = button.dataset.language === language;
+            button.classList.toggle('active', active);
+            button.setAttribute('aria-pressed', String(active));
+          });
+          renderStagePicker();
+          if (currentProblem) renderProblem();
+        }
+        function renderStagePicker() {
+          var picker = document.getElementById('stagePicker');
+          picker.textContent = '';
+          STAGE_ORDER.forEach(function (key) {
+            var button = document.createElement('button');
+            button.type = 'button';
+            button.className = key === stage ? 'active' : '';
+            button.setAttribute('aria-pressed', String(key === stage));
+            var strong = document.createElement('strong');
+            var small = document.createElement('span');
+            strong.textContent = STAGES[key][language][0];
+            small.textContent = key === 'arithmetic' ? 'Arithmetic' : key.charAt(0).toUpperCase() + key.slice(1);
+            button.append(strong, small);
+            button.addEventListener('click', function () { stage = key; savePreferences(); selectDailyProblem(); renderStagePicker(); });
+            picker.appendChild(button);
+          });
+          document.getElementById('stageDescription').textContent = STAGES[stage][language][1];
+        }
+        function chooseProblem() {
+          var pool = problems.filter(function (problem) { return problem.stage === stage; });
+          if (!pool.length) return null;
+          return pool[hash(todayKey() + ':' + stage) % pool.length];
+        }
+        function selectDailyProblem() {
+          currentProblem = chooseProblem();
+          currentState = loadState();
+          renderProblem();
+        }
+        function optionText(problem, index) {
+          return problem[language].options[index] || '';
+        }
+        function submitAnswer(answer) {
+          if (!currentProblem || currentState) return;
+          var correct = currentProblem.type === 'single_choice'
+            ? String(answer).toUpperCase() === String(currentProblem.answer).toUpperCase()
+            : answersMatch(answer, currentProblem.answer);
+          currentState = { answer: String(answer), correct: correct, completedAt: new Date().toISOString() };
+          localStorage.setItem(stateKey(), JSON.stringify(currentState));
+          renderProblem();
+        }
+        function renderProblem() {
+          if (!currentProblem) return;
+          var localized = currentProblem[language];
+          var kindKey = currentProblem.kind === 'theory' ? 'kindTheory' : currentProblem.kind === 'application' ? 'kindApplication' : 'kindCalculation';
+          document.getElementById('questionStage').textContent = STAGES[stage][language][0] + ' · ' + t(kindKey);
+          document.getElementById('stageDescription').textContent = STAGES[stage][language][1];
+          document.getElementById('dailyDate').textContent = new Intl.DateTimeFormat(language === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric', weekday: 'short' }).format(new Date());
+          var trail = document.getElementById('topicTrail');
+          trail.textContent = '';
+          (currentProblem.topic[language] || []).slice(1).forEach(function (topic) {
+            var span = document.createElement('span'); span.textContent = topic; trail.appendChild(span);
+          });
+          var question = document.getElementById('dailyQuestion');
+          question.textContent = localized.question;
+          var choices = document.getElementById('dailyChoices');
+          var form = document.getElementById('clozeForm');
+          var hint = document.getElementById('answerHint');
+          choices.textContent = '';
+          hint.hidden = true;
+          form.hidden = currentProblem.type !== 'cloze';
+          if (currentProblem.type === 'single_choice') {
+            localized.options.forEach(function (option, index) {
+              var letter = LETTERS[index];
+              var button = document.createElement('button'); button.type = 'button';
+              var badge = document.createElement('span'); badge.className = 'choice-letter'; badge.textContent = letter;
+              var copy = document.createElement('span'); copy.className = 'choice-copy'; copy.textContent = option;
+              if (currentState) {
+                button.disabled = true;
+                if (letter === String(currentProblem.answer).toUpperCase()) button.classList.add('correct-answer');
+                if (letter === currentState.answer.toUpperCase() && !currentState.correct) button.classList.add('wrong-answer');
+              }
+              button.append(badge, copy); button.addEventListener('click', function () { submitAnswer(letter); }); choices.appendChild(button);
+            });
+          } else {
+            var input = document.getElementById('clozeInput');
+            input.placeholder = t('inputPlaceholder'); input.disabled = Boolean(currentState); input.value = currentState ? currentState.answer : '';
+            form.querySelector('button').disabled = Boolean(currentState);
+          }
+          var feedback = document.getElementById('dailyFeedback');
+          feedback.hidden = !currentState;
+          if (currentState) {
+            feedback.className = 'daily-feedback ' + (currentState.correct ? 'is-correct' : 'is-wrong');
+            document.getElementById('feedbackTitle').textContent = t(currentState.correct ? 'correct' : 'wrong');
+            document.getElementById('correctAnswer').textContent = currentProblem.type === 'single_choice'
+              ? currentProblem.answer + ' · ' + optionText(currentProblem, LETTERS.indexOf(String(currentProblem.answer).toUpperCase()))
+              : currentProblem.answer;
+            hint.hidden = false; hint.textContent = t('alreadyAnswered');
+          }
+          typeset([question, choices, feedback]);
+        }
+        function validPayload(payload) {
+          return payload && Array.isArray(payload.problems) && payload.problems.length >= 50;
+        }
+        async function fetchJson(url) {
+          var response = await fetch(url, { cache: 'no-cache' });
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          var payload = await response.json();
+          if (!validPayload(payload)) throw new Error('Invalid MathBench cache');
+          return payload;
+        }
+        async function loadProblems() {
+          var localPayload;
+          try { localPayload = await fetchJson(LOCAL_DATA_URL); }
+          catch (error) {
+            try { localPayload = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null'); } catch (ignored) { /* Ignore invalid cache. */ }
+          }
+          if (validPayload(localPayload)) { problems = localPayload.problems; selectDailyProblem(); }
+          try {
+            var remotePayload = await fetchJson(REMOTE_DATA_URL);
+            problems = remotePayload.problems; localStorage.setItem(CACHE_KEY, JSON.stringify(remotePayload));
+            document.getElementById('sourceStatus').textContent = t('sourceRemote'); selectDailyProblem();
+          } catch (error) {
+            document.getElementById('sourceStatus').textContent = t('sourceLocal');
+          }
+        }
+
+        document.querySelectorAll('[data-language]').forEach(function (button) {
+          button.addEventListener('click', function () { language = button.dataset.language; savePreferences(); applyLanguage(); });
+        });
+        document.getElementById('clozeForm').addEventListener('submit', function (event) {
+          event.preventDefault(); var input = document.getElementById('clozeInput');
+          if (!input.value.trim()) { var hint = document.getElementById('answerHint'); hint.hidden = false; hint.textContent = t('emptyAnswer'); input.focus(); return; }
+          submitAnswer(input.value);
+        });
+        loadPreferences(); applyLanguage(); loadProblems();
+      })();
+    </script>
+  </body>
+</html>

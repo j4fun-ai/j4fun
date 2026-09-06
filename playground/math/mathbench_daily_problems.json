@@ -1,0 +1,3353 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "MathBench",
+    "repository": "https://github.com/open-compass/MathBench",
+    "release": "v0.1.0",
+    "license": "Apache-2.0",
+    "note": "Questions and answer keys are selected from MathBench's publicly released data. The paired language is machine translated for this independently produced third-party site."
+  },
+  "generatedAt": "2026-09-01T01:00:38.032Z",
+  "problems": [
+    {
+      "id": "mathbench-arithmetic-calculation-01",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-35947632.9663",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "将 -35947633 和 0.0337 加在一起。"
+      },
+      "en": {
+        "question": "Add together -35947633 and 0.0337."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-02",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-11",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "评估 (-5456)/6696*(-297)/(-22)。"
+      },
+      "en": {
+        "question": "Evaluate (-5456)/6696*(-297)/(-22)."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-03",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "86003.32",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "乘以 -0.26 和 -330782。"
+      },
+      "en": {
+        "question": "Multiply -0.26 and -330782."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-04",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-31/3",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "51/9 + -14 + -3 + 4/1 + -3 的值为多少，请以最简单的分数形式返回计算结果。"
+      },
+      "en": {
+        "question": "What is the value of 51/9 + -14 + -3 + 4/1 + -3, please return the calculation result in its simplest fraction form."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-05",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "47",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "计算 -7 + -16 + 31 - (-40 + 3 + -5 + 3)。"
+      },
+      "en": {
+        "question": "Calculate -7 + -16 + 31 - (-40 + 3 + -5 + 3)."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-06",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-14/11",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "(-123*(-6)/(-54) - -9)*(-75)/(-275)，请以最简分数形式返回计算结果。"
+      },
+      "en": {
+        "question": "(-123*(-6)/(-54) - -9)*(-75)/(-275), please return the calculation result in its simplest fraction form."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-07",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "5/616968",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "5除以616968，请以最简分数形式返回计算结果。"
+      },
+      "en": {
+        "question": "5 divided by 616968, please return the calculation result in its simplest fraction form."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-08",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-19",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "计算 12 - ((-10 - -1) + (19 - (-31 - -10)))。"
+      },
+      "en": {
+        "question": "Calculate 12 - ((-10 - -1) + (19 - (-31 - -10)))."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-09",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "46",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "什么是(-42136)/4122*9*2/(-4)？"
+      },
+      "en": {
+        "question": "What is (-42136)/4122*9*2/(-4)?"
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-10",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-1/5",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "(15 - (-176)/(-12))*((-192)/(-30) + -7)，请以最简分数形式返回计算结果。"
+      },
+      "en": {
+        "question": "(15 - (-176)/(-12))*((-192)/(-30) + -7), please return the calculation result in its simplest fraction form."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-11",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-8063226",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "-243*33182"
+      },
+      "en": {
+        "question": "-243 * 33182"
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-12",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-1/5",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "(4*(-6)/21 + -11 + 1728/140)*-1 是多少，请以最简单的分数形式返回计算结果。"
+      },
+      "en": {
+        "question": "What is (4*(-6)/21 + -11 + 1728/140)*-1, please return the calculation result in its simplest fraction form."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-13",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-45347.5",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "计算-2*22673.75。"
+      },
+      "en": {
+        "question": "Calculate -2*22673.75."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-14",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-31",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "什么是 (-4*1 + 2)*(0 - (-26 + 777/74))？"
+      },
+      "en": {
+        "question": "What is (-4*1 + 2)*(0 - (-26 + 777/74))?"
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-15",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "20",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "计算 (((-1476)/(-615))/(3/50))/(2/1)。"
+      },
+      "en": {
+        "question": "Calculate (((-1476)/(-615))/(3/50))/(2/1)."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-16",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-220514376",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "-220513777+-599"
+      },
+      "en": {
+        "question": "-220513777+-599"
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-17",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "17",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "计算 167 + -123 - (-7 + 34)。"
+      },
+      "en": {
+        "question": "Evaluate 167 + -123 - (-7 + 34)."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-18",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "50",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "(-1)/(-1)*((4563/(-15))/13 - -23)*-125 是什么？"
+      },
+      "en": {
+        "question": "What is (-1)/(-1)*((4563/(-15))/13 - -23)*-125?"
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-19",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-2",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "计算 1000804 除以 -500402。"
+      },
+      "en": {
+        "question": "Calculate 1000804 divided by -500402."
+      }
+    },
+    {
+      "id": "mathbench-arithmetic-calculation-20",
+      "stage": "arithmetic",
+      "kind": "calculation",
+      "type": "cloze",
+      "answer": "-8/107631",
+      "topic": {
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "zh": [
+          "基本的",
+          "数字和代数概论",
+          "四项操作"
+        ]
+      },
+      "zh": {
+        "question": "32除以-430524，请以最简分数形式返回计算结果。"
+      },
+      "en": {
+        "question": "32 divided by -430524, please return the calculation result in its simplest fraction form."
+      }
+    },
+    {
+      "id": "mathbench-primary-application-01",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "2",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Comprehensive Application",
+          "Typical Application Problems"
+        ],
+        "en": [
+          "Primary",
+          "Comprehensive Application",
+          "Typical Application Problems"
+        ]
+      },
+      "zh": {
+        "question": "小明计划从工作中存钱起来。他每小时赚取 2 元，每天工作 5 个小时，每星期都要工作 4 天。如果他想存 80 元，那么他需要工作多少个星期呢？"
+      },
+      "en": {
+        "question": "Xiao Ming plans to save money from work. He earned $2 an hour and worked five hours a day, four days a week. If he wants to save $80, how many weeks does he need to work?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-02",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "10",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ]
+      },
+      "zh": {
+        "question": "小花想要买新的蜡笔，她需要5种不同颜色的蜡笔，并且准备了20元人民币去购买。一支蜡笔需要2元人民币。她会找回多少钱呢？"
+      },
+      "en": {
+        "question": "Xiaohua wants to buy new crayons. She needs 5 different colors of crayons and has prepared 20 yuan to buy them. A crayon costs 2 yuan. How much money will she get back?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-03",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "180",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Ratios and Proportions"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Ratios and Proportions"
+        ]
+      },
+      "zh": {
+        "question": "小李的袜子数量是小张的两倍，而碗的数量是小张的一半。小张在超市里买的碗数量是袜子数量的两倍。如果小张买了60个碗，请问他们两人一共有多少双袜子和碗呢？"
+      },
+      "en": {
+        "question": "Xiao Li has twice as many socks as Xiao Zhang, and half as many bowls as Xiao Zhang. Xiao Zhang bought twice as many bowls as socks in the supermarket. If Xiao Zhang buys 60 bowls, how many pairs of socks and bowls do they have in total?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-04",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "125",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Fractions and Percentages"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Fractions and Percentages"
+        ]
+      },
+      "zh": {
+        "question": "一位商人正在考虑两个购买计划：5000元的贵金属还是8000元的电子产品。他的财务顾问预测，贵金属市场在一个月内将上涨2.5％，电子产品市场将上涨1.2％。如果商人希望通过做出选择来最大化月底的利润，那么这将是多少利润呢？"
+      },
+      "en": {
+        "question": "A businessman is considering two purchase plans: 5,000 yuan of precious metals or 8,000 yuan of electronic products. His financial advisor predicts that the precious metals market will rise by 2.5% in a month and the electronics market will rise by 1.2%. If a businessman wishes to maximize his profit at the end of the month by making choices, what profit will this be?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-05",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "7",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Basic Concepts of Equations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Basic Concepts of Equations"
+        ]
+      },
+      "zh": {
+        "question": "小明家有两个鱼缸，一个鱼缸里有4只蜗牛，另一个鱼缸里有32只蜗牛。这两个鱼缸中蜗牛数量的差异是两个鱼缸中鱼的数量的两倍。假如两个鱼缸中的鱼的数量是一样的，那么请问每个鱼缸里都有多少条鱼呢？"
+      },
+      "en": {
+        "question": "Xiao Ming's family has two fish tanks, one with 4 snails and the other with 32 snails. The difference in the number of snails in the two aquariums is twice the number of fish in the two aquariums. If the number of fish in the two fish tanks is the same, how many fish are in each fish tank?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-06",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "50",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ]
+      },
+      "zh": {
+        "question": "小李为一帮好友煮了饺子，聚会上有包括小李在内的8位男性朋友和6位女性朋友。每位男性朋友比每位女性朋友多吃了一个饺子。如果每位女性朋友都吃了3个饺子，而且所有饺子都被吃光了，那么小李一共煮了多少个饺子呢？"
+      },
+      "en": {
+        "question": "Xiao Li cooked dumplings for a group of friends. There were 8 male friends and 6 female friends, including Xiao Li. Each male friend ate one more dumpling than each female friend. If each female friend ate 3 dumplings, and all the dumplings were eaten, how many dumplings did Xiao Li cook in total?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-07",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "1080",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Comprehensive Application",
+          "Typical Application Problems"
+        ],
+        "en": [
+          "Primary",
+          "Comprehensive Application",
+          "Typical Application Problems"
+        ]
+      },
+      "zh": {
+        "question": "小李每15分钟可以用订书机订30份文件。如果他从早上8点开始，一直到下午5点还在订，那么他一天总共订了多少份文件呢？"
+      },
+      "en": {
+        "question": "Xiao Li can staple 30 documents every 15 minutes. If he started ordering at 8 a.m. and continued ordering until 5 p.m., how many documents did he order in total in one day?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-08",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "3",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ]
+      },
+      "zh": {
+        "question": "张伟手上有100个苹果。王强的苹果比张伟少23个。如果张伟给王强10个苹果，那么此时，王强的苹果比张伟少多少个呢？"
+      },
+      "en": {
+        "question": "Zhang Wei has 100 apples in his hand. Wang Qiang has 23 fewer apples than Zhang Wei. If Zhang Wei gives Wang Qiang 10 apples, how many fewer apples does Wang Qiang have than Zhang Wei at this time?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-09",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "90",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ]
+      },
+      "zh": {
+        "question": "小芳手上有40元。她的爸爸又给了她100元。她花了30元买了一条牛仔裤，又花了20元买了一个包。那么小芳还剩下多少钱呢？"
+      },
+      "en": {
+        "question": "Xiaofang has 40 yuan in hand. Her father gave her another 100 yuan. She spent 30 yuan on a pair of jeans and another 20 yuan on a bag. So how much money does Xiaofang have left?"
+      }
+    },
+    {
+      "id": "mathbench-primary-application-10",
+      "stage": "primary",
+      "kind": "application",
+      "type": "cloze",
+      "answer": "76",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ]
+      },
+      "zh": {
+        "question": "李华周一去超市买了4个蛋糕。周二他去了另一家蛋糕店，买了周一蛋糕数量的三倍。周三，他又去了另一家烘焙店，买了周二蛋糕数量的5倍。请问，这三天下来，他一共买了多少个蛋糕呢？"
+      },
+      "en": {
+        "question": "Li Hua went to the supermarket on Monday and bought 4 cakes. On Tuesday he went to another cake shop and bought three times the number of cakes he bought on Monday. On Wednesday, he went to another bakery and bought five times the number of cakes he bought on Tuesday. Excuse me, how many cakes did he buy in total in the past three days?"
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-11",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Integers and Decimals"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Integers and Decimals"
+        ]
+      },
+      "zh": {
+        "question": "最小的一位自然数是？",
+        "options": [
+          "2",
+          "0",
+          "1",
+          "-1"
+        ]
+      },
+      "en": {
+        "question": "What is the smallest natural number?",
+        "options": [
+          "2",
+          "0",
+          "1",
+          "-1"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-12",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Four Operations"
+        ]
+      },
+      "zh": {
+        "question": "把整数“4”平均分成500份，可以用小数表示为？",
+        "options": [
+          "0.08",
+          "0.25",
+          "0.04",
+          "0.008"
+        ]
+      },
+      "en": {
+        "question": "Divide the integer \"4\" equally into 500 parts. Can it be expressed as a decimal?",
+        "options": [
+          "0.08",
+          "0.25",
+          "0.04",
+          "0.008"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-13",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Divisibility of Numbers"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Divisibility of Numbers"
+        ]
+      },
+      "zh": {
+        "question": "整数a除以整数b（b≠0），除得的商正好是整数而且没有余数，则a与b的关系是?",
+        "options": [
+          "整乘",
+          "以上都不是",
+          "无关",
+          "整除"
+        ]
+      },
+      "en": {
+        "question": "If the integer a is divided by the integer b (b≠0), the quotient is exactly an integer and has no remainder. What is the relationship between a and b?",
+        "options": [
+          "Multiply",
+          "None of the above",
+          "irrelevant",
+          "Divisible"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-14",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Basic Concepts of Equations"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Basic Concepts of Equations"
+        ]
+      },
+      "zh": {
+        "question": "$a+b=b+$?",
+        "options": [
+          "a",
+          "b",
+          "以上都不是",
+          "2b"
+        ]
+      },
+      "en": {
+        "question": "$a+b=b+$?",
+        "options": [
+          "a",
+          "b",
+          "None of the above",
+          "2b"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-15",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Comprehensive Application",
+          "Typical Application Problems"
+        ],
+        "en": [
+          "Primary",
+          "Comprehensive Application",
+          "Typical Application Problems"
+        ]
+      },
+      "zh": {
+        "question": "速度×时间的答案是什么？",
+        "options": [
+          "路程",
+          "数量",
+          "效率",
+          "时间"
+        ]
+      },
+      "en": {
+        "question": "What is the answer to speed × time?",
+        "options": [
+          "distance",
+          "quantity",
+          "efficiency",
+          "time"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-16",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Fractions and Percentages"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Fractions and Percentages"
+        ]
+      },
+      "zh": {
+        "question": "把单位“1”平均分成若干份，表示这样的一份或几份的数叫做什么？",
+        "options": [
+          "等式",
+          "分子",
+          "分数",
+          "分母"
+        ]
+      },
+      "en": {
+        "question": "Divide the unit \"1\" evenly into several parts. What is the number that represents such one or several parts called?",
+        "options": [
+          "equation",
+          "molecular",
+          "Fraction",
+          "Denominator"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-17",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Ratios and Proportions"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Ratios and Proportions"
+        ]
+      },
+      "zh": {
+        "question": ":分数的什么就是比的前项？",
+        "options": [
+          "被除数",
+          "除数",
+          "分母",
+          "分子"
+        ]
+      },
+      "en": {
+        "question": ":What of fractions is the antecedent of ratio?",
+        "options": [
+          "dividend",
+          "divisor",
+          "Denominator",
+          "molecular"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-18",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Comprehensive Application",
+          "Unit Conversion"
+        ],
+        "en": [
+          "Primary",
+          "Comprehensive Application",
+          "Unit Conversion"
+        ]
+      },
+      "zh": {
+        "question": "长度单位有哪些？",
+        "options": [
+          "立方米、立方分米（升）、立方厘米（毫升）",
+          "吨、千克、克",
+          "千米、米、分米、厘米、毫米",
+          "平方千米、公顷、平方米、平方分米、平方厘米"
+        ]
+      },
+      "en": {
+        "question": "What are the units of length?",
+        "options": [
+          "Cubic meters, cubic decimeters (liters), cubic centimeters (ml)",
+          "tons, kilograms, grams",
+          "Kilometers, meters, decimeters, centimeters, millimeters",
+          "Square kilometers, hectares, square meters, square decimeters, square centimeters"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-19",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Geometry",
+          "Understanding Basic Shapes"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Geometry",
+          "Understanding Basic Shapes"
+        ]
+      },
+      "zh": {
+        "question": "线段、射线、直线的联系是什么?",
+        "options": [
+          "三者都是无限长的",
+          "三者都是直的",
+          "三者都是曲的",
+          "三者都是无端点的"
+        ]
+      },
+      "en": {
+        "question": "What is the connection between line segments, rays and straight lines?",
+        "options": [
+          "All three are infinitely long",
+          "All three are straight",
+          "All three are crooked",
+          "All three are endless"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-primary-theory-20",
+      "stage": "primary",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Integers and Decimals"
+        ],
+        "en": [
+          "Primary",
+          "Introduction to Numbers and Algebra",
+          "Integers and Decimals"
+        ]
+      },
+      "zh": {
+        "question": "最小的自然数是？",
+        "options": [
+          "1",
+          "0",
+          "2",
+          "-1"
+        ]
+      },
+      "en": {
+        "question": "What is the smallest natural number?",
+        "options": [
+          "1",
+          "0",
+          "2",
+          "-1"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-01",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Real Numbers"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Real Numbers"
+        ]
+      },
+      "zh": {
+        "question": "一种花瓣的花粉颗粒直径用科学记数法表示为 $6.5\\times 10^{-6}$，这个数用小数表示为____",
+        "options": [
+          "0.00065",
+          "0.000065",
+          "0.0000065",
+          "0.00000065"
+        ]
+      },
+      "en": {
+        "question": "The diameter of the pollen grains of a petal is expressed in scientific notation as $6.5\\times 10^{-6}$. This number is expressed as a decimal as ____",
+        "options": [
+          "0.00065",
+          "0.000065",
+          "0.0000065",
+          "0.00000065"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-02",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Equations in One Variable"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Equations in One Variable"
+        ]
+      },
+      "zh": {
+        "question": "某工艺品车间有 20名工人，平均每人每天可制作 12个大花瓶或 10个小饰品，已知2 个大花瓶与 5个小饰品配成一套，则要安排 x名工人制作大花瓶，才能使每天制作的大花瓶和小饰品刚好配套，方程正确的是____",
+        "options": [
+          "$2\\times12\\left(x-20\\right)=5\\times10x$",
+          "$2\\times12x=5\\times10\\left(20-x\\right)$",
+          "$5\\times12\\left(x-20\\right)=2\\times10x$",
+          "$5\\times12x=2\\times10\\left(20-x\\right)$"
+        ]
+      },
+      "en": {
+        "question": "There are 20 workers in a handicraft workshop. On average, each person can make 12 large vases or 10 trinkets per day. It is known that 2 large vases and 5 trinkets are matched in a set, and x workers must be arranged to make large vases so that the large vases and trinkets produced every day can be matched. The correct equation is ____",
+        "options": [
+          "$2\\times12\\left(x-20\\right)=5\\times10x$",
+          "$2\\times12x=5\\times10\\left(20-x\\right)$",
+          "$5\\times12\\left(x-20\\right)=2\\times10x$",
+          "$5\\times12x=2\\times10\\left(20-x\\right)$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-03",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Probability and Statistics",
+          "Data Collection and Organization"
+        ],
+        "en": [
+          "Middle",
+          "Basic Probability and Statistics",
+          "Data Collection and Organization"
+        ]
+      },
+      "zh": {
+        "question": "为调查某校九年级学生体育锻炼情况，下列调查对象最合适的____",
+        "options": [
+          "选50名男生",
+          ".选一个班级的学生",
+          "选50名女生",
+          "随机选取九年级50名学生"
+        ]
+      },
+      "en": {
+        "question": "In order to investigate the physical exercise situation of ninth grade students in a certain school, the following survey subjects are most suitable ____",
+        "options": [
+          "Choose 50 boys",
+          ".Select students from a class",
+          "Choose 50 girls",
+          "Randomly select 50 ninth grade students"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-04",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Fractions"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Fractions"
+        ]
+      },
+      "zh": {
+        "question": "把方程$\\frac{x+1}{0.4}-\\frac{0.2x-1}{0.7}=1$中分母化整数，其结果应为____",
+        "options": [
+          "$\\frac{10x+1}{4}-\\frac{2x-1}{7}=1$",
+          "$\\frac{10x+1}{4}-\\frac{2x-1}{7}=10$",
+          "$\\frac{10x+10}{4}-\\frac{2x-10}{7}=1$",
+          "$\\frac{10x+10}{4}-\\frac{2x-10}{7}=10$"
+        ]
+      },
+      "en": {
+        "question": "Convert the denominator of the equation $\\frac{x+1}{0.4}-\\frac{0.2x-1}{0.7}=1$ into an integer, and the result should be ____",
+        "options": [
+          "$\\frac{10x+1}{4}-\\frac{2x-1}{7}=1$",
+          "$\\frac{10x+1}{4}-\\frac{2x-1}{7}=10$",
+          "$\\frac{10x+10}{4}-\\frac{2x-10}{7}=1$",
+          "$\\frac{10x+10}{4}-\\frac{2x-10}{7}=10$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-05",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Polynomials and Factorization"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Polynomials and Factorization"
+        ]
+      },
+      "zh": {
+        "question": "因式分解$x^{2}+m x-12=\\left(x+p\\right)\\left(x+q\\right)$，其中 m，p ，q 都为整数，则这样的m的最大值是____",
+        "options": [
+          "1",
+          "4",
+          "11",
+          "12"
+        ]
+      },
+      "en": {
+        "question": "Factorize $x^{2}+m x-12=\\left(x+p\\right)\\left(x+q\\right)$, where m, p, q are all integers, then the maximum value of m is ____",
+        "options": [
+          "1",
+          "4",
+          "11",
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-06",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Geometry",
+          "Basic Concepts of Geometry"
+        ],
+        "en": [
+          "Middle",
+          "Basic Geometry",
+          "Basic Concepts of Geometry"
+        ]
+      },
+      "zh": {
+        "question": "下列说法不正确的是____",
+        "options": [
+          "用一个平面去截正方体，截面可能是七边形",
+          "用一个平面去截一个球，截面一定是圆",
+          "棱柱的截面不可能是圆",
+          "用一个平面去截圆锥，截面可能是圆"
+        ]
+      },
+      "en": {
+        "question": "Which of the following statements is incorrect is ____",
+        "options": [
+          "Use a plane to cut the cube, the cross-section may be a heptagon",
+          "Use a plane to cut a ball, the cross section must be a circle",
+          "The cross section of a prism cannot be a circle",
+          "Use a plane to truncate the cone, the cross section may be a circle"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-07",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Geometry",
+          "Basic Concepts of Circles"
+        ],
+        "en": [
+          "Middle",
+          "Basic Geometry",
+          "Basic Concepts of Circles"
+        ]
+      },
+      "zh": {
+        "question": "若⊙P的半径为5，圆心P的坐标为（-3，4），则平面直角坐标系的原点O与⊙P的位置关系是____",
+        "options": [
+          "在⊙P内",
+          "在⊙P上",
+          "在⊙P外",
+          "无法确定"
+        ]
+      },
+      "en": {
+        "question": "If the radius of ⊙P is 5 and the coordinates of the center P are (-3, 4), then the positional relationship between the origin O of the plane rectangular coordinate system and ⊙P is ____",
+        "options": [
+          "within ⊙P",
+          "on ⊙P",
+          "Outside ⊙P",
+          "Unable to determine"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-08",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Quadratic Equations in One Variable"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Quadratic Equations in One Variable"
+        ]
+      },
+      "zh": {
+        "question": "关于x的一元二次方程$x^2-3x+m=0$有两个不相等的实数根，则实数m的值范围为____",
+        "options": [
+          "$m\\geq \\frac{9}{4}$",
+          "$m< \\frac{9}{4}$",
+          "$m=\\frac{9}{4}$",
+          "$m< -\\frac{9}{4}$"
+        ]
+      },
+      "en": {
+        "question": "The quadratic equation $x^2-3x+m=0$ about x has two unequal real roots, then the value range of the real number m is ____",
+        "options": [
+          "$m\\geq \\frac{9}{4}$",
+          "$m< \\frac{9}{4}$",
+          "$m=\\frac{9}{4}$",
+          "$m< -\\frac{9}{4}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-09",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Basic Concepts of Inequalities"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Basic Concepts of Inequalities"
+        ]
+      },
+      "zh": {
+        "question": "某校组织七年级学生外出研学， (1)班人数38人，居各班之首，(2) 班人数 30人，位居第二，且这两个班男生一共有30人参加，则下列说法一定正确的是：____",
+        "options": [
+          "(1)班女生比 (2)班男生人数多",
+          "(2)班女生比 (1)班男生人数多",
+          "(2)班女生比 (2)班男生人数多",
+          "(1)班女生比 (1)班男生人数多"
+        ]
+      },
+      "en": {
+        "question": "A school organizes seventh-grade students to study abroad. (1) The number of students in the class is 38, ranking first among all classes, (2) The number of students in the class is 30, ranking second, and a total of 30 boys from these two classes participate. The following statement must be correct: ____",
+        "options": [
+          "There are more girls in class (1) than boys in class (2)",
+          "There are more girls in class (2) than boys in class (1)",
+          "There are more girls in class (2) than boys in class (2)",
+          "There are more girls in class (1) than boys in class (1)"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-application-10",
+      "stage": "middle",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Quadratic Functions"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Quadratic Functions"
+        ]
+      },
+      "zh": {
+        "question": "将二次函数$y=x^2-4x+1$ 化成 $y=a(x-h)^2+k$的形式为____",
+        "options": [
+          "$y=\\left(x-4\\right)^2+1$",
+          "$y=(x-4)^2-3$",
+          "$y=(x-2)^2-3$",
+          "$y=(x+2)^2-3$"
+        ]
+      },
+      "en": {
+        "question": "The form of converting the quadratic function $y=x^2-4x+1$ into $y=a(x-h)^2+k$ is ____",
+        "options": [
+          "$y=\\left(x-4\\right)^2+1$",
+          "$y=(x-4)^2-3$",
+          "$y=(x-2)^2-3$",
+          "$y=(x+2)^2-3$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-11",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Real Numbers"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Real Numbers"
+        ]
+      },
+      "zh": {
+        "question": "有理数通常能写成什么样的形式？",
+        "options": [
+          "$\\sqrt{pq} $( $p, q$为整数且$p\\ne0$)",
+          "$sin(pq)$( $p, q$为整数且$p\\ne0$)",
+          "$\\frac{q}{p}$( $p, q$为整数且$p\\ne0$)",
+          "$ q^{p}$( $p, q$为整数且$p\\ne0$)"
+        ]
+      },
+      "en": {
+        "question": "In what form can rational numbers usually be written?",
+        "options": [
+          "$\\sqrt{pq} $( $p, q$ is an integer and $p\\ne0$)",
+          "$sin(pq)$( $p, q$ is an integer and $p\\ne0$)",
+          "$\\frac{q}{p}$( $p, q$ is an integer and $p\\ne0$)",
+          "$ q^{p}$( $p, q$ is an integer and $p\\ne0$)"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-12",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Polynomials and Factorization"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Polynomials and Factorization"
+        ]
+      },
+      "zh": {
+        "question": "什么是单项式？",
+        "options": [
+          "在代数式中，若只含有乘法（包括乘方）运算。或虽含有除法运算，且除式中含字母一类的代数式叫单项式。",
+          "在代数式中，若只含有加法运算。或虽含有除法运算，但除式中不含字母一类的代数式叫单项式。",
+          "在代数式中，若只含有减法运算。或虽含有除法运算，但除式中不含字母一类的代数式叫单项式。",
+          "在代数式中，若只含有乘法（包括乘方）运算。或虽含有除法运算，但除式中不含字母一类的代数式叫单项式。"
+        ]
+      },
+      "en": {
+        "question": "What is a monomial?",
+        "options": [
+          "In an algebraic expression, if it only contains multiplication (including exponentiation) operations. Or algebraic expressions that contain division operations and contain letters in the division formula are called monomials.",
+          "In an algebraic expression, if it only contains addition operations. Or algebraic expressions that contain division operations but do not contain letters in the division formula are called monomials.",
+          "In an algebraic expression, if it only contains subtraction operations. Or algebraic expressions that contain division operations but do not contain letters in the division formula are called monomials.",
+          "In an algebraic expression, if it only contains multiplication (including exponentiation) operations. Or algebraic expressions that contain division operations but do not contain letters in the division formula are called monomials."
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-13",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Equations in One Variable"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Equations in One Variable"
+        ]
+      },
+      "zh": {
+        "question": "一元一次方程的定义是什么？",
+        "options": [
+          "只含有一个未知数，并且未知数的次数是1，并且含未知数项的系数不是零的整式方程",
+          "只含有一个未知数，并且未知数的次数是2，并且含未知数项的系数不是零的整式方程",
+          "只含有一个未知数，并且未知数的次数是3，并且含未知数项的系数不是零的整式方程",
+          "只含有一个未知数，并且未知数的次数是4，并且含未知数项的系数不是零的整式方程"
+        ]
+      },
+      "en": {
+        "question": "What is the definition of a linear equation of one variable?",
+        "options": [
+          "An integral equation that contains only one unknown, the degree of the unknown is 1, and the coefficient of the unknown term is not zero",
+          "An integral equation that contains only one unknown, the degree of the unknown is 2, and the coefficient of the unknown term is not zero",
+          "An integral equation that contains only one unknown, and the degree of the unknown is 3, and the coefficient of the unknown term is not zero",
+          "An integral equation that contains only one unknown, and the degree of the unknown is 4, and the coefficient of the unknown term is not zero"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-14",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Geometry",
+          "Basic Concepts of Geometry"
+        ],
+        "en": [
+          "Middle",
+          "Basic Geometry",
+          "Basic Concepts of Geometry"
+        ]
+      },
+      "zh": {
+        "question": "在列方程解应用题的过程中，周长问题有哪些常用公式？",
+        "options": [
+          "$部分=全体\\cdot 比率$、$比率=\\frac{部分}{全体}$、$全体=\\frac{部分}{比率}$",
+          "$C_{圆} =2\\pi R$、$C_{长方形} =2(a+b)$、$C_{正方形} =4a$",
+          "$V_{长方体} =abc$、$V_{正方体} =a^3$、$V_{圆柱} =\\pi R^2h$、$V_{圆锥} =\\frac{1}{3}\\pi R^2h$",
+          "$S_{圆} =\\pi R^2$、$S_{长方形} =ab$、$S_{正方形} =a^2$、$S_{环形} =\\pi (R^2-r^2)$"
+        ]
+      },
+      "en": {
+        "question": "In the process of formulating equations to solve word problems, what are the commonly used formulas for perimeter problems?",
+        "options": [
+          "$部分=全体\\cdot 比率$, $比率=\\frac{部分}{全体}$, $全体=\\frac{部分}{比率}$",
+          "$C_{圆} =2\\pi R$, $C_{长方形} =2(a+b)$, $C_{正方形} =4a$",
+          "$V_{长方体} =abc$, $V_{正方体} =a^3$, $V_{圆柱} =\\pi R^2h$, $V_{圆锥} =\\frac{1}{3}\\pi R^2h$",
+          "$S_{圆} =\\pi R^2$, $S_{长方形} =ab$, $S_{正方形} =a^2$, $S_{环形} =\\pi (R^2-r^2)$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-15",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Geometry",
+          "Basics of Triangles"
+        ],
+        "en": [
+          "Middle",
+          "Basic Geometry",
+          "Basics of Triangles"
+        ]
+      },
+      "zh": {
+        "question": "由不在同一直线上的三条线段首尾顺次相接所组成的图形叫做？",
+        "options": [
+          "正方形",
+          "三角形",
+          "圆形",
+          "长方形"
+        ]
+      },
+      "en": {
+        "question": "A figure composed of three line segments that are not on the same straight line and connected end to end is called?",
+        "options": [
+          "square",
+          "triangle",
+          "round",
+          "rectangle"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-16",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Equations in Two Variables"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Equations in Two Variables"
+        ]
+      },
+      "zh": {
+        "question": "二元一次方程含有两个未知数，并且未知数的指数都是1，像这样的方程叫做什么？",
+        "options": [
+          "二元一次方程",
+          "一元一次方程",
+          "一元二次方程",
+          "二元二次方程"
+        ]
+      },
+      "en": {
+        "question": "A linear equation of two variables contains two unknowns, and the exponents of the unknowns are both 1. What is an equation like this called?",
+        "options": [
+          "linear equation of two variables",
+          "linear equation of one variable",
+          "Quadratic equation of one variable",
+          "quadratic equation in two variables"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-17",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Basic Concepts of Inequalities"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Basic Concepts of Inequalities"
+        ]
+      },
+      "zh": {
+        "question": "用哪些符号表示大小关系的式子叫做不等式？",
+        "options": [
+          "$<,>$",
+          "$<,>,\\leq,\\req$",
+          "$<,>,\\leq,\\req,\\neq$",
+          "$<,>,\\leq,\\req,=$"
+        ]
+      },
+      "en": {
+        "question": "What symbols are used to express the relationship between magnitude and magnitude called inequalities?",
+        "options": [
+          "$<,>$",
+          "$<,>,\\leq,\\req$",
+          "$<,>,\\leq,\\req,\\neq$",
+          "$<,>,\\leq,\\req,=$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-18",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Probability and Statistics",
+          "Data Collection and Organization"
+        ],
+        "en": [
+          "Middle",
+          "Basic Probability and Statistics",
+          "Data Collection and Organization"
+        ]
+      },
+      "zh": {
+        "question": "考察全体对象的调查方式叫做什么？",
+        "options": [
+          "全面调查",
+          "片面调查",
+          "抽样调查",
+          "普遍调查"
+        ]
+      },
+      "en": {
+        "question": "What is the method of surveying all subjects called?",
+        "options": [
+          "full investigation",
+          "One-sided investigation",
+          "sample survey",
+          "general survey"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-19",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Functions"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Linear Functions"
+        ]
+      },
+      "zh": {
+        "question": "若两个变量x,y间的关系式可以表示成$y=kx+b(k\\ne 0)$\n的形式，则称y是x的？",
+        "options": [
+          "指数函数",
+          "三角函数",
+          "一次函数",
+          "二次函数"
+        ]
+      },
+      "en": {
+        "question": "If the relationship between two variables x and y can be expressed as $y=kx+b(k\\ne 0)$\nIn the form of , then y is said to be of x?",
+        "options": [
+          "exponential function",
+          "Trigonometric functions",
+          "linear function",
+          "quadratic function"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-middle-theory-20",
+      "stage": "middle",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Fractions"
+        ],
+        "en": [
+          "Middle",
+          "Basic Numbers and Algebra",
+          "Fractions"
+        ]
+      },
+      "zh": {
+        "question": "形如$A/B$，A、B是整式，B中含有未知数且B不等于0，这样的式子叫做分式，其中A和B分别叫做分式的什么？",
+        "options": [
+          "分母、分母",
+          "分子、分子",
+          "分母、分子",
+          "分子、分母"
+        ]
+      },
+      "en": {
+        "question": "In the form $A/B$, A and B are integers, B contains an unknown number and B is not equal to 0. Such a formula is called a fraction. What are A and B called fractions?",
+        "options": [
+          "denominator, denominator",
+          "molecule, molecule",
+          "Denominator, numerator",
+          "Numerator, denominator"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-01",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sets and Common Logical Terms"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sets and Common Logical Terms"
+        ]
+      },
+      "zh": {
+        "question": "设集合 $U=\\mathbf{R}$, 集合 $M=\\{x \\mid x<1\\}, N=\\{x \\mid-1<x<2\\}$, 则 $\\{x \\mid x \\geq 2\\}=$ ",
+        "options": [
+          "$\\overbrace{U}(M \\cup N)$",
+          "$N \\bigcup \\partial_{U} M$",
+          "$\\partial_{U}(M \\cap N)$",
+          "$M \\cup \\triangleleft_{U} N$"
+        ]
+      },
+      "en": {
+        "question": "Suppose the set $U=\\mathbf{R}$, the set $M=\\{x \\mid x<1\\}, N=\\{x \\mid-1<x<2\\}$, then $\\{x \\mid x \\geq 2\\}=$",
+        "options": [
+          "$\\overbrace{U}(M \\cup N)$",
+          "$N \\bigcup \\partial_{U} M$",
+          "$\\partial_{U}(M \\cap N)$",
+          "$M \\cup \\triangleleft_{U} N$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-02",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Trigonometric Functions and Solving Triangles"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Trigonometric Functions and Solving Triangles"
+        ]
+      },
+      "zh": {
+        "question": "在 $\\triangle A B C$ 中, 内角 $A, B, C$ 的对边分别是 $a, b, c$, 若 $a \\cos B-b \\cos A=c$, 且 $C=\\frac{\\pi}{5}$, 则 $\\angle B=(\\quad)$",
+        "options": [
+          "$\\frac{\\pi}{10}$",
+          "$\\frac{\\pi}{5}$",
+          "$\\frac{3 \\pi}{10}$",
+          "$\\frac{2 \\pi}{5}$"
+        ]
+      },
+      "en": {
+        "question": "In $\\triangle A B C$, the opposite sides of the interior angle $A, B, C$ are $a, b, c$ respectively. If $a \\cos B-b \\cos A=c$, and $C=\\frac{\\pi}{5}$, then $\\angle B=(\\quad)$",
+        "options": [
+          "$\\frac{\\pi}{10}$",
+          "$\\frac{\\pi}{5}$",
+          "$\\frac{3 \\pi}{10}$",
+          "$\\frac{2 \\pi}{5}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-03",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Complex Numbers"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Complex Numbers"
+        ]
+      },
+      "zh": {
+        "question": "若$z=1+i$,则$|iz+3\\overline{z}|=\\left(\\ \\ \\right)$",
+        "options": [
+          "$4\\sqrt{5}$",
+          "$4\\sqrt{2}$",
+          "$2\\sqrt{5}$",
+          "$2\\sqrt{2}$"
+        ]
+      },
+      "en": {
+        "question": "If $z=1+i$, then $|iz+3\\overline{z}|=\\left(\\ \\ \\right)$",
+        "options": [
+          "$4\\sqrt{5}$",
+          "$4\\sqrt{2}$",
+          "$2\\sqrt{5}$",
+          "$2\\sqrt{2}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-04",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Solid Geometry"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Solid Geometry"
+        ]
+      },
+      "zh": {
+        "question": "在长方体$ABCD-A_{1}B_{1}C_{1}D_{1}$中,已知$B_{1}D$与平面$ABCD$和平面$AA_{1}B_{1}B$所成的角均为$30^{\\circ}$,则（  ）",
+        "options": [
+          "$AB=2AD$",
+          "$AB$与平面$AB_{1}C_{1}D$所成的角为$30^{\\circ}$",
+          "$AC=CB_{1}$",
+          "$B_{1}D$与平面$BB_{1}C_{1}C$所成的角为$45^{\\circ}$"
+        ]
+      },
+      "en": {
+        "question": "In the cuboid $ABCD-A_{1}B_{1}C_{1}D_{1}$, it is known that the angles formed by $B_{1}D$, plane $ABCD$ and plane $AA_{1}B_{1}B$ are both $30^{\\circ}$, then ( )",
+        "options": [
+          "$AB=2AD$",
+          "The angle between $AB$ and the plane $AB_{1}C_{1}D$ is $30^{\\circ}$",
+          "$AC=CB_{1}$",
+          "The angle between $B_{1}D$ and the plane $BB_{1}C_{1}C$ is $45^{\\circ}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-05",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Elementary Functions and Their Derivatives"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Elementary Functions and Their Derivatives"
+        ]
+      },
+      "zh": {
+        "question": "6.已知函数 $f(x)=a \\mathrm{e}^{x}-\\ln x$ 在区间 $(1,2)$ 单调递增, 则 $a$ 的最小值为()",
+        "options": [
+          "$\\mathrm{e}^{2}$",
+          "e",
+          "$\\mathrm{e}^{-1}$",
+          "$\\mathrm{e}^{-2}$"
+        ]
+      },
+      "en": {
+        "question": "6. It is known that the function $f(x)=a \\mathrm{e}^{x}-\\ln x$ increases monotonically in the interval $(1,2)$, then the minimum value of $a$ is ()",
+        "options": [
+          "$\\mathrm{e}^{2}$",
+          "e",
+          "$\\mathrm{e}^{-1}$",
+          "$\\mathrm{e}^{-2}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-06",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Probability and Statistics",
+          "Foundations of Probability Theory"
+        ],
+        "en": [
+          "High",
+          "Intermediate Probability and Statistics",
+          "Foundations of Probability Theory"
+        ]
+      },
+      "zh": {
+        "question": "从$2$至$8$的$7$个整数中随机取$2$个不同的数,则这$2$个数互质的概率为（  ）",
+        "options": [
+          "$\\frac{1}{6}$",
+          "$\\frac{1}{3}$",
+          "$\\frac{1}{2}$",
+          "$\\frac{2}{3}$"
+        ]
+      },
+      "en": {
+        "question": "Randomly select $2$ different numbers from $7$ integers from $2$ to $8$, then the probability that these $2$ numbers are relatively prime is ( )",
+        "options": [
+          "$\\frac{1}{6}$",
+          "$\\frac{1}{3}$",
+          "$\\frac{1}{2}$",
+          "$\\frac{2}{3}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-07",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sequences"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sequences"
+        ]
+      },
+      "zh": {
+        "question": "10.已知等差数列 $\\left\\{a_{n}\\right\\}$ 的公差为 $\\frac{2 \\pi}{3}$, 集合 $S=\\left\\{\\cos a_n \\mid n \\in \\mathrm{N}^*\\right\\}$, 若 $S=\\{a, b\\}$, 则 $a b=($ ( )",
+        "options": [
+          "-1",
+          "$-\\frac{1}{2}$",
+          "0",
+          "$\\frac{1}{2}$"
+        ]
+      },
+      "en": {
+        "question": "10. It is known that the tolerance of the arithmetic sequence $\\left\\{a_{n}\\right\\}$ is $\\frac{2 \\pi}{3}$, the set $S=\\left\\{\\cos a_n \\mid n \\in \\mathrm{N}^*\\right\\}$, if $S=\\{a, b\\}$, then $a b=($ ( )",
+        "options": [
+          "-1",
+          "$-\\frac{1}{2}$",
+          "0",
+          "$\\frac{1}{2}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-08",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Plane Vectors"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Plane Vectors"
+        ]
+      },
+      "zh": {
+        "question": "在$\\triangle ABC$中,点$D$在边$AB$上,$BD=2DA$.记$\\overrightarrow{CA}=\\overrightarrow{m}$,$\\overrightarrow{CD}=\\overrightarrow{n}$,则$\\overrightarrow{CB}=\\left(\\ \\ \\right)$",
+        "options": [
+          "$3\\overrightarrow{m}-2\\overrightarrow{n}$",
+          "$-2\\overrightarrow{m}+3\\overrightarrow{n}$",
+          "$3\\overrightarrow{m}+2\\overrightarrow{n}$",
+          "$2\\overrightarrow{m}+3\\overrightarrow{n}$"
+        ]
+      },
+      "en": {
+        "question": "In $\\triangle ABC$, point $D$ is on the edge $AB$, $BD=2DA$. Note $\\overrightarrow{CA}=\\overrightarrow{m}$, $\\overrightarrow{CD}=\\overrightarrow{n}$, then $\\overrightarrow{CB}=\\left(\\ \\ \\right)$",
+        "options": [
+          "$3\\overrightarrow{m}-2\\overrightarrow{n}$",
+          "$-2\\overrightarrow{m}+3\\overrightarrow{n}$",
+          "$3\\overrightarrow{m}+2\\overrightarrow{n}$",
+          "$2\\overrightarrow{m}+3\\overrightarrow{n}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-09",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Conic Sections"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Conic Sections"
+        ]
+      },
+      "zh": {
+        "question": "已知椭圆$C$:$\\frac{{{x^2}}}{{{a^2}}}+\\frac{{{y^2}}}{{{b^2}}}=1\\left(a \\gt b \\gt 0\\right)$的离心率为$\\frac{1}{3}$,$A_{1}$,$A_{2}$分别为$C$的左、右顶点,$B$为$C$的上顶点.若$\\overrightarrow{B{A_1}}\\cdot \\overrightarrow{B{A_2}}=-1$,则$C$的方程为（  ）",
+        "options": [
+          "$\\frac{{{x^2}}}{{18}}+\\frac{{{y^2}}}{{16}}=1$",
+          "$\\frac{{{x^2}}}{9}+\\frac{{{y^2}}}{8}=1$",
+          "$\\frac{{{x^2}}}{3}+\\frac{{{y^2}}}{2}=1$",
+          "$\\frac{{{x^2}}}{2}+y^{2}=1$"
+        ]
+      },
+      "en": {
+        "question": "It is known that the eccentricities of ellipses $C$:$\\frac{{{x^2}}}{{{a^2}}}+\\frac{{{y^2}}}{{{b^2}}}=1\\left(a \\gt b \\gt 0\\right)$ are $\\frac{1}{3}$, $A_{1}$, and $A_{2}$ are ZXQ respectively. The left and right vertices of MATH5QXZ, $B$ are the upper vertices of $C$. If $\\overrightarrow{B{A_1}}\\cdot \\overrightarrow{B{A_2}}=-1$, then the equation of $C$ is ( )",
+        "options": [
+          "$\\frac{{{x^2}}}{{18}}+\\frac{{{y^2}}}{{16}}=1$",
+          "$\\frac{{{x^2}}}{9}+\\frac{{{y^2}}}{8}=1$",
+          "$\\frac{{{x^2}}}{3}+\\frac{{{y^2}}}{2}=1$",
+          "$\\frac{{{x^2}}}{2}+y^{2}=1$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-application-10",
+      "stage": "high",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Lines and Circles"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Lines and Circles"
+        ]
+      },
+      "zh": {
+        "question": "已知实数 $x, y$ 满足 $x^{2}+y^{2}-4 x-2 y-4=0$, 则 $x-y$ 的最大值是 ( )",
+        "options": [
+          "$1+\\frac{3 \\sqrt{2}}{2}$",
+          "4",
+          "$1+3 \\sqrt{2}$",
+          "7"
+        ]
+      },
+      "en": {
+        "question": "It is known that the real number $x, y$ satisfies $x^{2}+y^{2}-4 x-2 y-4=0$, then the maximum value of $x-y$ is ( )",
+        "options": [
+          "$1+\\frac{3 \\sqrt{2}}{2}$",
+          "4",
+          "$1+3 \\sqrt{2}$",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-11",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sets and Common Logical Terms"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sets and Common Logical Terms"
+        ]
+      },
+      "zh": {
+        "question": "把研究的对象统称为元素，把一些元素组成的总体叫做集合。请问以下哪个不属于集合三要素？",
+        "options": [
+          "无序性",
+          "有序性",
+          "确定性",
+          "互异性"
+        ]
+      },
+      "en": {
+        "question": "The objects of study are collectively called elements, and the totality of some elements is called a set. Which of the following does not belong to the three elements of a set?",
+        "options": [
+          "disorder",
+          "Orderliness",
+          "certainty",
+          "Mutuality"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-12",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Elementary Functions and Their Derivatives"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Elementary Functions and Their Derivatives"
+        ]
+      },
+      "zh": {
+        "question": "设A、B是非空的数集，如果按照某种确定的对应关系f，使对于集合A中的任意一个数x，在集合B中都有惟一确定的数f(x)和它对应，那么就称$f: A \\to  B$为集合A到集合B的一个，又是如何表示的？",
+        "options": [
+          "向量，$y \\approx f(x), x \\in A$",
+          "反射，$y \\times f(x), x \\in A$",
+          "函数，$y = f(x), x \\in A$",
+          "映射，$y = f(x), x \\notin A$"
+        ]
+      },
+      "en": {
+        "question": "Suppose A and B are non-empty number sets. If according to a certain corresponding relationship f, for any number x in set A, there is a unique number f(x) corresponding to it in set B, then $f: A \\to  B$ is called one of set A to set B. How is it expressed?",
+        "options": [
+          "Vector, $y \\approx f(x), x \\in A$",
+          "Reflection, $y \\times f(x), x \\in A$",
+          "Function, $y = f(x), x \\in A$",
+          "Mapping, $y = f(x), x \\notin A$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-13",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Probability and Statistics",
+          "Foundations of Probability Theory"
+        ],
+        "en": [
+          "High",
+          "Intermediate Probability and Statistics",
+          "Foundations of Probability Theory"
+        ]
+      },
+      "zh": {
+        "question": "什么是基本事件？",
+        "options": [
+          "随机数字次数试验中可能出现的每一个基本结果",
+          "一次试验中可能出现的每一个基本结果",
+          "多次次试验中可能出现的每一个基本结果",
+          "一次试验中可能出现的两个结果组合成的基本结果"
+        ]
+      },
+      "en": {
+        "question": "What are basic events?",
+        "options": [
+          "Every possible basic outcome in a random number trial",
+          "Every basic outcome that can occur in an experiment",
+          "Every basic outcome that could occur over many trials",
+          "The basic result composed of the combination of two possible results in an experiment"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-14",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Trigonometric Functions and Solving Triangles"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Trigonometric Functions and Solving Triangles"
+        ]
+      },
+      "zh": {
+        "question": "${\\sin }^{2}\\alpha + {\\cos }^{2}\\alpha $= ?",
+        "options": [
+          "0.5",
+          "1",
+          "3",
+          "2"
+        ]
+      },
+      "en": {
+        "question": "${\\sin }^{2}\\alpha + {\\cos }^{2}\\alpha $= ?",
+        "options": [
+          "0.5",
+          "1",
+          "3",
+          "2"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-15",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Solid Geometry"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Solid Geometry"
+        ]
+      },
+      "zh": {
+        "question": "一般地,由一个平面多边形沿某一方向平移形成的空间几何体叫做？",
+        "options": [
+          "棱柱",
+          "圆柱",
+          "棱锥",
+          "棱台"
+        ]
+      },
+      "en": {
+        "question": "Generally, the spatial geometry formed by a plane polygon translated in a certain direction is called?",
+        "options": [
+          "prism",
+          "cylinder",
+          "pyramid",
+          "prism"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-16",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sequences"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Sequences"
+        ]
+      },
+      "zh": {
+        "question": "如果一个数列从第2项起，每一项与它前一项的差等于同一个常数，那么这个数列叫做？",
+        "options": [
+          "等比数列",
+          "单减数列",
+          "单增数列",
+          "等差数列"
+        ]
+      },
+      "en": {
+        "question": "If the difference between each item in a sequence starting from the 2nd item and its previous item is equal to the same constant, then what is this sequence called?",
+        "options": [
+          "geometric sequence",
+          "single subtraction sequence",
+          "Single increasing sequence",
+          "Arithmetic sequence"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-17",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Lines and Circles"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Lines and Circles"
+        ]
+      },
+      "zh": {
+        "question": "直线方程点斜式的表达式是？",
+        "options": [
+          "$y-y_0 = k(x_0-x)$",
+          "$y-y_0 = k(x-x_0)$",
+          "$y-y_0 = x-kx_0$",
+          "$y-y_0 = kx-x_0$"
+        ]
+      },
+      "en": {
+        "question": "What is the expression of the point slope of the equation of a straight line?",
+        "options": [
+          "$y-y_0 = k(x_0-x)$",
+          "$y-y_0 = k(x-x_0)$",
+          "$y-y_0 = x-kx_0$",
+          "$y-y_0 = kx-x_0$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-18",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Lines and Planes in Space"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Lines and Planes in Space"
+        ]
+      },
+      "zh": {
+        "question": "一条直线上至少几个点在一个平面内，那么这条直线所有点都在这个平面内？",
+        "options": [
+          "3个",
+          "4个",
+          "2个",
+          "1个"
+        ]
+      },
+      "en": {
+        "question": "At least several points on a straight line lie in a plane, so all the points of this straight line lie in this plane?",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-19",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Plane Vectors"
+        ],
+        "en": [
+          "High",
+          "Intermediate Numbers and Algebra",
+          "Plane Vectors"
+        ]
+      },
+      "zh": {
+        "question": "既有<<<Answer 1>>>又有<<<Answer 2>>>的量叫做向量",
+        "options": [
+          "大小,速度",
+          "力，大小",
+          "方向,速度",
+          "大小,方向"
+        ]
+      },
+      "en": {
+        "question": "A quantity that has both <<<Answer 1>>> and <<<Answer 2>>> is called a vector",
+        "options": [
+          "size, speed",
+          "force, size",
+          "direction, speed",
+          "size, direction"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-high-theory-20",
+      "stage": "high",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Conic Sections"
+        ],
+        "en": [
+          "High",
+          "Intermediate Geometry",
+          "Equations of Conic Sections"
+        ]
+      },
+      "zh": {
+        "question": "关于圆锥曲线的描述，下列哪项是正确的？",
+        "options": [
+          "圆锥曲线是圆锥被平面截得的边缘轮廓",
+          "圆锥曲线是圆锥底面的轮廓",
+          "圆锥曲线仅包括圆和椭圆",
+          "圆锥曲线是圆锥上的任意一条直线"
+        ]
+      },
+      "en": {
+        "question": "Which of the following is correct regarding the description of conic sections?",
+        "options": [
+          "A conic section is the edge contour of a cone intercepted by a plane",
+          "A conic section is the outline of the base of a cone",
+          "Conic sections include only circles and ellipses",
+          "A conic section is any straight line on a cone"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-01",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "College",
+          "Discrete Mathematics",
+          "Graph Theory"
+        ],
+        "en": [
+          "College",
+          "Discrete Mathematics",
+          "Graph Theory"
+        ]
+      },
+      "zh": {
+        "question": "具有7个结点的所有非同构的树有____个。",
+        "options": [
+          "7",
+          "11",
+          "12",
+          "14"
+        ]
+      },
+      "en": {
+        "question": "There are ____ all non-isomorphic trees with 7 nodes.",
+        "options": [
+          "7",
+          "11",
+          "12",
+          "14"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-02",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Discrete Mathematics",
+          "Set Theory"
+        ],
+        "en": [
+          "College",
+          "Discrete Mathematics",
+          "Set Theory"
+        ]
+      },
+      "zh": {
+        "question": "在代数系统中，整环和域的关系是____",
+        "options": [
+          "整环一定是域",
+          "域不一定是整环",
+          "域一定是整环",
+          "域一定不是整环"
+        ]
+      },
+      "en": {
+        "question": "In algebraic systems, the relationship between integral rings and fields is ____",
+        "options": [
+          "The whole ring must be a domain",
+          "The domain is not necessarily the entire ring",
+          "The domain must be the entire ring",
+          "The domain must not be the entire ring"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-03",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "College",
+          "Discrete Mathematics",
+          "Mathematical Logic"
+        ],
+        "en": [
+          "College",
+          "Discrete Mathematics",
+          "Mathematical Logic"
+        ]
+      },
+      "zh": {
+        "question": "$\\left(\\exists x\\right)\\left(\\mathsf{P}\\left(a,x\\right)\\rightarrow\\left(\\forall y\\right)\\mathsf{Q}\\left(x,b,y\\right)\\right)$的前束范式为____",
+        "options": [
+          "$\\left(\\exists x\\right)\\left(\\forall y\\right)\\left(\\neg P\\left(a,x\\right)\\lor Q\\left(x,b,y\\right)\\right)$",
+          "$\\neg\\left(\\forall x\\right)\\left(\\exists y\\right)\\left(\\mathsf{P}\\left(a,x\\right)\\wedge\\neg Q\\left(x,b,y\\right)\\right)$",
+          "$(\\exists x)(\\forall y)~(\\neg P(a,x)\\land Q(x,b,y))$",
+          "$(\\exists x)(\\neg P(a,x)\\lor(\\forall y)Q(x,b,y))$"
+        ]
+      },
+      "en": {
+        "question": "The toe-in paradigm of $\\left(\\exists x\\right)\\left(\\mathsf{P}\\left(a,x\\right)\\rightarrow\\left(\\forall y\\right)\\mathsf{Q}\\left(x,b,y\\right)\\right)$ is____",
+        "options": [
+          "$\\left(\\exists x\\right)\\left(\\forall y\\right)\\left(\\neg P\\left(a,x\\right)\\lor Q\\left(x,b,y\\right)\\right)$",
+          "$\\neg\\left(\\forall x\\right)\\left(\\exists y\\right)\\left(\\mathsf{P}\\left(a,x\\right)\\wedge\\neg Q\\left(x,b,y\\right)\\right)$",
+          "$(\\exists x)(\\forall y)~(\\neg P(a,x)\\land Q(x,b,y))$",
+          "$(\\exists x)(\\neg P(a,x)\\lor(\\forall y)Q(x,b,y))$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-04",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "College",
+          "Probability and Statistics",
+          "Random Events and Probability"
+        ],
+        "en": [
+          "College",
+          "Probability and Statistics",
+          "Random Events and Probability"
+        ]
+      },
+      "zh": {
+        "question": "设$X_{1},X_{2},\\cdots,X_{n}$是来自总体$X\\sim U(0,8\\pi)$的简单样本,$\\mathrm{Y}_{i}=\\frac{\\pi}{4}\\sin\\left(\\frac{1}{8}X_{1}\\right)$,则$\\frac1n\\sum_{i=1}^{n}Y_{i}$依概率收敛于____",
+        "options": [
+          "$1 / 16$",
+          "$1 / 4$",
+          "$1 / 8$",
+          "$1 / 2$"
+        ]
+      },
+      "en": {
+        "question": "Suppose $X_{1},X_{2},\\cdots,X_{n}$ is a simple sample from the population $X\\sim U(0,8\\pi)$, $\\mathrm{Y}_{i}=\\frac{\\pi}{4}\\sin\\left(\\frac{1}{8}X_{1}\\right)$, then $\\frac1n\\sum_{i=1}^{n}Y_{i}$ converges to ____ with probability",
+        "options": [
+          "$1 / 16$",
+          "$1 / 4$",
+          "$1 / 8$",
+          "$1 / 2$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-05",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "College",
+          "Probability and Statistics",
+          "Mathematical Statistics"
+        ],
+        "en": [
+          "College",
+          "Probability and Statistics",
+          "Mathematical Statistics"
+        ]
+      },
+      "zh": {
+        "question": "假设某厂生产的一种保险丝的融化时间服从分布$N(\\mu,\\sigma^2)$,按规定保险丝融化时间的方差不得超过400,现从一批产品中抽取25个,测得其融化时间的样本方差为427.5。在显著性水平0.05下，根据这个样本数据检验这批样品的方差是否符合要求，假设检验的原假设为$H_0$,被则假设$H_1$,拒绝与为W，以及检验结论为____(本题查表值:$\\chi_{0.05}^2(24)=36.415,\\chi_{0.025}^2(24)=39.364,\\chi_{0.95}^2(24)=13.848,\\chi_{0.975}^2(24)=12.401$)",
+        "options": [
+          "$\\mathrm{H}_0: \\sigma^2 \\geq 400$, $\\mathrm{H}_1: \\sigma^2<400$ ;$ W=\\left\\{\\frac{24 S^2}{400}<13.848\\right\\}$;结论：符合要求",
+          "$\\mathrm{H}_0: \\sigma^2 \\leq 400$, $\\mathrm{H}_1: \\sigma^2>400 $; $W=\\left\\{\\frac{24 S^2}{400}>39.364\\right\\}$; 结论: 不符合要求",
+          "$\\mathrm{H}_0: \\sigma^2 \\geq 400$, $\\mathrm{H}_1: \\sigma^2<400$ ;$ W=\\left\\{\\frac{24 S^2}{400}<12.401\\right\\}$;结论：符合要求",
+          "$\\mathrm{H}_0: \\sigma^2 \\leq 400$,$ \\mathrm{H}_1: \\sigma^2>400 $; $W=\\left\\{\\frac{24 S^2}{400}>36.415\\right\\}$;结论；符合要求"
+        ]
+      },
+      "en": {
+        "question": "Assume that the melting time of a fuse produced by a certain factory obeys the distribution $N(\\mu,\\sigma^2)$. According to regulations, the variance of the melting time of the fuse shall not exceed 400. Now, 25 fuses are selected from a batch of products, and the sample variance of the melting time is measured to be 427.5. At the significance level of 0.05, based on this sample data, test whether the variance of this batch of samples meets the requirements. The original hypothesis of the hypothesis test is $H_0$, the hypothesis is $H_1$, the rejection and is W, and the test conclusion is ____ (table lookup value for this question: $\\chi_{0.05}^2(24)=36.415,\\chi_{0.025}^2(24)=39.364,\\chi_{0.95}^2(24)=13.848,\\chi_{0.975}^2(24)=12.401$)",
+        "options": [
+          "$\\mathrm{H}_0: \\sigma^2 \\geq 400$, $\\mathrm{H}_1: \\sigma^2<400$;$ W=\\left\\{\\frac{24 S^2}{400}<13.848\\right\\}$;Conclusion: meets the requirements",
+          "$\\mathrm{H}_0: \\sigma^2 \\leq 400$, $\\mathrm{H}_1: \\sigma^2>400 $; $W=\\left\\{\\frac{24 S^2}{400}>39.364\\right\\}$; Conclusion: Does not meet the requirements",
+          "$\\mathrm{H}_0: \\sigma^2 \\geq 400$, $\\mathrm{H}_1: \\sigma^2<400$;$ W=\\left\\{\\frac{24 S^2}{400}<12.401\\right\\}$;Conclusion: meets the requirements",
+          "$\\mathrm{H}_0: \\sigma^2 \\leq 400$,$ \\mathrm{H}_1: \\sigma^2>400 $; $W=\\left\\{\\frac{24 S^2}{400}>36.415\\right\\}$;Conclusion;Meet the requirements"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-06",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "College",
+          "Probability and Statistics",
+          "Distribution of Random Variables"
+        ],
+        "en": [
+          "College",
+          "Probability and Statistics",
+          "Distribution of Random Variables"
+        ]
+      },
+      "zh": {
+        "question": "设随机变量$X$服从均匀分布$U(-1,1)$,则$Y=e^X$的密度函数为:____",
+        "options": [
+          "$$\nf_Y(y)=\\left\\{\\begin{array}{cl}\n\\frac{1}{2} \\ln y+1, & y \\in\\left(e^{-1}, e^1\\right) \\\\\n0, & \\text { 其他 }\n\\end{array}\\right.\n$$",
+          "$$\nf_Y(y)=\\left\\{\\begin{array}{lc}\n\\frac{1}{y}, & y \\in\\left(e^{-1}, e^1\\right) \\\\\n0, & \\text { 其他 }\n\\end{array}\\right.\n$$",
+          "$f_Y(y)=\\left\\{\\begin{array}{cl}\\frac{1}{2}(\\ln y+1), & y \\in\\left(e^{-1}, e^1\\right) \\\\ 0, & \\text { 其他 }\\end{array}\\right.$",
+          "$f_Y(y)=\\left\\{\\begin{array}{cc}\\frac{1}{2 y}, & y \\in\\left(e^{-1}, e^1\\right) \\\\ 0, & \\text { 其他 }\\end{array}\\right.$"
+        ]
+      },
+      "en": {
+        "question": "Assume that the random variable $X$ obeys the uniform distribution $U(-1,1)$, then the density function of $Y=e^X$ is:____",
+        "options": [
+          "$\nf_Y(y)=\\left\\{\\begin{array}{cl}\n\\frac{1}{2} \\ln y+1, & y \\in\\left(e^{-1}, e^1\\right) \\\\\n0, & \\text { 其他 }\n\\end{array}\\right.\n$",
+          "$\nf_Y(y)=\\left\\{\\begin{array}{lc}\n\\frac{1}{y}, & y \\in\\left(e^{-1}, e^1\\right) \\\\\n0, & \\text { 其他 }\n\\end{array}\\right.\n$",
+          "$f_Y(y)=\\left\\{\\begin{array}{cl}\\frac{1}{2}(\\ln y+1), & y \\in\\left(e^{-1}, e^1\\right) \\\\ 0, & \\text { 其他 }\\end{array}\\right.$",
+          "$f_Y(y)=\\left\\{\\begin{array}{cc}\\frac{1}{2 y}, & y \\in\\left(e^{-1}, e^1\\right) \\\\ 0, & \\text { 其他 }\\end{array}\\right.$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-07",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "College",
+          "Probability and Statistics",
+          "Distribution of Multidimensional Random Variables"
+        ],
+        "en": [
+          "College",
+          "Probability and Statistics",
+          "Distribution of Multidimensional Random Variables"
+        ]
+      },
+      "zh": {
+        "question": "设二维随机变量$(X,Y)$的联合分布函数为\n$$\nF(x,y)=\\left\\{\\begin{array}{cl}\n1-e^{-0.01x}-e^{-0.01y}+e^{-0.01(x+y)},&x\\geq0,y\\geq0,\\\\\n0,&\\text{其他}\n\\end{array}\\right.\n$$\n则$P(X>100)=$____",
+        "options": [
+          "$1-e^{-1}$",
+          "$e^{-1}$",
+          "$1-2 e^{-1}$",
+          "$2 e^{-1}$"
+        ]
+      },
+      "en": {
+        "question": "Suppose the joint distribution function of the two-dimensional random variable $(X,Y)$ is\n$\nF(x,y)=\\left\\{\\begin{array}{cl}\n1-e^{-0.01x}-e^{-0.01y}+e^{-0.01(x+y)},&x\\geq0,y\\geq0,\\\\\n0,&\\text{其他}\n\\end{array}\\right.\n$\nThen $P(X>100)=$____",
+        "options": [
+          "$1-e^{-1}$",
+          "$e^{-1}$",
+          "$1-2 e^{-1}$",
+          "$2 e^{-1}$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-08",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "College",
+          "Probability and Statistics",
+          "Numerical Characteristics of Random Variables"
+        ],
+        "en": [
+          "College",
+          "Probability and Statistics",
+          "Numerical Characteristics of Random Variables"
+        ]
+      },
+      "zh": {
+        "question": "设随机变量$X_1，X_2，\\ldots,X_n(n>1)$独立同分布，且其方差$\\sigma^2>0$，令$Y=\\frac{1}{n}\\sum_{i=1}^nX_i$，则____",
+        "options": [
+          "$\\operatorname{cov}\\left(X_1, Y\\right)=\\frac{\\sigma^2}{n}$",
+          "$cov\\left(X_1, Y\\right)=\\sigma^2$",
+          "$D\\left(X_1+Y\\right)=\\frac{n+2}{n} \\sigma^2$",
+          "$D\\left(X_1-Y\\right)=\\frac{n-1}{n} \\sigma^2$"
+        ]
+      },
+      "en": {
+        "question": "Assume that the random variable $X_1，X_2，\\ldots,X_n(n>1)$ is independently and identically distributed, and its variance is $\\sigma^2>0$. Let $Y=\\frac{1}{n}\\sum_{i=1}^nX_i$, then ____",
+        "options": [
+          "$\\operatorname{cov}\\left(X_1, Y\\right)=\\frac{\\sigma^2}{n}$",
+          "$cov\\left(X_1, Y\\right)=\\sigma^2$",
+          "$D\\left(X_1+Y\\right)=\\frac{n+2}{n} \\sigma^2$",
+          "$D\\left(X_1-Y\\right)=\\frac{n-1}{n} \\sigma^2$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-09",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Functions, Limits, Continuity"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Functions, Limits, Continuity"
+        ]
+      },
+      "zh": {
+        "question": "求极限：$\\lim_{x\\rightarrow1}\\frac{\\left(1+\\frac{1}{x}\\right)^x\\left(1+x\\right)^{\\frac{1}{x}}-4}{\\left(x-1\\right)^2}$=____",
+        "options": [
+          "$2\\ln 2-1$",
+          "$3\\ln 2-2$",
+          "$4\\ln 2-3$",
+          "$5\\ln 2-3$"
+        ]
+      },
+      "en": {
+        "question": "Find the limit: $\\lim_{x\\rightarrow1}\\frac{\\left(1+\\frac{1}{x}\\right)^x\\left(1+x\\right)^{\\frac{1}{x}}-4}{\\left(x-1\\right)^2}$=____",
+        "options": [
+          "$2\\ln 2-1$",
+          "$3\\ln 2-2$",
+          "$4\\ln 2-3$",
+          "$5\\ln 2-3$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-application-10",
+      "stage": "college",
+      "kind": "application",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Integral Calculus of Single-Variable Functions"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Integral Calculus of Single-Variable Functions"
+        ]
+      },
+      "zh": {
+        "question": "计算广义积分：$I=\\int_1^{+\\infty}{\\frac{1}{\\sqrt{x}}\\ln\\left(\\frac{x+1}{x}\\right)}\\mathrm{d}x$____",
+        "options": [
+          "$\\pi -\\ln 2$",
+          "$\\pi -2\\ln 2$",
+          "$\\pi -3\\ln 2$",
+          "$2\\pi -\\ln 2$"
+        ]
+      },
+      "en": {
+        "question": "Compute generalized integrals: $I=\\int_1^{+\\infty}{\\frac{1}{\\sqrt{x}}\\ln\\left(\\frac{x+1}{x}\\right)}\\mathrm{d}x$____",
+        "options": [
+          "$\\pi -\\ln 2$",
+          "$\\pi -2\\ln 2$",
+          "$\\pi -3\\ln 2$",
+          "$2\\pi -\\ln 2$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-11",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "A",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Functions, Limits, Continuity"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Functions, Limits, Continuity"
+        ]
+      },
+      "zh": {
+        "question": "设函数 \\(f(x)\\) 的定义域为 \\(D\\), 数集 \\(X \\subseteq D\\). 若存在正数 \\(M\\), 使得 \\(|f(x)| \\leqslant M\\) 对任一 \\(x \\in X\\) 都成立, 则称函数 \\(f(x)\\) 在 \\(X\\) 上是？",
+        "options": [
+          "有界的",
+          "无界的",
+          "单调的",
+          "周期的"
+        ]
+      },
+      "en": {
+        "question": "Let the domain of the function \\(f(x)\\) be \\(D\\), the number set \\(X \\subseteq D\\). If there is a positive number \\(M\\) such that \\(|f(x)| \\leqslant M\\) is true for any \\(x \\in X\\), then the function \\(f(x)\\) is said to be on \\(X\\)?",
+        "options": [
+          "bounded",
+          "unbounded",
+          "monotonous",
+          "cyclical"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-12",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Differential Calculus of Single-Variable Functions"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Differential Calculus of Single-Variable Functions"
+        ]
+      },
+      "zh": {
+        "question": "在下列哪些情况下，$x_{0}$是函数 $y=f(x)$ 导数？",
+        "options": [
+          "左导数存在。",
+          "左导数和右导数都存在但不相等。",
+          "左导数和右导数都存在且相等。",
+          "右导数存在。"
+        ]
+      },
+      "en": {
+        "question": "In which of the following cases, $x_{0}$ is the derivative of the function $y=f(x)$?",
+        "options": [
+          "The left derivative exists.",
+          "Both the left and right derivatives exist but are not equal.",
+          "Both the left and right derivatives exist and are equal.",
+          "The right derivative exists."
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-13",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Integral Calculus of Single-Variable Functions"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Integral Calculus of Single-Variable Functions"
+        ]
+      },
+      "zh": {
+        "question": "若在区间 $I$ 上, 可导函数 $F(x)$ 的导函数为 $f(x)$, 则函数 $F(x)$ 被称为 $f(x)$ (或 $f(x) \\mathrm{d} x)$ 在区间 $I$ 上的一个?",
+        "options": [
+          "导函数",
+          "母函数",
+          "子函数",
+          "原函数"
+        ]
+      },
+      "en": {
+        "question": "If the derivative function of the differentiable function $F(x)$ is $f(x)$ on the interval $I$, then the function $F(x)$ is called $f(x)$ (or one of $f(x) \\mathrm{d} x)$ on the interval $I$?",
+        "options": [
+          "derivative function",
+          "parent function",
+          "Subfunction",
+          "original function"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-14",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Differential Calculus of Multivariable Functions"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Differential Calculus of Multivariable Functions"
+        ]
+      },
+      "zh": {
+        "question": "设函数 $z=f(x, y)$ 在点 $\\left(x_{0}, y_{0}\\right)$ 的某一邻域内有定义, 当 $y$ 固定在 $y_{0}$ 而 $x$ 在 $x_{0}$ 处有增量 $\\Delta x$ 时, 相应的函数有增量 $f\\left(x_{0}+\\Delta x, y_{0}\\right)-f\\left(x_{0}, y_{0}\\right)$, 若\n\n$$\n\\lim _{\\Delta x \\rightarrow 0} \\frac{f\\left(x_{0}+\\Delta x, y_{0}\\right)-f\\left(x_{0}, y_{0}\\right)}{\\Delta x}\n$$\n\n存在, 则称此极限为函数 $z=f(x, y)$ 在点 $\\left(x_{0}, y_{0}\\right)$ 处对 $x$ 的？",
+        "options": [
+          "梯度",
+          "微分",
+          "偏导数",
+          "次梯度"
+        ]
+      },
+      "en": {
+        "question": "Suppose the function $z=f(x, y)$ is defined in a certain neighborhood of point $\\left(x_{0}, y_{0}\\right)$. When $y$ is fixed at $y_{0}$ and $x$ has an increment of $\\Delta x$ at $x_{0}$, the corresponding function has an increment of $f\\left(x_{0}+\\Delta x, y_{0}\\right)-f\\left(x_{0}, y_{0}\\right)$. If\n\n$\n\\lim _{\\Delta x \\rightarrow 0} \\frac{f\\left(x_{0}+\\Delta x, y_{0}\\right)-f\\left(x_{0}, y_{0}\\right)}{\\Delta x}\n$\n\nexists, then this limit is called the function $z=f(x, y)$ at point $\\left(x_{0}, y_{0}\\right)$ versus $x$?",
+        "options": [
+          "gradient",
+          "differential",
+          "Partial derivative",
+          "subgradient"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-15",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Double Integrals"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Double Integrals"
+        ]
+      },
+      "zh": {
+        "question": "以下哪一项是二重积分的性质？",
+        "options": [
+          "均不是",
+          "设 $M$ 和 $m$ 分别是 $f(x, y)$ 在闭区域 $D$ 上的最大值和最小值, $\\sigma$ 是 $D$\n   的面积,则有\n\n$$\nm \\sigma < \\iint_{D} f(x, y) \\mathrm{d} \\sigma < M \\sigma \\text {. }\n$$",
+          "$$\n\\iint_{D}[\\alpha f(x, y)+\\beta g(x, y)] \\mathrm{d} \\sigma=\\alpha\\beta \\iint_{D} f(x, y) \\mathrm{d} \\sigma+\\alpha\\beta \\iint_{D} g(x, y) \\mathrm{d} \\sigma .\n$$",
+          "$$\n\\iint_{D}[\\alpha f(x, y)+\\beta g(x, y)] \\mathrm{d} \\sigma=\\alpha \\iint_{D} f(x, y) \\mathrm{d} \\sigma+\\beta \\iint_{D} g(x, y) \\mathrm{d} \\sigma .\n$$"
+        ]
+      },
+      "en": {
+        "question": "Which of the following is a property of double integrals?",
+        "options": [
+          "None",
+          "Let $M$ and $m$ be the maximum and minimum values of $f(x, y)$ in the closed region $D$ respectively, and $\\sigma$ is $D$\n   area, then there is\n\n$\nm \\sigma < \\iint_{D} f(x, y) \\mathrm{d} \\sigma < M \\sigma \\text {. }\n$",
+          "$\n\\iint_{D}[\\alpha f(x, y)+\\beta g(x, y)] \\mathrm{d} \\sigma=\\alpha\\beta \\iint_{D} f(x, y) \\mathrm{d} \\sigma+\\alpha\\beta \\iint_{D} g(x, y) \\mathrm{d} \\sigma .\n$",
+          "$\n\\iint_{D}[\\alpha f(x, y)+\\beta g(x, y)] \\mathrm{d} \\sigma=\\alpha \\iint_{D} f(x, y) \\mathrm{d} \\sigma+\\beta \\iint_{D} g(x, y) \\mathrm{d} \\sigma .\n$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-16",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Ordinary Differential Equations"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Ordinary Differential Equations"
+        ]
+      },
+      "zh": {
+        "question": "若一个一阶微分方程能写成 $g(y) \\mathrm{d} y=f(x) \\mathrm{d} x$ 的形式, 即能把微分方程写成一端只含 $y$ 的函数和 $\\mathrm{d} y$,一端只含 $x$ 的函数和 $\\mathrm{d} x$, 则原方程称为什么？",
+        "options": [
+          "偏微分方程",
+          "变量不可分离的微分方程.",
+          "变量可分离的微分方程.",
+          "都不是"
+        ]
+      },
+      "en": {
+        "question": "If a first-order differential equation can be written in the form of $g(y) \\mathrm{d} y=f(x) \\mathrm{d} x$, that is, the differential equation can be written as one end containing only the function $y$ and $\\mathrm{d} y$, and one end only containing the function $x$ and $\\mathrm{d} x$, then what is the original equation called?",
+        "options": [
+          "partial differential equations",
+          "Differential equations with inseparable variables.",
+          "Differential equations with separable variables.",
+          "None"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-17",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "B",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Infinite Series"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Infinite Series"
+        ]
+      },
+      "zh": {
+        "question": "设 $\\sum_{n=1}^{\\infty} a_{n}$ 和 $\\sum_{n=1}^{\\infty} b_{n}$ 都是正项级数, 且 $a_{n} \\leqslant b_{n}(n$ $=1,2, \\cdots)$. 若 $\\sum_{n=1}^{\\infty} b_{n}$ 收敛, 则 $\\sum_{n=1}^{\\infty} a_{n}$ .",
+        "options": [
+          "条件收敛",
+          "收敛",
+          "绝对收敛",
+          "发散"
+        ]
+      },
+      "en": {
+        "question": "Suppose $\\sum_{n=1}^{\\infty} a_{n}$ and $\\sum_{n=1}^{\\infty} b_{n}$ are both positive series, and $a_{n} \\leqslant b_{n}(n$ $=1,2, \\cdots)$. If $\\sum_{n=1}^{\\infty} b_{n}$ converges, then $\\sum_{n=1}^{\\infty} a_{n}$.",
+        "options": [
+          "Conditional convergence",
+          "convergence",
+          "Absolute convergence",
+          "diverge"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-18",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Advanced Mathematics",
+          "Integral Calculus of Multivariable Functions"
+        ],
+        "en": [
+          "College",
+          "Advanced Mathematics",
+          "Integral Calculus of Multivariable Functions"
+        ]
+      },
+      "zh": {
+        "question": "设 $f(x, y, z)$ 是空间有界闭区域 $\\Omega$ 上的有界函数. 将 $\\Omega$ 任意分成 $n$ 个小闭区域 $\\Delta v{1}, \\Delta v{2}, \\cdots, \\Delta v{n}$, 其中 $\\Delta v{i}$ 表示第 $i$ 个小闭区域,也表示它的体积. 在每个 $\\Delta v{i}$ 上任取一点 $\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right)$, 作乘积 $f\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right) \\Delta v{i}(i=1,2, \\cdots, n)$, 并作和 $\\sum{i=1}^{n} f\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right) \\Delta v{i}$. 若当各小闭区域直径中的最大值 $\\lambda \\rightarrow 0$ 时, 这和的极限总存在, 且与闭区域 $\\Omega$ 的分法及点 $\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right)$ 的取法无关, 则称此极限为函数 $f(x, y, z)$ 在闭区域 $\\Omega$ 上的三重积分, 记作 $\\iiint_{n} f(x, y, z) \\mathrm{d} v$, 即 \\iiint_{\\Omega} f(x, y, z) \\mathrm{d} v=\\lim _{\\lambda \\rightarrow 0} \\sum_{i=1}^{n} f\\left(\\xi_{i}, \\eta_{i}, \\zeta_{i}\\right) \\Delta v_{i}, 其中____叫做被积函数?",
+        "options": [
+          "$\\Omega$",
+          "$\\mathrm{d} v$",
+          "$f(x, y, z)$",
+          "$ f(x, y, z) \\mathrm{d} v$"
+        ]
+      },
+      "en": {
+        "question": "Let $f(x, y, z)$ be a bounded function on the space bounded closed region $\\Omega$. Divide $\\Omega$ arbitrarily into $n$ small closed regions $\\Delta v{1}, \\Delta v{2}, \\cdots, \\Delta v{n}$, where $\\Delta v{i}$ represents the $i$th small closed region and also represents its volume. Pick any point on each $\\Delta v{i}$ $\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right)$, make the product $f\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right) \\Delta v{i}(i=1,2, \\cdots, n)$, and make the sum $\\sum{i=1}^{n} f\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right) \\Delta v{i}$. If the maximum value of the diameter of each small closed area is $\\lambda \\rightarrow 0$, the limit of this sum always exists, and it has nothing to do with the division method of the closed area $\\Omega$ and the method of taking the point $\\left(\\xi{i}, \\eta{i}, \\zeta{i}\\right)$, then this limit is called a function The triple integral of $f(x, y, z)$ on the closed region $\\Omega$ is denoted as $\\iiint_{n} f(x, y, z) \\mathrm{d} v$, that is, \\iiint_{\\Omega} f(x, y, z) \\mathrm{d} v=\\lim _{\\lambda \\rightarrow 0} \\sum_{i=1}^{n} f\\left(\\xi_{i}, \\eta_{i}, \\zeta_{i}\\right) \\Delta v_{i}, where ____ is called the integrand?",
+        "options": [
+          "$\\Omega$",
+          "$\\mathrm{d} v$",
+          "$f(x, y, z)$",
+          "$ f(x, y, z) \\mathrm{d} v$"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-19",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "C",
+      "topic": {
+        "zh": [
+          "College",
+          "Linear Algebra",
+          "Determinants"
+        ],
+        "en": [
+          "College",
+          "Linear Algebra",
+          "Determinants"
+        ]
+      },
+      "zh": {
+        "question": "把行列式的某一行(列) 的各元素乘同一个数然后加到另一行(列) 对应的元素上去, 行列式有什么变化？",
+        "options": [
+          "变为原来的$\\frac{1}{x}$倍",
+          "变为原来的$1+x$倍",
+          "不变",
+          "变为原来的x倍"
+        ]
+      },
+      "en": {
+        "question": "If each element in a row (column) of the determinant is multiplied by the same number and then added to the corresponding element in another row (column), what will happen to the determinant?",
+        "options": [
+          "Become $\\frac{1}{x}$ times the original",
+          "Become $1+x$ times the original",
+          "constant",
+          "Become x times the original"
+        ]
+      }
+    },
+    {
+      "id": "mathbench-college-theory-20",
+      "stage": "college",
+      "kind": "theory",
+      "type": "single_choice",
+      "answer": "D",
+      "topic": {
+        "zh": [
+          "College",
+          "Linear Algebra",
+          "Matrices"
+        ],
+        "en": [
+          "College",
+          "Linear Algebra",
+          "Matrices"
+        ]
+      },
+      "zh": {
+        "question": "矩阵的初等行变换不包括哪种类型？",
+        "options": [
+          "对换第$i$行与第$j$列",
+          "以数$k \\neq 0$乘第i行",
+          " 以数$k$乘第$j$行加到第$i$行",
+          "将一行中的两个数字互相调换位置"
+        ]
+      },
+      "en": {
+        "question": "Which type is not included in the elementary row transformation of a matrix?",
+        "options": [
+          "Swap row $i$ and column $j$",
+          "Multiply the i-th row by the number $k \\neq 0$",
+          "Multiply row $j$ by the number $k$ and add to row $i$",
+          "Swap two numbers in a row with each other"
+        ]
+      }
+    }
+  ]
+}

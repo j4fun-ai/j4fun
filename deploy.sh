@@ -27,17 +27,24 @@ SHIBEN_OUT_DIR="$DEPLOY_DIR/shiben" \
 pnpm --dir "$PROJECT_DIR/shiben-dev" build:static
 
 echo "Collecting production files…"
-for page in index.html about.html poetry.html sudoku.html strands.html; do
+for source_page in "$PROJECT_DIR"/*.html; do
+  page="$(basename "$source_page")"
   sed \
     -e "s/build local/build ${GIT_REVISION}/g" \
     -e "s#assets/main.css#assets/main.css?v=${GIT_REVISION}#g" \
     -e "s#assets/site-nav.js#assets/site-nav.js?v=${GIT_REVISION}#g" \
     -e "s#assets/images/favicon-32.png#assets/images/favicon-32.png?v=${GIT_REVISION}#g" \
     -e "s#assets/images/apple-touch-icon.png#assets/images/apple-touch-icon.png?v=${GIT_REVISION}#g" \
-    "$PROJECT_DIR/$page" > "$DEPLOY_DIR/$page"
+    "$source_page" > "$DEPLOY_DIR/$page"
 done
 cp "$PROJECT_DIR/poems.json" "$DEPLOY_DIR/"
+for data_file in math_problems.json; do
+  cp "$PROJECT_DIR/$data_file" "$DEPLOY_DIR/$data_file"
+done
 cp -R "$PROJECT_DIR/assets" "$DEPLOY_DIR/assets"
+
+echo "Adding Google Analytics to production HTML…"
+node "$PROJECT_DIR/scripts/inject-analytics.js" "$DEPLOY_DIR"
 
 echo "Build version: $BUILD_VERSION"
 

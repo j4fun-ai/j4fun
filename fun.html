@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>关于 j4fun · Just For Fun</title>
+    <title>中文小玩意合集 · j4fun</title>
     <meta
       name="description"
-      content="了解 j4fun：收集中文互动、轻量网页游戏和知识挑战的好玩实验场。"
+      content="j4fun 是一个不断添加中文趣味小项目的合集站，收录诗词、汉字游戏和数学等知识挑战。"
     />
     <link
       rel="icon"
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="assets/main.css?v=20260906d" />
     <script src="assets/site-nav.js?v=20260906" defer></script>
   </head>
-  <body class="page-about">
+  <body class="page-home">
     <header class="site">
       <div class="wrap topbar">
         <a class="brand" href="index.html" aria-label="j4fun 首页">
@@ -50,10 +50,10 @@
           ></span>
         </button>
         <nav class="top-links" id="site-navigation" aria-label="主导航">
-          <a href="fun.html">中文小玩意</a>
+          <a href="fun.html" aria-current="page">中文小玩意</a>
           <a href="games.html">随手玩</a>
           <a href="quiz.html">知识挑战</a>
-          <a href="about.html" aria-current="page">关于</a>
+          <a href="about.html">关于</a>
           <a class="related-project" href="shiben/"
             ><img
               src="shiben/images/huawen-textbook-mark.svg"
@@ -66,53 +66,60 @@
     </header>
 
     <section class="hero wrap">
-      <p class="eyebrow">About J4FUN</p>
-      <h1>让好奇心多一点<span class="accent">好玩</span></h1>
+      <p class="eyebrow">Chinese Culture, Ready to Play</p>
+      <h1>中文小玩意<span class="accent">合集</span></h1>
       <p class="lede">
-        j4fun
-        是一个轻量互动项目合集：有中文小玩意、随手玩的网页游戏，也有每天都能试试的知识挑战。
+        把诗词、汉字和传统文化做成轻松好玩的互动小项目。无需下载，不用注册，打开网页就能玩。
       </p>
     </section>
 
-    <main class="wrap about-page-content">
-      <section class="about-intro" aria-labelledby="about-title">
-        <h2 id="about-title">关于 j4fun</h2>
-        <p>
-          我们希望把有趣的想法做成不用安装
-          App、打开网页就能体验的小项目。从中文诗词和汉字，到不依赖语言的小游戏与知识问答，每个板块都保留适合自己的表达方式。
-        </p>
-        <p>
-          这里的项目规模不一定很大，但每一个都应该简单、清楚、可以直接玩。新的想法会继续加入，旧的项目也会慢慢打磨。
-        </p>
-      </section>
+    <main class="wrap">
+      <div class="card-grid">
+        <a class="item-card" href="poetry.html">
+          <div class="emoji">🌸</div>
+          <h3>诗词好玩局</h3>
+          <p>
+            飞花令 + 诗句接龙 + 随便读读，用真实的唐诗宋词数据做的中文小游戏。
+          </p>
+          <div class="tag-row">
+            <span class="tag">飞花令</span><span class="tag">接龙</span>
+          </div>
+          <div class="cta">进去玩</div>
+        </a>
 
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>打开就玩</h3>
-          <p>无需注册或下载，主要功能直接在浏览器中运行。</p>
-        </div>
-        <div class="about-card">
-          <h3>保留原味</h3>
+        <a class="item-card" href="sudoku.html">
+          <div class="emoji">🧩</div>
+          <h3>汉字数独</h3>
           <p>
-            全站以中文为主，英文仅用于每个页面的眉题点题；导航、说明与主要内容均保持中文。
+            规则和普通数独一样，只是把 1-9 换成了汉字 ——
+            数字大写、天干、生肖、吉祥语，还能自定义。
           </p>
-        </div>
-        <div class="about-card">
-          <h3>尊重隐私</h3>
+          <div class="tag-row">
+            <span class="tag">益智</span><span class="tag">可自定义</span>
+          </div>
+          <div class="cta">进去玩</div>
+        </a>
+
+        <a class="item-card" href="strands.html">
+          <div class="emoji">🕸️</div>
+          <h3>字踪 · 藏字连连看</h3>
           <p>
-            纯静态页面无后端服务器，除使用 Google Analytics
-            统计匿名访问外，我们不保存用户的任何数据，所有操作均在浏览器本地完成。
+            参考纽约时报 Strands
+            的玩法，连出的成语和诗句正好铺满整个棋盘，找到贯穿全局的"通关词"。
           </p>
-        </div>
+          <div class="tag-row">
+            <span class="tag">连线</span><span class="tag">成语</span>
+          </div>
+          <div class="cta">进去玩</div>
+        </a>
+
       </div>
-      <p class="build-info">当前版本：v1.0 · build local</p>
     </main>
 
     <footer class="wrap">
-      <div class="footer-brand">
-        j4fun - Just For Fun<br />Play, Learn &amp; Discover
-      </div>
+      <div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div>
       <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
     </footer>
+
   </body>
 </html>

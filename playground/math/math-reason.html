@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mAceReason 每日数学 · j4fun</title>
+    <meta name="description" content="每天一道中英对应的数学推理题，可选择基础或挑战难度，并进行五题闯关。题目来自 mAceReason-Math。" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/main.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+        options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+    <script src="../../assets/site-nav.js" defer></script>
+  </head>
+  <body class="page-math page-puzzle page-macereason">
+    <div id="numbers" aria-hidden="true"></div>
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="../../index.html" aria-label="j4fun 首页"><img class="brand-logo" src="../../assets/images/logo.png?083026" alt="j4fun" /></a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="../../poetry.html">诗词</a><a href="math.html">数学</a><a href="../../sudoku.html">汉字数独</a><a href="../../strands.html">字踪</a><a href="../../about.html">关于</a>
+          <a class="related-project" href="../../shiben/"><img src="../../shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap">
+      <p class="eyebrow" data-i18n="eyebrow">mAceReason-Math · 双语数学推理</p>
+      <h1 data-i18n="title">今天，你能解开这道<span class="accent">数学题</span>吗？</h1>
+      <p class="lede" data-i18n="lede">每天一道中英对应的数学推理题，也可以连续挑战基础与进阶两关。</p>
+    </section>
+
+    <main class="wrap">
+      <div class="mode-tabs puzzle-mode-tabs" id="modeTabs" role="tablist" aria-label="游戏模式">
+        <button class="mode-tab active" type="button" data-mode="daily" role="tab" aria-selected="true" data-i18n="dailyTab">今日一题</button>
+        <button class="mode-tab" type="button" data-mode="challenge" role="tab" aria-selected="false" data-i18n="challengeTab">数学闯关</button>
+        <button class="mode-tab" type="button" data-mode="stats" role="tab" aria-selected="false" data-i18n="statsTab">我的战绩</button>
+      </div>
+
+      <section class="panel" id="panel-daily" role="tabpanel">
+        <div class="panel-head puzzle-daily-heading">
+          <h2 data-i18n="dailyTitle">今日一题</h2>
+          <p data-i18n="dailyCopy">同一天、同一难度的题目保持不变。</p>
+        </div>
+        <div class="puzzle-daily-toolbar">
+          <div class="daily-meta">
+            <time id="dailyDate" class="puzzle-date-label">
+              <span class="puzzle-date-month" aria-hidden="true"></span>
+              <span class="puzzle-date-day" aria-hidden="true"></span>
+            </time>
+            <span class="streak-pill"><span data-i18n="streakBefore">连续答对</span> <b id="dailyStreak">0</b> <span data-i18n="streakAfter">天</span></span>
+          </div>
+          <div class="puzzle-toolbar-control puzzle-level-picker" id="dailyLevelPicker" role="group" aria-label="选择挑战难度">
+            <span class="puzzle-control-eyebrow" data-i18n="chooseLevel">选择挑战难度</span>
+            <div class="grade-picker-options">
+              <button class="grade-option active" type="button" data-level="standard" aria-pressed="true" data-i18n="standard">基础</button>
+              <button class="grade-option" type="button" data-level="challenge" aria-pressed="false" data-i18n="challenge">挑战</button>
+            </div>
+          </div>
+          <div class="puzzle-toolbar-control puzzle-language-control">
+            <span class="puzzle-control-eyebrow" data-i18n="languageLabel">题目语言</span>
+            <div class="puzzle-language-picker" role="group" aria-label="题目语言">
+              <button type="button" data-language="zh" aria-pressed="true">中文</button>
+              <button type="button" data-language="en" aria-pressed="false">English</button>
+            </div>
+          </div>
+        </div>
+        <article class="math-card puzzle-card">
+          <div class="puzzle-meta" id="dailyMeta"></div>
+          <div class="math-question puzzle-question" id="dailyQuestion"></div>
+          <div class="choice-list puzzle-choice-list" id="dailyChoices"></div>
+          <form class="puzzle-answer-form" id="dailyAnswerForm" hidden>
+            <label for="dailyAnswer" data-i18n="enterAnswer">输入答案</label>
+            <div><input id="dailyAnswer" type="text" autocomplete="off" /><button type="submit" data-i18n="submit">提交</button></div>
+          </form>
+          <div class="explain-box" id="dailyExplain"></div>
+          <div class="result-banner" id="dailyResult"></div>
+          <div class="done-note" id="dailyDoneNote" hidden data-i18n="doneNote">今天这一档已经作答，明天会换新题。</div>
+        </article>
+        <div class="week-strip" id="weekStrip"></div>
+        <p class="math-source-status puzzle-source-note" id="puzzleSourceStatus" aria-live="polite">正在载入本地题库…</p>
+      </section>
+
+      <section class="panel" id="panel-challenge" role="tabpanel" hidden>
+        <div id="challengeIntro">
+          <div class="panel-head"><h2 data-i18n="challengeTitle">数学闯关</h2><p data-i18n="challengeCopy">每关 5 题，答对至少 4 题进入挑战关。</p></div>
+          <div class="challenge-ladder puzzle-ladder" id="challengeLadderIntro">
+            <div class="rung current"><span data-i18n="standard">基础</span><small data-i18n="standardDesc">基础推理</small></div>
+            <div class="rung"><span data-i18n="challenge">挑战</span><small data-i18n="challengeDesc">综合推理</small></div>
+          </div>
+          <div class="challenge-start"><button id="challengeStart" type="button" data-i18n="start">开始闯关</button></div>
+        </div>
+        <div id="challengePlay" hidden>
+          <div class="challenge-top"><span id="challengeLevel"></span><span id="challengeProgress"></span></div>
+          <div class="progress-bar"><span id="challengeProgressBar"></span></div>
+          <article class="math-card puzzle-card">
+            <div class="puzzle-meta" id="challengeMeta"></div>
+            <div class="math-question puzzle-question" id="challengeQuestion"></div>
+            <div class="choice-list puzzle-choice-list" id="challengeChoices"></div>
+            <form class="puzzle-answer-form" id="challengeAnswerForm" hidden>
+              <label for="challengeAnswer" data-i18n="enterAnswer">输入答案</label>
+              <div><input id="challengeAnswer" type="text" autocomplete="off" /><button type="submit" data-i18n="submit">提交</button></div>
+            </form>
+            <div class="explain-box" id="challengeExplain"></div>
+          </article>
+          <div class="challenge-next"><button id="challengeNext" type="button" hidden data-i18n="next">下一题</button></div>
+        </div>
+        <div id="challengeDone" hidden>
+          <div class="big-result"><div class="headline" id="challengeHeadline"></div><div class="sub" id="challengeSub"></div>
+            <div class="btn-row"><button id="challengeRetry" type="button" data-i18n="retry">再挑战一次</button><button class="secondary" id="challengeCopy" type="button" data-i18n="copy">复制结果</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-stats" role="tabpanel" hidden>
+        <div class="panel-head"><h2 data-i18n="statsTitle">我的战绩</h2><p data-i18n="statsCopy">数据只保存在当前浏览器，清除浏览器数据后会重置。</p></div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="num" id="statStreak">0</div><div class="label" data-i18n="statStreak">连续答对天数</div></div>
+          <div class="stat-card"><div class="num" id="statBest">—</div><div class="label" data-i18n="statBest">闯关最高水平</div></div>
+          <div class="stat-card"><div class="num" id="statTotal">0</div><div class="label" data-i18n="statTotal">累计答题数</div></div>
+          <div class="stat-card"><div class="num" id="statAccuracy">—</div><div class="label" data-i18n="statAccuracy">总正确率</div></div>
+        </div>
+        <div class="week-strip" id="statsWeekStrip"></div>
+      </section>
+    </main>
+
+    <section class="about wrap" id="details">
+      <h2 data-i18n="aboutTitle">玩法说明</h2>
+      <p data-i18n="aboutCopy">英文原题、答案及该项目生成的中文译文来自 <a href="https://github.com/apple/ml-macereason-math" target="_blank" rel="noopener noreferrer">mAceReason-Math</a>。本站只筛选无需图片、适合浏览器直接作答的题目；判题和战绩记录都在本地完成，不上传输入内容。</p>
+      <div class="about-grid">
+        <div class="about-card"><h3 data-i18n="aboutDailyTitle">今日一题怎么玩</h3><p data-i18n="aboutDailyCopy">基础、挑战各有一道每日题。日期和难度共同决定题目，答对可累计连胜。</p></div>
+        <div class="about-card"><h3 data-i18n="aboutChallengeTitle">数学闯关怎么玩</h3><p data-i18n="aboutChallengeCopy">先挑战 5 道基础题，答对 4 题进入挑战关。答案可输入数字、百分数或题目要求的数学表达式。</p></div>
+        <div class="about-card"><h3 data-i18n="aboutDataTitle">数据与许可</h3><p data-i18n="aboutDataCopy">本地缓存 320 道中英配对题，来自 mAceReason-Math 的 parallel train split。数据采用 CC BY-NC-ND 4.0，仅限非商业使用并保持题目原文。</p></div>
+      </div>
+    </section>
+
+    <footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+
+    <script>
+      (function () {
+        var LOCAL_DATA_URL = 'macereason_daily_problems.json';
+        var REMOTE_DATA_URL = 'https://raw.githubusercontent.com/j4fun-ai/j4fun/main/macereason_daily_problems.json';
+        var DATA_CACHE_KEY = 'j4fun-macereason-data-v1';
+        var STORE_KEY = 'j4fun-macereason-state-v1';
+        var LEVEL_NAMES = { standard: { zh: '基础', en: 'Standard' }, challenge: { zh: '挑战', en: 'Challenge' } };
+        var LEVEL_ORDER = ['standard', 'challenge'];
+        var I18N = {
+          zh: {
+            eyebrow: 'mAceReason-Math · 双语数学推理', title: '今天，你能解开这道<span class="accent">数学题</span>吗？', lede: '每天一道中英对应的数学推理题，也可以连续挑战基础与进阶两关。',
+            dailyTab: '今日一题', challengeTab: '数学闯关', statsTab: '我的战绩', dailyTitle: '今日一题', dailyCopy: '同一天、同一难度的题目保持不变。',
+            streakBefore: '连续答对', streakAfter: '天', chooseLevel: '选择挑战难度', standard: '基础', challenge: '挑战', languageLabel: '题目语言', enterAnswer: '输入答案', submit: '提交', doneNote: '今天这一档已经作答，明天会换新题。',
+            challengeTitle: '数学闯关', challengeCopy: '每关 5 题，答对至少 4 题进入挑战关。', standardDesc: '较短题目', challengeDesc: '综合推理', start: '开始闯关', next: '下一题', retry: '再挑战一次', copy: '复制结果',
+            statsTitle: '我的战绩', statsCopy: '数据只保存在当前浏览器，清除浏览器数据后会重置。', statStreak: '连续答对天数', statBest: '闯关最高水平', statTotal: '累计答题数', statAccuracy: '总正确率', select: '选择', groundTruth: '数据集答案', aiExplain: '用 AI 查看逐步解析 ↗', correct: '✓ 答对了！', wrong: '答案不一致，请检查格式或计算过程。',
+            levelSuffix: '关', questionProgress: '第 {n} / 5 题', correctShort: '✓ 正确。', wrongShort: '✗ 本题答案不一致。', copied: '已复制', copyFailed: '复制失败',
+            qShort: '简答题', localSource: '内置精选题库 · {n} 题', remoteSource: '本站在线缓存已更新 · 内置题库仍可离线使用', hardCleared: '你闯过了挑战关！', normalCleared: '基础关通过！', stageAlmost: '{level}关还差一点', resultCount: '本次共答对 {n} 题。',
+            aboutTitle: '玩法说明', aboutCopy: '英文原题、答案及该项目生成的中文译文来自 <a href="https://github.com/apple/ml-macereason-math" target="_blank" rel="noopener noreferrer">mAceReason-Math</a>。mAceReason-Math 使用 Claude Sonnet 4 机器翻译其训练集；本站直接使用已发布译文，不在浏览器中临时翻译。答案与战绩均在本地处理。本页面由 j4fun 独立制作，与数据集作者或维护者没有隶属、合作或认可关系。', aboutDailyTitle: '今日一题怎么玩', aboutDailyCopy: '基础、挑战各有一道每日题。日期和难度共同决定题目，切换语言不会换题。', aboutChallengeTitle: '数学闯关怎么玩', aboutChallengeCopy: '先挑战 5 道基础题，答对 4 题进入挑战关。答案可输入数字、百分数或题目要求的数学表达式。', aboutDataTitle: '数据与许可', aboutDataCopy: '本站内置 320 道中英配对题，筛选自 mAceReason-Math 的 parallel train split，并可从本站 GitHub 读取同一缓存的更新版；页面不会直接下载上游全部题库。项目把答案字段称为 solution，但多数记录只提供最终答案，并非逐步解析。数据采用 <a href="https://github.com/apple/ml-macereason-math/blob/main/LICENSE_DATA" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>，仅限非商业使用并保持题目原文。'
+          },
+          en: {
+            eyebrow: 'mAceReason-Math · Bilingual math reasoning', title: 'Can you solve today<span class="cute-apostrophe">’</span>s <span class="accent">math problem</span>?', lede: 'One paired Chinese–English reasoning problem each day, plus Standard and Challenge stages.',
+            dailyTab: 'Daily Problem', challengeTab: 'Math Challenge', statsTab: 'My Stats', dailyTitle: 'Daily Problem', dailyCopy: 'The same date and difficulty always produce the same problem.',
+            streakBefore: 'Correct streak', streakAfter: 'days', chooseLevel: 'Choose challenge difficulty', standard: 'Standard', challenge: 'Challenge', languageLabel: 'Problem language', enterAnswer: 'Enter your answer', submit: 'Submit', doneNote: 'You have answered this difficulty today. A new problem arrives tomorrow.',
+            challengeTitle: 'Math Challenge', challengeCopy: 'Five problems per stage. Score at least 4 to advance to Challenge.', standardDesc: 'Shorter prompts', challengeDesc: 'Multi-step reasoning', start: 'Start challenge', next: 'Next problem', retry: 'Try again', copy: 'Copy result',
+            statsTitle: 'My Stats', statsCopy: 'Your progress stays in this browser and resets if browser data is cleared.', statStreak: 'Correct streak', statBest: 'Highest stage', statTotal: 'Total answered', statAccuracy: 'Accuracy', select: 'Choose', groundTruth: 'Dataset answer', aiExplain: 'Explain step by step with AI ↗', correct: '✓ Correct!', wrong: 'That does not match. Check the requested format or your calculation.',
+            levelSuffix: ' stage', questionProgress: 'Problem {n} / 5', correctShort: '✓ Correct.', wrongShort: '✗ That does not match.', copied: 'Copied', copyFailed: 'Copy failed',
+            qShort: 'Short answer', localSource: 'Bundled selection · {n} problems', remoteSource: 'Site-hosted cache updated · bundled problems remain available offline', hardCleared: 'You cleared the Challenge stage!', normalCleared: 'Standard stage cleared!', stageAlmost: 'Almost through the {level} stage', resultCount: '{n} correct in this run.',
+            aboutTitle: 'How it works', aboutCopy: 'English source problems, answers, and project-generated Chinese translations come from <a href="https://github.com/apple/ml-macereason-math" target="_blank" rel="noopener noreferrer">mAceReason-Math</a>. The project translated its training split with Claude Sonnet 4; this page uses those published translations and does not translate questions at runtime. Answers and stats stay local. This page is independently made by j4fun and is not affiliated with, partnered with, or endorsed by the dataset authors or maintainers.', aboutDailyTitle: 'Daily problem', aboutDailyCopy: 'Standard and Challenge each have one daily problem. Date and difficulty determine the item; switching language never changes it.', aboutChallengeTitle: 'Math challenge', aboutChallengeCopy: 'Start with five Standard problems and score four to reach Challenge. Enter a number, percentage, or mathematical expression in the requested format.', aboutDataTitle: 'Data and license', aboutDataCopy: 'This page bundles 320 paired problems selected from the mAceReason-Math parallel train split and can fetch an updated copy of that same cache from this site’s GitHub repository; it does not download the complete upstream dataset in the browser. Although the project names its answer field solution, most records contain a final answer rather than a step-by-step explanation. Data is licensed under <a href="https://github.com/apple/ml-macereason-math/blob/main/LICENSE_DATA" target="_blank" rel="noopener noreferrer">CC BY-NC-ND 4.0</a>: non-commercial use only, with the source problems kept unchanged.'
+          }
+        };
+        var problems = [];
+        var byLevel = { standard: [], challenge: [] };
+        var selectedLevel = 'standard';
+        var dailyProblem = null;
+        var challenge = null;
+        var state = loadState();
+        var language = state.language === 'en' ? 'en' : 'zh';
+
+        function loadState() {
+          try {
+            return Object.assign({ streak: 0, lastCorrectDate: null, history: {}, totalAnswered: 0, totalCorrect: 0, bestLevel: '', selectedLevel: 'standard', language: 'zh' }, JSON.parse(localStorage.getItem(STORE_KEY) || '{}'));
+          } catch (error) { return { streak: 0, history: {}, totalAnswered: 0, totalCorrect: 0, bestLevel: '', selectedLevel: 'standard' }; }
+        }
+        function saveState() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (error) { /* Storage may be unavailable. */ } }
+        function dateKey(date) { return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0'); }
+        function historyKey(date, level) { return dateKey(date) + '-' + level; }
+        function hash(text) { var value = 2166136261; for (var i = 0; i < text.length; i++) { value ^= text.charCodeAt(i); value = Math.imul(value, 16777619); } return value >>> 0; }
+        function seededSample(items, seed, count) {
+          var result = items.slice(); var value = hash(seed);
+          for (var i = result.length - 1; i > 0; i--) { value = (Math.imul(value, 1664525) + 1013904223) >>> 0; var j = value % (i + 1); var tmp = result[i]; result[i] = result[j]; result[j] = tmp; }
+          return result.slice(0, count);
+        }
+        function t(key, values) { var text = I18N[language][key] || key; Object.keys(values || {}).forEach(function (name) { text = text.replace('{' + name + '}', values[name]); }); return text; }
+        function localizedProblem(problem) { return problem.content ? problem.content[language] : problem.problem; }
+        function localizedAnswer(problem) { return problem.answers ? problem.answers[language] : problem.answer; }
+        function displayProblem(problem) {
+          return String(localizedProblem(problem) || '')
+            .replace(/\*\*([^*]+)\*\*/g, '$1')
+            .replace(/\\\[([\s\S]*?)\\\]/g, function (_, formula) { return '$$' + formula.trim() + '$$'; })
+            .replace(/\\\(([\s\S]*?)\\\)/g, function (_, formula) { return '$' + formula.trim() + '$'; })
+            .replace(/~*\\uline\{[^}]*\}~*/g, ' __________ ')
+            .replace(/\\textgreater\s*(?:\{\})?/g, '>')
+            .replace(/\\textless\s*(?:\{\})?/g, '<');
+        }
+        function levelName(level) { return LEVEL_NAMES[level][language]; }
+        function isChoice() { return false; }
+        function optionLetters(problem) {
+          var matches = displayProblem(problem).match(/(?:^|\n)\s*([A-F])[\.、．]/g) || [];
+          var count = Math.max(2, Math.min(6, matches.length || 4));
+          return ['A', 'B', 'C', 'D', 'E', 'F'].slice(0, count);
+        }
+        function normalize(value, evalType) {
+          var text = String(value || '').trim().replace(/[“”"']/g, '').replace(/====/g, ',').replace(/[，；;]/g, ',').replace(/\s+/g, '').toLowerCase()
+            .replace(/^\$|\$$/g, '').replace(/\\left|\\right/g, '').replace(/\\dfrac|\\tfrac/g, '\\frac')
+            .replace(/\\%/g, '%').replace(/[−–—]/g, '-');
+          var fraction = text.match(/^\\frac\{(-?\d+(?:\.\d+)?)\}\{(-?\d+(?:\.\d+)?)\}$/);
+          if (fraction && Number(fraction[2]) !== 0) return String(Number(fraction[1]) / Number(fraction[2]));
+          if (/^-?\d+(?:\.\d+)?%?$/.test(text)) return String(Number(text.replace(/%$/, ''))) + (text.endsWith('%') ? '%' : '');
+          if (evalType === 'numeral') {
+            var number = Number(text.replace(/%$/, ''));
+            if (Number.isFinite(number)) return String(number) + (text.endsWith('%') ? '%' : '');
+          }
+          if (evalType === 'unordered array') return text.replace(/[\[\](){}]/g, '').split(',').filter(Boolean).sort().join(',');
+          return text.replace(/[\[\](){}]/g, '');
+        }
+        function correctAnswer(problem, answer) { return normalize(answer, problem.evalType) === normalize(localizedAnswer(problem), problem.evalType); }
+        function typeset(node) {
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            if (window.MathJax.typesetClear) window.MathJax.typesetClear([node]);
+            window.MathJax.typesetPromise([node]).catch(function () {});
+          }
+        }
+        function aiExplanationUrl(problem) {
+          var prompt = language === 'zh'
+            ? '请逐步解析下面这道数学题，说明所用公式或定理，验证数据集答案是否正确。不要只重复最终答案。\n\n题目：' + displayProblem(problem) + '\n\n数据集答案：' + localizedAnswer(problem)
+            : 'Explain this math problem step by step. State the formulas or theorems used and verify whether the dataset answer is correct. Do not merely repeat the final answer.\n\nProblem: ' + displayProblem(problem) + '\n\nDataset answer: ' + localizedAnswer(problem);
+          return 'https://www.google.com/search?udm=50&q=' + encodeURIComponent(prompt);
+        }
+        function renderExplanation(node, problem, prefix) {
+          node.className = 'explain-box show';
+          node.textContent = '';
+          var answer = document.createElement('div');
+          answer.className = 'dataset-answer';
+          answer.textContent = prefix + t('groundTruth') + '：$' + localizedAnswer(problem).replace(/^\$|\$$/g, '') + '$';
+          var link = document.createElement('a');
+          link.className = 'ai-explain-link';
+          link.href = aiExplanationUrl(problem);
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = t('aiExplain');
+          node.append(answer, link);
+          typeset(answer);
+        }
+        function setDataset(payload) {
+          problems = payload.problems || [];
+          byLevel = { standard: [], challenge: [] };
+          problems.forEach(function (problem) { if (byLevel[problem.level]) byLevel[problem.level].push(problem); });
+        }
+        function setSourceStatus(text, error) { var node = document.getElementById('puzzleSourceStatus'); node.textContent = text; node.classList.toggle('error', Boolean(error)); }
+        function applyLanguage() {
+          document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-i18n]').forEach(function (node) { var value = I18N[language][node.dataset.i18n]; if (value) node.innerHTML = value; });
+          document.querySelectorAll('[data-language]').forEach(function (button) { var active = button.dataset.language === language; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+          if (problems.length) {
+            renderDaily();
+            setSourceStatus(t('localSource', { n: problems.length }), false);
+            if (challenge && !document.getElementById('challengePlay').hidden) {
+              renderChallenge();
+              if (challenge.currentAnswer !== undefined) showChallengeAnswer(challenge.currentAnswer, challenge.currentCorrect);
+            }
+            if (!document.getElementById('panel-stats').hidden) renderStats();
+          }
+        }
+        async function fetchData(url) { var response = await fetch(url, { cache: 'no-cache' }); if (!response.ok) throw new Error('HTTP ' + response.status); var data = await response.json(); if (!data.problems || data.problems.length < 100) throw new Error('invalid data'); return data; }
+
+        function renderAnswerControl(problem, prefix, onAnswer, locked) {
+          var choices = document.getElementById(prefix + 'Choices');
+          var form = document.getElementById(prefix + 'AnswerForm');
+          choices.textContent = '';
+          form.hidden = isChoice(problem);
+          if (isChoice(problem)) {
+            optionLetters(problem).forEach(function (letter) {
+              var button = document.createElement('button'); button.type = 'button'; button.disabled = locked;
+              var badge = document.createElement('span'); badge.className = 'letter'; badge.textContent = letter;
+              var copy = document.createElement('span'); copy.textContent = t('select') + ' ' + letter;
+              button.append(badge, copy); button.addEventListener('click', function () { onAnswer(letter, button); }); choices.appendChild(button);
+            });
+          } else {
+            var input = form.querySelector('input'); input.value = ''; input.disabled = locked; form.querySelector('button').disabled = locked;
+            form.onsubmit = function (event) { event.preventDefault(); if (!input.value.trim()) { input.focus(); return; } onAnswer(input.value); };
+          }
+        }
+        function markChoice(prefix, problem, answer) {
+          if (!isChoice(problem)) return;
+          document.querySelectorAll('#' + prefix + 'Choices button').forEach(function (button) {
+            button.disabled = true;
+            var letter = button.querySelector('.letter').textContent;
+            if (letter === problem.answer.toUpperCase()) button.classList.add('correct');
+            if (letter === String(answer).toUpperCase() && letter !== problem.answer.toUpperCase()) button.classList.add('wrong');
+          });
+        }
+        function metaText(problem) {
+          return levelName(problem.level) + ' · ' + t('qShort') + ' · mAceReason #' + problem.originalIdx;
+        }
+
+        function renderDaily() {
+          var today = new Date(); var pool = byLevel[selectedLevel]; if (!pool.length) return;
+          dailyProblem = pool[hash(dateKey(today) + ':' + selectedLevel) % pool.length];
+          var key = historyKey(today, selectedLevel); var saved = state.history[key];
+          var dateFormatter = new Intl.DateTimeFormat(language === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric' });
+          var englishMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          var month = language === 'en' ? englishMonths[today.getMonth()] : String(today.getMonth() + 1) + '月';
+          var day = String(today.getDate());
+          var dateNode = document.getElementById('dailyDate');
+          dateNode.dateTime = dateKey(today);
+          dateNode.setAttribute('aria-label', dateFormatter.format(today));
+          dateNode.querySelector('.puzzle-date-month').textContent = month;
+          dateNode.querySelector('.puzzle-date-day').textContent = day;
+          document.getElementById('dailyStreak').textContent = state.streak;
+          document.getElementById('dailyMeta').textContent = metaText(dailyProblem);
+          document.getElementById('dailyQuestion').textContent = displayProblem(dailyProblem);
+          typeset(document.getElementById('dailyQuestion'));
+          document.getElementById('dailyExplain').className = 'explain-box';
+          document.getElementById('dailyResult').textContent = '';
+          document.getElementById('dailyDoneNote').hidden = saved === undefined;
+          renderAnswerControl(dailyProblem, 'daily', answerDaily, saved !== undefined);
+          if (saved !== undefined) showDailyResult(saved.answer, saved.correct);
+          renderWeekStrip('weekStrip', selectedLevel);
+        }
+        function answerDaily(answer) {
+          var today = new Date(); var key = historyKey(today, selectedLevel); if (state.history[key] !== undefined) return;
+          var correct = correctAnswer(dailyProblem, answer);
+          state.history[key] = { correct: correct, answer: String(answer) };
+          state.totalAnswered++; if (correct) state.totalCorrect++;
+          if (correct) {
+            var yesterday = new Date(today); yesterday.setDate(yesterday.getDate() - 1);
+            state.streak = state.lastCorrectDate === dateKey(yesterday) ? state.streak + 1 : state.lastCorrectDate === dateKey(today) ? state.streak : 1;
+            state.lastCorrectDate = dateKey(today);
+          } else { state.streak = 0; }
+          saveState(); showDailyResult(answer, correct); renderWeekStrip('weekStrip', selectedLevel);
+        }
+        function showDailyResult(answer, correct) {
+          markChoice('daily', dailyProblem, answer);
+          document.getElementById('dailyAnswerForm').querySelector('input').disabled = true;
+          document.getElementById('dailyAnswerForm').querySelector('button').disabled = true;
+          renderExplanation(document.getElementById('dailyExplain'), dailyProblem, '');
+          document.getElementById('dailyResult').textContent = t(correct ? 'correct' : 'wrong');
+          document.getElementById('dailyDoneNote').hidden = false; document.getElementById('dailyStreak').textContent = state.streak;
+        }
+        function renderWeekStrip(id, level) {
+          var node = document.getElementById(id); node.textContent = ''; var today = new Date();
+          for (var i = 6; i >= 0; i--) {
+            var day = new Date(today); day.setDate(day.getDate() - i); var saved;
+            if (level) saved = state.history[historyKey(day, level)];
+            else saved = state.history[historyKey(day, 'standard')] || state.history[historyKey(day, 'challenge')];
+            var cell = document.createElement('div'); cell.className = 'week-cell' + (saved && saved.correct ? ' ok' : saved ? ' bad' : '') + (i === 0 ? ' today' : '');
+            cell.textContent = saved ? (saved.correct ? '✓' : '✗') : (day.getMonth() + 1) + '/' + day.getDate(); node.appendChild(cell);
+          }
+        }
+
+        function startChallenge() {
+          challenge = { levelIndex: 0, questionIndex: 0, correct: 0, levelCorrect: 0, results: [], questions: seededSample(byLevel.standard, Date.now() + ':standard', 5) };
+          document.getElementById('challengeIntro').hidden = true; document.getElementById('challengeDone').hidden = true; document.getElementById('challengePlay').hidden = false; renderChallenge();
+        }
+        function renderChallenge() {
+          var problem = challenge.questions[challenge.questionIndex]; var level = LEVEL_ORDER[challenge.levelIndex];
+          document.getElementById('challengeLevel').textContent = levelName(level) + t('levelSuffix');
+          document.getElementById('challengeProgress').textContent = t('questionProgress', { n: challenge.questionIndex + 1 });
+          document.getElementById('challengeProgressBar').style.width = ((challenge.questionIndex + 1) * 20) + '%';
+          document.getElementById('challengeMeta').textContent = metaText(problem); document.getElementById('challengeQuestion').textContent = displayProblem(problem); typeset(document.getElementById('challengeQuestion'));
+          document.getElementById('challengeExplain').className = 'explain-box'; document.getElementById('challengeNext').hidden = true;
+          renderAnswerControl(problem, 'challenge', answerChallenge, false);
+        }
+        function answerChallenge(answer) {
+          var problem = challenge.questions[challenge.questionIndex]; var correct = correctAnswer(problem, answer);
+          if (correct) { challenge.correct++; challenge.levelCorrect++; }
+          challenge.results.push(correct); challenge.currentAnswer = String(answer); challenge.currentCorrect = correct; state.totalAnswered++; if (correct) state.totalCorrect++; saveState(); showChallengeAnswer(answer, correct);
+        }
+        function showChallengeAnswer(answer, correct) {
+          var problem = challenge.questions[challenge.questionIndex]; markChoice('challenge', problem, answer);
+          document.getElementById('challengeAnswerForm').querySelector('input').disabled = true; document.getElementById('challengeAnswerForm').querySelector('button').disabled = true;
+          renderExplanation(document.getElementById('challengeExplain'), problem, t(correct ? 'correctShort' : 'wrongShort') + ' ');
+          document.getElementById('challengeNext').hidden = false;
+        }
+        function nextChallenge() {
+          challenge.questionIndex++; delete challenge.currentAnswer; delete challenge.currentCorrect;
+          if (challenge.questionIndex < 5) { renderChallenge(); return; }
+          var passed = challenge.levelCorrect >= 4; var level = LEVEL_ORDER[challenge.levelIndex];
+          if (passed) { state.bestLevel = level; saveState(); }
+          if (passed && level === 'standard') {
+            challenge.levelIndex = 1; challenge.questionIndex = 0; challenge.levelCorrect = 0; challenge.questions = seededSample(byLevel.challenge, Date.now() + ':challenge', 5); renderChallenge(); return;
+          }
+          finishChallenge(passed, level);
+        }
+        function finishChallenge(passed, level) {
+          document.getElementById('challengePlay').hidden = true; document.getElementById('challengeDone').hidden = false;
+          document.getElementById('challengeHeadline').textContent = passed && level === 'challenge' ? t('hardCleared') : passed ? t('normalCleared') : t('stageAlmost', { level: levelName(level) });
+          document.getElementById('challengeSub').textContent = t('resultCount', { n: challenge.correct });
+        }
+        function renderStats() {
+          document.getElementById('statStreak').textContent = state.streak; document.getElementById('statBest').textContent = state.bestLevel ? levelName(state.bestLevel) : '—';
+          document.getElementById('statTotal').textContent = state.totalAnswered; document.getElementById('statAccuracy').textContent = state.totalAnswered ? Math.round(state.totalCorrect / state.totalAnswered * 100) + '%' : '—'; renderWeekStrip('statsWeekStrip');
+        }
+
+        document.getElementById('modeTabs').addEventListener('click', function (event) {
+          var button = event.target.closest('button[data-mode]'); if (!button) return;
+          ['daily', 'challenge', 'stats'].forEach(function (mode) { document.getElementById('panel-' + mode).hidden = button.dataset.mode !== mode; });
+          document.querySelectorAll('#modeTabs button').forEach(function (item) { var active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-selected', String(active)); });
+          if (button.dataset.mode === 'stats') renderStats();
+        });
+        document.getElementById('dailyLevelPicker').addEventListener('click', function (event) {
+          var button = event.target.closest('[data-level]'); if (!button) return; selectedLevel = button.dataset.level; state.selectedLevel = selectedLevel; saveState();
+          document.querySelectorAll('[data-level]').forEach(function (item) { var active = item.dataset.level === selectedLevel; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); }); renderDaily();
+        });
+        document.querySelectorAll('[data-language]').forEach(function (button) {
+          button.addEventListener('click', function () { language = button.dataset.language; state.language = language; saveState(); applyLanguage(); });
+        });
+        document.getElementById('challengeStart').addEventListener('click', startChallenge); document.getElementById('challengeRetry').addEventListener('click', startChallenge); document.getElementById('challengeNext').addEventListener('click', nextChallenge);
+        document.getElementById('challengeCopy').addEventListener('click', function () {
+          var text = language === 'zh' ? 'mAceReason 数学闯关：答对 ' + challenge.correct + ' 题 · j4fun' : 'mAceReason Math Challenge: ' + challenge.correct + ' correct · j4fun';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { document.getElementById('challengeCopy').textContent = t('copied'); }).catch(function () { document.getElementById('challengeCopy').textContent = t('copyFailed'); });
+          } else { document.getElementById('challengeCopy').textContent = t('copyFailed'); }
+        });
+
+        var SYMBOLS = ['?', '∴', '→', '≠', '∑', '◇'];
+        function spawnSymbol() { var node = document.createElement('span'); node.className = 'numeral'; node.textContent = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)]; node.style.left = Math.random() * 100 + 'vw'; node.style.animationDuration = (8 + Math.random() * 6) + 's'; document.getElementById('numbers').appendChild(node); setTimeout(function () { node.remove(); }, 14500); }
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(spawnSymbol, 1800);
+
+        async function init() {
+          var payload;
+          try { payload = await fetchData(LOCAL_DATA_URL); }
+          catch (error) { try { payload = JSON.parse(localStorage.getItem(DATA_CACHE_KEY) || 'null'); } catch (ignored) { /* Ignore. */ } }
+          if (!payload) { setSourceStatus('本地题库载入失败，请刷新页面重试。', true); return; }
+          setDataset(payload); selectedLevel = byLevel[state.selectedLevel] && byLevel[state.selectedLevel].length ? state.selectedLevel : 'standard';
+          document.querySelectorAll('[data-level]').forEach(function (item) { var active = item.dataset.level === selectedLevel; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
+          renderDaily(); setSourceStatus(t('localSource', { n: problems.length }), false);
+          try { var remote = await fetchData(REMOTE_DATA_URL); setDataset(remote); localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(remote)); renderDaily(); setSourceStatus(t('remoteSource'), false); }
+          catch (error) { /* Bundled cache remains active. */ }
+        }
+        applyLanguage(); init();
+      })();
+    </script>
+  </body>
+</html>

@@ -25,8 +25,8 @@
       href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/main.css" />
-    <script src="assets/site-nav.js" defer></script>
+    <link rel="stylesheet" href="assets/main.css?v=20260906d" />
+    <script src="assets/site-nav.js?v=20260906" defer></script>
   </head>
   <body class="page-poetry">
     <div id="petals" aria-hidden="true"></div>
@@ -52,9 +52,9 @@
           ></span>
         </button>
         <nav class="top-links" id="site-navigation" aria-label="主导航">
-          <a href="poetry.html" aria-current="page">诗词</a>
-          <a href="sudoku.html">汉字数独</a>
-          <a href="strands.html">字踪</a>
+          <a href="fun.html" aria-current="page">中文小玩意</a>
+          <a href="games.html">随手玩</a>
+          <a href="quiz.html">知识挑战</a>
           <a href="about.html">关于</a>
           <a class="related-project" href="shiben/"
             ><img
@@ -68,7 +68,7 @@
     </header>
 
     <section class="hero wrap">
-      <p class="eyebrow">给海外华人家庭的中文小游戏</p>
+      <p class="eyebrow">Poetry in Play</p>
       <h1>一句诗接一句诗，<span class="accent">玩</span>着玩着就记住了</h1>
       <p class="lede">
         从唐诗宋词精选开始，也可以切换到更大的全唐诗、全宋诗和全宋词题库。飞花令考关键字，诗句接龙考记忆链，全部在浏览器里就能玩。
@@ -266,7 +266,7 @@
     </section>
 
     <footer class="wrap">
-      <div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div>
+      <div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div>
       <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
     </footer>
 
@@ -518,7 +518,7 @@
         }
 
         /* petals */
-        var PETAL_CHARS = ['❀','✿','❁','☘'];
+        var PETAL_CHARS = ['❀','✿','❁','❃'];
         function spawnPetal(){
           var el = document.createElement('span');
           el.className = 'petal';

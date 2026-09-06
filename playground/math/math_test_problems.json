@@ -1,0 +1,2843 @@
+[
+  {
+    "id": "3cedbba643944cfbbe8dbf3a2d008949",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2008年福建全国高中数学联赛竞赛初赛第5题6分"
+    ],
+    "zh": {
+      "problem": "已知函数$$f(x)$$满足对所有的实数$$x$$、$$y$$，都有$$f(x)+f(2x+y)+5xy=f(3x-y)+2{{x}^{2}}+1$$，则$$f(10)$$的值为．",
+      "choices": [
+        "$$-49$$",
+        "$$-1$$",
+        "$$0$$",
+        "25"
+      ],
+      "analysis": "令$$x=10$$，$$y=5$$，得$$f(10)+f(25)+250=f(25)+200+1$$， 所以$$f(10)=-49$$．故选$$\\text{A}$$．"
+    },
+    "en": {
+      "problem": "It is known that the function $$f(x)$$ satisfies that for all real numbers $$x$$ and $$y$$, $$f(x)+f(2x+y)+5xy=f(3x-y)+2{{x}^{2}}+1$$, then the value of $$f(10)$$ is.",
+      "choices": [
+        "$$-49$$",
+        "$$-1$$",
+        "$$0$$",
+        "25"
+      ],
+      "analysis": "Let $$x=10$$, $$y=5$$, we get $$f(10)+f(25)+250=f(25)+200+1$$, so $$f(10)=-49$$． Therefore, $$\\text{A}$$ is selected."
+    }
+  },
+  {
+    "id": "8962b7a621384c8086a7e0b3124e4594",
+    "level": 1,
+    "answer": "D",
+    "source": [
+      "1986年全国高中数学联赛竞赛一试第1题"
+    ],
+    "zh": {
+      "problem": "设$$-1\\textless{}a\\textless{}0$$，$$\\theta =\\arcsin a$$，那么不等式$$\\sin x\\textless{}a$$的解集为（~ ）．",
+      "choices": [
+        "$$\\left { x\\textbar2n \\pi +\\theta \\textless{}x\\textless{}\\left( 2n+1 \\right) \\pi -\\theta ,n\\in \\mathbf{Z} \\right }$$",
+        "$$\\left { x\\textbar2n \\pi -\\theta \\textless{}x\\textless{}\\left( 2n+1 \\right) \\pi +\\theta ,n\\in \\mathbf{Z} \\right }$$",
+        "$$\\left { x\\textbar\\left( 2n-1 \\right) \\pi +\\theta \\textless{}x\\textless{}2n \\pi -\\theta ,n\\in \\mathbf{Z} \\right }$$",
+        "$$\\left { x\\textbar\\left( 2n-1 \\right) \\pi- \\theta \\textless{}x\\textless{}2n \\pi +\\theta ,n\\in \\mathbf{Z} \\right }$$"
+      ],
+      "analysis": "∵ $$-1\\textless{}a\\textless{}0$$， ∴$$\\theta =\\arcsin a\\in \\left( -\\frac{ \\pi }{2},0 \\right)$$． 在区间$$(- \\pi , \\pi )$$中， 满足方程$$\\sin x=a$$的解为： $$x=- \\pi -\\arcsin a$$或$$x=\\arcsin a$$． 因此，不等式$$\\sin x\\textless{}a$$的解集为： $$\\left { x\\textbar\\left( 2n-1 \\right) \\pi -\\theta \\textless{}x\\textless{}2n \\pi +\\theta ,n\\in \\mathbf{Z} \\right }$$． 故选$$\\text{D}$$．"
+    },
+    "en": {
+      "problem": "Assume $$-1\\textless{}a\\textless{}0$$, $$\\theta =\\arcsin a$$, then the solution set of inequality $$\\sin x\\textless{}a$$ is (~).",
+      "choices": [
+        "$$\\left { x\\textbar2n \\pi +\\theta \\textless{}x\\textless{}\\left( 2n+1 \\right) \\pi -\\theta ,n\\in \\mathbf{Z} \\right }$$",
+        "$$\\left { x\\textbar2n \\pi -\\theta \\textless{}x\\textless{}\\left( 2n+1 \\right) \\pi +\\theta ,n\\in \\mathbf{Z} \\right }$$",
+        "$$\\left { x\\textbar\\left( 2n-1 \\right) \\pi +\\theta \\textless{}x\\textless{}2n \\pi -\\theta ,n\\in \\mathbf{Z} \\right }$$",
+        "$$\\left { x\\textbar\\left( 2n-1 \\right) \\pi- \\theta \\textless{}x\\textless{}2n \\pi +\\theta ,n\\in \\mathbf{Z} \\right }$$"
+      ],
+      "analysis": "∵ $$-1\\textless{}a\\textless{}0$$, ∴$$\\theta =\\arcsin a\\in \\left( -\\frac{ \\pi }{2},0 \\right)$$. In the interval $$(- \\pi , \\pi )$$, the solution that satisfies the equation $$\\sin x=a$$ is: $$x=- \\pi -\\arcsin a$$ or $$x=\\arcsin a$$. Therefore, the solution set of the inequality $$\\sin x\\textless{}a$$ is: $$\\left { x\\textbar\\left( 2n-1 \\right) \\pi -\\theta \\textless{}x\\textless{}2n \\pi +\\theta ,n\\in \\mathbf{Z} \\right }$$. Therefore, $$\\text{D}$$ is selected."
+    }
+  },
+  {
+    "id": "14d411094ee44edcadf9b41fd981ec74",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2009年第8届全国新希望杯三年级竞赛"
+    ],
+    "zh": {
+      "problem": "~周末，妈妈去商场买了一些家庭用品，分别是洗衣机（$$1258$$元）、台灯（$$59$$元）、电饭煲（$$365$$元）、电吹风（$$230$$元），这些用品一共需要花费（~）元．",
+      "choices": [
+        "$$2012$$",
+        "$$2013$$",
+        "$$2014$$",
+        "$$2022$$"
+      ],
+      "analysis": "为了简化计算，我们常把一些数拆开来使它与其他数字之和是整十、整百、整千$$ \\cdots ~\\cdots $$这种方法叫作借数凑整法，我们发现如果将$$1258$$和$$159$$分别拆成$$1250 + 8$$和$$150 + 9$$时，便可以凑出整百，$$365$$可以拆成$$360 + 5$$，也可以拆成$$370 - 5$$，但是由于后面要加上$$230$$，所以拆成$$370 - 5$$时会与$$230$$凑成整百，所以总的花费 $$ = \\left( 1250 + 150 \\right) + \\left( 370 + 230 \\right) + \\left( 8 + 9 - 5 \\right) = 1400 + 600 + 12 = 2012$$（元）．"
+    },
+    "en": {
+      "problem": "~On the weekend, my mother went to the mall and bought some household items, including a washing machine ($$1258$$ yuan), a table lamp ($$59$$ yuan), a rice cooker ($$365$$ yuan), and a hair dryer ($$230$$ yuan). These items cost a total of (~) yuan.",
+      "choices": [
+        "$$2012$$",
+        "$$2013$$",
+        "$$2014$$",
+        "$$2022$$"
+      ],
+      "analysis": "In order to simplify calculations, we often split some numbers so that the sum of them with other numbers is a whole ten, a whole hundred, or a whole thousand $$ \\cdots ~\\cdots $$ This method is called the debit rounding method. We found that if $$1258$$ and $$159$$ are split into $$1250 + 8$$ and $$150 + respectively When it is 9$$, you can make up a hundred. $$365$$ can be divided into $$360 + 5$$, or it can be divided into $$370 - 5$$. However, since $$230$$ is added afterwards, when it is divided into $$370 - 5$$, it will be combined with $$230$$ to make up a hundred, so the total cost is $$ = \\left( 1250 + 150 \\right) + \\left( 370 + 230 \\right) + \\left( 8 + 9 - 5 \\right) = 1400 + 600 + 12 = 2012$$ (yuan)．"
+    }
+  },
+  {
+    "id": "70c04c8bb15c4fec95429b88c65f2fcf",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "1985年全国高中数学联赛竞赛一试第1题"
+    ],
+    "zh": {
+      "problem": "假如有两个命题；甲：$$a$$是大于零的实数；乙：$$a\\textgreater b$$且$${{a}^{-1}}\\textgreater{{b}^{-1}}$$，那么（~ ）．",
+      "choices": [
+        "甲是乙的充分而不必要条件",
+        "甲是乙的必要而不充分条件",
+        "甲是乙的充分必要条件",
+        "甲既不是乙的充分条件也不是乙的必要条件．"
+      ],
+      "analysis": "由于“甲“成立时，“乙“不一定成立，（例如$$a=3$$，$$b=2$$时甲成立，但乙不成立），因此可知“甲“不是“乙“的充分条件， 接着看“乙“在什么情况下成立，很明显，当且仅当$$a\\textgreater0$$且$$b\\textless{}0$$时“乙“才能成立，由此可知，“甲“是“乙“成立的必要条件，综上所述，“甲“是“乙“的必要而不充分条件．"
+    },
+    "en": {
+      "problem": "If there are two propositions; A: $$a$$ is a real number greater than zero; B: $$a\\textgreater b$$ and $${{a}^{-1}}\\textgreater{{b}^{-1}}$$, then (~).",
+      "choices": [
+        "A is a sufficient but not necessary condition for B",
+        "A is a necessary but not sufficient condition for B",
+        "A is a necessary and sufficient condition for B",
+        "A is neither a sufficient condition nor a necessary condition for B."
+      ],
+      "analysis": "Since \"A\" is established, \"B\" may not be established (for example, when $$a=3$$, $$b=2$$, A is established, but B is not established), so it can be seen that \"A\" is not a sufficient condition for \"B\", Next, look at the circumstances under which \"B\" is established. It is obvious that \"B\" can be established if and only if $$a\\textgreater0$$ and $$b\\textless{}0$$. It can be seen that \"A\" is a necessary condition for the establishment of \"B\". To sum up, \"A\" is a necessary but not sufficient condition for \"B\"."
+    }
+  },
+  {
+    "id": "88d776d4e351433594aa13d0c8c74ba6",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "2014年第25届全国希望杯初二竞赛复赛第4题4分"
+    ],
+    "zh": {
+      "problem": "不等式组$$\\begin{cases}x-4\\leqslant 8-2x x\\textgreater-\\dfrac{2}{3} \\end{cases}$$的最小整数解是（~ ）．",
+      "choices": [
+        "$$-1$$",
+        "$$0$$",
+        "$$1$$",
+        "$$4$$"
+      ],
+      "analysis": "解$$x-4\\leqslant 8-2x$$，得$$x\\leqslant 4$$， 故原不等式的解为$$-\\frac{2}{3}\\textless{}x\\leqslant 4$$， 所以，原不等式组的最小整数解是$$x=0$$．"
+    },
+    "en": {
+      "problem": "The minimum integer solution of the set of inequalities $$\\begin{cases}x-4\\leqslant 8-2x x\\textgreater-\\dfrac{2}{3} \\end{cases}$$ is (~).",
+      "choices": [
+        "$$-1$$",
+        "$$0$$",
+        "$$1$$",
+        "$$4$$"
+      ],
+      "analysis": "Solving $$x-4\\leqslant 8-2x$$, we get $$x\\leqslant 4$$, so the solution of the original inequality is $$-\\frac{2}{3}\\textless{}x\\leqslant 4$$. Therefore, the minimum integer solution of the original inequality group is $$x=0$$."
+    }
+  },
+  {
+    "id": "4bc05d1eaef143fe9cffb2fd4ac24e09",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "1986年全国高中数学联赛竞赛一试第2题"
+    ],
+    "zh": {
+      "problem": "设$$Z$$为复数，$$M= {Z\\textbar{{\\left( Z-1 \\right)}^{2}}=\\textbar Z-1{{\\textbar}^{2}} }$$，那么（~ ）．",
+      "choices": [
+        "$$M=$${纯虚数}",
+        "$$M=$${实数}",
+        "{实数}$$\\subset M\\subset $${复数}",
+        "$$M=$${复数}"
+      ],
+      "analysis": "∵$${{(Z-1)}^{2}}=\\textbar Z-1{{\\textbar}^{2}}$$， 即$${{(Z-1)}^{2}}=(Z-1)(\\overline{Z}\\mathsf{-1})$$， ∴$$(Z-1)(\\overline{Z}\\mathsf{-1})=\\mathsf{0}$$， 因此$$Z=1$$或$$Z=\\overline{Z}$$， 即$$Z$$为实数． 故选$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "Assume $$Z$$ is a complex number, $$M= {Z\\textbar{{\\left( Z-1 \\right)}^{2}}=\\textbar Z-1{{\\textbar}^{2}} }$$, then (~ ).",
+      "choices": [
+        "$$M=$${pure imaginary number}",
+        "$$M=$${real number}",
+        "{Real numbers}$$\\subset M\\subset $${Plural numbers}",
+        "$$M=$${plural}"
+      ],
+      "analysis": "∵$${{(Z-1)}^{2}}=\\textbar Z-1{{\\textbar}^{2}}$$, that is, $${{(Z-1)}^{2}}=(Z-1)(\\overline{Z}\\mathsf{-1})$$, ∴$$(Z-1)(\\overline{Z}\\mathsf{-1})=\\mathsf{0}$$, so $$Z=1$$ or $$Z=\\overline{Z}$$, that is, $$Z$$ is a real number. Therefore, $$\\text{B}$$ is selected."
+    }
+  },
+  {
+    "id": "69cd85aaa8d144989311089130f60ff7",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2009年第8届全国新希望杯三年级竞赛"
+    ],
+    "zh": {
+      "problem": "周末，妈妈去商场买了一些家庭用品，分别是洗衣机（$$1258$$元）、台灯（$$159$$元）、电饭煲（$$365$$元）、电吹风（$$230$$元），这些用品一共需要花费元．",
+      "choices": [
+        "$$2012$$",
+        "$$2013$$",
+        "$$2014$$",
+        "$$2022$$"
+      ],
+      "analysis": "为了简化计算，我们常把一些数拆开来使它与其他数之和是整十、整百、整千$$ \\cdots ~\\cdots $$这种方法叫作借数凑整法，我们发现如果将$$1258$$和$$159$$分别拆成$$1250 + 8$$和$$150 + 9$$时，便可以凑出整百，$$365$$可以拆成$$360 + 5$$，也可以拆成$$370 - 5$$，但是由于后面要加上$$230$$，所以拆成$$370 - 5$$时会与$$230$$凑成整百，所以总的花费 $$ = \\left( 1250 + 150 \\right) + \\left( 370 + 230 \\right) + \\left( 8 + 9 - 5 \\right) = 1400 + 600 + 12 = 2012$$．"
+    },
+    "en": {
+      "problem": "Over the weekend, my mother went to the mall and bought some household items, including a washing machine ($$1258$$ yuan), a table lamp ($$159$$ yuan), a rice cooker ($$365$$ yuan), and a hair dryer ($$230$$ yuan). These items cost a total of yuan.",
+      "choices": [
+        "$$2012$$",
+        "$$2013$$",
+        "$$2014$$",
+        "$$2022$$"
+      ],
+      "analysis": "In order to simplify the calculation, we often split some numbers so that the sum of them with other numbers is a whole ten, a whole hundred, or a whole thousand $$ \\cdots ~\\cdots $$ This method is called the debit and round method. We found that if $$1258$$ and $$159$$ are split into $$1250 + 8$$ and $$150 + respectively When it is 9$$, you can make up a hundred. $$365$$ can be divided into $$360 + 5$$, or it can be divided into $$370 - 5$$. However, since $$230$$ is added afterwards, when it is divided into $$370 - 5$$, it will be combined with $$230$$ to make up a hundred, so the total cost is $$ = \\left( 1250 + 150 \\right) + \\left( 370 + 230 \\right) + \\left( 8 + 9 - 5 \\right) = 1400 + 600 + 12 = 2012$$．"
+    }
+  },
+  {
+    "id": "8faabed1166544d89535e6ab1242e775",
+    "level": 1,
+    "answer": "C",
+    "source": [
+      "2010年四川全国高中数学联赛竞赛初赛第2题5分"
+    ],
+    "zh": {
+      "problem": "在$$5$$件产品中有$$4$$件正品、$$1$$件次品．从中任取$$2$$件，记其中含正品的个数为随机变量$$\\xi $$，则$$\\xi $$的数学期望$$E\\xi $$是．",
+      "choices": [
+        "$$\\frac{6}{5}$$",
+        "$$\\frac{7}{5}$$",
+        "$$\\frac{8}{5}$$",
+        "$$\\frac{9}{5}$$"
+      ],
+      "analysis": "数学期望是：$$1\\times \\frac{\\text{C}_{4}^{1}}{\\text{C}_{5}^{2}}+2\\times \\frac{\\text{C}_{4}^{2}}{\\text{C}_{5}^{2}}=\\frac{8}{5}$$．故选$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "Among the $$5$$ products, there are $$4$$ genuine products and $$1$$ defective products. Take $$2$$ randomly from them, and record the number of genuine products among them as the random variable $$\\xi $$, then the mathematical expectation $$E\\xi $$ of $$\\xi $$ is.",
+      "choices": [
+        "$$\\frac{6}{5}$$",
+        "$$\\frac{7}{5}$$",
+        "$$\\frac{8}{5}$$",
+        "$$\\frac{9}{5}$$"
+      ],
+      "analysis": "The mathematical expectation is: $$1\\times \\frac{\\text{C}_{4}^{1}}{\\text{C}_{5}^{2}}+2\\times \\frac{\\text{C}_{4}^{2}}{\\text{C}_{5}^{2}}=\\frac{8}{5}$$． Therefore, $$\\text{C}$$ is selected."
+    }
+  },
+  {
+    "id": "a95bfbd396184fbb900671303482aa6a",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "2015年广东全国高中数学联赛竞赛初赛第3题8分"
+    ],
+    "zh": {
+      "problem": "若函数$$y={{\\log }_{a}}\\left( {{x}^{2}}-ax+1 \\right)$$有最小值，则$$a$$的取值范围是~\\uline{~~~~~~~~~~}~",
+      "choices": [
+        "$$a\\textless{}1$$",
+        "$$1\\textless{}a\\textless{}2$$",
+        "$$a\\textgreater{}2$$",
+        "以上选项都不对"
+      ],
+      "analysis": "因为$${{x}^{2}}-ax+1$$无最大值，所以$$a\\textgreater1$$．函数有最小值，则$${{x}^{2}}-ax+1$$有最小值，$$\\Delta \\textless{}0$$．"
+    },
+    "en": {
+      "problem": "If function $$y={{\\log }_{a}}\\left( {{x}^{2}}-ax+1 \\right)$$ has a minimum value, then the value range of $$a$$ is ~\\uline{~~~~~~~~~~}~",
+      "choices": [
+        "$$a\\textless{}1$$",
+        "$$1\\textless{}a\\textless{}2$$",
+        "$$a\\textgreater{}2$$",
+        "None of the above options are correct"
+      ],
+      "analysis": "Because $${{x}^{2}}-ax+1$$ has no maximum value, so $$a\\textgreater1$$． The function has a minimum value, then $${{x}^{2}}-ax+1$$ has a minimum value, $$\\Delta \\textless{}0$$．"
+    }
+  },
+  {
+    "id": "d7d7799a14374b52bfc9536508df744c",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2015年广东全国高中数学联赛竞赛初赛第3题8分"
+    ],
+    "zh": {
+      "problem": "若函数$$y={{\\log }_{a}}\\left( {{x}^{2}}-ax+1 \\right)$$有最小值，则$$a$$的取值范围是~\\uline{~~~~~~~~~~}~",
+      "choices": [
+        "$$1\\textless{}a\\textless{}2$$",
+        "$1\\lt a\\leqslant2$",
+        "$a\\gt2$",
+        "$a\\geqslant2$"
+      ],
+      "analysis": "因为$${{x}^{2}}-ax+1$$无最大值，所以$$a\\textgreater1$$．函数有最小值，则$${{x}^{2}}-ax+1$$有最小值，$$\\Delta \\textless{}0$$．"
+    },
+    "en": {
+      "problem": "If function $$y={{\\log }_{a}}\\left( {{x}^{2}}-ax+1 \\right)$$ has a minimum value, then the value range of $$a$$ is ~\\uline{~~~~~~~~~~}~",
+      "choices": [
+        "$$1\\textless{}a\\textless{}2$$",
+        "$1\\lt a\\leqslant2$",
+        "$a\\gt2$",
+        "$a\\geqslant2$"
+      ],
+      "analysis": "Because $${{x}^{2}}-ax+1$$ has no maximum value, so $$a\\textgreater1$$． The function has a minimum value, then $${{x}^{2}}-ax+1$$ has a minimum value, $$\\Delta \\textless{}0$$．"
+    }
+  },
+  {
+    "id": "4bd140ebd0e34989be770f055867ef28",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "2011年辽宁全国高中数学联赛竞赛初赛第3题6分"
+    ],
+    "zh": {
+      "problem": "一个盒子里有$$3$$个黑球和$$4$$个白球，现从盒子里随机每次取出一个球，取出后不再放回，每个球被取出的可能性相等．直到某种颜色的球全部被取出．最后取出的是黑球的概率是．",
+      "choices": [
+        "$$\\frac{3}{5}$$",
+        "$$\\frac{4}{7}$$",
+        "$$\\frac{1}{2}$$",
+        "$$\\frac{3}{7}$$"
+      ],
+      "analysis": "$$7$$个球全被取出的方式共有$$\\text{C}_{7}^{3}=\\text{C}_{7}^{4}=35$$（种），$$3$$个黑球全部被取出的方式有$$\\text{C}_{6}^{3}=20$$（种），故所求概率为$$\\frac{20}{35}=\\frac{4}{7}$$．"
+    },
+    "en": {
+      "problem": "There are $$3$$ black balls and $$4$$ white balls in a box. One ball is randomly taken out from the box each time. It will not be put back after being taken out. Each ball has an equal probability of being taken out. Until all the balls of a certain color are taken out. The probability that the black ball is finally taken out is.",
+      "choices": [
+        "$$\\frac{3}{5}$$",
+        "$$\\frac{4}{7}$$",
+        "$$\\frac{1}{2}$$",
+        "$$\\frac{3}{7}$$"
+      ],
+      "analysis": "There are $$\\text{C}_{7}^{3}=\\text{C}_{7}^{4}=35$$ (ways) for all $$7$$ balls to be taken out, and there are $$\\text{C}_{6}^{3}=20$$ (way) for all $$3$$ black balls to be taken out, so the required probability is $$\\frac{20}{35}=\\frac{4}{7}$$."
+    }
+  },
+  {
+    "id": "5f0755fd9e6e4b3caca98be0926c1963",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2012年甘肃全国高中数学联赛竞赛初赛第8题10分"
+    ],
+    "zh": {
+      "problem": "实数$$x, y, z$$满足$${{x}^{2}}+{{y}^{2}}+{{z}^{2}}=1$$，则$$xy+yz$$的最大值为~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$\\frac{\\sqrt{2}}{2}$$",
+        "$$\\frac{1}{2}$$",
+        "$$\\frac{\\sqrt{3}}{2}$$",
+        "$$\\frac{\\sqrt{5}}{2}$$"
+      ],
+      "analysis": "因为$$1=\\left( {{x}^{2}}+\\frac{1}{2}{{y}^{2}} \\right)+\\left( \\frac{1}{2}{{y}^{2}}+{{z}^{2}} \\right)$$ $$\\geqslant 2\\sqrt{\\frac{1}{2}{{x}^{2}}{{y}^{2}}}+2\\sqrt{\\frac{1}{2}{{y}^{2}}{{z}^{2}}}$$ $$=\\sqrt{2}\\left( xy+yz \\right)$$， 所以$$xy+yz\\leqslant \\frac{\\sqrt{2}}{2}$$． 又当$$x=1, y=\\frac{\\sqrt{2}}{2}, z=1$$时取到等号，故最大值为$$\\frac{\\sqrt{2}}{2}$$．"
+    },
+    "en": {
+      "problem": "The real numbers $$x, y, z$$ satisfy $${{x}^{2}}+{{y}^{2}}+{{z}^{2}}=1$$, then the maximum value of $$xy+yz$$ is ~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$\\frac{\\sqrt{2}}{2}$$",
+        "$$\\frac{1}{2}$$",
+        "$$\\frac{\\sqrt{3}}{2}$$",
+        "$$\\frac{\\sqrt{5}}{2}$$"
+      ],
+      "analysis": "Because $$1=\\left( {{x}^{2}}+\\frac{1}{2}{{y}^{2}} \\right)+\\left( \\frac{1}{2}{{y}^{2}}+{{z}^{2}} \\right)$$ $$\\geqslant 2\\sqrt{\\frac{1}{2}{{x}^{2}}{{y}^{2}}}+2\\sqrt{\\frac{1}{2}{{y}^{2}}{{z}^{2}}}$$ $$=\\sqrt{2}\\left( xy+yz \\right)$$, so $$xy+yz\\leqslant \\frac{\\sqrt{2}}{2}$$． And when $$x=1, y=\\frac{\\sqrt{2}}{2}, z=1$$, the equal sign is obtained, so the maximum value is $$\\frac{\\sqrt{2}}{2}$$."
+    }
+  },
+  {
+    "id": "62e656e0845847a6b1f1a52932bc488c",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "2012年江西全国高中数学联赛竞赛初赛第4题10分"
+    ],
+    "zh": {
+      "problem": "若实数$$a, b, c$$满足：$$a+b+c={{a}^{2}}+{{b}^{2}}+{{c}^{2}}$$，则$$a+b+c$$的最大值是~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$2$$",
+        "$$3$$",
+        "$$4$$",
+        "以上都不对"
+      ],
+      "analysis": "提示：据柯西不等式， $$3\\left( a+b+c \\right)=\\left( {{1}^{2}}+{{1}^{2}}+{{1}^{2}} \\right)\\left( {{a}^{2}}+{{b}^{2}}+{{c}^{2}} \\right)\\geqslant {{\\left( a+b+c \\right)}^{2}}$$，所以$$a+b+c\\leqslant 3$$，当$$a=b=c=1$$时取得等号．"
+    },
+    "en": {
+      "problem": "If the real numbers $$a, b, c$$ satisfy: $$a+b+c={{a}^{2}}+{{b}^{2}}+{{c}^{2}}$$, then the maximum value of $$a+b+c$$ is ~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$2$$",
+        "$$3$$",
+        "$$4$$",
+        "None of the above is correct"
+      ],
+      "analysis": "Tip: According to Cauchy's inequality, $$3\\left( a+b+c \\right)=\\left( {{1}^{2}}+{{1}^{2}}+{{1}^{2}} \\right)\\left( {{a}^{2}}+{{b}^{2}}+{{c}^{2}} \\right)\\geqslant {{\\left( a+b+c \\right)}^{2}}$$, so $$a+b+c\\leqslant 3$$, when $$a=b=c=1$$, the equal sign is obtained."
+    }
+  },
+  {
+    "id": "76701479256948889e95c62ab79b03dd",
+    "level": 1,
+    "answer": "C",
+    "source": [
+      "2009年湖南全国高中数学联赛竞赛初赛第1题5分"
+    ],
+    "zh": {
+      "problem": "设$$z$$是复数，$$a(z)$$表示满足$${{z}^{n}}=1$$的最小正整数$$n$$，则对虚数单位$$\\text{i},\\alpha (\\text{i})=$$．",
+      "choices": [
+        "$$8$$",
+        "$$6$$",
+        "$$4$$",
+        "$$2$$"
+      ],
+      "analysis": "因为$${{\\text{i}}^{1}}=1, {{\\text{i}}^{2}}=-1, {{\\text{i}}^{3}}=-1, {{\\text{i}}^{4}}=1$$，所以满足$${{z}^{n}}=1$$的最小正整数$$n=4$$．故选$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "Assume $$z$$ is a complex number, $$a(z)$$ represents the smallest positive integer $$n$$ that satisfies $${{z}^{n}}=1$$, then for the imaginary unit $$\\text{i},\\alpha (\\text{i})=$$.",
+      "choices": [
+        "$$8$$",
+        "$$6$$",
+        "$$4$$",
+        "$$2$$"
+      ],
+      "analysis": "Because $${{\\text{i}}^{1}}=1, {{\\text{i}}^{2}}=-1, {{\\text{i}}^{3}}=-1, {{\\text{i}}^{4}}=1$$, so the smallest positive integer $$n=4$$ that satisfies $${{z}^{n}}=1$$. Therefore, $$\\text{C}$$ is selected."
+    }
+  },
+  {
+    "id": "2a6ee04e44814636a32300a25839dd56",
+    "level": 1,
+    "answer": "C",
+    "source": [
+      "2009年吉林全国高中数学联赛竞赛初赛第3题5分"
+    ],
+    "zh": {
+      "problem": "称横坐标为整数的点为“次整点“，过曲线$$y=\\sqrt{9-{{x}^{2}}}$$上任意两个次整点作直线，则倾斜角大于$$30{}^{}\\circ $$的直线条数为．",
+      "choices": [
+        "$$12$$",
+        "$$13$$",
+        "$$14$$",
+        "$$15$$"
+      ],
+      "analysis": "次整点有$$\\left( \\pm 3,0 \\right)$$，$$\\left( \\pm 2,\\sqrt{5} \\right)$$，$$\\left( \\pm 1,2\\sqrt{2} \\right)$$，$$\\left( 0,3 \\right)$$，斜率为负的直线都满足要求，共有$$5+3+1=9$$条，斜率为正的只有$$5$$条满足要求，总共$$9+5=14$$条．"
+    },
+    "en": {
+      "problem": "The point whose abscissa is an integer is called a \"sub-integer point\". If a straight line is drawn through any two sub-integer points on the curve $$y=\\sqrt{9-{{x}^{2}}}$$, then the number of straight lines with an inclination angle greater than $$30{}^{}\\circ $$ is.",
+      "choices": [
+        "$$12$$",
+        "$$13$$",
+        "$$14$$",
+        "$$15$$"
+      ],
+      "analysis": "The sub-hour points are $$\\left( \\pm 3,0 \\right)$$, $$\\left( \\pm 2,\\sqrt{5} \\right)$$, $$\\left( \\pm 1,2\\sqrt{2} \\right)$$, $$\\left( 0,3 \\right)$$, the straight lines with negative slopes all meet the requirements, a total of $$5+3+1=9$$, and only $$5$$ with positive slopes meet the requirements, a total of $$9+5=14$$."
+    }
+  },
+  {
+    "id": "2ee9c14234fb4d89982890d59a6c659a",
+    "level": 1,
+    "answer": "D",
+    "source": [
+      "1988年全国高中数学联赛竞赛一试第2题"
+    ],
+    "zh": {
+      "problem": "已知原点在椭圆$${{k}^{2}}{{x}^{2}}+{{y}^{2}}-4kx+2ky+{{k}^{2}}-1=0$$的内部，那么参数$$k$$的取值范围是（~ ）．",
+      "choices": [
+        "$$\\textbar k\\textbar\\textgreater1$$；",
+        "$$\\textbar k\\textbar\\ne 1$$；",
+        "$$-1\\textless{}k\\textless{}1$$；",
+        "$$0\\textbar k\\textbar1$$"
+      ],
+      "analysis": "椭圆外部的点可以离原点很远，它的坐标$$x\\mathsf{}y$$的绝对值可以很大，使得方程左边大于$$0$$，所以内部点的坐标使方程左边小于$$0$$，用原点的坐标代入方程左边得 $${{K}^{2}}-1\\textless{}0$$ 又$$k\\ne 0$$，（否则方程不表示椭圆），所以答$$\\text{D}$$．"
+    },
+    "en": {
+      "problem": "It is known that the origin is inside the ellipse $${{k}^{2}}{{x}^{2}}+{{y}^{2}}-4kx+2ky+{{k}^{2}}-1=0$$, then the value range of parameter $$k$$ is (~).",
+      "choices": [
+        "$$\\textbar k\\textbar\\textgreater1$$;",
+        "$$\\textbar k\\textbar\\ne 1$$;",
+        "$$-1\\textless{}k\\textless{}1$$;",
+        "$$0\\textbar k\\textbar1$$"
+      ],
+      "analysis": "The points outside the ellipse can be far away from the origin, and the absolute value of its coordinates $$x\\mathsf{}y$$ can be very large, making the left side of the equation greater than $$0$$, so the coordinates of the internal points make the left side of the equation less than $$0$$. Substituting the coordinates of the origin into the left side of the equation gives $${{K}^{2}}-1\\textless{}0$$ and $$k\\ne 0$$, (otherwise the equation does not represent an ellipse), so the answer is $$\\text{D}$$."
+    }
+  },
+  {
+    "id": "575361495cd1406cb6928ed952d5c84a",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2010年辽宁全国高中数学联赛竞赛初赛第2题6分"
+    ],
+    "zh": {
+      "problem": "“函数$$f(x)$$在$$\\left[ a,b \\right]$$上单调“是“函数$$f(x)$$在$$\\left[ a,b \\right]$$上有最大值和最小值“的．",
+      "choices": [
+        "充分条件而非必要条件",
+        "必要条件而非充分条件",
+        "充分必要条件",
+        "即非充分条件亦非必要条件"
+      ],
+      "analysis": "若$$f(x)$$在$$\\left[ a,b \\right]$$上单调，则$$f(a)$$和$$f(b)$$一个是最大值，另一个是最小值，故是充分条件；如，$$\\sin x$$在$$\\left[ 0, \\pi ~\\right]$$上有最大值$$1$$和最小值$$0$$，但不单调，故不是必要条件．"
+    },
+    "en": {
+      "problem": "\"The function $$f(x)$$ is monotonic on $$\\left[ a,b \\right]$$\" means \"the function $$f(x)$$ has a maximum value and a minimum value on $$\\left[ a,b \\right]$$\".",
+      "choices": [
+        "Sufficient conditions rather than necessary conditions",
+        "necessary but not sufficient condition",
+        "necessary and sufficient conditions",
+        "Neither a sufficient condition nor a necessary condition"
+      ],
+      "analysis": "If $$f(x)$$ is monotonic on $$\\left[ a,b \\right]$$, then one of $$f(a)$$ and $$f(b)$$ is the maximum value and the other is the minimum value, so it is a sufficient condition; for example, $$\\sin x$$ has a maximum value $$1$$ and a minimum value $$0$$ on $$\\left[ 0, \\pi ~\\right]$$, but it is not monotonic, so it is not a necessary condition."
+    }
+  },
+  {
+    "id": "9b73daaa3b3e40d28ffa3eb62f94ee2b",
+    "level": 1,
+    "answer": "A",
+    "source": [
+      "2019年湖南长沙雨花区湖南广益实验中学初一竞赛（广益杯）第9题3分"
+    ],
+    "zh": {
+      "problem": "据统计，$$2017$$“十一“国庆长假期间，长沙市共接待国内外游客约$$319$$万人次，与$$2016$$年相比同比增长$$16.43 \\%$$，数据$$319$$万用科学记数法表示为．",
+      "choices": [
+        "$$3.19\\times {{10}^{6}}$$",
+        "$$3.19\\times {{10}^{8}}$$",
+        "$$0.319\\times {{10}^{7}}$$",
+        "$$319\\times {{10}^{6}}$$"
+      ],
+      "analysis": "$$319$$万$$=3190000$$， $$3190000=3.19\\times {{10}^{6}}$$， 其中科学记数法的表示方法为$$\\left\\textbar{} a \\right\\textbar\\times {{10}^{n}}\\left( 1\\leqslant a\\textless{}10 \\right)$$． 故选$$\\text{A}$$．"
+    },
+    "en": {
+      "problem": "According to statistics, during the National Day holiday in 2017, Changsha received a total of approximately 319 million domestic and foreign tourists, a year-on-year increase of 16.43% compared to 2016. The data of 319 is expressed in scientific notation.",
+      "choices": [
+        "$$3.19\\times {{10}^{6}}$$",
+        "$$3.19\\times {{10}^{8}}$$",
+        "$$0.319\\times {{10}^{7}}$$",
+        "$$319\\times {{10}^{6}}$$"
+      ],
+      "analysis": "$$319$$million$$=3190000$$, $$3190000=3.19\\times {{10}^{6}}$$, where the scientific notation is $$\\left\\textbar{} a \\right\\textbar\\times {{10}^{n}}\\left( 1\\leqslant a\\textless{}10 \\right)$$. Therefore, $$\\text{A}$$ is selected."
+    }
+  },
+  {
+    "id": "009b64a94ce64a9a83f0476619b785c0",
+    "level": 1,
+    "answer": "C",
+    "source": [
+      "2014年湖南全国高中数学联赛竞赛初赛第1题5分"
+    ],
+    "zh": {
+      "problem": "设$$M=\\left { a\\left\\textbar{} a={{x}^{2}}-{{y}^{2}}, x, y\\in Z \\right. \\right }$$，则．",
+      "choices": [
+        "$$9\\in M$$，$$10\\in M$$",
+        "$$9\\notin M$$，$$10\\in M$$",
+        "$$9\\in M$$，$$10\\notin M$$",
+        "$$9\\notin M$$，$$10\\notin M$$"
+      ],
+      "analysis": "因为$$9={{3}^{2}}-{{0}^{2}}$$，所以$$9\\in M$$；假设$$10\\in M$$，则存在整数$$m$$、$$n$$使得 $$10={{m}^{2}}-{{n}^{2}}=\\left( m+n \\right)\\left( m-n \\right)$$， 则因为将$$10$$分解为两个整数因子之积，必定一个因子为奇数，另一个因子为偶数，而$$\\left( m+n \\right)$$与$$\\left( m-n \\right)$$同奇同偶，矛盾，所以$$10\\notin M$$．"
+    },
+    "en": {
+      "problem": "Suppose $$M=\\left { a\\left\\textbar{} a={{x}^{2}}-{{y}^{2}}, x, y\\in Z \\right. \\right }$$, then.",
+      "choices": [
+        "$$9\\in M$$，$$10\\in M$$",
+        "$$9\\notin M$$,$$10\\in M$$",
+        "$$9\\in M$$, $$10\\notin M$$",
+        "$$9\\notin M$$，$$10\\notin M$$"
+      ],
+      "analysis": "Because $$9={{3}^{2}}-{{0}^{2}}$$, so $$9\\in M$$; assuming $$10\\in M$$, there are integers $$m$$, $$n$$ such that $$10={{m}^{2}}-{{n}^{2}}=\\left( m+n \\right)\\left( m-n \\right)$$, Then because $$10$$ is decomposed into the product of two integer factors, one factor must be an odd number and the other factor must be an even number, and $$\\left( m+n \\right)$$ and $$\\left( m-n \\right)$$ are both odd and even, which is a contradiction, so $$10\\notin M$$."
+    }
+  },
+  {
+    "id": "a4e60b3c73b246318d2034660316d173",
+    "level": 1,
+    "answer": "B",
+    "source": [
+      "2019年吉林全国高中数学联赛竞赛初赛第5题5分"
+    ],
+    "zh": {
+      "problem": "若$$x$$、$$y$$满足$$\\left\\textbar{} y \\right\\textbar\\leqslant 2x$$，且$$x\\geqslant 1$$，则$$2x+y$$的最小值为．",
+      "choices": [
+        "$$-7$$",
+        "$$-5$$",
+        "$$1$$",
+        "$$4$$"
+      ],
+      "analysis": "作出可行域，知$$2x+y$$在$$x=-1$$，$$y=-3$$时，取得最小值$$-5$$． 故选$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "If $$x$$ and $$y$$ satisfy $$\\left\\textbar{} y \\right\\textbar\\leqslant 2x$$, and $$x\\geqslant 1$$, then the minimum value of $$2x+y$$ is.",
+      "choices": [
+        "$$-7$$",
+        "$$-5$$",
+        "$$1$$",
+        "$$4$$"
+      ],
+      "analysis": "Draw the feasible region and know that $$2x+y$$ obtains the minimum value $$-5$$ when $$x=-1$$ and $$y=-3$$. Therefore, $$\\text{B}$$ is selected."
+    }
+  },
+  {
+    "id": "0b96a1cb764841b4bd0c9f443c378481",
+    "level": 2,
+    "answer": "C",
+    "source": [
+      "2001年第12届希望杯初一竞赛第2试第6题"
+    ],
+    "zh": {
+      "problem": "用一根长为$$a$$米的线围成一个等边三角形，测知这个等边三角形的面积为$$b$$平方米．现在这个等边三角形内任取一点$$P$$，则点$$P$$到等边三角形三边距离之和为（ ）米．",
+      "choices": [
+        "$$\\frac{2b}{a}$$",
+        "$$\\frac{4b}{a}$$",
+        "$$\\frac{6b}{a}$$",
+        "$$\\frac{8b}{a}$$"
+      ],
+      "analysis": "等边三角形周长为$$a$$，则边长为$$\\frac{a}{3}$$， 设$$P$$到等边三角形的三边分别为$$x$$、$$y$$、$$z$$， 则等边三角形的面积为$$b=\\frac{1}{2}\\times \\frac{a}{3}\\times \\left( x+y+z \\right)$$ 解得$$x+y+z=\\frac{6b}{a}$$， 故选C"
+    },
+    "en": {
+      "problem": "An equilateral triangle is formed by a line with a length of $$a$$ meters. The area of ​​this equilateral triangle is measured to be $$b$$ square meters. Now pick any point $$P$$ within this equilateral triangle, then the sum of the distances from point $$P$$ to the three sides of the equilateral triangle is ( ) meters.",
+      "choices": [
+        "$$\\frac{2b}{a}$$",
+        "$$\\frac{4b}{a}$$",
+        "$$\\frac{6b}{a}$$",
+        "$$\\frac{8b}{a}$$"
+      ],
+      "analysis": "The perimeter of the equilateral triangle is $$a$$, then the side length is $$\\frac{a}{3}$$. Suppose $$P$$ to the three sides of the equilateral triangle are $$x$$, $$y$$, $$z$$ respectively. Then the area of the equilateral triangle is $$b=\\frac{1}{2}\\times \\frac{a}{3}\\times \\left( x+y+z \\right)$$ The solution is $$x+y+z=\\frac{6b}{a}$$, so choose C"
+    }
+  },
+  {
+    "id": "24d77807fa714bc2a97225317de7da65",
+    "level": 2,
+    "answer": "C",
+    "source": [
+      "2007年四年级竞赛创新杯",
+      "2007年第5届创新杯四年级竞赛第6题5分"
+    ],
+    "zh": {
+      "problem": "设m和n是选自自然数$$1\\sim 1004$$中的两个不同的数，那么$$\\left( m+n \\right)\\div \\left( m-n \\right)$$的最大值 是( )。",
+      "choices": [
+        "$$2000$$",
+        "$$2005$$",
+        "$$2007$$",
+        "$$2009$$"
+      ],
+      "analysis": "为使$$\\left( m+n \\right)\\div \\left( m-n \\right)$$最大，应使$$m+n$$尽可能大，而$$m-n$$尽可能小，所以$$m=1004$$，$$n=1003$$，$$\\left( m+n \\right)\\div \\left( m-n \\right)=2007$$为最大值。"
+    },
+    "en": {
+      "problem": "Assume m and n are two different numbers selected from the natural numbers $$1\\sim 1004$$, then the maximum value of $$\\left( m+n \\right)\\div \\left( m-n \\right)$$ is ( ).",
+      "choices": [
+        "$$2000$$",
+        "$$2005$$",
+        "$$2007$$",
+        "$$2009$$"
+      ],
+      "analysis": "In order to maximize $$\\left( m+n \\right)\\div \\left( m-n \\right)$$, $$m+n$$ should be as large as possible, and $$m-n$$ should be as small as possible, so $$m=1004$$, $$n=1003$$, $$\\left( m+n \\right)\\div \\left( m-n \\right)=2007$$ is the maximum value."
+    }
+  },
+  {
+    "id": "3a5da8ec9c1d4521a0f276ded97a6195",
+    "level": 2,
+    "answer": "A",
+    "source": [
+      "2018年山西全国高中数学联赛竞赛初赛第6题8分"
+    ],
+    "zh": {
+      "problem": "计算$$\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}\\cos \\frac{6\\pi }{7}$$的值为~\\uline{~~~~~~~~~~}~．",
+      "choices": [
+        "$$\\frac{1}{8}$$",
+        "$$\\frac{1}{4}$$",
+        "$$\\frac{1}{2}$$",
+        "$$1$$"
+      ],
+      "analysis": "记$$S=\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}\\cos \\frac{6\\pi }{7}$$，则$$S=-\\cos \\frac{\\pi }{7}\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}$$， $$-S\\cdot 8\\sin \\frac{\\pi }{7}=8\\sin \\frac{\\pi }{7}\\cdot \\cos \\frac{\\pi }{7}\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}=4\\sin \\frac{2\\pi }{7}\\cdot \\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}=2\\sin \\frac{4\\pi }{7}\\cos \\frac{4\\pi }{7}$$ $$=\\sin \\frac{8\\pi }{7}=-\\sin \\frac{\\pi }{7}$$，所以，$$S=\\frac{1}{8}$$．"
+    },
+    "en": {
+      "problem": "Calculate the value of $$\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}\\cos \\frac{6\\pi }{7}$$ to be ~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$\\frac{1}{8}$$",
+        "$$\\frac{1}{4}$$",
+        "$$\\frac{1}{2}$$",
+        "$$1$$"
+      ],
+      "analysis": "Remember $$S=\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}\\cos \\frac{6\\pi }{7}$$, then $$S=-\\cos \\frac{\\pi }{7}\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}$$, $$-S\\cdot 8\\sin \\frac{\\pi }{7}=8\\sin \\frac{\\pi }{7}\\cdot \\cos \\frac{\\pi }{7}\\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}=4\\sin \\frac{2\\pi }{7}\\cdot \\cos \\frac{2\\pi }{7}\\cos \\frac{4\\pi }{7}=2\\sin \\frac{4\\pi }{7}\\cos \\frac{4\\pi }{7}$$ $$=\\sin \\frac{8\\pi }{7}=-\\sin \\frac{\\pi }{7}$$, so, $$S=\\frac{1}{8}$$．"
+    }
+  },
+  {
+    "id": "5d59b2db49d54e14862aaea4b331cc76",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "初一下学期其它第18题",
+      "2016~2017学年陕西西安高新区西安高新第一中学初二上学期期末第24题7分",
+      "2008年第19届希望杯初二竞赛第2试第2题"
+    ],
+    "zh": {
+      "problem": "关于$$x$$，$$y$$的方程组$$\\begin{cases}x+ay+1=0 bx-2y+1=0 \\end{cases}$$有无数组解，则$$a$$，$$b$$的值为（~ ）．",
+      "choices": [
+        "$$a=0$$，$$b=0$$",
+        "$$a=-2$$，$$b=1$$",
+        "$$a=2$$，$$b=-1$$",
+        "$$a=2$$，$$b=1$$ ~"
+      ],
+      "analysis": "方程组有无数组解于是有$$\\frac{{{a}_{1}}}{{{a}_{2}}}=\\frac{{{b}_{1}}}{{{b}_{2}}}=\\frac{{{c}_{1}}}{{{c}_{2}}}$$， 于是$$\\frac{1}{b}=\\frac{a}{-2}=\\frac{1}{1}$$， ∴$$a=-2$$，$$b=1$$．"
+    },
+    "en": {
+      "problem": "Regarding $$x$$, $$y$$, the system of equations $$\\begin{cases}x+ay+1=0 bx-2y+1=0 \\end{cases}$$ has infinite sets of solutions, then the values ​​of $$a$$, $$b$$ are (~).",
+      "choices": [
+        "$$a=0$$，$$b=0$$",
+        "$$a=-2$$, $$b=1$$",
+        "$$a=2$$，$$b=-1$$",
+        "$$a=2$$，$$b=1$$ ~"
+      ],
+      "analysis": "The system of equations has countless solutions, so there are $$\\frac{{{a}_{1}}}{{{a}_{2}}}=\\frac{{{b}_{1}}}{{{b}_{2}}}=\\frac{{{c}_{1}}}{{{c}_{2}}}$$, So $$\\frac{1}{b}=\\frac{a}{-2}=\\frac{1}{1}$$, ∴$$a=-2$$, $$b=1$$."
+    }
+  },
+  {
+    "id": "7affcc007ccb48b8abbee3b401d86903",
+    "level": 2,
+    "answer": "A",
+    "source": [
+      "2012年第8届全国新希望杯五年级竞赛复赛第4题"
+    ],
+    "zh": {
+      "problem": "在$$\\overline{20\\square 12\\square }$$的$$\\square $$内填上合适的数字，使该六位数能同时被$$2、$$3$$、5$$整除，不同的填法有．",
+      "choices": [
+        "$$3$$种",
+        "$$4$$种",
+        "$$5$$种",
+        "$$6$$种"
+      ],
+      "analysis": "$$\\overline{20\\square 12\\square }$$末位肯定为$$0$$，那么$$\\overline{20\\square 120}$$是$$3$$的倍数，中间的$$\\square $$有三种选择$$1、$$4$$、7$$，因此最后只有$$3$$种填法．"
+    },
+    "en": {
+      "problem": "Fill in the appropriate numbers in $$\\square $$ of $$\\overline{20\\square 12\\square }$$ so that the six-digit number can be divisible by $$2, $$3$$, and 5$$ at the same time. The different filling methods are.",
+      "choices": [
+        "$$3$$ species",
+        "$$4$$ species",
+        "$$5$$ species",
+        "$$6$$ species"
+      ],
+      "analysis": "The last digit of $$\\overline{20\\square 12\\square }$$ must be $$0$$, then $$\\overline{20\\square 120}$$ is a multiple of $$3$$. The middle $$\\square $$ has three choices: $$1, $$4$$, and 7$$, so in the end there are only $$3$$ filling methods."
+    }
+  },
+  {
+    "id": "893b500eb7e34a64a8399bfe582d3899",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2014年全国华杯赛小学高年级竞赛初赛B卷第4题"
+    ],
+    "zh": {
+      "problem": "小华下午$$2$$点要到少年宫参加活动，但他的手表每个小时快了$$4$$分钟，他特意在上午$$10$$点时对好了表．当小华按照自己的表于下午$$2$$点到少年宫时，实际早到了分钟．",
+      "choices": [
+        "$$14$$",
+        "$$15$$",
+        "$$16$$",
+        "$$17$$"
+      ],
+      "analysis": "小华所带的“快表“每小时快了$$4$$分钟，说明准确时间走$$60$$分钟的时候，“快表“已经走了$$64$$分钟了，这样我们就可以得到$$\\frac{快表}{准表}=\\frac{64}{60}=\\frac{16}{15}$$；现在快表走了$$4\\times60=240$$，那么标准表走了$$240\\times 15\\div 16=225$$；所以实际上早到了$$240-225=15$$，选$$B$$．"
+    },
+    "en": {
+      "problem": "Xiaohua had to go to the Children's Palace to participate in activities at $$2$$ in the afternoon, but his watch was $$4$$ minutes faster every hour. He deliberately adjusted his watch at $$10$$ in the morning. When Xiaohua arrived at the Children's Palace at $$2$$ in the afternoon according to his schedule, he actually arrived minutes early.",
+      "choices": [
+        "$$14$$",
+        "$$15$$",
+        "$$16$$",
+        "$$17$$"
+      ],
+      "analysis": "The \"fast watch\" brought by Xiaohua is $$4$$ minutes faster per hour, which means that when the accurate time is $$60$$ minutes, the \"fast watch\" has already gone $$64$$ minutes, so we can get $$\\frac{fast watch }{Quick watch}=\\frac{64}{60}=\\frac{16}{15}$$; now the fast watch has gone $$4\\times60=240$$, then the standard watch has gone $$240\\times 15\\div 16=225$$; so actually $$240-225=15$$ arrived early, choose $$B$$."
+    }
+  },
+  {
+    "id": "966389d075a74364b0b26ab740353773",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2019年第23届广东世界少年奥林匹克数学竞赛四年级竞赛初赛第9题5分"
+    ],
+    "zh": {
+      "problem": "甲、乙、丙三人都在读同一本故事书，书中有$$100$$个故事．已知甲读了$$85$$个故事，乙读了$$70$$个故事，丙读了$$62$$个故事．甲、乙、丙三人都读过的故事最少有个．",
+      "choices": [
+        "$$15$$",
+        "$$17$$",
+        "$$32$$",
+        "$$62$$"
+      ],
+      "analysis": "要求三人都读过的故事最少有多少个， 则三人读的故事错开越多越好，不妨令这$$100$$个故事编号为$$1$$，$$2$$，$$3$$$$\\cdots \\cdots $$$$100$$， 则甲读$$1\\sim 85$$号，乙读$$31\\sim 100$$号，从$$31\\sim 85$$是甲乙重复的． 那么丙读$$1\\sim 30$$号，$$86\\sim 100$$号，共计$$45$$个故事，此时没有三人都重复的， 但丙读的$$62$$个故事还缺：$$62-45=17$$（个）．这$$17$$个故事只能从$$31\\sim 85$$中选取， 故三人会最少重复$$17$$个故事． 即选择$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "A, B, and C are all reading the same story book. There are $$100$$ stories in the book. It is known that A has read $$85$$ stories, B has read $$70$$ stories, and C has read $$62$$ stories. A, B, and C have all read at least one story.",
+      "choices": [
+        "$$15$$",
+        "$$17$$",
+        "$$32$$",
+        "$$62$$"
+      ],
+      "analysis": "The minimum number of stories required to be read by three people is the minimum number. The more staggered the stories read by the three people, the better. You might as well make these $$100$$ stories numbered as $$1$$, $$2$$, $$3$$$$\\cdots \\cdots $$$$100$$, then A reads $$1\\sim 85$$, and B reads $$31\\sim Number 100$$, starting from $$31\\sim 85$$, is repeated by A and B. Then C reads $$1\\sim 30$$ and $$86\\sim 100$$, a total of $$45$$ stories. At this time, there are no duplicates for all three people, but the $$62$$ stories read by C are still missing: $$62-45=17$$ (pieces). These $$17$$ stories can only be selected from $$31\\sim 85$$, so the three people will repeat at least $$17$$ stories. That is, select $$\\text{B}$$."
+    }
+  },
+  {
+    "id": "97a04486e0e546e08444f4c3970ed029",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2008年贵州全国高中数学联赛竞赛初赛第9题5分"
+    ],
+    "zh": {
+      "problem": "顶点在同一球面上的正四棱柱$$ABCD-{A}'{B}'{C}'{D}'$$中，$$AB=1$$，$$A{A}'=\\sqrt{2}$$，则$$A$$，$$C$$两点间的球面距离为．",
+      "choices": [
+        "$$\\frac{\\pi }{4}$$",
+        "$$\\frac{\\pi }{2}$$",
+        "$$\\frac{\\sqrt{2}}{4}\\pi $$",
+        "$$\\frac{\\sqrt{2}}{2}\\pi $$"
+      ],
+      "analysis": "设球心为$$O$$，则$$O$$为正四棱柱对角线的交点， 因为$$AC=\\sqrt{2}$$，$$A{C}'=2$$， 故$$OA=OC=1$$，$$\\triangle OAC$$为直角三角形， $$\\angle AOC=\\frac{ \\pi }{2}$$，故选$$\\text{B}$$."
+    },
+    "en": {
+      "problem": "In the regular square prism $$ABCD-{A}'{B}'{C}'{D}'$$ whose vertices are on the same spherical surface, $$AB=1$$, $$A{A}'=\\sqrt{2}$$, then the spherical distance between the two points $$A$$ and $$C$$ is.",
+      "choices": [
+        "$$\\frac{\\pi }{4}$$",
+        "$$\\frac{\\pi }{2}$$",
+        "$$\\frac{\\sqrt{2}}{4}\\pi $$",
+        "$$\\frac{\\sqrt{2}}{2}\\pi $$"
+      ],
+      "analysis": "Suppose the center of the sphere is $$O$$, then $$O$$ is the intersection of the diagonals of the regular square prism, because $$AC=\\sqrt{2}$$, $$A{C}'=2$$, so $$OA=OC=1$$, $$\\triangle OAC$$ is a right triangle, $$\\angle AOC=\\frac{ \\pi }{2}$$, so $$\\text{B}$$ is selected."
+    }
+  },
+  {
+    "id": "9b3eb73a74444b96bbf2d21624af4cbd",
+    "level": 2,
+    "answer": "C",
+    "source": [
+      "2020年第23届世界少年奥林匹克数学竞赛四年级竞赛决赛（中国区）第5题3分"
+    ],
+    "zh": {
+      "problem": "一些糖果，如果每天吃$$3$$个，十多天吃完，最后一天只吃了$$1$$个．如果每天吃$$4$$个，不到$$11$$天就吃完了，最后一天也是只吃了$$1$$个．那么，这些糖果原来有个",
+      "choices": [
+        "$$35$$",
+        "$$36$$",
+        "$$37$$",
+        "$$41$$"
+      ],
+      "analysis": "暂无"
+    },
+    "en": {
+      "problem": "For some candies, if you eat $$3$$ pieces every day and finish them in more than ten days, you will only eat $$1$$ pieces on the last day. If you eat $$4$$ pieces every day, you will finish them in less than $$11$$ days, and you will only eat $$1$$ pieces on the last day. So, these candies turned out to have a",
+      "choices": [
+        "$$35$$",
+        "$$36$$",
+        "$$37$$",
+        "$$41$$"
+      ],
+      "analysis": "None yet"
+    }
+  },
+  {
+    "id": "a08c0edebf39465c8f10e5cdfe497cbb",
+    "level": 2,
+    "answer": "C",
+    "source": [
+      "2019年第23届广东世界少年奥林匹克数学竞赛五年级竞赛初赛第7题5分"
+    ],
+    "zh": {
+      "problem": "给小数$$0.0123456789$$添加表示循环节的两个圆点，得到一个循环小数．要使得这个循环小数的小数点后第$$100$$位数字是$$8$$，应该在数字和$$9$$上添加圆点．",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "A~ 如果循环节是$$123456789$$，循环周期为$$9$$，除了已经有的$$10$$位小数以外，后面还有$$100-10=90$$（位）小数， $90\\div9=10\\cdots0$，所以最后一位是$$9$$，排除 A； B~ 如果循环节是$$23456789$$，循环周期为$$8$$，除了已经有的$$10$$位小数以外，后面还有$$100-10=90$$（位）小数， $90\\div8=11\\cdots2$，所以最后一位是$$3$$，排除 B； C 如果循环节是$$3456789$$，循环周期为$$7$$，除了已经有的$$10$$位小数以外，后面还有$$100-10=90$$（位）小数， $90\\div7=12\\cdots6$，所以最后一位是$$8$$，选择 C； D~ 如果循环节是$$456789$$，循环周期为$$6$$，除了已经有的$$10$$位小数以外，后面还有$$100-10=90$$（位）小数， $90\\div6=15\\cdots0$，所以最后一位是$$9$$，排除 D； 所以，选择 C．"
+    },
+    "en": {
+      "problem": "Add two dots indicating recurring sections to the decimal $$0.0123456789$$ to get a recurring decimal. To make the $$100$$th digit after the decimal point of this recurring decimal be $$8$$, dots should be added between the numbers and $$9$$.",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "A~ If the cycle section is $$123456789$$ and the cycle period is $$9$$, in addition to the existing $$10$$ decimal places, there are $$100-10=90$$ (digits) decimal places, $90\\div9=10\\cdots0$, so the last digit is $$9$$, excluding A; B~ If the cycle section is $$23456789$$ and the cycle period is $$8$$, in addition to the existing $$10$$ decimal places, there are $$100-10=90$$ (digits) decimal places, $90\\div8=11\\cdots2$, so the last digit is $$3$$, excluding B; C If the cycle section is $$3456789$$ and the cycle period is $$7$$, in addition to the existing $$10$$ decimal places, there are $$100-10=90$$ (digits) decimal places, $90\\div7=12\\cdots6$, so the last digit is $$8$$, select C; D~ If the loop section is $$456789$$ and the cycle period is $$6$$, in addition to the existing $$10$$ decimal places, there are $$100-10=90$$ (digits) decimal places, $90\\div6=15\\cdots0$, so the last digit is $$9$$, excluding D; therefore, choose C."
+    }
+  },
+  {
+    "id": "a7ce7d0ca1494a5a82d8670f8ea79b75",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2018年湖北武汉新希望杯六年级竞赛训练题（四）第5题"
+    ],
+    "zh": {
+      "problem": "一项工程，甲、乙两队合作需$$12$$天完成，现在甲队先做$$4$$天，然后乙队接着做$$6$$天，共完成这项工程的$$\\frac{3}{7}$$，那么甲队和乙队的工作效率之比为．",
+      "choices": [
+        "$$4:3$$",
+        "$$3:4$$",
+        "$$3:2$$",
+        "$$2:3$$"
+      ],
+      "analysis": "乙队：$$\\left( \\frac{3}{7}-\\frac{4}{12} \\right)\\div (6-4)=\\frac{1}{21}$$， 甲队：$$\\frac{1}{12}-\\frac{1}{21}=\\frac{1}{28}$$， $$\\frac{1}{28}:\\frac{1}{21}=3:4$$．"
+    },
+    "en": {
+      "problem": "A project requires $$12$$ days to be completed by two teams A and B. Now team A will do $$4$$ days first, and then team B will do $$6$$ days. A total of $$\\frac{3}{7}$$ will be completed for the project. Then the ratio of the work efficiency of team A and team B is.",
+      "choices": [
+        "$$4:3$$",
+        "$$3:4$$",
+        "$$3:2$$",
+        "$$2:3$$"
+      ],
+      "analysis": "Team B: $$\\left( \\frac{3}{7}-\\frac{4}{12} \\right)\\div (6-4)=\\frac{1}{21}$$, Team A: $$\\frac{1}{12}-\\frac{1}{21}=\\frac{1}{28}$$, $$\\frac{1}{28}:\\frac{1}{21}=3:4$$."
+    }
+  },
+  {
+    "id": "c1e6564899b646068ec18dcfc5a94e34",
+    "level": 2,
+    "answer": "D",
+    "source": [
+      "2017年世界少年奥林匹克数学竞赛四年级竞赛初赛A卷第8题5分"
+    ],
+    "zh": {
+      "problem": "选择“$$+$$、$$-$$、$$\\times $$、$$\\div $$“填入圆圈中，使得等式$$21\\bigcirc 10\\bigcirc 2\\bigcirc 8=24$$成立．",
+      "choices": [
+        "$$\\times $$；$$\\div $$；$$+$$．",
+        "$$\\times $$；$$\\div $$；$$-$$．",
+        "$$-$$；$$\\div $$；$$-$$．",
+        "$$-$$；$$\\div $$；$$+$$．"
+      ],
+      "analysis": "$$21-10\\div 2+8=24$$．"
+    },
+    "en": {
+      "problem": "Select \"$$+$$, $$-$$, $$\\times $$, $$\\div $$\" to fill in the circle, so that the equation $$21\\bigcirc 10\\bigcirc 2\\bigcirc 8=24$$ is established.",
+      "choices": [
+        "$$\\times $$;$$\\div $$;$$+$$．",
+        "$$\\times $$; $$\\div $$; $$-$$.",
+        "$$-$$;$$\\div $$;$$-$$．",
+        "$$-$$;$$\\div $$;$$+$$."
+      ],
+      "analysis": "$$21-10\\div 2+8=24$$."
+    }
+  },
+  {
+    "id": "d8f35a0f05344c8099d2858c36b22742",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2019年第23届广东世界少年奥林匹克数学竞赛五年级竞赛初赛第9题5分"
+    ],
+    "zh": {
+      "problem": "一列快车和一列慢车相向而行，快车的车长是$$280$$米，慢车的车长是$$455$$米，坐在快车上的人看见慢车驶过的时间是$$13$$秒，那么坐在慢车上的人看见快车驶过的时间是秒．",
+      "choices": [
+        "$$7$$",
+        "$$8$$",
+        "$$9$$",
+        "$$10$$"
+      ],
+      "analysis": "坐在快车上的人和慢车进行相遇运动，则速度和$$=455\\div 13=35$$（米/秒），坐在慢车上的人和快车进行相遇运动时，则相遇时间$$=280\\div 35=8$$（秒）． 故选择$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "An express train and a slow train are running towards each other. The length of the express train is $$280$$ meters and the length of the slow train is $$455$$ meters. The time it takes for a person sitting on the express train to see the slow train passing is $$13$$ seconds. Then the time it takes for a person sitting on the slow train to see the fast train passing is $$13 seconds.",
+      "choices": [
+        "$$7$$",
+        "$$8$$",
+        "$$9$$",
+        "$$10$$"
+      ],
+      "analysis": "When a person sitting on an express train meets a slow train, the speed sum $$=455\\div 13=35$$ (m/s). When a person sitting on a slow train encounters a fast train, the encounter time is $$=280\\div 35=8$$ (seconds). Therefore, $$\\text{B}$$ is selected."
+    }
+  },
+  {
+    "id": "dd1bb00194024a4992098511f332f314",
+    "level": 2,
+    "answer": "C",
+    "source": [
+      "1996年全国全国高中数学联赛竞赛一试第1题"
+    ],
+    "zh": {
+      "problem": "把圆$${{x}^{2}}+{{(y-1)}^{2}}=1$$与椭圆$$9{{x}^{2}}+{{(y+1)}^{2}}=9$$的公共点，用线段连接起来所得到的图形为（~ ~ ）．",
+      "choices": [
+        "线段",
+        "不等边三角形",
+        "等边三角形",
+        "四边形"
+      ],
+      "analysis": "圆$${{x}^{2}}+(y-1)=1$$与椭圆$$9{{x}^{2}}+{{(y+1)}^{2}}=9$$的交点$$A(xy)$$的坐标应满足方程，$${{x}^{2}}+\\frac{{{(y+1)}^{2}}}{9}={{x}^{2}}+{{(y-1)}^{2}}$$， 解得，$$y=2$$，或$$\\frac{1}{2}$$．于是相应地求得$$x=0$$，或$$x=\\pm \\frac{\\sqrt{3}}{2}$$．这样．得到给定圆与椭圆的三个交点：$${{A}_{1}}(0,2)$$，$${{A}_{2}}\\left( \\frac{\\sqrt{3}}{2} \\frac{1}{2} \\right)$$，$${{A}_{3}}\\left( -\\frac{\\sqrt{3}}{2} \\frac{1}{2} \\right)$$易求得，$$\\left\\textbar{} {{A}_{1}}{{A}_{2}} \\right\\textbar=\\left\\textbar{} {{A}_{1}}{{A}_{3}} \\right\\textbar=\\left\\textbar{} {{A}_{2}}{{A}_{3}} \\right\\textbar=\\sqrt{3}$$， 因此所得到的图形为正三角形． 故选$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "The figure obtained by connecting the common points of circle $${{x}^{2}}+{{(y-1)}^{2}}=1$$ and ellipse $$9{{x}^{2}}+{{(y+1)}^{2}}=9$$ with line segments is (~ ~ ).",
+      "choices": [
+        "line segment",
+        "scalene triangle",
+        "Equilateral triangle",
+        "quadrilateral"
+      ],
+      "analysis": "The intersection $$A(xy)$$ of circle $${{x}^{2}}+(y-1)=1$$ and ellipse $$9{{x}^{2}}+{{(y+1)}^{2}}=9$$ The standard should satisfy the equation, $${{x}^{2}}+\\frac{{{(y+1)}^{2}}}{9}={{x}^{2}}+{{(y-1)}^{2}}$$, The solution is, $$y=2$$, or $$\\frac{1}{2}$$. So accordingly, $$x=0$$, or $$x=\\pm \\frac{\\sqrt{3}}{2}$$. so. Get three intersection points of the given circle and the ellipse: $${{A}_{1}}(0,2)$$, $${{A}_{2}}\\left( \\frac{\\sqrt{3}}{2} \\frac{1}{2} \\right)$$, $${{A}_{3}}\\left( -\\frac{\\sqrt{3}}{2} \\frac{1}{2} \\right)$$ is easy to obtain, $$\\left\\textbar{} {{A}_{1}}{{A}_{2}} \\right\\textbar=\\left\\textbar{} {{A}_{1}}{{A}_{3}} \\right\\textbar=\\left\\textbar{} {{A}_{2}}{{A}_{3}} \\right\\textbar=\\sqrt{3}$$, Therefore the resulting figure is an equilateral triangle. Therefore, $$\\text{C}$$ is selected."
+    }
+  },
+  {
+    "id": "e0588b6e3aba45aeba75a0dd33971a9a",
+    "level": 2,
+    "answer": "C",
+    "source": [
+      "2010年中环杯四年级竞赛决赛",
+      "2011年中环杯四年级竞赛初赛",
+      "2011年中环杯四年级竞赛决赛"
+    ],
+    "zh": {
+      "problem": "康康到麦当劳买套餐，一份套餐包含了一个汉堡、一份小吃和一杯饮料。服务员告诉他店里有$$8$$种汉堡、$$4$$种小吃、$$5$$种饮料可供选择，那么康康一共可以搭配出（ ）种套餐。",
+      "choices": [
+        "$$17$$",
+        "$$3$$",
+        "$$160$$",
+        "$$32$$"
+      ],
+      "analysis": "康康先选择汉堡，共有$$8$$种选择，然后选小吃，有$$4$$种选择，最后选饮料，有$$5$$种选择，根据乘法原理，共有：$$8\\times 4\\times 5=160$$（种）搭配方法。"
+    },
+    "en": {
+      "problem": "Kangkang went to McDonald's to buy a set meal, which included a burger, a snack and a drink. The waiter told him that the store had $8$$ burgers, $4$$ snacks, and $5$$ drinks to choose from, so Kangkang could make a total of ( ) kinds of set meals.",
+      "choices": [
+        "$$17$$",
+        "$$3$$",
+        "$$160$$",
+        "$$32$$"
+      ],
+      "analysis": "Kangkang first chooses burgers, with a total of $$8$$ choices, then chooses snacks, with $$4$$ choices, and finally chooses drinks, with $$5$$ choices. According to the multiplication principle, there are a total of: $$8\\times 4\\times 5=160$$ (kinds) of matching methods."
+    }
+  },
+  {
+    "id": "eae7efabd11a491ea930257b03240fe8",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2018年湖北武汉新希望杯五年级竞赛训练题（四）第4题"
+    ],
+    "zh": {
+      "problem": "水果店规定：如果购买芒果不超过$$10$$千克，那么每千克售价$$4$$元；如果超过$$10$$千克，那么超过的部分每千克$$3.5$$元．某人买了$$24$$千克芒果，他应付元．",
+      "choices": [
+        "$$84$$",
+        "$$89$$",
+        "$$90$$",
+        "$$96$$"
+      ],
+      "analysis": "$$4\\times 10+3.5\\times (24-10)=89$$（元）．"
+    },
+    "en": {
+      "problem": "Fruit shop regulations: If the mango purchased does not exceed $$10$$ kilogram, then the price per kilogram is $$4$$ yuan; if it exceeds $$10$$ kilogram, then the excess price is $$3.5$$ yuan per kilogram. Someone bought $$24$$ kilograms of mangoes, and he should pay RMB.",
+      "choices": [
+        "$$84$$",
+        "$$89$$",
+        "$$90$$",
+        "$$96$$"
+      ],
+      "analysis": "$$4\\times 10+3.5\\times (24-10)=89$$ (yuan)．"
+    }
+  },
+  {
+    "id": "ff8080814acd9dc6014adbd75bf62310",
+    "level": 2,
+    "answer": "A",
+    "source": [
+      "2014年黑龙江全国高中数学联赛竞赛初赛第5题5分"
+    ],
+    "zh": {
+      "problem": "已知三棱锥$$S-ABC$$，在三棱锥内任取一点$$P$$，使得$${{V}_{p-ABC}}\\textless\\frac{1}{2}{{V}_{S-ABC}}$$的概率是（~ ）",
+      "choices": [
+        "$$\\frac{7}{8}$$",
+        "$$\\frac{3}{4}$$",
+        "$$\\frac{1}{2}$$",
+        "$$\\frac{1}{4}$$"
+      ],
+      "analysis": "当$$P$$在三棱锥的中截面与下底面构成的三棱台内时符合要求，由几何概型知，$$P=1-\\frac{1}{8}=\\frac{7}{8}$$．"
+    },
+    "en": {
+      "problem": "Given the triangular pyramid $$S-ABC$$, pick any point $$P$$ within the triangular pyramid, so that the probability of $${{V}_{p-ABC}}\\textless\\frac{1}{2}{{V}_{S-ABC}}$$ is (~ )",
+      "choices": [
+        "$$\\frac{7}{8}$$",
+        "$$\\frac{3}{4}$$",
+        "$$\\frac{1}{2}$$",
+        "$$\\frac{1}{4}$$"
+      ],
+      "analysis": "When $$P$$ is within the triangular prism formed by the middle section and the lower base of the triangular pyramid, it meets the requirements. According to the geometric general shape, $$P=1-\\frac{1}{8}=\\frac{7}{8}$$."
+    }
+  },
+  {
+    "id": "0cb3c9d98ece42c3a9bf637a0da03234",
+    "level": 2,
+    "answer": "D",
+    "source": [
+      "2004年六年级竞赛创新杯",
+      "2004年第2届创新杯六年级竞赛初赛第9题"
+    ],
+    "zh": {
+      "problem": "两个相同的瓶子装满酒精溶液，一个瓶子中酒精与水的体积比是$$3:1$$，另一个瓶子中酒精与水的体积比是$$4:1$$。如果把这两瓶酒精溶液混合，那么混合溶液中酒精与水的体积比是（ ）",
+      "choices": [
+        "$$7:1$$",
+        "$$7:2$$",
+        "$$24:7$$",
+        "$$31:9$$"
+      ],
+      "analysis": "两个相同的瓶子装满酒精溶液，设一个瓶子装溶液的体积是单位“$$1$$“，那么第一个瓶子中酒精体积是$$3\\div (1+3)=\\frac{3}{4}$$，第二个瓶子中酒精体积是$$4\\div (1+4)=\\frac{4}{5}$$，把两瓶酒精溶液混合，两个瓶子的酒精体积和是$$\\frac{3}{4}+\\frac{4}{5}=\\frac{31}{20}$$， 水体积和$$=1+1-\\frac{31}{20}=\\frac{9}{20}$$， 那么酒精与水的体积比是$$\\frac{31}{20}:\\frac{9}{20}=31:9$$． 故选$$\\text{D}$$．"
+    },
+    "en": {
+      "problem": "Two identical bottles are filled with alcohol solution. The volume ratio of alcohol to water in one bottle is $$3:1$$, and the volume ratio of alcohol to water in the other bottle is $$4:1$$. If these two bottles of alcohol solution are mixed, the volume ratio of alcohol to water in the mixed solution is ( )",
+      "choices": [
+        "$$7:1$$",
+        "$$7:2$$",
+        "$$24:7$$",
+        "$$31:9$$"
+      ],
+      "analysis": "Two identical bottles are filled with alcohol solution. Suppose the volume of the solution in one bottle is the unit \"$$1$$\", then the volume of alcohol in the first bottle is $$3\\div (1+3)=\\frac{3}{4}$$, and the volume of alcohol in the second bottle is $$4\\div (1+4)=\\frac{4}{5}$$, mix two bottles of alcohol solution, the sum of the alcohol volumes of the two bottles is $$\\frac{3}{4}+\\frac{4}{5}=\\frac{31}{20}$$, the sum of the water volumes is $$=1+1-\\frac{31}{20}=\\frac{9}{20}$$, Then the volume ratio of alcohol to water is $$\\frac{31}{20}:\\frac{9}{20}=31:9$$. Therefore, $$\\text{D}$$ is selected."
+    }
+  },
+  {
+    "id": "0cbd59d9044746f08390b22a3de2762b",
+    "level": 2,
+    "answer": "D",
+    "source": [
+      "2014年全国迎春杯三年级竞赛初赛第8题"
+    ],
+    "zh": {
+      "problem": "祖玛游戏中，龙嘴里不断吐出不同颜色的龙珠，按$$4$$颗红珠，$$3$$颗黄珠，再$$2$$颗绿珠，最后$$1$$颗白珠，按此方式不断重复，从龙嘴里吐出的第$$2000$$颗龙珠是．",
+      "choices": [
+        "红珠",
+        "黄珠",
+        "绿珠",
+        "白珠"
+      ],
+      "analysis": "$$2000\\div (4+3+2+1)=200$$（组）．"
+    },
+    "en": {
+      "problem": "In the Zuma game, dragon balls of different colors are spit out from the dragon's mouth continuously. Press $$4$$ red beads, $$3$$ yellow beads, then $$2$$ green beads, and finally $$1$$ white beads. Repeat this way. The $$2000$$ dragon ball spit out from the dragon's mouth is.",
+      "choices": [
+        "red beads",
+        "yellow beads",
+        "green beads",
+        "white beads"
+      ],
+      "analysis": "$$2000\\div (4+3+2+1)=200$$ (group)．"
+    }
+  },
+  {
+    "id": "10a375051f5745f1a53a9ef7618a1b00",
+    "level": 2,
+    "answer": "B",
+    "source": [
+      "2011年全国创新杯五年级竞赛第6题5分"
+    ],
+    "zh": {
+      "problem": "兰佛德数字是这样一种数字，它的数字中每一个数码都出现两次，并且数码$$1$$被一个其他数码分开，数码$$2$$被两个其他数码分开，以此类推．下面四个数是兰佛德数字的一个是（~~ ）．",
+      "choices": [
+        "$$12142334$$",
+        "$$41312432$$",
+        "$$14132342$$",
+        "$$32432141$$"
+      ],
+      "analysis": "$$1\\times 1$$ $$2\\times \\times 2$$ $$3\\times \\times \\times 3$$ $$4\\times \\times \\times \\times 4$$．"
+    },
+    "en": {
+      "problem": "A Langford number is a number in which each digit appears twice, and the digit $$1$$ is separated by one other digit, the digit $$2$$ is separated by two other digits, and so on. One of the following four numbers is a Langford number (~~).",
+      "choices": [
+        "$$12142334$$",
+        "$$41312432$$",
+        "$$14132342$$",
+        "$$32432141$$"
+      ],
+      "analysis": "$$1\\times 1$$ $$2\\times \\times 2$$ $$3\\times \\times \\times 3$$ $$4\\times \\times \\times \\times 4$$．"
+    }
+  },
+  {
+    "id": "0b6eb76b77e9451ea2f3bca0c95c4383",
+    "level": 3,
+    "answer": "D",
+    "source": [
+      "2014年迎春杯三年级竞赛复赛"
+    ],
+    "zh": {
+      "problem": "甲、乙、丙、丁和戊参加$$100$$米比赛，比赛结束后丁说：“我比乙跑得快。“丙说：“戊在我前面冲过终点线。“甲说：“我的名次排在丁的前面，丙的后面。“请根据他们的话排出名次（ ）",
+      "choices": [
+        "戊$$\\textgreater$$丙$$\\textgreater$$丁$$\\textgreater$$甲$$\\textgreater$$乙",
+        "甲$$\\textgreater$$乙$$\\textgreater$$丙$$\\textgreater$$丁$$\\textgreater$$戊",
+        "乙$$\\textgreater$$丁$$\\textgreater$$甲$$\\textgreater$$丙$$\\textgreater$$戊",
+        "戊$$\\textgreater$$丙$$\\textgreater$$甲$$\\textgreater$$丁$$\\textgreater$$乙"
+      ],
+      "analysis": "解：根据分析，由丁说的可得“丁$$\\textgreater$$乙“，根据丙说的可得“戊$$\\textgreater$$丙“， 根据甲说的可得“丙$$\\textgreater$$甲$$\\textgreater$$丁“，综合可得“戊$$\\textgreater$$丙$$\\textgreater$$甲$$\\textgreater$$丁$$\\textgreater$$乙“。 故选：D。"
+    },
+    "en": {
+      "problem": "A, B, C, D and E participated in a $$100$$ meter race. After the race, D said: \"I ran faster than B.\" C said: \"E crossed the finish line in front of me.\" A said: \"My ranking is in front of D and behind C.\" Please rank according to their words ( )",
+      "choices": [
+        "E$$\\textgreater$$C$$\\textgreater$$D$$\\textgreater$$A$$\\textgreater$$B",
+        "A$$\\textgreater$$B$$\\textgreater$$C$$\\textgreater$$D$$\\textgreater$$E",
+        "B$$\\textgreater$$D$$\\textgreater$$A$$\\textgreater$$C$$\\textgreater$$E",
+        "E$$\\textgreater$$C$$\\textgreater$$A$$\\textgreater$$D$$\\textgreater$$B"
+      ],
+      "analysis": "Solution: According to analysis, we can get \"D$$\\textgreater$$B\" from what Ding said, \"E$$\\textgreater$$C\" according to what C said, \"C$$\\textgreater$$A$$\\textgreater$$D\" according to what A said, and comprehensively we can get \"E$$\\textgreater$$C$$\\textgreater$$A$$\\textgreater$$D$$\\textgreater$$B\". So choose: D."
+    }
+  },
+  {
+    "id": "298df3791f1c45c495e128dafae49608",
+    "level": 3,
+    "answer": "A",
+    "source": [
+      "2008年全国高中数学联赛竞赛一试第4题6分"
+    ],
+    "zh": {
+      "problem": "若三个棱长均为整数（单位：$$\\text{cm}$$）的正方体的表面积之和为$$564\\text{c}{{\\text{m}}^{2}}$$，则这三个正方体的体积之和为（~ ~ ）．",
+      "choices": [
+        "$$764\\text{c}{{\\text{m}}^{3}}$$或$$586\\text{c}{{\\text{m}}^{3}}$$",
+        "$$764\\text{c}{{\\text{m}}^{3}}$$",
+        "$$586\\text{c}{{\\text{m}}^{3}}$$或$$564\\text{c}{{\\text{m}}^{3}}$$",
+        "$$586\\text{c}{{\\text{m}}^{3}}$$"
+      ],
+      "analysis": "设这三个正方体的棱长分别为$$a,b,c$$，则有$$6({{a}^{2}}+{{b}^{2}}+{{c}^{2}})=564$$，$${{a}^{2}}+{{b}^{2}}+{{c}^{2}}=94$$， 不妨设$$1\\leqslant a\\leqslant b\\leqslant c\\textless{}10$$，从而$$3{{c}^{2}}\\geqslant {{a}^{2}}+{{b}^{2}}+{{c}^{2}}=94$$，$${{c}^{2}}\\textgreater31$$， 故$$6\\leqslant c\\leqslant 10$$．$$c$$只能取$$9$$，$$8$$，$$7$$，$$6$$， 若$$c=9$$，则$${{a}^{2}}+{{b}^{2}}=94-{{9}^{2}}=13$$，易知$$a=2$$，$$b=3$$，得一组解$$(a,b,c)=(2,3,9)$$， 若$$c=8$$，则$${{a}^{2}}+{{b}^{2}}=94-64=30$$，$$b\\leqslant 5$$，但$$2{{b}^{2}}\\geqslant 30$$，$$b\\geqslant 4$$，从而$$b=4$$或$$5$$， 若$$b=5$$，则$${{a}^{2}}=5$$无解，若$$b=4$$，则$${{a}^{2}}=14$$无解，此时无解， 若$$c=7$$，则$${{a}^{2}}+{{b}^{2}}=94-49=45$$，有唯一解$$a=3$$，$$b=6$$， 若$$c=6$$，则$${{a}^{2}}+{{b}^{2}}=94-36=58$$，此时$$2{{b}^{2}}\\geqslant {{a}^{2}}+{{b}^{2}}=58$$，$${{b}^{2}}\\geqslant 29$$，故$$b\\geqslant 6$$，但$$b\\leqslant c=6$$，故$$b=6$$，此时$${{a}^{2}}=58-36=22$$无解， 综上，共有两组解$$\\begin{cases}a=2 b=3 c=9 \\end{cases}$$或$$\\begin{cases}a=3 b=6 c=7 \\end{cases}$$， 体积为$${{V}_{1}}={{2}^{3}}+{{3}^{3}}+{{9}^{3}}=764\\text{c}{{\\text{m}}^{3}}$$或$${{V}_{2}}={{3}^{3}}+{{6}^{3}}+{{7}^{3}}=586\\text{c}{{\\text{m}}^{3}}$$． 故选$$\\text{A}$$．"
+    },
+    "en": {
+      "problem": "If the sum of the surface areas of three cubes whose edge lengths are all integers (unit: $$\\text{cm}$$) is $$564\\text{c}{{\\text{m}}^{2}}$$, then the sum of the volumes of these three cubes is (~ ~ ).",
+      "choices": [
+        "$$764\\text{c}{{\\text{m}}^{3}}$$ or $$586\\text{c}{{\\text{m}}^{3}}$$",
+        "$$764\\text{c}{{\\text{m}}^{3}}$$",
+        "$$586\\text{c}{{\\text{m}}^{3}}$$ or $$564\\text{c}{{\\text{m}}^{3}}$$",
+        "$$586\\text{c}{{\\text{m}}^{3}}$$"
+      ],
+      "analysis": "Assume that the edge lengths of these three cubes are $$a, b, c$$ respectively, then $$6({{a}^{2}}+{{b}^{2}}+{{c}^{2}})=564$$, $${{a}^{2}}+{{b}^{2}}+{{c}^{2}}=94$$, you might as well set $$1\\leqslant a\\leqslant b\\leqslant c\\textless{}10$$, so $$3{{c}^{2}}\\geqslant {{a}^{2}}+{{b}^{2}}+{{c}^{2}}=94$$, $${{c}^{2}}\\textgreater31$$, so $$6\\leqslant c\\leqslant 10$$. $$c$$ can only take $$9$$, $$8$$, $$7$$, $$6$$, If $$c=9$$, then $${{a}^{2}}+{{b}^{2}}=94-{{9}^{2}}=13$$. It is easy to know that $$a=2$$, $$b=3$$, and a set of solutions $$(a,b,c)=(2,3,9)$$ is obtained. If $$c=8$$, then $${{a}^{2}}+{{b}^{2}}=94-64=30$$, $$b\\leqslant 5$$, but $$2{{b}^{2}}\\geqslant 30$$, $$b\\geqslant 4$$, so $$b=4$$ or $$5$$, If $$b=5$$, then $${{a}^{2}}=5$$ has no solution. If $$b=4$$, then $${{a}^{2}}=14$$ has no solution. There is no solution at this time. If $$c=7$$, then $${{a}^{2}}+{{b}^{2}}=94-49=45$$, there is a unique solution $$a=3$$, $$b=6$$, If $$c=6$$, then $${{a}^{2}}+{{b}^{2}}=94-36=58$$, then $$2{{b}^{2}}\\geqslant {{a}^{2}}+{{b}^{2}}=58$$, $${{b}^{2}}\\geqslant 29$$, so $$b\\geqslant 6$$, but $$b\\leqslant c=6$$, so $$b=6$$, then $${{a}^{2}}=58-36=22$$ has no solution. In summary, there are two sets of solutions $$\\begin{cases}a=2 b=3 c=9 \\end{cases}$$ or $$\\begin{cases}a=3 b=6 c=7 \\end{cases}$$, The volume is $${{V}_{1}}={{2}^{3}}+{{3}^{3}}+{{9}^{3}}=764\\text{c}{{\\text{m}}^{3}}$ $ or $${{V}_{2}}={{3}^{3}}+{{6}^{3}}+{{7}^{3}}=586\\text{c}{{\\text{m}}^{3}}$$． Therefore, $$\\text{A}$$ is selected."
+    }
+  },
+  {
+    "id": "45c7d7b6c08747c19be185cb569e5f7b",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "2015年华杯赛四年级竞赛初赛"
+    ],
+    "zh": {
+      "problem": "新生入校后，合唱队、田径队和舞蹈队共招收学员$$100$$人。如果合唱队招收的人数比田径队多一倍，舞蹈队比合唱队多$$10$$人。那么，舞蹈队招收（ ）人。（注：每人限加入一个队）",
+      "choices": [
+        "$$30$$",
+        "$$42$$",
+        "$$46$$",
+        "$$52$$"
+      ],
+      "analysis": "$$\\left( 100-10 \\right)\\div \\left( 2+2+1 \\right)$$ $$=90\\div 5$$ $$=18$$（人） $$18\\times 2+10$$ $$=36+10$$ $$=46$$（人） 答：舞蹈队招收$$46$$人。 故选：$$C$$。"
+    },
+    "en": {
+      "problem": "After freshmen enter the school, the choir, track and field team and dance team will recruit a total of $$100$$ students. If the choir recruits twice as many people as the track and field team, the dance team has $$10$$ more people than the choir. So, the dance team recruits ( ) people. (Note: Each person can only join one team)",
+      "choices": [
+        "$$30$$",
+        "$$42$$",
+        "$$46$$",
+        "$$52$$"
+      ],
+      "analysis": "$$\\left( 100-10 \\right)\\div \\left( 2+2+1 \\right)$$ $$=90\\div 5$$ $$=18$$ (person) $$18\\times 2+10$$ $$=36+10$$ $$=46$$ (person) Answer: The dance team recruits $$46$$ people. Therefore, we choose: $$C$$."
+    }
+  },
+  {
+    "id": "776ddede051a4c98a91c3af01f6dd50c",
+    "level": 3,
+    "answer": "B",
+    "source": [
+      "2012年竞赛第2题3分"
+    ],
+    "zh": {
+      "problem": "在平面直角坐标系$$xOy$$中，满足不等式$${{x}^{2}}+{{y}^{2}}\\leqslant 2x+2y$$的整数$$\\left( x,y \\right)$$的对数为．",
+      "choices": [
+        "$$10$$",
+        "$$9$$",
+        "$$7$$",
+        "$$5$$"
+      ],
+      "analysis": "由题设$${{x}^{2}}+{{y}^{2}}\\leqslant 2x+2y$$，得$$0\\leqslant {{\\left( x-1 \\right)}^{2}}{{\\left( y-1 \\right)}^{2}}\\leqslant 2$$， 因为$$x$$，$$y$$均为整数，所以有 $$\\begin{cases}{{(x-1)}^{2}}=0 {{\\left( y-1 \\right)}^{2}}=0 \\end{cases}$$或$$\\begin{cases}{{\\left( x-1 \\right)}^{2}}=0 {{\\left( y-1 \\right)}^{2}}=1 \\end{cases}$$或 $$\\begin{cases}{{\\left( x-1 \\right)}^{2}}=1 {{\\left( y-1 \\right)}^{2}}=0 \\end{cases}$$或$$\\begin{cases}{{\\left( x-1 \\right)}^{2}}=1 {{\\left( y-1 \\right)}^{2}}=1 \\end{cases}$$， 解得：$$\\begin{cases}x=1 y=1 \\end{cases}$$；$$\\begin{cases}x=1 y=2 \\end{cases}$$；$$\\begin{cases}x=1 y=0 \\end{cases}$$；$$\\begin{cases}x=0 y=1 \\end{cases}$$；$$\\begin{cases}x=0 y=0 \\end{cases}$$；$$\\begin{cases}x=0 y=2 \\end{cases}$$；$$\\begin{cases}x=2 y=1 \\end{cases}$$；$$\\begin{cases}x=2 y=0 \\end{cases}$$；$$\\begin{cases}x=2 y=2 \\end{cases}$$， 以上共计$$9$$对$$(x,y)$$． 故选：$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "In the plane rectangular coordinate system $$xOy$$, the logarithm of the integer $$\\left( x,y \\right)$$ that satisfies the inequality $${{x}^{2}}+{{y}^{2}}\\leqslant 2x+2y$$ is.",
+      "choices": [
+        "$$10$$",
+        "$$9$$",
+        "$$7$$",
+        "$$5$$"
+      ],
+      "analysis": "Assuming $${{x}^{2}}+{{y}^{2}}\\leqslant 2x+2y$$ from the question, we get $$0\\leqslant {{\\left( x-1 \\right)}^{2}}{{\\left( y-1 \\right)}^{2}}\\leqslant 2$$, because $$x$$ and $$y$$ are both integers, so we have $$\\begin{cases}{{(x-1 \\right)}^{2}}=0 {{\\left( y-1 \\right)}^{2}}=0 \\end{cases}$$ or $$\\begin{cases}{{\\left( x-1 \\right)}^{2}}=0 {{\\left( y-1 \\right)}^{2}}=1 \\end{cases}$$ or $$\\begin{cases}{{\\left( x-1 \\right)}^{2}}=1 {{\\left( y-1 \\right)}^{2}}=0 \\end{cases}$$ or $$\\begin{cases}{{\\left( x-1 \\right)}^{2}}=1 {{\\left( y-1 \\right)}^{2}}=1 \\end{cases}$$, Solution: $$\\begin{cases}x=1 y=1 \\end{cases}$$; $$\\begin{cases}x=1 y=2 \\end{cases}$$; $$\\begin{cases}x=1 y=0 \\end{cases}$$; y=0 \\end{cases}$$; $$\\begin{cases}x=0 y=2 \\end{cases}$$; $$\\begin{cases}x=2 y=1 \\end{cases}$$; $$\\begin{cases}x=2 y=0 \\end{cases}$$; $$\\begin{cases}x=2 y=2 \\end{cases}$$, The above totals $$9$$ for $$(x,y)$$. Therefore, we choose: $$\\text{B}$$."
+    }
+  },
+  {
+    "id": "8aac4907507fb8840150897542fb17b7",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "1999年第10届希望杯初一竞赛第9题",
+      "2017~2018学年四川凉山西昌市西昌一中俊波外国语学校初一上学期期中第14题2分",
+      "初一下学期单元测试《二元一次方程组》二元一次方程（组）的相关概念第24题"
+    ],
+    "zh": {
+      "problem": "若$$\\left\\textbar{} a+b+1 \\right\\textbar$$与$${{(a-b+1)}^{2}}$$互为相反数，则$$a$$与$$b$$的大小关系是（~ ）．",
+      "choices": [
+        "$$a\\textgreater b$$",
+        "$$a=b$$",
+        "$$a\\textless{}b$$",
+        "$$a\\geqslant b$$"
+      ],
+      "analysis": "$$\\left\\textbar{} a+b+1 \\right\\textbar$$与$${{(a-b+1)}^{2}}$$互为相反数， 由绝对值和偶次方的非负性知， $$a+b+1=0$$，$$a-b+1=0$$， 解得$$a=-1$$，$$b=0$$， ∴$$a\\textless{}b$$．"
+    },
+    "en": {
+      "problem": "If $$\\left\\textbar{} a+b+1 \\right\\textbar$$ and $${{(a-b+1)}^{2}}$$ are opposite numbers to each other, then the size relationship between $$a$$ and $$b$$ is (~).",
+      "choices": [
+        "$$a\\textgreater b$$",
+        "$$a=b$$",
+        "$$a\\textless{}b$$",
+        "$$a\\geqslant b$$"
+      ],
+      "analysis": "$$\\left\\textbar{} a+b+1 \\right\\textbar$$ and $${{(a-b+1)}^{2}}$$ are opposite numbers of each other. According to the non-negativity of absolute value and even power, $$a+b+1=0$$, $$a-b+1=0$$, the solution is $$a=-1$$, $$b=0$$, ∴$$a\\textless{}b$$．"
+    }
+  },
+  {
+    "id": "a77ccc00ebd542ef8f3e4e98d7fc7c01",
+    "level": 3,
+    "answer": "B",
+    "source": [
+      "2017年第15届全国希望杯六年级竞赛"
+    ],
+    "zh": {
+      "problem": "小明放学回家，休息了一会儿开始做作业，此时他看到钟面上分针略超过时针．完成作业时，小明发现分针与时针恰好互换了位置．小明做家庭作业用了~\\uline{~~~~~~~~~~}~分钟．",
+      "choices": [
+        "$$\\frac{720}{11}$$",
+        "$$\\frac{720}{13}$$",
+        "$$\\frac{360}{11}$$",
+        "$$\\frac{360}{13}$$"
+      ],
+      "analysis": "设小明做作业用了$$x$$分钟．根据题意：分针每走一小格转动$$6$$°，时针每走一大格（$$1$$小时） 转动$$30$$°，即一分钟走$$0.5$$°．于是有$$6x+0.5x=360$$，解得：$$x=\\frac{720}{13}$$．所以小明做作业用 了$$\\frac{720}{13}$$分钟．"
+    },
+    "en": {
+      "problem": "Xiao Ming came home from school, rested for a while and started doing homework. At this time, he saw that the minute hand on the clock was slightly longer than the hour hand. When Xiao Ming completed his homework, he found that the minute hand and hour hand had just swapped positions. It took Xiao Ming ~\\uline{~~~~~~~~~~}~ minutes to do his homework.",
+      "choices": [
+        "$$\\frac{720}{11}$$",
+        "$$\\frac{720}{13}$$",
+        "$$\\frac{360}{11}$$",
+        "$$\\frac{360}{13}$$"
+      ],
+      "analysis": "Let Xiao Ming spend $$x$$ minutes doing his homework. According to the meaning of the question: the minute hand moves $$6$$° for every one step, and the hour hand moves $$30$$° for every one step ($$1$$ hour), that is, it moves $$0.5$$° per minute. So there is $$6x+0.5x=360$$, and the solution is: $$x=\\frac{720}{13}$$. So it took Xiao Ming $$\\frac{720}{13}$$ minutes to do his homework."
+    }
+  },
+  {
+    "id": "acea09fd29724bb4a830ff305f78b3e1",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "2018年湖北武汉新希望杯小学高年级六年级竞赛训练题（四）第4题"
+    ],
+    "zh": {
+      "problem": "张老师把$$165$$苹果、$$220$$个梨和$$398$$个桔子平均分给小朋友们，最后剩下$$21$$个苹果、$$4$$个梨和$$38$$个桔子没有分出去．每个小朋友分到了个．",
+      "choices": [
+        "$$8$$",
+        "$$9$$",
+        "$$10$$",
+        "$$11$$"
+      ],
+      "analysis": "$$165-21=144$$，$$220-4=216$$，$$398-38=360$$，（$$144$$，$$216$$，$$260$$）$$=72$$，所以小朋友的人数应该是$$72$$的因数，又$$38\\textgreater36$$，所以人数只能是$$72$$人，$$144\\div 72+216\\div 72+360\\div 72=10$$（个）．"
+    },
+    "en": {
+      "problem": "Teacher Zhang divided $$165$$ apples, $$220$$ pears and $$398$$ oranges equally among the children, leaving $$21$$ apples, $$4$$ pears and $$38$$ oranges undistributed. Each child was assigned one.",
+      "choices": [
+        "$$8$$",
+        "$$9$$",
+        "$$10$$",
+        "$$11$$"
+      ],
+      "analysis": "$$165-21=144$$, $$220-4=216$$, $$398-38=360$$, ($$144$$, $$216$$, $$260$$)$$= 72$$, so the number of children should be a factor of $$72$$, and $$38\\textgreater36$$, so the number of children can only be $$72$$, $$144\\div 72+216\\div 72+360\\div 72=10$$(pieces)．"
+    }
+  },
+  {
+    "id": "b1cb418aba7f43cf86ac3a4451b60270",
+    "level": 3,
+    "answer": "D",
+    "source": [
+      "2008年竞赛第5题6分"
+    ],
+    "zh": {
+      "problem": "将$$1$$，$$2$$，$$3$$，$$4$$，$$5$$这五个数字排成一排，最后一个数是奇数，且使得其中任意连续三个数之和都能被这三个数中的第一个数整除，那么满足要求的排法有．",
+      "choices": [
+        "$$2$$种",
+        "$$3$$种",
+        "$$4$$种",
+        "$$5$$种"
+      ],
+      "analysis": "设$${{a}_{1}}$$，$${{a}_{2}}$$，$${{a}_{3}}$$，$${{a}_{4}}$$，$${{a}_{5}}$$是$$1$$，$$2$$，$$3$$，$$4$$，$$5$$的一个满足要求的排列． 首先，对于$${{a}_{1}}$$，$${{a}_{2}}$$，$${{a}_{3}}$$，$${{a}_{4}}$$，不能有连续的两个都是偶数，否则，这两个之后都是偶数，与已知条件矛盾． 又如果$${{a}_{i}}\\left( 1\\leqslant i\\leqslant 3 \\right)$$是偶数，$${{a}_{i+1}}$$是奇数，则$${{a}_{i+2}}$$是奇数，这说明一个偶数后面一定要接两个或两个以上的奇数，除非接的这个奇数是最后一个数． 所以$${{a}_{1}}$$，$${{a}_{2}}$$，$${{a}_{3}}$$，$${{a}_{4}}$$，$${{a}_{5}}$$只能是：偶，奇，奇，偶，奇，有如下$$5$$种情形满足条件： $$2$$，$$1$$，$$3$$，$$4$$，$$5$$； $$2$$，$$3$$，$$5$$，$$4$$，$$1$$； $$2$$，$$5$$，$$1$$，$$4$$，$$3$$； $$4$$，$$3$$，$$1$$，$$2$$，$$5$$； $$4$$，$$5$$，$$3$$，$$2$$，$$1$$． 故选$$\\text{D}$$．"
+    },
+    "en": {
+      "problem": "Arrange the five numbers $$1$$, $$2$$, $$3$$, $$4$$, and $$5$$ in a row. The last number is an odd number, and the sum of any three consecutive numbers can be divisible by the first of the three numbers. Then the arrangement that meets the requirements is:",
+      "choices": [
+        "$$2$$ species",
+        "$$3$$ species",
+        "$$4$$ species",
+        "$$5$$ species"
+      ],
+      "analysis": "Suppose $${{a}_{1}}$$, $${{a}_{2}}$$, $${{a}_{3}}$$, $${{a}_{4}}$$, $${{a}_{5}}$$ is a satisfying arrangement of $$1$$, $$2$$, $$3$$, $$4$$, $$5$$. First of all, for $${{a}_{1}}$$, $${{a}_{2}}$$, $${{a}_{3}}$$, $${{a}_{4}}$$, there cannot be two consecutive even numbers. Otherwise, the two subsequent ones will all be even numbers, which is inconsistent with the known conditions. And if $${{a}_{i}}\\left( 1\\leqslant i\\leqslant 3 \\right)$$ is an even number, $${{a}_{i+1}}$$ is an odd number, then $${{a}_{i+2}}$$ is an odd number, which means that an even number must be followed by two or more odd numbers, unless the odd number is the last number. So $${{a}_{1}}$$, $${{a}_{2}}$$, $${{a}_{3}}$$, $${{a}_{4}}$$, $${{a}_{5}}$$ can only be: even, odd, odd, even, odd, there are the following $$5$$ situations that meet the conditions: $$2$$, $$1$$, $$3$$, $$4$$, $$5$$; $$2$$, $$3$$, $$5$$, $$4$$, $$1$$; $$2$$, $$5$$, $$1$$, $$4$$, $$3$$; $$4$$, $$3$$, $$1$$, $$2$$, $$5$$; $$4$$, $$5$$, $$3$$, $$2$$, $$1$$. Therefore, $$\\text{D}$$ is selected."
+    }
+  },
+  {
+    "id": "b2857b62b8b14721bee93beae2ac2a53",
+    "level": 3,
+    "answer": "D",
+    "source": [
+      "2011年山东全国高中数学联赛竞赛初赛第7题6分"
+    ],
+    "zh": {
+      "problem": "有$$6$$名同学咨询成绩．老师说：甲不是$$6$$人中成绩最好的，乙不是$$6$$人中成绩最差的，而且$$6$$人的成绩各不相同．那么他们$$6$$人的成绩不同的可能排序共有 ．",
+      "choices": [
+        "$$120$$种",
+        "$$216$$ 种",
+        "$$384$$ 种",
+        "$$504$$种"
+      ],
+      "analysis": "解法一 以$$A$$记甲成绩排名第一的所有可能的排序之集， 以$$B$$记乙成绩排名为最后的所有可能的排序之集，则$$\\left\\textbar{} A \\right\\textbar=\\left\\textbar{} B \\right\\textbar=5!$$，$$\\left\\textbar{} A\\cap B \\right\\textbar=4!$$． 甲排名第一或乙排名最后的所有可能的排序数为 $$\\left\\textbar{} A\\cup B \\right\\textbar=\\left\\textbar{} A \\right\\textbar+\\left\\textbar{} B \\right\\textbar-\\left\\textbar{} A\\cap B \\right\\textbar=216$$． 按照老师所述，这６位同学成绩可能的排序数为$$6!-216=504$$． 解法二 以乙的成绩不在最后为前提，考虑甲的成绩不在第一的所有可能排序． （$$1$$）甲的成绩排在最后的所有可能的排序数为$$A_{5}^{5}=120$$； （$$2$$）甲的成绩不在最后，又不在第一的所有可能排序数为$$C_{4}^{1}\\cdot C_{4}^{1}\\cdot A_{4}^{4}=384$$． 所以甲不在首，乙不在尾的所有可能排序数为$$120+384=504$$．"
+    },
+    "en": {
+      "problem": "There are $$6$$ students asking about their scores. The teacher said: Person A is not the one with the best grades among $$6$$, and Person B is not the one with the worst grades among $$6$$, and the grades of $$6$$ are different. Then there are a total of different possible rankings of their $$6$$ people’s scores.",
+      "choices": [
+        "$$120$$kind",
+        "$$216$$",
+        "$$384$$ species",
+        "$$504$$ species"
+      ],
+      "analysis": "Solution 1: Let $$A$$ record the set of all possible rankings where A's score ranks first, and use $$B$$ to record the set of all possible rankings where B's score ranks last, then $$\\left\\textbar{} A \\right\\textbar=\\left\\textbar{} B \\right\\textbar=5!$$, $$\\left\\textbar{} A\\cap B \\right\\textbar=4!$$. All possible ranking numbers for A ranking first or B ranking last are $$\\left\\textbar{} A\\cup B \\right\\textbar=\\left\\textbar{} A \\right\\textbar+\\left\\textbar{} B \\right\\textbar-\\left\\textbar{} A\\cap B \\right\\textbar=216$$. According to the teacher, the possible rankings of these 6 students’ scores are $$6!-216=504$$. Solution 2: On the premise that B's score is not last, consider all possible rankings in which A's score is not first. ($$1$$) The number of possible rankings in which A’s grades are at the bottom is $$A_{5}^{5}=120$$; ($$2$$) The number of possible rankings in which A’s grades are neither at the bottom nor first is $$C_{4}^{1}\\cdot C_{4}^{1}\\cdot A_{4}^{4}=384$$. Therefore, the number of all possible sortings in which A is not at the beginning and B is not at the end is $$120+384=504$$."
+    }
+  },
+  {
+    "id": "b8921956449c46709d498b1bc4c3dec1",
+    "level": 3,
+    "answer": "B",
+    "source": [
+      "2014年第25届全国希望杯初一竞赛复赛第8题4分"
+    ],
+    "zh": {
+      "problem": "已知$$p={{3}^{70}}$$，$$q={{5}^{56}}$$，$$r={{6}^{42}}$$，$$s={{17}^{28}}$$．这$$4$$个数中，最大的是（~ ）．",
+      "choices": [
+        "$$p$$",
+        "$$q$$",
+        "$$r$$",
+        "$$s$$"
+      ],
+      "analysis": "观察到，$$70$$，$$56$$，$$42$$，$$28$$的最大公约数为$$14$$． ∴题设中的四个数可化为 $$p={{3}^{70}}={{3}^{5\\times 4}}$$， $$q={{5}^{56}}={{5}^{4\\times 14}}$$， $$r={{6}^{42}}={{6}^{3\\times 14}}$$， $$s={{17}^{28}}={{17}^{2\\times 14}}$$． ∵$${{3}^{5}}=243$$，$${{5}^{4}}=625$$，$${{6}^{3}}=216$$，$${{17}^{2}}=289$$， ∴这$$4$$个数中，最大的是$$q$$．"
+    },
+    "en": {
+      "problem": "It is known that $$p={{3}^{70}}$$, $$q={{5}^{56}}$$, $$r={{6}^{42}}$$, $$s={{17}^{28}}$$. Among these $$4$$ numbers, the largest one is (~).",
+      "choices": [
+        "$$p$$",
+        "$$q$$",
+        "$$r$$",
+        "$$s$$"
+      ],
+      "analysis": "Observe that the greatest common divisor of $$70$$, $$56$$, $$42$$, and $$28$$ is $$14$$. ∴The four numbers in the question can be converted into $$p={{3}^{70}}={{3}^{5\\times 4}}$$, $$q={{5}^{56}}={{5}^{4\\times 14}}$$, $$r={{6}^{42}}={{6}^{3\\times 14}}$$, $$s={{17}^{28}}={{17}^{2\\times 14}}$$. ∵$${{3}^{5}}=243$$, $${{5}^{4}}=625$$, $${{6}^{3}}=216$$, $${{17}^{2}}=289$$, ∴ Among these $$4$$ numbers, the largest one is $$q$$."
+    }
+  },
+  {
+    "id": "d76bc00d030149059628a06fe5339748",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "其它",
+      "2009年第20届希望杯初二竞赛第2试第9题4分"
+    ],
+    "zh": {
+      "problem": "电影票有$$10$$元、$$15$$元、$$20$$元三种票价，班长用$$500$$元买了$$30$$张电影票，其中票价为$$20$$元的比票价为$$10$$元的多（~ ~ ~）．",
+      "choices": [
+        "$$20$$张",
+        "$$15$$张",
+        "$$10$$张",
+        "$$5$$张"
+      ],
+      "analysis": "设购买$$10$$元、$$15$$元、$$20$$元的电影票分别为$$x$$、$$y$$、$$z$$张， 则根据题意，得$$\\begin{cases}\\textasciitilde x+y+z=10 ① \\textasciitilde10x+15y+20z=500 ②\\end{cases}$$， 方法一：①$$-$$②$$\\times 10$$得， $$5y+10z=200$$， ∴$$z=\\frac{40-y}{2}=20-\\frac{y}{2}$$． ①$$\\times 20-$$②得， $$10x+5y=100$$， ∴$$x=\\frac{20-y}{2}=10-\\frac{y}{2}$$． 方法二：②$$-$$①$$\\times 15$$得， $$-5x+5z=50$$ ∴$$z-x=10$$． ∴票价为$$20$$元的比票价为$$10$$元的多$$10$$张．"
+    },
+    "en": {
+      "problem": "There are three types of movie tickets: $$10$$ yuan, $$15$$ yuan, and $$20$$ yuan. The monitor spent $$50$$ yuan to buy $$30$$ movie tickets. Among them, the ticket price of $$20$$ yuan was more than the ticket price of $$10$$ yuan (~ ~ ~).",
+      "choices": [
+        "$$20$$ pieces",
+        "$$15$$ pieces",
+        "$$10$$ pieces",
+        "$$5$$ pieces"
+      ],
+      "analysis": "Assume that the movie tickets purchased for $$10$$ yuan, $$15$$ yuan, and $$20$$ yuan are $$x$$, $$y$$, and $$z$$ respectively. According to the meaning of the question, $$\\begin{cases}\\textasciitilde x+y+z=10 ① \\textasciitilde10x+15y+20z=500 ②\\end{cases}$$, Method 1: ①$$-$$②$$\\times 10$$, $$5y+10z=200$$, ∴$$z=\\frac{40-y}{2}=20-\\frac{y}{2}$$. ①$$\\times 20-$$②We get, $$10x+5y=100$$, ∴$$x=\\frac{20-y}{2}=10-\\frac{y}{2}$$. Method 2: ②$$-$$①$$\\times 15$$, $$-5x+5z=50$$ ∴$$z-x=10$$. ∴The ticket price of $$20$$ yuan is $$10$$ more than the ticket price of $$10$$ yuan."
+    }
+  },
+  {
+    "id": "f3947de40dac471e9626ec85cb9ce960",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "2014年第10届全国新希望杯小学高年级六年级竞赛复赛第2题4分"
+    ],
+    "zh": {
+      "problem": "对自然数$$n$$进行如下操作：如果$$n$$是偶数，就把它除以$$2$$，如果$$n$$是奇数，就把它加上$$105$$．现在对$$123$$进行有限次操作，得到的结果不可能是．",
+      "choices": [
+        "$$57$$",
+        "$$93$$",
+        "$$100$$",
+        "$$114$$"
+      ],
+      "analysis": "由于$$123$$是$$3$$的倍数，操作过程中得到数一定为$$3$$的倍数，故不可能得到$$100$$选$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "Perform the following operations on the natural number $$n$$: if $$n$$ is an even number, divide it by $$2$$. If $$n$$ is an odd number, add $$105$$ to it. Now perform a finite number of operations on $$123$$, and the result obtained cannot be.",
+      "choices": [
+        "$$57$$",
+        "$$93$$",
+        "$$100$$",
+        "$$114$$"
+      ],
+      "analysis": "Since $$123$$ is a multiple of $$3$$, the number obtained during the operation must be a multiple of $$3$$, so it is impossible to get $$100$$ and choose $$\\text{C}$$."
+    }
+  },
+  {
+    "id": "ff8080814502fa24014507b670c60ba0",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "2014年全国迎春杯三年级竞赛初赛第14题"
+    ],
+    "zh": {
+      "problem": "$$2$$个樱桃的价钱与$$3$$个苹果价钱一样，但是一个苹果的大小却是一个樱桃的$$12$$倍，如果妈妈用买$$1$$箱樱桃的钱买同样大小箱子的苹果，能买（~~~~~~~ ）箱．",
+      "choices": [
+        "$$4$$",
+        "$$6$$",
+        "$$18$$",
+        "$$27$$"
+      ],
+      "analysis": "$$12$$ 个樱桃的钱可以买$$18$$个苹果，大小是$$1$$个苹果的大小，所以$$1$$个苹果大小的樱桃可以买到$$18$$个苹果，所以$$1$$箱樱桃的钱可以买$$18$$箱苹果．"
+    },
+    "en": {
+      "problem": "The price of $$2$$ cherries is the same as the price of $$3$$ apples, but the size of one apple is $$12$$ times that of one cherry. If mother uses the money of buying $1$$ boxes of cherries to buy boxes of apples of the same size, she can buy (~~~~~~~) boxes.",
+      "choices": [
+        "$$4$$",
+        "$$6$$",
+        "$$18$$",
+        "$$27$$"
+      ],
+      "analysis": "The money of $$12$$ cherries can buy $$18$$ apples, the size is the size of $$1$$ apples, so $$1$$ cherries the size of apples can buy $$18$$ apples, so the money of $$1$$ boxes of cherries can buy $$18$$ boxes of apples."
+    }
+  },
+  {
+    "id": "1f5c03b8a0ef49f8810ab8d4e3df307b",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "1995年第12届全国初中数学联赛竞赛第3题"
+    ],
+    "zh": {
+      "problem": "如果方程$$\\left( x-1 \\right)\\left( {{x}^{2}}-2x+m \\right)=0$$的三根可以作为一个三角形的三边之长，那么实数$$m$$的取值范围是．",
+      "choices": [
+        "$$0\\leqslant m\\leqslant 1$$",
+        "$$m\\geqslant \\frac{3}{4}$$",
+        "$$\\frac{3}{4}\\textless{}m\\leqslant 1$$",
+        "$$\\frac{3}{4}\\leqslant m\\leqslant 1$$"
+      ],
+      "analysis": "显然，方程的一个根为$$1$$，另两根之和为$${{x}_{1}}+{{x}_{2}}=2\\textgreater1$$，三根能作为一个三角形的三边，须且只须$$\\left\\textbar{} {{x}_{1}}-{{x}_{2}} \\right\\textbar\\textless{}1$$， 又$$\\left\\textbar{} {{x}_{1}}-{{x}_{2}} \\right\\textbar=\\frac{\\sqrt{\\Delta }}{\\left\\textbar{} a \\right\\textbar}=\\sqrt{4-4m}\\textless{}1$$， 有$$0\\leqslant 4-4m\\textless{}1$$， 解得$$\\frac{3}{4}\\textless{}m\\leqslant 1$$， 但作为选择题，只须取$$m=\\frac{3}{4}$$代入，得方程的根为$$1$$、$$\\frac{3}{2}$$、$$\\frac{1}{2}$$，不能组成三角形，故包括$$\\frac{3}{4}$$的$$\\text{A}$$、$$\\text{B}$$、$$\\text{D}$$均可否定，选$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "If the three roots of the equation $$\\left( x-1 \\right)\\left( {{x}^{2}}-2x+m \\right)=0$$ can be used as the lengths of the three sides of a triangle, then the value range of the real number $$m$$ is.",
+      "choices": [
+        "$$0\\leqslant m\\leqslant 1$$",
+        "$$m\\geqslant \\frac{3}{4}$$",
+        "$$\\frac{3}{4}\\textless{}m\\leqslant 1$$",
+        "$$\\frac{3}{4}\\leqslant m\\leqslant 1$$"
+      ],
+      "analysis": "Obviously, one root of the equation is $$1$$, and the sum of the other two roots is $${{x}_{1}}+{{x}_{2}}=2\\textgreater1$$. The three roots can be used as the three sides of a triangle, and only $$\\left\\textbar{} {{x}_{1}}-{{x}_{2}} \\right\\textbar\\textless{}1$$, and $$\\left\\textbar{} {{x}_{1}}-{{x}_{2}} \\right\\textbar=\\frac{\\sqrt{\\Delta }}{\\left\\textbar{} a \\right\\textbar}=\\sqrt{4-4m}\\textless{}1$$, There is $$0\\leqslant 4-4m\\textless{}1$$, The solution is $$\\frac{3}{4}\\textless{}m\\leqslant 1$$, But as a multiple-choice question, just take $$m=\\frac{3}{4}$$ and substitute it in. The roots of the equation are $$1$$, $$\\frac{3}{2}$$, $$\\frac{1}{2}$$, which cannot form three Angular shape, so $$\\text{A}$$, $$\\text{B}$$, $$\\text{D}$$ including $$\\frac{3}{4}$$ can all be negated, choose $$\\text{C}$$."
+    }
+  },
+  {
+    "id": "2aaff3e845ab4135a39666cd57af239c",
+    "level": 3,
+    "answer": "B",
+    "source": [
+      "2016年新希望杯小学高年级六年级竞赛训练题（二）第2题"
+    ],
+    "zh": {
+      "problem": "甲商品打$$8$$折后的价格是乙商品原价的$$4$$倍，小华分别以$$8$$折和$$7$$折的价格买下甲、乙两种商品，支出总额比甲商品原价少$$6$$元，乙商品实际售价是（~ ）元．",
+      "choices": [
+        "$$10$$",
+        "$$14$$",
+        "$$21$$",
+        "$$28$$"
+      ],
+      "analysis": "设乙原价为$$x$$元． $$4x+0.7x=\\frac{4x}{0.8}-6$$，$$x=20$$，$$20\\times 0.7=14$$（元）．"
+    },
+    "en": {
+      "problem": "The price of product A after a discount of $$8$$ is $$4$$ times the original price of product B. Xiaohua bought two products, A and B, at a discount of $$8$$ and $7$$ respectively. The total expenditure was $6$$ yuan less than the original price of product A. The actual selling price of product B was (~) yuan.",
+      "choices": [
+        "$$10$$",
+        "$$14$$",
+        "$$21$$",
+        "$$28$$"
+      ],
+      "analysis": "Suppose the original price of B is $$x$$ yuan. $$4x+0.7x=\\frac{4x}{0.8}-6$$, $$x=20$$, $$20\\times 0.7=14$$ (yuan)."
+    }
+  },
+  {
+    "id": "389739d7bee54932bea5d17fa15a4c4c",
+    "level": 3,
+    "answer": "C",
+    "source": [
+      "2016年新希望杯小学高年级六年级竞赛训练题（六）第5题"
+    ],
+    "zh": {
+      "problem": "小明在路边捡到一台怪钟，这个钟比正常的钟慢$$\\frac{1}{6}$$，现在的时间是中午$$12$$点整，怪钟也恰好是$$12$$点整，再过（~ ）分钟这台钟的时针和分针再次重合．",
+      "choices": [
+        "$$65\\frac{3}{11}$$",
+        "$$65\\frac{6}{11}$$",
+        "$$78\\frac{6}{11}$$",
+        "$$78\\frac{9}{11}$$"
+      ],
+      "analysis": "可以判断重合时时针在$$1$$点到$$2$$点之间，假设怪钟走过了$$x$$分钟，$$\\frac{x}{60}\\times 5=x-60$$，解得$$x=\\frac{720}{11}$$，怪钟走过$$\\frac{720}{11}$$分钟实际经过的时间是$$\\frac{720}{11}\\times \\frac{6}{5}=\\frac{864}{11}=78\\frac{6}{11}$$（分）．"
+    },
+    "en": {
+      "problem": "Xiao Ming picked up a strange clock on the roadside. This clock is $$\\frac{1}{6}$$ slower than a normal clock. The current time is $$12$$ exactly at noon, and the strange clock also happens to be $$12$$ sharp. After (~) minutes, the hour and minute hands of this clock coincide again.",
+      "choices": [
+        "$$65\\frac{3}{11}$$",
+        "$$65\\frac{6}{11}$$",
+        "$$78\\frac{6}{11}$$",
+        "$$78\\frac{9}{11}$$"
+      ],
+      "analysis": "It can be judged that the hour hand of the coincident hour is between the $$1$$ point and the $$2$$ point. Assume that the strange clock has passed $$x$$ minutes, $$\\frac{x}{60}\\times 5=x-60$$, the solution is $$x=\\frac{720}{11}$$. The actual time passed by the strange clock for $$\\frac{720}{11}$$ minutes is $$\\frac{720}{11}\\times \\frac{6}{5}=\\frac{864}{11}=78\\frac{6}{11}$$ (minutes)."
+    }
+  },
+  {
+    "id": "3e72dafe44d943eeb707808fa4fffb8d",
+    "level": 3,
+    "answer": "B",
+    "source": [
+      "2015年全国美国数学大联盟杯小学高年级五年级竞赛初赛第39题"
+    ],
+    "zh": {
+      "problem": "珍妮花$$50$$美金买了一条围巾．她一开始准备以$$60$$美金卖出，然后把价格增加$$25 \\%$$，再把新的价格减少$$20 \\%$$并且出售．在这笔交易之中，她（ ~ ~）．",
+      "choices": [
+        "赚了$$7$$美金",
+        "赚了$$10$$美金",
+        "亏了$$7$$美金",
+        "亏了$$10$$美金"
+      ],
+      "analysis": "算出实际花的钱，还有实际收入的钱，最终的结果是赚了$$10$$美元．"
+    },
+    "en": {
+      "problem": "Jennifer spent $$50$$ on a scarf. She initially planned to sell it for $$60$$, then increased the price by $$25 \\%$$, then reduced the new price by $$20 \\%$$ and sold it. In this transaction, she (~~).",
+      "choices": [
+        "Earned $$7$$ dollars",
+        "Earned $$10$$ dollars",
+        "Lost $$7$$ dollars",
+        "Lost $$10$$ dollars"
+      ],
+      "analysis": "Calculating the actual money spent and the actual income, the final result is $$10$$ dollars."
+    }
+  },
+  {
+    "id": "4383941a7192484b93d8b7b5dd4747ac",
+    "level": 3,
+    "answer": "D",
+    "source": [
+      "2014年迎春杯四年级竞赛复赛"
+    ],
+    "zh": {
+      "problem": "两根同样长的绳子，第一根平均剪成$$4$$段，第二根平均剪成$$6$$段，已知第一根剪成的每段长度与第二根剪成的每段长度相差$$2$$米，那么，原来两根绳子的长度之和是（ ）米。",
+      "choices": [
+        "$$12$$",
+        "$$24$$",
+        "$$36$$",
+        "$$48$$"
+      ],
+      "analysis": "解：第二根绳子的长度为： $$(2\\times 4)\\div \\left( 6-4 \\right)\\times 6$$ $$=8\\div 2\\times 6$$ $$=4\\times 6$$ $$=24$$（米） 原来两根绳子的长度之和是： $$24\\times 2=48$$（米） 答：原来两根绳子的长度之和是$$48$$米。 故选：D。"
+    },
+    "en": {
+      "problem": "For two ropes of the same length, the first one is cut into $$4$$ segments on average, and the second one is cut into $$6$$ segments on average. It is known that the length of each section cut by the first rope is $$2$$ meters different from the length of each section cut by the second rope. Then, the sum of the original lengths of the two ropes is ( ) meters.",
+      "choices": [
+        "$$12$$",
+        "$$24$$",
+        "$$36$$",
+        "$$48$$"
+      ],
+      "analysis": "Solution: The length of the second rope is: $$(2\\times 4)\\div \\left( 6-4 \\right)\\times 6$$ $$=8\\div 2\\times 6$$ $$=4\\times 6$$ $$=24$$ (meters) The original sum of the lengths of the two ropes is: $$24\\times 2=48$$ (meters) Answer: It turns out that the sum of the lengths of the two ropes is $$48$$ meters. So choose: D."
+    }
+  },
+  {
+    "id": "4e0b315c53d544ea8e0f83c3c91b158b",
+    "level": 3,
+    "answer": "D",
+    "source": [
+      "2017年全国希望杯小学高年级六年级竞赛"
+    ],
+    "zh": {
+      "problem": "$$a=2015\\times 2017$$，$$b=2014\\times 2018$$，$$c=2016\\times 2016$$，将$$a$$，$$b$$，$$c$$从大到小排列．",
+      "choices": [
+        "$$a\\textgreater b\\textgreater c$$",
+        "$$c\\textgreater b\\textgreater a$$",
+        "$$b\\textgreater a\\textgreater c$$",
+        "$$c\\textgreater a\\textgreater b$$"
+      ],
+      "analysis": "$$a=2015\\times 2017=\\left( 2016-1 \\right)\\times \\left( 2016+1 \\right)$$ $$=2016\\times 2016-1=c-1$$ $$b=2014\\times 2018=\\left( 2016-2 \\right)\\times \\left( 2016+2 \\right)$$ $$=2016\\times 2016-4=c-4$$ 所以$$c\\textgreater a\\textgreater b$$．"
+    },
+    "en": {
+      "problem": "$$a=2015\\times 2017$$, $$b=2014\\times 2018$$, $$c=2016\\times 2016$$, arrange $$a$$, $$b$$, $$c$$ from large to small.",
+      "choices": [
+        "$$a\\textgreater b\\textgreater c$$",
+        "$$c\\textgreater b\\textgreater a$$",
+        "$$b\\textgreater a\\textgreater c$$",
+        "$$c\\textgreater a\\textgreater b$$"
+      ],
+      "analysis": "$$a=2015\\times 2017=\\left( 2016-1 \\right)\\times \\left( 2016+1 \\right)$$ $$=2016\\times 2016-1=c-1$$ $$b=2014\\times 2018=\\left( 2016-2 \\right)\\times \\left( 2016+2 \\right)$$ $$=2016\\times 2016-4=c-4$$ So $$c\\textgreater a\\textgreater b$$."
+    }
+  },
+  {
+    "id": "4edafe9242294656a47af2b9bb946595",
+    "level": 3,
+    "answer": "B",
+    "source": [
+      "2019~2020学年9月湖北武汉武昌区武汉市武珞路实验初级中学初三上学期周测A卷第8题3分",
+      "2004年第21届全国初中数学联赛竞赛第5题"
+    ],
+    "zh": {
+      "problem": "已知$${{b}^{2}}-4ac$$是一元二次方程$$a{{x}^{2}}+bx+c=0\\left( a\\ne 0 \\right)$$的一个实数根，则$$ab$$的取值范围为．",
+      "choices": [
+        "$$ab\\geqslant \\frac{1}{8}$$",
+        "$$ab\\leqslant \\frac{1}{8}$$",
+        "$$ab\\geqslant \\frac{1}{4}$$",
+        "$$ab\\leqslant \\frac{1}{4}$$"
+      ],
+      "analysis": "\\textbf{（知识点：判别式的应用）} 方法一：由求根公式得到方程的根为$$x=\\frac{-b\\pm \\sqrt{{{b}^{2}}-4ac}}{2a}$$，设$$\\sqrt{{{b}^{2}}-4ac}=y$$，又因为$${{y}^{2}}={{b}^{2}}-4ac$$是原方程的根，所以$${{y}^{2}}=\\frac{-b+y}{2a}$$或者$${{y}^{2}}=\\frac{-b-y}{2a}$$，因为$$a\\ne 0$$，这两个方程可化成关于$$y$$的一元二次方程$$2a{{y}^{2}}\\pm y+b=0$$，考虑这个方程的判别式得到$$1-8ab\\geqslant 0$$，所以$$ab{\\leqslant } \\frac{1}{8}$$，选择$$\\text{B}$$． 方法二：因为方程有实数解，所以$${{b}^{2}}-4ac{\\geqslant }0$$，由题意， 有$$\\frac{-b+\\sqrt{{{b}^{2}}-4ac}}{2a}={{b}^{2}}-4ac$$或$$\\frac{-b-\\sqrt{{{b}^{2}}-4ac}}{2a}={{b}^{2}}-4ac$$． 令$$u=\\sqrt{{{b}^{2}}-4ac}$$，得方程$$2a{{u}^{2}}-u+b=0$$或$$2a{{u}^{2}}+u+b=0$$， 因为$$u=\\sqrt{{{b}^{2}}-4ac}$$是该方程的解，所以方程的判别式非负，即$$1-8ab{\\geqslant }0$$，所以$$ab{\\leqslant }\\frac{1}{8}$$．所以选$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "It is known that $${{b}^{2}}-4ac$$ is a real root of the quadratic equation $$a{{x}^{2}}+bx+c=0\\left( a\\ne 0 \\right)$$, then the value range of $$ab$$ is.",
+      "choices": [
+        "$$ab\\geqslant \\frac{1}{8}$$",
+        "$$ab\\leqslant \\frac{1}{8}$$",
+        "$$ab\\geqslant \\frac{1}{4}$$",
+        "$$ab\\leqslant \\frac{1}{4}$$"
+      ],
+      "analysis": "\\textbf{(Knowledge point: Application of discriminant)} Method 1: From the root formula, the root of the equation is $$x=\\frac{-b\\pm \\sqrt{{{b}^{2}}-4ac}}{2a}$$, assuming $$\\sqrt{{{b}^{2}}-4ac}=y$$, and because $${{y}^{2}}={{b}^{2}}-4 ac$$ is the root of the original equation, so $${{y}^{2}}=\\frac{-b+y}{2a}$$ or $${{y}^{2}}=\\frac{-b-y}{2a}$$, because $$a\\ne 0$$, these two equations can be transformed into a quadratic equation $$2a{{y}^{2}}\\pm y+b=0$$ about $$y$$. Considering the discriminant of this equation, we get $$1-8ab\\geqslant 0$$, so $$ab{\\leqslant } \\frac{1}{8}$$, choose $$\\text{B}$$. Method 2: Because the equation has a real number solution, so $${{b}^{2}}-4ac{\\geqslant }0$$, according to the meaning of the question, There are $$\\frac{-b+\\sqrt{{{b}^{2}}-4ac}}{2a}={{b}^{2}}-4ac$$ or $$\\frac{-b-\\sqrt{{{b}^{2}}-4ac}}{2a}={{b}^{2}}-4ac$$. Let $$u=\\sqrt{{{b}^{2}}-4ac}$$, we get the equation $$2a{{u}^{2}}-u+b=0$$ or $$2a{{u}^{2}}+u+b=0$$, Because $$u=\\sqrt{{{b}^{2}}-4ac}$$ is the solution of this equation, the discriminant of the equation is non-negative, that is, $$1-8ab{\\geqslant }0$$, so $$ab{\\leqslant }\\frac{1}{8}$$. So choose $$\\text{B}$$."
+    }
+  },
+  {
+    "id": "129728b71137438c948bd0243da469aa",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2016年全国美国数学大联盟杯小学中年级三年级竞赛初赛"
+    ],
+    "zh": {
+      "problem": "在小镇大学里，学生们的专业是音乐、美术，或两者．如果有$$500$$个学生是音乐专业，$$600$$个学生是美术专业，$$300$$个学生是音乐和美术专业，那么大学里有多少个学生？",
+      "choices": [
+        "$$500$$",
+        "$$800$$",
+        "$$1000$$",
+        "$$1400$$"
+      ],
+      "analysis": "$$500+600-300=800$$个．"
+    },
+    "en": {
+      "problem": "At small-town colleges, students major in music, art, or both. If there are $$500$$ students majoring in music, $$600$$ students majoring in art, and $$300$$ students majoring in music and art, how many students are there in the university?",
+      "choices": [
+        "$$500$$",
+        "$$800$$",
+        "$$1000$$",
+        "$$1400$$"
+      ],
+      "analysis": "$$500+600-300=800$$ pieces．"
+    }
+  },
+  {
+    "id": "2b23392531014f25a3b7ef0422b00a6d",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2011年北京学而思杯五年级竞赛"
+    ],
+    "zh": {
+      "problem": "$$5$$卷百科全书按从第$$1$$卷到第$$5$$卷的递增序号排列，今要将它们变为反序排列，即从第$$5$$卷到第$$1$$卷．如果每次只能调换相邻的两卷，那么最少要调换多少次？",
+      "choices": [
+        "$$12$$",
+        "$$10$$",
+        "$$8$$",
+        "$$6$$"
+      ],
+      "analysis": "因为必须是调换相邻的两卷，将第$$5$$卷调至原来第$$1$$卷的位置最少需$$4$$次，得到的顺序为$$51234$$； 现在将第$$4$$卷调至此时第$$1$$卷的位置最少需$$3$$次，得到的顺序为$$54123$$； 现在将第$$3$$卷调至此时第$$1$$卷的位置最少需$$2$$次，得到的顺序为$$54312$$； 最后将第$$1$$卷和第$$2$$卷对调即可． 所以，共需调换$$4+3+2+1=10$$（次）．"
+    },
+    "en": {
+      "problem": "The $$5$$ encyclopedia volumes are arranged in ascending order from volume $$1$$ to volume $$5$$. Now we will change them into reverse order, that is, from volume $$5$$ to volume $$1$$. If you can only swap two adjacent volumes at a time, what is the minimum number of times you need to swap them?",
+      "choices": [
+        "$$12$$",
+        "$$10$$",
+        "$$8$$",
+        "$$6$$"
+      ],
+      "analysis": "Because two adjacent volumes must be swapped, it takes at least $$4$$ times to move the $$5$$ volume to the original position of the $$1$$ volume, and the resulting order is $$51234$$; now it takes at least $$3$$ times to move the $$4$$ volume to the current position of the $$1$$ volume, and the resulting order is $$54123$$; Now it takes at least $$2$$ times to move the $$3$$ volume to the position of the $$1$$ volume, and the resulting order is $$54312$$; finally, just swap the $$1$$ and $$2$$ volumes. Therefore, a total of $$4+3+2+1=10$$ (times) needs to be replaced."
+    }
+  },
+  {
+    "id": "e0104824ea8d4eca8bc742d4b1eaab57",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2016年全国美国数学大联盟杯小学中年级三年级竞赛初赛"
+    ],
+    "zh": {
+      "problem": "在小镇大学里，学生们的专业是音乐、美术，或两者．如果有$$500$$个学生是音乐专业，$$600$$个学生是美术专业，$$300$$个学生是音乐和美术专业，那么大学里有多少个学生？",
+      "choices": [
+        "$$500$$",
+        "$$800$$",
+        "$$1000$$",
+        "$$1400$$"
+      ],
+      "analysis": "$$500+600-300=800$$个．"
+    },
+    "en": {
+      "problem": "At small-town colleges, students major in music, art, or both. If there are $$500$$ students majoring in music, $$600$$ students majoring in art, and $$300$$ students majoring in music and art, how many students are there in the university?",
+      "choices": [
+        "$$500$$",
+        "$$800$$",
+        "$$1000$$",
+        "$$1400$$"
+      ],
+      "analysis": "$$500+600-300=800$$ pieces．"
+    }
+  },
+  {
+    "id": "cb254cd9d4ec483e9a9378591a650cbf",
+    "level": 4,
+    "answer": "A",
+    "source": [
+      "2014年第25届全国希望杯初二竞赛初赛第10题4分"
+    ],
+    "zh": {
+      "problem": "将$$1$$，$$2$$，$$3$$，$$4$$，$$5$$，$$6$$，$$7$$，$$8$$这$$8$$个数排成一行，要使$$8$$的两边各数的和相等，那么不同的排法一共有．",
+      "choices": [
+        "$$1152$$种",
+        "$$576$$种",
+        "$$288$$种",
+        "$$144$$种"
+      ],
+      "analysis": "因为去掉$$8$$以后，余下$$7$$个数的和是$$1+2+3+4+5+6+7=28$$， 所以$$8$$的两边各数的和分别是$$14$$． 因为$$7+6=13$$， 所以$$14$$至少是由$$3$$个数相加而成的， 所以$$8$$的两边分别有$$3$$个数和$$4$$个数． 因为$$(7,6,1)$$，$$(7,5,2)$$，$$(7,4,3)$$，$$(6,5,3)$$这四组数的和都是$$14$$， 每组中的数的排列方法有$$3\\times 2\\times 1=6$$种， 与其对应的另外$$4$$个数（$$8$$除外）有$$4\\times 3\\times 2\\times 1=24$$种排列方法， 当排成横行时，这$$4$$组数有排在$$8$$的左边和右边两种排列方法， 因此，每组数的排列方法有$$2\\times 6\\times 24=288$$（种）． 所以，满足题意的排列方法有$$4\\times 288=1152$$（种）．"
+    },
+    "en": {
+      "problem": "Arrange the $$8$$ numbers $$1$$, $$2$$, $$3$$, $$4$$, $$5$$, $$6$$, $$7$$, $$8$$ in a row. To make the sum of the numbers on both sides of $$8$$ equal, there are different ways to arrange them.",
+      "choices": [
+        "$$1152$$ species",
+        "$$576$$ species",
+        "$$288$$ species",
+        "$$144$$ species"
+      ],
+      "analysis": "Because after removing $$8$$, the sum of the remaining $$7$$ numbers is $$1+2+3+4+5+6+7=28$$, so the sum of the numbers on both sides of $$8$$ is $$14$$. Because $$7+6=13$$, so $$14$$ is at least the sum of $$3$$ numbers, so there are $$3$$ numbers and $$4$$ numbers on both sides of $$8$$. Because the sum of the four groups of numbers $$(7,6,1)$$, $$(7,5,2)$$, $$(7,4,3)$$, and $$(6,5,3)$$ is all $$14$$, there are $$3\\times 2\\times 1=6$$ ways to arrange the numbers in each group, and the corresponding other $$4$$ numbers (except $$8$$) are $$4\\times There are 3\\times 2\\times 1=24$$ ways to arrange them. When arranged in horizontal rows, the $$4$$ groups can be arranged on the left and right of $$8$$. Therefore, each group of numbers can be arranged in $$2\\times 6\\times 24=288$$ (kinds). Therefore, there are $$4\\times 288=1152$$ (kinds) of arrangement methods that satisfy the meaning of the question."
+    }
+  },
+  {
+    "id": "eb2c244e22764dc5ada2b8f122b7a667",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2017年北京迎春杯小学高年级五年级竞赛模拟"
+    ],
+    "zh": {
+      "problem": "小悦与阿奇比赛下象棋，两人水平相当，约定赛$$7$$局，先赢$$4$$局者胜，现在已经比赛了$$3$$局，小悦胜了$$2$$局，阿奇胜了$$1$$局，请问：小悦最后胜利的概率有多少？",
+      "choices": [
+        "$$\\frac{3}{8}$$",
+        "$$\\frac{11}{16}$$",
+        "$$\\frac{3}{16}$$",
+        "$$\\frac{7}{16}$$"
+      ],
+      "analysis": "$$\\rm B$$"
+    },
+    "en": {
+      "problem": "Xiaoyue and Archie are competing in chess. They are of equal skill. They agree to play $$7$$ games. The first one to win $$4$$ games wins. Now they have played $$3$$ games. Xiaoyue has won $$2$$ games and Archie has won $$1$$ games. What is the probability of Xiaoyue winning in the end?",
+      "choices": [
+        "$$\\frac{3}{8}$$",
+        "$$\\frac{11}{16}$$",
+        "$$\\frac{3}{16}$$",
+        "$$\\frac{7}{16}$$"
+      ],
+      "analysis": "$$\\rm B$$"
+    }
+  },
+  {
+    "id": "60da1557d6be4313aebc721f4b549af5",
+    "level": 4,
+    "answer": "A",
+    "source": [
+      "2014年第25届全国希望杯初二竞赛初赛第10题4分"
+    ],
+    "zh": {
+      "problem": "将$$1$$，$$2$$，$$3$$，$$4$$，$$5$$，$$6$$，$$7$$，$$8$$这$$8$$个数排成一行，要使$$8$$的两边各数的和相等，则不同的排法一共有．",
+      "choices": [
+        "$$1152$$种",
+        "$$576$$种",
+        "$$288$$种",
+        "$$144$$种"
+      ],
+      "analysis": "因为去掉$$8$$以后，余下$$7$$个数的和是$$1+2+3+4+5+6+7=28$$， 所以$$8$$的两边各数的和分别是$$14$$． 因为$$7+6=13$$， 所以$$14$$至少是由$$3$$个数相加而成的， 所以$$8$$的两边分别有$$3$$个数和$$4$$个数． 因为$$(7,6,1)$$，$$(7,5,2)$$，$$(7,4,3)$$，$$(6,5,3)$$这四组数的和都是$$14$$， 每组中的数的排列方法有$$3\\times 2\\times 1=6$$种， 与其对应的另外$$4$$个数（$$8$$除外）有$$4\\times 3\\times 2\\times 1=24$$种排列方法， 当排成横行时，这$$4$$组数有排在$$8$$的左边和右边两种排列方法， 因此，每组数的排列方法有$$2\\times 6\\times 24=288$$（种）． 所以，满足题意的排列方法有$$4\\times 288=1152$$（种）．"
+    },
+    "en": {
+      "problem": "Arrange the $$8$$ numbers $$1$$, $$2$$, $$3$$, $$4$$, $$5$$, $$6$$, $$7$$, $$8$$ in a line. To make the sum of the numbers on both sides of $$8$$ equal, there are different arrangements.",
+      "choices": [
+        "$$1152$$ species",
+        "$$576$$ species",
+        "$$288$$ species",
+        "$$144$$ species"
+      ],
+      "analysis": "Because after removing $$8$$, the sum of the remaining $$7$$ numbers is $$1+2+3+4+5+6+7=28$$, so the sum of the numbers on both sides of $$8$$ is $$14$$. Because $$7+6=13$$, so $$14$$ is at least the sum of $$3$$ numbers, so there are $$3$$ numbers and $$4$$ numbers on both sides of $$8$$. Because the sum of the four groups of numbers $$(7,6,1)$$, $$(7,5,2)$$, $$(7,4,3)$$, and $$(6,5,3)$$ is all $$14$$, there are $$3\\times 2\\times 1=6$$ ways to arrange the numbers in each group, and the corresponding other $$4$$ numbers (except $$8$$) are $$4\\times There are 3\\times 2\\times 1=24$$ ways to arrange them. When arranged in horizontal rows, the $$4$$ groups can be arranged on the left and right of $$8$$. Therefore, each group of numbers can be arranged in $$2\\times 6\\times 24=288$$ (kinds). Therefore, there are $$4\\times 288=1152$$ (kinds) of arrangement methods that satisfy the meaning of the question."
+    }
+  },
+  {
+    "id": "66514b59aebd43be92395ef7f85e3f04",
+    "level": 4,
+    "answer": "C",
+    "source": [
+      "2016年创新杯五年级竞赛训练题（一）第6题"
+    ],
+    "zh": {
+      "problem": "黑板上有$$1\\sim 2013$$共$$2013$$个数，每次可以擦掉其中两个数，并且写上这两数之和的数字和．已知黑板上剩下四个数，其乘积为$$27$$，那么这四位数的和是（~ ）．",
+      "choices": [
+        "$$10$$",
+        "$$14$$",
+        "$$30$$",
+        "$$18$$"
+      ],
+      "analysis": "一个数除以$$9$$的余数等于这个数各个数字之和除以$$9$$的余数，每次操作将数的和变为数字和，不改变除以$$9$$的余数，$$1+2+3+\\cdots +2013=2014\\times 2013\\div 2=1007\\times 2013$$，$$1007$$除以$$9$$的余数相同，余数为$$3$$，那么最后剩下的四个数字的和除以$$9$$也是余$$3$$的；将$$27$$拆分成四个数的乘积；$$27=3\\times 3\\times 3\\times 1=3\\times 9\\times 1\\times 1=27\\times 1\\times 1\\times 1$$，和分别为$$10$$，$$14$$，$$30$$，只有$$30$$除以$$9$$余数为$$3$$，所以四个数的和为$$30$$．"
+    },
+    "en": {
+      "problem": "There are $$1\\sim 2013$$ on the blackboard, a total of $$2013$$ numbers. You can erase two of the numbers each time and write the sum of the two numbers. It is known that there are four numbers left on the blackboard, and their product is $$27$$, then the sum of these four numbers is (~).",
+      "choices": [
+        "$$10$$",
+        "$$14$$",
+        "$$30$$",
+        "$$18$$"
+      ],
+      "analysis": "The remainder of dividing a number by $$9$$ is equal to the remainder of the sum of the digits of the number divided by $$9$$. Each operation changes the sum of the numbers into the sum of numbers and does not change the remainder of division by $$9$$. $$1+2+3+\\cdots +2013=2014\\times 2013\\div 2=1007\\times 2013$$, $$1007$$ divided by $$9$$ have the same remainder, the remainder is $$3$$, then the sum of the last remaining four numbers divided by $$9$$ also has a remainder of $$3$$; split $$27$$ into the product of four numbers; $$27=3\\times 3\\times 3\\times 1=3\\times 9\\times 1\\times 1=27\\times 1\\times 1\\times 1$$, and the sums are $$10$$, $$14$$, and $$30$$ respectively. Only the remainder of $$30$$ divided by $$9$$ is $$3$$, so the sum of the four numbers is $$30$$."
+    }
+  },
+  {
+    "id": "7f53c5256f5f421ab2ed0a8dde10f63d",
+    "level": 4,
+    "answer": "A",
+    "source": [
+      "2007年第18届希望杯初一竞赛初赛第9题4分",
+      "初一上学期单元测试《一元一次方程》第17题"
+    ],
+    "zh": {
+      "problem": "以$$x$$为未知数的方程$$2007x+2007a+2008b=0$$（$$a$$，$$b$$为有理数，且$$b\\textgreater0$$）有正整数解，则$$ab$$是．",
+      "choices": [
+        "负数",
+        "非负数",
+        "正数",
+        "零"
+      ],
+      "analysis": "方程两边同乘$$b$$得： $$2007bx+2007ab+2008{{b}^{2}}=0$$， ∴$$ab=-\\frac{2007bx+2008{{b}^{2}}}{2007}$$， ∵$$b\\textgreater0$$，是$$x$$为正整数， ∴$$ab\\textless{}0$$，为负数． 所以选$$\\text{A}$$．"
+    },
+    "en": {
+      "problem": "The equation $$2007x+2007a+2008b=0$$ with $$x$$ as the unknown ($$a$$, $$b$$ is a rational number, and $$b\\textgreater0$$) has a positive integer solution, then $$ab$$ is.",
+      "choices": [
+        "negative number",
+        "non-negative number",
+        "positive number",
+        "zero"
+      ],
+      "analysis": "Multiply both sides of the equation by $$b$$ to get: $$2007bx+2007ab+2008{{b}^{2}}=0$$, ∴$$ab=-\\frac{2007bx+2008{{b}^{2}}}{2007}$$, ∵$$b\\textgreater0$$, which means $$x$$ is a positive integer, ∴$$ab\\textless{}0$$, is a negative number. So choose $$\\text{A}$$．"
+    }
+  },
+  {
+    "id": "8a1b784b6f28450e98f6848b1afa8e96",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2013年第18届华杯赛初一竞赛初赛第6题",
+      "其它"
+    ],
+    "zh": {
+      "problem": "满足不等式$$\\frac{2}{3}\\textless{}\\frac{5}{n}\\textless{}\\frac{3}{m}$$的有序整数对$$(m,n)$$的个数是（~ ）．",
+      "choices": [
+        "$$12$$",
+        "$$13$$",
+        "$$14$$",
+        "$$15$$"
+      ],
+      "analysis": "由$$\\frac{2}{3}\\textless{}\\frac{5}{n}\\textless{}\\frac{3}{m}$$，得到$$\\frac{m}{3}\\textless{}\\frac{n}{5}\\textless{}\\frac{3}{2}$$，即$$\\frac{5}{3}m\\textless{}n\\textless{}\\frac{15}{2}$$，因此$$n\\leqslant 7$$． $$n=7\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{21}{5}$$，$$m=1,2,3,4$$， $$n=6\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{18}{5}$$，$$m=1,2,3$$， $$n=5\\Rightarrow m\\textless{}\\frac{3}{5}n=3$$，$$m=1,2$$， $$n=4\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{12}{5}$$，$$m=1,2$$， $$n=3\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{9}{5}$$，$$m=1$$， $$n=2\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{6}{5}$$，$$m=1$$， ∴满足不等式的$$(m,n)$$一共有$$4+3+2+2+1+1=13$$对． 故选$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "The number of ordered integer pairs $$(m,n)$$ that satisfy the inequality $$\\frac{2}{3}\\textless{}\\frac{5}{n}\\textless{}\\frac{3}{m}$$ is (~).",
+      "choices": [
+        "$$12$$",
+        "$$13$$",
+        "$$14$$",
+        "$$15$$"
+      ],
+      "analysis": "From $$\\frac{2}{3}\\textless{}\\frac{5}{n}\\textless{}\\frac{3}{m}$$, we get $$\\frac{m}{3}\\textless{}\\frac{n} {5}\\textless{}\\frac{3}{2}$$, that is, $$\\frac{5}{3}m\\textless{}n\\textless{}\\frac{15}{2}$$, so $$n\\leqslant 7$$． $$n=7\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{21}{5}$$, $$m=1,2,3,4$$, $$n=6\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{18}{5}$$, $$m=1,2,3$$, $$n=5\\Rightarrow m\\textless{}\\frac{3}{5}n=3$$, $$m=1,2$$, $$n=4\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{12}{5}$$, $$m=1,2$$, $$n=3\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{9}{5}$$, $$m=1$$, $$n=2\\Rightarrow m\\textless{}\\frac{3}{5}n=\\frac{6}{5}$$, $$m=1$$, ∴ There are $$4+3+2+2+1+1=13$$ pairs that satisfy the inequality $$(m,n)$$. Therefore, $$\\text{B}$$ is selected."
+    }
+  },
+  {
+    "id": "d929b788a5ae4b40bd4fa473010a6d62",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2008年中环杯六年级竞赛决赛",
+      "2008年中环杯五年级竞赛决赛",
+      "2008年第9届中环杯五年级竞赛决赛第8题",
+      "2008年中环杯四年级竞赛决赛"
+    ],
+    "zh": {
+      "problem": "有$$49$$个孩子，每人胸前有一个号码，号码从$$1$$到$$49$$各不相同.~ 请你挑出若干个小孩排成一个圆圈，使任 何相邻两个孩子号码数乘积小于100.~ 你最多能够选出个孩子.",
+      "choices": [
+        "$$17$$",
+        "$$18$$",
+        "$$19$$",
+        "$$20$$"
+      ],
+      "analysis": "任意两位数乘积都小于$$100$$，所以相邻两个数必须有一个$$1$$位数，$$1$$位数共有$$9$$个，所以两位数最多也只能挑$$9$$个，因此最多能挑$$18$$个孩子."
+    },
+    "en": {
+      "problem": "There are $$49$$ children, each with a number on their chest, and the numbers vary from $$1$$ to $$49$$.~ Please pick a number of children to line up in a circle, so that the product of the numbers of any two adjacent children is less than 100.~ You can select at most 3 children.",
+      "choices": [
+        "$$17$$",
+        "$$18$$",
+        "$$19$$",
+        "$$20$$"
+      ],
+      "analysis": "The product of any two-digit number is less than $$100$$, so two adjacent numbers must have a $$1$$ digit. There are $$9$$ digits in $$1$$, so you can only pick $$9$$ at most with two digits, so you can pick up to $$18$$ children."
+    }
+  },
+  {
+    "id": "eb3870c8868446a3baa88b905da327f3",
+    "level": 4,
+    "answer": "D",
+    "source": [
+      "2017年新希望杯六年级竞赛训练题（三）第6题",
+      "2018年湖北武汉新希望杯六年级竞赛训练题（三）第6题"
+    ],
+    "zh": {
+      "problem": "从$$1$$，$$2$$，$$3$$，$$\\cdots $$，$$16$$中选出$$m$$个数，若选出的数中，每一个数都不是另一个数的$$2$$倍，则$$m$$的最大值为．",
+      "choices": [
+        "$$8$$",
+        "$$9$$",
+        "$$10$$",
+        "$$11$$"
+      ],
+      "analysis": "先选择$$1$$、$$3$$、$$5$$、$$7$$、$$9$$、$$11$$、$$13$$、$$15$$，再选择$$4$$、$$12$$、$$16$$，共$$11$$个数．"
+    },
+    "en": {
+      "problem": "Select $$m$$ numbers from $$1$$, $$2$$, $$3$$, $$\\cdots $$, $$16$$. If each of the selected numbers is not $$2$$ times the other number, then the maximum value of $$m$$ is.",
+      "choices": [
+        "$$8$$",
+        "$$9$$",
+        "$$10$$",
+        "$$11$$"
+      ],
+      "analysis": "First select $$1$$, $$3$$, $$5$$, $$7$$, $$9$$, $$11$$, $$13$$, $$15$$, then $$4$$, $$12$$, $$16$$, for a total of $$11$$."
+    }
+  },
+  {
+    "id": "2619520d5faf413daedbaf2619cde7fc",
+    "level": 4,
+    "answer": "D",
+    "source": [
+      "2014年第25届全国希望杯初二竞赛初赛第10题4分"
+    ],
+    "zh": {
+      "problem": "将$$1$$，$$2$$，$$3$$，$$4$$，$$5$$，$$6$$，$$7$$，$$8$$这$$8$$个数排成一行，使$$8$$的两边各数的和相等，则不同的排法有．",
+      "choices": [
+        "$$144$$种",
+        "$$288$$种",
+        "$$576$$种",
+        "$$1152$$种"
+      ],
+      "analysis": "因为去掉$$8$$以后，余下$$7$$个数的和是$$1+2+3+4+5+6+7=28$$， 所以$$8$$的两边各数的和分别是$$14$$． 因为$$7+6=13$$， 所以$$14$$至少是由$$3$$个数相加而成的， 所以$$8$$的两边分别有$$3$$个数和$$4$$个数． 因为$$(7,6,1)$$，$$(7,5,2)$$，$$(7,4,3)$$，$$(6,5,3)$$这四组数的和都是$$14$$， 每组中的数的排列方法有$$3\\times 2\\times 1=6$$种， 与其对应的另外$$4$$个数（$$8$$除外）有$$4\\times 3\\times 2\\times 1=24$$种排列方法， 当排成横行时，这$$4$$组数有排在$$8$$的左边和右边两种排列方法， 因此，每组数的排列方法有$$2\\times 6\\times 24=288$$（种）． 所以，满足题意的排列方法有$$4\\times 288=1152$$（种）．"
+    },
+    "en": {
+      "problem": "Arrange the $$8$$ numbers $$1$$, $$2$$, $$3$$, $$4$$, $$5$$, $$6$$, $$7$$, $$8$$ in a line, so that the sum of the numbers on both sides of $$8$$ is equal, then there are different arrangements.",
+      "choices": [
+        "$$144$$ species",
+        "$$288$$ species",
+        "$$576$$ species",
+        "$$1152$$ species"
+      ],
+      "analysis": "Because after removing $$8$$, the sum of the remaining $$7$$ numbers is $$1+2+3+4+5+6+7=28$$, so the sum of the numbers on both sides of $$8$$ is $$14$$. Because $$7+6=13$$, so $$14$$ is at least the sum of $$3$$ numbers, so there are $$3$$ numbers and $$4$$ numbers on both sides of $$8$$. Because the sum of the four groups of numbers $$(7,6,1)$$, $$(7,5,2)$$, $$(7,4,3)$$, and $$(6,5,3)$$ is all $$14$$, there are $$3\\times 2\\times 1=6$$ ways to arrange the numbers in each group, and the corresponding other $$4$$ numbers (except $$8$$) are $$4\\times There are 3\\times 2\\times 1=24$$ ways to arrange them. When arranged in horizontal rows, the $$4$$ groups can be arranged on the left and right of $$8$$. Therefore, each group of numbers can be arranged in $$2\\times 6\\times 24=288$$ (kinds). Therefore, there are $$4\\times 288=1152$$ (kinds) of arrangement methods that satisfy the meaning of the question."
+    }
+  },
+  {
+    "id": "787103a11ae14229884883745a5e798c",
+    "level": 4,
+    "answer": "D",
+    "source": [
+      "1997年第14届全国初中数学联赛竞赛"
+    ],
+    "zh": {
+      "problem": "给定平面上$$n$$个点，已知$$1$$，$$2$$，$$4$$，$$8$$，$$16$$，$$32$$都是其中两点之间的距离，那么点数$$n$$的最小可能值是（~ ）．",
+      "choices": [
+        "$$4$$",
+        "$$5$$",
+        "$$6$$",
+        "$$7$$"
+      ],
+      "analysis": "观察出这些距离都是$$2$$的$$n$$次幂，而$$1+2\\textless{}4$$，$$1+2+4\\textless{}8$$，$$\\cdots $$，$$1+2+4+\\cdots +16\\textless{}32$$，即这些线段中的任几条都不能构成一个多边形，这六条线段也不能构成六边形，所以至少要$$7$$个点才能满足条件． 选择$$\\text{D}$$．"
+    },
+    "en": {
+      "problem": "Given $$n$$ points on the plane, it is known that $$1$$, $$2$$, $$4$$, $$8$$, $$16$$, $$32$$ are the distances between two of them, then the minimum possible value of the number of points $$n$$ is (~).",
+      "choices": [
+        "$$4$$",
+        "$$5$$",
+        "$$6$$",
+        "$$7$$"
+      ],
+      "analysis": "Observe that these distances are all raised to the $$n$$ power of $$2$$, and $$1+2\\textless{}4$$, $$1+2+4\\textless{}8$$, $$\\cdots $$, $$1+2+4+\\cdots +16\\textless{}32$$, that is, any of these line segments cannot form a polygon, and these six line segments cannot form a hexagon, so at least $$7$$ points are required to meet the conditions. Select $$\\text{D}$$．"
+    }
+  },
+  {
+    "id": "c7f472ce5e6c47edabed6bc1c99e08de",
+    "level": 4,
+    "answer": "D",
+    "source": [
+      "2007年四年级竞赛创新杯"
+    ],
+    "zh": {
+      "problem": "一片匀速生长的草场长满牧草，可供$$5$$头牛吃$$30$$天，或者可供$$4$$头牛吃$$40$$天。已知每头牛每天吃$$1$$份草，那么草场原有份草，每天新长出份草。",
+      "choices": [
+        "$$240$$  $$2$$",
+        "$$120$$  $$2$$",
+        "$$240$$  $$1$$",
+        "$$120$$  $$1$$"
+      ],
+      "analysis": "$$5$$头牛$$30$$天共吃$$30\\times5=150$$（份）草，$$4$$头牛$$40$$天共吃$$4\\times40=160$$（份）草，总草量相差部分是因为生长天数不同，故草的生长速度为$$(160-150)\\div(40-30)=1$$（份/天），草场原有$$150-1\\times30=120$$（份）草。"
+    },
+    "en": {
+      "problem": "A uniformly growing pasture covered with pasture can feed $5$$ cows for $$30$$ a day, or it can feed $$4$$ cows for $$40$$ a day. It is known that each cow eats $1$$ of grass every day, then the original grass in the pasture will grow new grass every day.",
+      "choices": [
+        "$$240$$ $$2$$",
+        "$$120$$ $$2$$",
+        "$$240$$ $$1$$",
+        "$$120$$ $$1$$"
+      ],
+      "analysis": "A cow of $$5$$$$30$$ eats a total of $$30\\times5=150$$ (portions) of grass a day, and a cow of $$4$$$$40$$ eats a total of $$4\\times40=160$$ (portions) of grass a day. The total amount of grass is different. Partly because of the different growing days, the grass growth rate is $$(160-150)\\div(40-30)=1$$ (parts/day), and the original grassland has $$150-1\\times30=120$$(parts) of grass."
+    }
+  },
+  {
+    "id": "45562866995248aaafe34e08d0f0018d",
+    "level": 4,
+    "answer": "C",
+    "source": [
+      "2009年黑龙江全国高中数学联赛竞赛初赛第7题5分"
+    ],
+    "zh": {
+      "problem": "已知不等式$${{m}^{2}}+({{\\cos }^{2}}\\theta -5)m+4{{\\sin }^{2}}\\theta \\geqslant 0$$恒成立，则实数$$m$$的取值范围是．",
+      "choices": [
+        "$$0\\leqslant m\\leqslant 4$$",
+        "$$1\\leqslant m\\leqslant 4$$",
+        "$$m\\geqslant 4$$或$$x\\leqslant 0$$",
+        "$$m\\geqslant 1$$或$$m\\leqslant 0$$"
+      ],
+      "analysis": "$${{m}^{2}}+({{\\cos }^{2}}\\theta -5)m+4{{\\sin }^{2}}\\theta ={{m}^{2}}+\\left( -4-{{\\sin }^{2}}\\theta \\right)m+4{{\\sin }^{2}}\\theta =\\left( m-4 \\right)\\left( m-{{\\sin }^{2}}\\theta \\right)\\geqslant 0$$， 所以$$m\\geqslant 4$$或$$m\\leqslant {{\\sin }^{2}}\\theta $$恒成立，则$$m\\geqslant 4$$或$$m\\leqslant 0$$．"
+    },
+    "en": {
+      "problem": "It is known that the inequality $${{m}^{2}}+({{\\cos }^{2}}\\theta -5)m+4{{\\sin }^{2}}\\theta \\geqslant 0$$ is always true, then the value range of the real number $$m$$ is.",
+      "choices": [
+        "$$0\\leqslant m\\leqslant 4$$",
+        "$$1\\leqslant m\\leqslant 4$$",
+        "$$m\\geqslant 4$$ or $$x\\leqslant 0$$",
+        "$$m\\geqslant 1$$ or $$m\\leqslant 0$$"
+      ],
+      "analysis": "$${{m}^{2}}+({{\\cos }^{2}}\\theta -5)m+4{{\\sin }^{2}}\\theta ={{m}^{2}}+\\left( -4-{{\\sin }^{2}}\\theta \\right)m+4{{\\sin }^{2}}\\theta =\\left( m-4 \\right)\\left( m-{{\\sin }^{2}}\\theta \\right)\\geqslant 0$$, so $$m\\geqslant 4$$ or $$m\\leqslant {{\\sin }^{2}}\\theta $$ is always true, then $$m\\geqslant 4$$ or $$m\\leqslant 0$$."
+    }
+  },
+  {
+    "id": "4c64b07e8c934609a6ec061eb34ca8cb",
+    "level": 4,
+    "answer": "B",
+    "source": [
+      "2001年竞赛（全国初中数学竞赛）第3题5分"
+    ],
+    "zh": {
+      "problem": "如果$$a$$，$$b$$是质数，且$${{a}^{2}}-13a+m=0$$，$${{b}^{2}}-13b+m=0$$那么$$\\frac{b}{a}+\\frac{a}{b}$$的值为（ ）",
+      "choices": [
+        "$$\\frac{123}{22}$$",
+        "$$\\frac{125}{22}$$或$$2$$",
+        "$$\\frac{125}{22}$$",
+        "$$\\frac{123}{22}$$或$$2$$"
+      ],
+      "analysis": "有两种情况： ①若$$a=b$$，则$$\\frac{b}{a}+\\frac{a}{b}=2$$； ②若$$a\\ne b$$，根据题意，$$a$$、$$b$$是方程$${{x}^{2}}-13x+m=0$$的根， 则$$a+b=13$$，因为$$a$$，$$b$$是质数且和为奇数，所以两数分别为$$2$$和$$11$$．此时$$\\frac{b}{a}+\\frac{a}{b}=\\frac{2}{11}+\\frac{11}{2}=\\frac{125}{22}$$． 方法二：两式相减，消$$m$$，$${{a}^{2}}-{{b}^{2}}-13a+13b=0$$，$$\\left( a-b \\right)\\left( a+b-13 \\right)=0$$，所以有$$a=b$$或$$a+b=13$$."
+    },
+    "en": {
+      "problem": "If $$a$$, $$b$$ are prime numbers, and $${{a}^{2}}-13a+m=0$$, $${{b}^{2}}-13b+m=0$$, then the value of $$\\frac{b}{a}+\\frac{a}{b}$$ is ( )",
+      "choices": [
+        "$$\\frac{123}{22}$$",
+        "$$\\frac{125}{22}$$ or $$2$$",
+        "$$\\frac{125}{22}$$",
+        "$$\\frac{123}{22}$$ or $$2$$"
+      ],
+      "analysis": "There are two situations: ①If $$a=b$$, then $$\\frac{b}{a}+\\frac{a}{b}=2$$; ②If $$a\\ne b$$, according to the meaning of the question, $$a$$, $$b$$ are the roots of the equation $${{x}^{2}}-13x+m=0$$, Then $$a+b=13$$, because $$a$$, $$b$$ are prime numbers and the sum is an odd number, so the two numbers are $$2$$ and $$11$$ respectively. At this time $$\\frac{b}{a}+\\frac{a}{b}=\\frac{2}{11}+\\frac{11}{2}=\\frac{125}{22}$$. Method 2: Subtract the two expressions, eliminate $$m$$, $${{a}^{2}}-{{b}^{2}}-13a+13b=0$$, $$\\left( a-b \\right)\\left( a+b-13 \\right)=0$$, so there is $$a=b$$ or $$a+b=13$$."
+    }
+  },
+  {
+    "id": "76975059cf524957a99e36c55ad70ef9",
+    "level": 4,
+    "answer": "C",
+    "source": [
+      "2020年第24届YMO六年级竞赛决赛第6题3分",
+      "2019年第24届YMO六年级竞赛决赛第6题3分"
+    ],
+    "zh": {
+      "problem": "一条道路上有$$20$$盏路灯，为了节省用电，又不影响照明，现关闭其中的$$8$$盏路灯，要求道路两端的路灯不能关闭，相邻的路灯不能都关闭．那么关闭路灯有种不同的方式．",
+      "choices": [
+        "$$100$$",
+        "$$150$$",
+        "$$165$$",
+        "$$185$$"
+      ],
+      "analysis": "由题干可得出有：$$20-8=12$$盏路灯是打开状态， $$12$$盏开着的路灯中间有$$11$$个空档（两端不能放关闭的路灯）， 把$$8$$盏关闭的路灯分别放入这$$11$$个空档中（每个空档只能放$$1$$盏）的方法有： $$\\left( 11\\times 10\\times 9\\times 8\\times 7\\times 6\\times 5\\times 4 \\right)\\div \\left( 8\\times 7\\times 6\\times 5\\times 4\\times 3\\times 2 \\right)=165$$（种）． 故选：$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "There are $$20$$ street lights on a road. In order to save electricity without affecting lighting, $$8$$ street lights are now turned off. It is required that the street lights at both ends of the road cannot be turned off, and that adjacent street lights cannot be turned off. So there are different ways to turn off street lights.",
+      "choices": [
+        "$$100$$",
+        "$$150$$",
+        "$$165$$",
+        "$$185$$"
+      ],
+      "analysis": "From the question, it can be concluded that: $$20-8=12$$ street lights are on, and there are $$11$$ gaps in the middle of the $$12$$ street lights (off ends cannot be placed). The methods of placing $$8$$ off street lights into these $$11$$ gaps respectively (only $$1$$ can be placed in each gap) are: $$\\left( 11\\times 10\\times 9\\times 8\\times 7\\times 6\\times 5\\times 4 \\right)\\div \\left( 8\\times 7\\times 6\\times 5\\times 4\\times 3\\times 2 \\right)=165$$ (kind). Therefore, we choose: $$\\text{C}$$."
+    }
+  },
+  {
+    "id": "c62fbbba557448b0825048e223c8dafe",
+    "level": 4,
+    "answer": "C",
+    "source": [
+      "2002年第19届全国初中数学联赛竞赛第6题7分"
+    ],
+    "zh": {
+      "problem": "如果对于不小于$$8$$的自然数$$n$$，当$$3n+1$$是一个完全平方数时，$$n+1$$都能表示成$$k$$个完全平方数的和，那么$$k$$的最小值为（~ ）．",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "$$3n+1$$是一个完全平方数，那这个完全平方数$$a$$显然不是$$3$$的倍数． 设$$a=3t\\pm 1$$，则$${{a}^{2}}=9{{t}^{2}}\\pm 6t+1$$， $${{a}^{2}}=3n+1=9{{t}^{2}}\\pm 6t+1$$，$$\\textasciitilde\\Rightarrow n=3{{t}^{2}}\\pm 2t$$， $$n+1=3{{t}^{2}}\\pm 2t+1={{(t\\pm 1)}^{2}}+{{t}^{2}}+{{t}^{2}}$$． 而若$$k$$为$$1$$，当$$n=21$$时$$3n+1=64$$是完全平方数，但是$$n+1=22$$不能写成一个或两个完全平方数的和，故$$k$$最小为$$3$$，选择$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "If for a natural number $$n$$ not less than $$8$$, when $$3n+1$$ is a perfect square number, $$n+1$$ can be expressed as the sum of $$k$$ perfect square numbers, then the minimum value of $$k$$ is (~).",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "$$3n+1$$ is a perfect square number, so this perfect square number $$a$$ is obviously not a multiple of $$3$$. Assume $$a=3t\\pm 1$$, then $${{a}^{2}}=9{{t}^{2}}\\pm 6t+1$$, $${{a}^{2}}=3n+1=9{{t}^{2}}\\pm 6t+1$$, $$\\textasciitilde\\Rightarrow n=3{{t}^{2}}\\pm 2t$$, $$n+1=3{{t}^{2}}\\pm 2t+1={{(t\\pm 1)}^{2}}+{{t}^{2}}+{{t}^{2}}$$. And if $$k$$ is $$1$$, when $$n=21$$, $$3n+1=64$$ is a perfect square number, but $$n+1=22$$ cannot be written as the sum of one or two perfect square numbers, so $$k$$ is at least $$3$$, choose $$\\text{C}$$."
+    }
+  },
+  {
+    "id": "d05731d5cc01463787d3a4b86d550413",
+    "level": 4,
+    "answer": "C",
+    "source": [
+      "2015年第13届全国创新杯五年级竞赛复赛第8题"
+    ],
+    "zh": {
+      "problem": "一副扑克牌去掉大、小王共有$$52$$张，最上面的一张是红桃$$K$$，如果每次把最上面的$$18$$张牌移到最下面而不改变他们的顺序，至少经过（~ ）次移动，红桃$$K$$才会有出现在最上面．",
+      "choices": [
+        "$$13$$",
+        "$$18$$",
+        "$$26$$",
+        "$$32$$"
+      ],
+      "analysis": "每次移动$$18$$张，那么移动牌的总数是$$18$$的倍数，要使红桃$$K$$又出现在最上面，那么$$18\\times $$次数的乘积应该是$$52$$的倍数，那么至少是$$26$$．"
+    },
+    "en": {
+      "problem": "There are $$52$$ cards in a deck of playing cards excluding the big and small kings. The top one is hearts $$K$$. If you move the top $$18$$ cards to the bottom each time without changing their order, after at least (~) moves, hearts $$K$$ will appear on top.",
+      "choices": [
+        "$$13$$",
+        "$$18$$",
+        "$$26$$",
+        "$$32$$"
+      ],
+      "analysis": "Each time $$18$$ cards are moved, then the total number of moved cards is a multiple of $$18$$. To make the heart $$K$$ appear at the top again, then the product of $$18\\times $$ times should be a multiple of $$52$$, so it is at least $$26$$."
+    }
+  },
+  {
+    "id": "104d9364e5d84d70ab6c19cb8a9f091b",
+    "level": 4,
+    "answer": "A",
+    "source": [
+      "竞赛第9题"
+    ],
+    "zh": {
+      "problem": "已知\\emph{x}，\\emph{y}，\\emph{z}是非负实数，且$x+y+z=2$，则$x^{2}y^{2}+y^{2}z^{2}+z^{2}x^{2}+xyz$的最大值为（~~~~~~~）",
+      "choices": [
+        "1",
+        "2",
+        "$\\frac{5}{4}$",
+        "以上答案都不对"
+      ],
+      "analysis": "\\hfill\\break 【分析】\\\\ 利用基本不等式可求最大值.\\\\ 【详解】\\\\ $2x^{2}y^{2}\\leq xy\\left(x^{2}+y^{2}\\right)$，$2y^{2}z^{2}\\leq yz\\left(y^{2}+z^{2}\\right)$，$2z^{2}x^{2}\\leq zx\\left(z^{2}+x^{2}\\right)$，\\\\ 所以$2x^{2}y^{2}+2y^{2}z^{2}+2z^{2}x^{2}+2xyz\\leq xy\\left(x^{2}+y^{2}\\right)+yz\\left(y^{2}+z^{2}\\right)+zx\\left(z^{2}+x^{2}\\right)+2xyz$，\\\\ $\\leq xy\\left(x^{2}+y^{2}\\right)+yz\\left(y^{2}+z^{2}\\right)+zx\\left(z^{2}+x^{2}\\right)+\\left(x+y+z\\right)xyz$\\\\ $=\\left(xy+yz+zx\\right)\\left(x^{2}+y^{2}+z^{2}\\right)$\\\\ $=\\frac{1}{2}\\left(2xy+2yz+2zx\\right)\\left(x^{2}+y^{2}+z^{2}\\right)$\\\\ $\\leq \\frac{1}{2}\\frac{\\left[\\left(2xy+2yz+2zx\\right)+\\left(x^{2}+y^{2}+z^{2}\\right)\\right]^{2}}{2}=2$，\\\\ 因此所求代数式的最大值为1．\\\\ 故选：A."
+    },
+    "en": {
+      "problem": "It is known that \\emph{x}, \\emph{y}, \\emph{z} are non-negative real numbers, and $x+y+z=2$, then the maximum value of $x^{2}y^{2}+y^{2}z^{2}+z^{2}x^{2}+xyz$ is (~~~~~~~)",
+      "choices": [
+        "1",
+        "2",
+        "$\\frac{5}{4}$",
+        "None of the above answers are correct"
+      ],
+      "analysis": "\\hfill\\break [Analysis]\\\\ Use basic inequalities to find the maximum value.\\\\ [Detailed explanation]\\\\ $2x^{2}y^{2}\\leq xy\\left(x^{2}+y^{2}\\right)$, $2y^{2}z^{2}\\leq yz\\left(y^{2}+z^{2}\\right)$, $2z^{2}x^{2}\\leq zx\\left(z^{2}+x^{2}\\right)$,\\\\ So $2x^{2}y^{2}+2y^{2}z^{2}+2z^{2}x^{2}+2xyz\\leq xy\\left(x^{2}+y^{2}\\right)+yz\\left(y^{2}+z^{2}\\right)+zx\\left(z^{2}+x^{2}\\right)+2xyz$,\\\\ $\\leq xy\\left(x^{2}+y^{2}\\right)+yz\\left(y^{2}+z^{2}\\right)+zx\\left(z^{2}+x^{2}\\right)+\\left(x+y+z\\right)xyz$\\\\ $=\\left(xy+yz+zx\\right)\\left(x^{2}+y^{2}+z^{2}\\right)$\\\\ $=\\frac{1}{2}\\left(2xy+2yz+2zx\\right)\\left(x^{2}+y^{2}+z^{2}\\right)$\\\\ $\\leq \\frac{1}{2}\\frac{\\left[\\left(2xy+2yz+2zx\\right)+\\left(x^{2}+y^{2}+z^{2}\\right)\\right]^{2}}{2}=2$,\\\\ Therefore, the maximum value of the algebraic formula is 1. \\\\ So choose: A."
+    }
+  },
+  {
+    "id": "804738ee337040308734bf73a86c788a",
+    "level": 5,
+    "answer": "B",
+    "source": [
+      "2023年陕西榆林绥德县实验中学高三上学期高考模拟（第四次模拟）第12题",
+      "2022~2023学年9月辽宁高三上学期月考（名校联盟）第8题",
+      "2022年湖南湘西吉首市竞赛（第一届中小学生教师解题大赛）第8题",
+      "2022年四川成都青羊区四川省成都市石室中学高三上学期高考模拟理科（一诊模拟）第12题"
+    ],
+    "zh": {
+      "problem": "已知$a={{\\text{e}}^{0.2}}-1,b=\\ln 1.2,c=\\tan 0.2$，其中$\\text{e}=2.71828\\cdots $为自然对数的底数，则（~~~~~~~）",
+      "choices": [
+        "$c\\textgreater a\\textgreater b$",
+        "$a\\textgreater c\\textgreater b$",
+        "$b\\textgreater a\\textgreater c$",
+        "$a\\textgreater b\\textgreater c$"
+      ],
+      "analysis": "\\hfill\\break 【分析】\\\\ 观察$a={{\\text{e}}^{0.2}}-1,b=\\ln 1.2,c=\\tan 0.2$，发现都含有$0.2$，把$0.2$换成$x$，自变量在$(0,1)$或其子集范围内构造函数，利用导数证明其单调性，比较$a,b,c$的大小.\\\\ 【详解】\\\\ 令$f(x)={{\\text{e}}^{x}}-1-\\tan x=\\frac{\\cos x{{\\text{e}}^{x}}-\\cos x-\\sin x}{\\cos x}$，$0\\textless{} x\\textless{} \\frac{\\pi }{4}$，\\\\ 令$g(x)=\\cos x{{\\text{e}}^{x}}-\\cos x-\\sin x$，${g}\\textquotesingle(x)=(-\\sin x+\\cos x){{\\text{e}}^{x}}+\\sin x-\\cos x=({{\\text{e}}^{x}}-1)\\cdot (\\cos x-\\sin x)$，\\\\ 当$0\\textless{} x\\textless{} \\frac{\\pi }{4}$时，${g}\\textquotesingle(x)\\textgreater0$，$g(x)$单调递增，\\\\ 又$g(0)=1-1=0$，所以$g(x)\\textgreater0$，又$\\cos x\\textgreater0$，\\\\ 所以$f(x)\\textgreater0$，在$(0,\\frac{\\pi }{4})$成立，所以$f(0.2)\\textgreater0$即$a\\textgreater c$，\\\\ 令$h(x)=\\ln (x+1)-x$，${h}\\textquotesingle(x)=\\frac{1}{x+1}-1=\\frac{-x}{x+1}$，$h(x)$在$x\\in (0,\\frac{\\pi }{2})$为减函数，所以$h(x)\\textless{} h(0)=0$，即$\\ln (x+1)\\textless{} x$，\\\\ 令$m(x)=x-\\tan x$，${m}\\textquotesingle(x)=1-\\frac{1}{{{\\cos }^{2}}x}$，$m(x)$在$x\\in (0,\\frac{\\pi }{2})$为减函数，所以$m(x)\\textless{} m(0)=0$，即$x\\textless{} \\tan x$，\\\\ 所以$\\ln (x+1)\\textless{} x\\textless{} \\tan x$，$x\\in (0,\\frac{\\pi }{2})$成立，\\\\ 令$x=0.2$，则上式变为$\\ln (0.2+1)\\textless{} 0.2\\textless{} \\tan 0.2$，所以$b\\textless{} 0.2\\textless{} c$\\\\ 所以$b\\textless{} c$，\\\\ 所以$b\\textless{} c\\textless{} a$.\\\\ 故答案为：B.\\\\ 【点睛】\\\\ 比较大小题目，是高考的热点，也是难点，通过观察和构造函数是基本的解题要求，难点在于构造后的证明，需要平时多积累常见的结论，达到深入理解，举一反三，融会贯通."
+    },
+    "en": {
+      "problem": "It is known that $a={{\\text{e}}^{0.2}}-1,b=\\ln 1.2,c=\\tan 0.2$, where $\\text{e}=2.71828\\cdots $ is the base of the natural logarithm, then (~~~~~~~)",
+      "choices": [
+        "$c\\textgreater a\\textgreater b$",
+        "$a\\textgreater c\\textgreater b$",
+        "$b\\textgreater a\\textgreater c$",
+        "$a\\textgreater b\\textgreater c$"
+      ],
+      "analysis": "\\hfill\\break [Analysis]\\\\ Observe $a={{\\text{e}}^{0.2}}-1,b=\\ln 1.2,c=\\tan 0.2$, and find that they all contain $0.2$. Replace $0.2$ with $x$. Construct the function within the range of $(0,1)$ or its subset, use derivatives to prove its monotonicity, and compare the sizes of $a, b, c$.\\\\ [Detailed explanation] \\\\ Let $f(x)={{\\text{e}}^{x}}-1-\\tan x=\\frac{\\cos x{{\\text{e}}^{x}}-\\cos x-\\sin x}{\\cos x}$, $0\\textless{} x\\textless{} \\frac{\\pi }{4}$, \\\\ Let $g(x)=\\cos x{{\\text{e}}^{x}}-\\cos x-\\sin x$,${g}\\textquotesingle(x)=(-\\sin x+\\cos x){{\\text{e}}^{x}}+\\sin x-\\cos x=({{\\text{e}}^{x}}-1)\\cdot (\\cos x-\\sin x)$,\\\\ When $0\\textless{} x\\textless{} \\frac{\\pi }{4}$, ${g}\\textquotesingle(x)\\textgreater0$, $g(x)$ increases monotonically, \\\\ and $g(0)=1-1=0$, so $g(x)\\textgreater0$, and $\\cos x\\textgreater0$,\\\\ So $f(x)\\textgreater0$ is established at $(0,\\frac{\\pi }{4})$, so $f(0.2)\\textgreater0$ is $a\\textgreater c$,\\\\ Let $h(x)=\\ln (x+1)-x$, ${h}\\textquotesingle(x)=\\frac{1}{x+1}-1=\\frac{-x}{x+1}$, $h(x)$ is a decreasing function in $x\\in (0,\\frac{\\pi }{2})$, so $h(x)\\textless{} h(0)=0$, that is, $\\ln (x+1)\\textless{} x$,\\\\ Let $m(x)=x-\\tan x$, ${m}\\textquotesingle(x)=1-\\frac{1}{{{\\cos }^{2}}x}$, $m(x)$ is a decreasing function in $x\\in (0,\\frac{\\pi }{2})$, so $m(x)\\textless{} m(0)=0$, that is, $x\\textless{} \\tan x$,\\\\ So $\\ln (x+1)\\textless{} x\\textless{} \\tan x$, $x\\in (0,\\frac{\\pi }{2})$ holds, \\\\ Let $x=0.2$, then the above formula becomes $\\ln (0.2+1)\\textless{} 0.2\\textless{} \\tan 0.2$, so $b\\textless{} 0.2\\textless{} c$\\\\ So $b\\textless{} c$,\\\\ So $b\\textless{} c\\textless{} a$.\\\\ So the answer is: B.\\\\ [Key Point]\\\\ Comparing large and small questions is a hot topic and difficult point in the college entrance examination. Observation and constructing functions are the basic problem-solving requirements. The difficulty lies in the proof after construction. You need to accumulate more common conclusions in order to achieve in-depth understanding, draw inferences from one example, and integrate them all."
+    }
+  },
+  {
+    "id": "ca8161edc4634467b6f7e98eabf9b56b",
+    "level": 5,
+    "answer": "B",
+    "source": [
+      "2018年全国初中数学联赛竞赛A卷"
+    ],
+    "zh": {
+      "problem": "设$$p$$，$$q$$均为大于$$3$$的素数，则使$${{p}^{2}}+5pq+4{{q}^{2}}$$为完全平方数的素数对$$(p,q)$$的个数为（~ ）．",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "设$${{p}^{2}}+5pq+4{{q}^{2}}={{m}^{2}}$$ ($$m$$为自然数)，则$${{(p+2q)}^{2}}+pq={{m}^{2}}$$，即 $$(m-p-2q)(m+p+2q)=pq$$． 由于$$pq$$为素数，且$$m+p+2q\\textgreater p$$，$$m+p+2q\\textgreater q$$， 所以$$m-p-2q=1$$，$$m+p+2q=pq$$， 从而$$pq-2p-4q-1=0$$，即$$(p-4)(q-2)=9$$， 所以，$$(p,q)=(5,11)$$或$$(7,5)$$． 所以，满足条件的素数对$$(p,q)$$的个数为$$2$$．"
+    },
+    "en": {
+      "problem": "Suppose $$p$$ and $$q$$ are both prime numbers greater than $$3$$, then the number of prime pairs $$(p,q)$$ such that $${{p}^{2}}+5pq+4{{q}^{2}}$$ is a perfect square number is (~).",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "Suppose $${{p}^{2}}+5pq+4{{q}^{2}}={{m}^{2}}$$ ($$m$$ is a natural number), then $${{(p+2q)}^{2}}+pq={{m}^{2}}$$, that is, $$(m-p-2q)(m+p+2q)=pq$$. Since $$pq$$ is a prime number, and $$m+p+2q\\textgreater p$$, $$m+p+2q\\textgreater q$$, so $$m-p-2q=1$$, $$m+p+2q=pq$$, so $$pq-2p-4q-1=0$$, that is, $$(p-4)(q-2)=9$$, Therefore, $$(p,q)=(5,11)$$ or $$(7,5)$$. Therefore, the number of prime pairs $$(p,q)$$ that satisfy the condition is $$2$$."
+    }
+  },
+  {
+    "id": "7ddfbddac38e4b64892bbb5b28dea406",
+    "level": 5,
+    "answer": "B",
+    "source": [
+      "2018年全国初中数学联赛竞赛A卷"
+    ],
+    "zh": {
+      "problem": "设$$p$$，$$q$$均为大于$$3$$的素数，则使$${{p}^{2}}+5pq+4{{q}^{2}}$$为完全平方数的素数对$$(p,q)$$的个数为．",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "设$${{p}^{2}}+5pq+4{{q}^{2}}={{m}^{2}}$$ ($$m$$为自然数)，则$${{(p+2q)}^{2}}+pq={{m}^{2}}$$，即 $$(m-p-2q)(m+p+2q)=pq$$． 由于$$pq$$为素数，且$$m+p+2q\\textgreater p$$，$$m+p+2q\\textgreater q$$， 所以$$m-p-2q=1$$，$$m+p+2q=pq$$， 从而$$pq-2p-4q-1=0$$，即$$(p-4)(q-2)=9$$， 所以，$$(p,q)=(5,11)$$或$$(7,5)$$． 所以，满足条件的素数对$$(p,q)$$的个数为$$2$$．"
+    },
+    "en": {
+      "problem": "Assume that $$p$$ and $$q$$ are both prime numbers greater than $$3$$, then the number of prime pairs $$(p,q)$$ that make $${{p}^{2}}+5pq+4{{q}^{2}}$$ be a perfect square number is.",
+      "choices": [
+        "$$1$$",
+        "$$2$$",
+        "$$3$$",
+        "$$4$$"
+      ],
+      "analysis": "Suppose $${{p}^{2}}+5pq+4{{q}^{2}}={{m}^{2}}$$ ($$m$$ is a natural number), then $${{(p+2q)}^{2}}+pq={{m}^{2}}$$, that is, $$(m-p-2q)(m+p+2q)=pq$$. Since $$pq$$ is a prime number, and $$m+p+2q\\textgreater p$$, $$m+p+2q\\textgreater q$$, so $$m-p-2q=1$$, $$m+p+2q=pq$$, so $$pq-2p-4q-1=0$$, that is, $$(p-4)(q-2)=9$$, Therefore, $$(p,q)=(5,11)$$ or $$(7,5)$$. Therefore, the number of prime pairs $$(p,q)$$ that satisfy the condition is $$2$$."
+    }
+  },
+  {
+    "id": "76b53c7fa14742ebab70ea8244d8c52e",
+    "level": 5,
+    "answer": "A",
+    "source": [
+      "竞赛第16题"
+    ],
+    "zh": {
+      "problem": "对$n$个正整数用\\emph{k}种颜色染色，使得无法从中选出三个不同色的正整数构成等差数列，设\\emph{k}的最大值为$f(n)$，则（~~~~~~~）",
+      "choices": [
+        "$\\log _{3}n\\leq f(n)\\leq \\log _{2}n+1$",
+        "$\\log _{2}n\\leq f(n)\\leq \\log _{2}n+1$",
+        "$\\log _{3}n\\leq f(n)\\leq \\log _{2}n$",
+        "$\\log _{3}n\\leq f(n)\\leq \\log _{3}n+1$"
+      ],
+      "analysis": "\\hfill\\break 【分析】\\\\ 利用特例可判断BCD的正误，利用整除性和数学归纳法可判断A的正误.\\\\ 【详解】\\\\ 取$n=4$，则$f(4)=3$，将1234染成$ABBC$即可．因此选项CD错误．\\\\ 下面证明$\\log _{3}n\\leq f(n)\\leq \\log _{2}n+1$．\\\\ 设$v(n,p)$为正整数\\emph{n}中素数\\emph{p}的幂次，即$p^{v(n,p)}\\parallel n$．\\\\ 对于任意的正整数$m(1\\leq m\\leq n)$，将\\emph{m}染成第$v(m,3)+1$种颜色，这样就用了$\\left[\\log _{3}n\\right]+1$种颜色．\\\\ 此时对于任意不同色的正整数\\emph{x}，\\emph{y}，有$v(2x-y,3)=v(2y-x,3)=\\min {v(x,3),v(y,3) }$，\\\\ 因此$2x-y$和$2y-x$均与\\emph{x}，\\emph{y}之一同色，符合题意．这样就证明了$f(n)\\geq \\left[\\log _{3}n\\right]+1\\textgreater{} \\log _{3}n$．\\\\ 接下来设$2^{k}\\leq n\\textless{} 2^{k+1}\\left(k\\in \\mathbf{N}^{\\ast }\\right)$，则右侧不等式即$f(n)\\leq k+1$．\\\\ 对\\emph{k}进行归纳，应用数学归纳法证明．\\\\ 当$k=1$时，$n=2,3$，此时$f(n)=2$，命题成立．\\\\ 假设命题对$k-1$成立，对已有$1,2,\\cdots ,2^{k}-1$的染色，考虑1，2，\\ldots，\\emph{n}的染色，若其中有两种或两种以上新增的颜色，不妨设为红色和蓝色，且最小的红色数为\\emph{x}，最小的蓝色数为\\emph{y}，且$x\\textless{} y$，则$2^{k}\\leq x\\textless{} y\\leq n\\textless{} 2^{k+1}\\Rightarrow 2x-y\\textgreater{} 0$，\\\\ 考虑正整数$2x-y$，它与异色数对$(x,y)$成等差数列，于是必然与\\emph{x}，\\emph{y}之一同色，但$2x-y\\textless{} x\\textless{} y$，这与之前假设的\\emph{x}，\\emph{y}的最小性矛盾．\\\\ 因此1，2，\\ldots，\\emph{n}的染色至多在之前的基础上增加1种，从而命题得证．\\\\ 综上所述，有$\\log _{3}n\\leq f(n)\\leq \\log _{2}n+1$．\\\\ 接下来考虑$n=9$的情形，此时$f(n)=3$，排除选项B．\\\\ 故选：A."
+    },
+    "en": {
+      "problem": "Color $n$ positive integers with \\emph{k} colors, so that three positive integers of different colors cannot be selected to form an arithmetic sequence. Suppose the maximum value of \\emph{k} is $f(n)$, then (~~~~~~~)",
+      "choices": [
+        "$\\log _{3}n\\leq f(n)\\leq \\log _{2}n+1$",
+        "$\\log _{2}n\\leq f(n)\\leq \\log _{2}n+1$",
+        "$\\log _{3}n\\leq f(n)\\leq \\log _{2}n$",
+        "$\\log _{3}n\\leq f(n)\\leq \\log _{3}n+1$"
+      ],
+      "analysis": "\\hfill\\break [Analysis]\\\\ Use special cases to determine whether BCD is correct, and use divisibility and mathematical induction to determine whether A is correct.\\\\ [Detailed Explanation] \\\\ Take $n=4$, then $f(4)=3$, and dye 1234 into $ABBC$. Therefore option CD is wrong. \\\\ The following proves that $\\log _{3}n\\leq f(n)\\leq \\log _{2}n+1$. \\\\ Let $v(n,p)$ be the power of the prime number \\emph{p} in the positive integer \\emph{n}, that is, $p^{v(n,p)}\\parallel n$. \\\\ For any positive integer $m(1\\leq m\\leq n)$, dye \\emph{m} into the $v(m,3)+1$th color, thus using the $\\left[\\log _{3}n\\right]+1$ color. \\\\ At this time, for any positive integers \\emph{x} and \\emph{y} of different colors, $v(2x-y,3)=v(2y-x,3)=\\min {v(x,3),v(y,3) }$,\\\\ Therefore $2x-y$ and $2y-x$ both have the same color as one of \\emph{x} and \\emph{y}, which is consistent with the meaning of the question. This proves that $f(n)\\geq \\left[\\log _{3}n\\right]+1\\textgreater{} \\log _{3}n$. \\\\ Next, let $2^{k}\\leq n\\textless{} 2^{k+1}\\left(k\\in \\mathbf{N}^{\\ast }\\right)$, then the inequality on the right side is $f(n)\\leq k+1$. \\\\ Make an induction on \\emph{k} and prove it by mathematical induction. \\\\ When $k=1$, $n=2,3$, at this time $f(n)=2$, the proposition is established. \\\\ Assume that the proposition is true for $k-1$. For the coloring of $1, 2, \\cdots, 2^{k}-1$, consider the coloring of 1, 2, \\ldots, \\emph{n}. If there are two or more new colors, it may be set as red and blue, and the minimum number of red is \\emph{x}, the minimum number of blue is \\emph{y}, and $x\\textless{} y$, then $2^{k}\\leq x\\textless{} y\\leq n\\textless{} 2^{k+1}\\Rightarrow 2x-y\\textgreater{} 0$,\\\\ Consider the positive integer $2x-y$, which forms an arithmetic sequence with the heterochromatic number pair $(x,y)$, so it must be of the same color as one of \\emph{x}, \\emph{y}, but $2x-y\\textless{} x\\textless{} y$, which is inconsistent with the minimum of the previously assumed \\emph{x}, \\emph{y}. \\\\ Therefore, the coloring of 1, 2, \\ldots, \\emph{n} can be increased by at most one color on the basis of the previous ones, and the proposition is proved. \\\\ In summary, there are $\\log _{3}n\\leq f(n)\\leq \\log _{2}n+1$. \\\\ Next, consider the case of $n=9$. At this time, $f(n)=3$, excluding option B. \\\\ So choose: A."
+    }
+  },
+  {
+    "id": "ff8080814d7978b9014d866b715d243c",
+    "level": 5,
+    "answer": "A",
+    "source": [
+      "1990年第1届全国希望杯初一竞赛初赛第10题",
+      "2019年浙江杭州拱墅区杭州市文澜中学中考模拟（一）第10题3分"
+    ],
+    "zh": {
+      "problem": "轮船往返于一条河的两码头之间，如果船本身在静水中的速度是固定的，那么，当这条河的水流速度增大时，船往返一次所用的时间将（~ ）．",
+      "choices": [
+        "增多",
+        "减少",
+        "不变",
+        "增多、减少都有可能"
+      ],
+      "analysis": "设两码头之间距离为$$s$$，船在静水中速度为$$a$$，水速为$${{v}_{0}}$$，则往返一次所用时间为$${{t}_{0}}=\\frac{s}{a+{{v}_{0}}}+\\frac{s}{a-{{v}_{0}}}$$， 设河水速度增大后为$$v(v\\textgreater{{v}_{0}})$$，则往返一次所用时间为$$t=\\frac{s}{a+v}+\\frac{s}{a-v}$$． 计算：$${{t}_{0}}-t=\\frac{s}{a+{{v}_{0}}}+\\frac{s}{a-{{v}_{0}}}-\\frac{s}{a+v}-\\frac{s}{a-v}$$ $$=s[(\\frac{1}{a+{{v}_{0}}}-\\frac{1}{a+v})+(\\frac{1}{a-{{v}_{0}}}-\\frac{1}{a-v})]$$ $$=s[\\frac{v-{{v}_{0}}}{(a+{{v}_{0}})(a+v)}+\\frac{{{v}_{0}}-v}{(a-{{v}_{0}})(a-v)}]$$ $$=s(v-{{v}_{0}})[\\frac{1}{(a+{{v}_{0}})(a+v)}-\\frac{1}{(a-{{v}_{0}})(a-v)}]$$． 由于$$v-{{v}_{0}}\\textgreater0$$，$$a+{{v}_{0}}\\textgreater a-{{v}_{0}}$$，$$a+v\\textgreater a-v$$ 所以$$(a+{{v}_{0}})(a+v)\\textgreater(a-{{v}_{0}})(a-v)$$， 因此$$\\frac{1}{(a+{{v}_{0}})(a+v)}\\textless\\frac{1}{(a-{{v}_{0}})(a-v)}$$， 即$$\\frac{1}{(a+{{v}_{0}})(a+v)}-\\frac{1}{(a-{{v}_{0}})(a-v)}\\textless0$$． ∴$${{t}_{0}}-t\\textless0$$，即$${{t}_{0}}\\textless t$$．因此河水速增大所用时间将增多，选$$\\text{A}$$．"
+    },
+    "en": {
+      "problem": "A ship goes back and forth between two piers on a river. If the speed of the ship itself in still water is fixed, then when the water speed of the river increases, the time it takes for the ship to go back and forth will be (~).",
+      "choices": [
+        "increase",
+        "reduce",
+        "constant",
+        "It is possible to increase or decrease"
+      ],
+      "analysis": "Suppose the distance between the two docks is $$s$$, the speed of the ship in still water is $$a$$, and the water speed is $${{v}_{0}}$$, then the time for a round trip is $${{t}_{0}}=\\frac{s}{a+{{v}_{0}}}+\\frac{s}{a-{{v}_{0}}}$$, Assume that the river water speed increases to $$v(v\\textgreater{{v}_{0}})$$, then the time taken for a round trip is $$t=\\frac{s}{a+v}+\\frac{s}{a-v}$$. Calculation: $${{t}_{0}}-t=\\frac{s}{a+{{v}_{0}}}+\\frac{s}{a-{{v}_{0}}}-\\frac{s}{a+v}-\\frac{s}{a-v}$$ $$=s[(\\frac{1}{a+{{v}_{0}}}-\\frac{1}{a+v})+(\\frac{1}{a-{{v}_{0}}}-\\frac{1}{a-v})]$$ $$=s[\\frac{v-{{v}_{0}}}{(a+{{v}_{0}})(a+v)}+\\frac{{{v}_{0}}-v}{(a-{{v}_{0}})(a-v)}]$$ $$=s(v-{{v}_{0}})[\\frac{1}{(a+{{v}_{0}})(a+v)}-\\frac{1}{(a-{{v}_{0}})(a-v)}]$$. Since $$v-{{v}_{0}}\\textgreater0$$, $$a+{{v}_{0}}\\textgreater a-{{v}_{0}}$$, $$a+v\\textgreater a-v$$ so $$(a+{{v}_{0}})(a+v)\\textgreater(a-{{v}_{0}})(a-v)$$, Therefore $$\\frac{1}{(a+{{v}_{0}})(a+v)}\\textless\\frac{1}{(a-{{v}_{0}})(a-v)}$$, That is $$\\frac{1}{(a+{{v}_{0}})(a+v)}-\\frac{1}{(a-{{v}_{0}})(a-v)}\\textless0$$. ∴$${{t}_{0}}-t\\textless0$$, that is, $${{t}_{0}}\\textless t$$. Therefore, the time it takes for the river water speed to increase will increase, so choose $$\\text{A}$$."
+    }
+  },
+  {
+    "id": "d9aed025a8f64c03adef18393280886d",
+    "level": 5,
+    "answer": "B",
+    "source": [
+      "2014年第10届全国新希望杯小学高年级六年级竞赛复赛第6题4分"
+    ],
+    "zh": {
+      "problem": "某足球联赛积分规则如下：每队赛$$30$$场，胜一场得$$3$$分，平一场得$$1$$分，负一场得$$0$$分．在$$2013$$赛季中，希望队以总积分$$77$$分位居积分榜首位，且负的场数比平的场数少，则这个赛季该队共胜了（~ ）场比赛．",
+      "choices": [
+        "$$22$$",
+        "$$24$$",
+        "$$23$$",
+        "$$25$$"
+      ],
+      "analysis": "设胜了$$x$$场，平$$y$$场，负$$\\left( 30-x-y \\right)$$ 有$$3x+y=77$$ $$30-\\left( x+y \\right)\\textless{}y$$，则$$x=24$$ 选$$\\text{B}$$．"
+    },
+    "en": {
+      "problem": "The points rules of a certain football league are as follows: Each team plays $$30$$ games, and gets $$3$$ points for a win, $$1$$ points for a draw, and $$0$$ points for a loss. In the $$2013$$ season, the Hope team ranked first in the standings with a total of $$77$$ points, and the number of losses was less than the number of draws, so the team won a total of (~) games this season.",
+      "choices": [
+        "$$22$$",
+        "$$24$$",
+        "$$23$$",
+        "$$25$$"
+      ],
+      "analysis": "Suppose you win $$x$$ games, draw $$y$$ games, and lose $$\\left( 30-x-y \\right)$$. There are $$3x+y=77$$ $$30-\\left( x+y \\right)\\textless{}y$$, then $$x=24$$ choose $$\\text{B}$$."
+    }
+  },
+  {
+    "id": "a8b83fb0c1df49f0a2e2631d28605adc",
+    "level": 5,
+    "answer": "D",
+    "source": [
+      "2008年竞赛第7题6分",
+      "2016~2017学年福建泉州南安市南安市实验中学初一下学期期中第16题4分",
+      "2018~2019学年浙江杭州西湖区杭州市之江实验中学初一下学期期末第18题4分",
+      "2016~2017学年10月河南郑州二七区郑州实验外国语中学初一上学期月考第11题3分"
+    ],
+    "zh": {
+      "problem": "小王沿街匀速行走，发现每隔$$6$$分钟从背后驶过一辆$$18$$路公交车，每隔$$3$$分钟从迎面驶来一辆$$18$$路公交车．假设每辆$$18$$路公交车行驶速度相同，而且$$18$$路公交车总站每隔固定时间发一辆车，那么发车间隔的时间是分钟．",
+      "choices": [
+        "$$2$$",
+        "$$3$$",
+        "$$6$$",
+        "$$4$$"
+      ],
+      "analysis": "设$$18$$路公交车的速度是$$x$$米/分，小王行走的速度是$$y$$米/分，同向行驶的相邻两车的间距为$$s$$米． 每隔$$6$$分钟从背后开过一辆$$18$$路公交车，则 $$6x-6y=s$$．① 每隔$$3$$分钟从迎面驶来一辆$$18$$路公交车，则 $$3x+3y=s$$．② 由①②得，$$s=4x$$，所以$$\\frac{s}{x}=4$$. 即$$18$$路公交车总站发车间隔的时间是$$4$$分钟．"
+    },
+    "en": {
+      "problem": "Xiao Wang was walking along the street at a constant speed and found that every $$6$$ minutes, a $$18$$ bus passed from behind, and every $$3$$ minutes, a $$18$$ bus came from the oncoming direction. Assume that each $$18$$ bus travels at the same speed, and the $$18$$ bus terminal leaves a bus at a fixed time, then the time between departures is minutes.",
+      "choices": [
+        "$$2$$",
+        "$$3$$",
+        "$$6$$",
+        "$$4$$"
+      ],
+      "analysis": "Suppose the speed of bus $$18$$ is $$x$$ meters/minute, Xiao Wang's walking speed is $$y$$ meters/minute, and the distance between two adjacent buses traveling in the same direction is $$s$$ meters. If a $$18$$ bus passes behind you every $$6$$ minutes, then $$6x-6y=s$$. ① Every $$3$$ minutes, a $$18$$ bus comes from the opposite direction, then $$3x+3y=s$$. ② From ①②, $$s=4x$$, so $$\\frac{s}{x}=4$$. That is, the departure time from the $$18$$ bus terminal is $$4$$ minutes."
+    }
+  },
+  {
+    "id": "90efdbd02fe749ff86b8c748a27823e7",
+    "level": 5,
+    "answer": "D",
+    "source": [
+      "2012年第8届全国新希望杯小学高年级六年级竞赛复赛第6题4分"
+    ],
+    "zh": {
+      "problem": "$$\\overline{**45}$$，$$\\overline{19*8}$$，$$\\overline{2*86}$$，$$\\overline{3*49}$$是四个四位数，其中$$*$$代表不能辨认的数字，若其中有一个数是完全平方数，那么这个数可能是．",
+      "choices": [
+        "$$\\overline{**45}$$",
+        "$$\\overline{19*8}$$",
+        "$$\\overline{2*86}$$",
+        "$$\\overline{3*49}$$"
+      ],
+      "analysis": "完全平方数的个位只能为$$0$$、$$1$$、$$4$$、$$5$$、$$6$$、$$9$$，因此排除$$\\text{B}$$选项．如果一个完全平方数是 $$5$$的倍数，那么它至少是$$25$$的倍数，因此排除$$\\text{A}$$选项．估算$${{48}^{2}}=2304$$，$${{49}^{2}}=2401$$，排除 $$\\text{C}$$选项．经检验$${{57}^{2}}=3249$$．"
+    },
+    "en": {
+      "problem": "$$\\overline{**45}$$, $$\\overline{19*8}$$, $$\\overline{2*86}$$, $$\\overline{3*49}$$ are four four-digit numbers, where $$*$$ represents an unrecognizable number. If one of the numbers is a perfect square, then this number may be.",
+      "choices": [
+        "$$\\overline{**45}$$",
+        "$$\\overline{19*8}$$",
+        "$$\\overline{2*86}$$",
+        "$$\\overline{3*49}$$"
+      ],
+      "analysis": "The ones digit of a perfect square number can only be $$0$$, $$1$$, $$4$$, $$5$$, $$6$$, $$9$$, so the $$\\text{B}$$ option is excluded. If a perfect square is a multiple of $$5$$, then it is at least a multiple of $$25$$, thus eliminating the $$\\text{A}$$ option. It is estimated that $${{48}^{2}}=2304$$, $${{49}^{2}}=2401$$, excluding the $$\\text{C}$$ option. After inspection $${{57}^{2}}=3249$$．"
+    }
+  },
+  {
+    "id": "0bcad56b1ca04227b13512edf0b102a6",
+    "level": 5,
+    "answer": "D",
+    "source": [
+      "2012年第8届全国新希望杯小学高年级六年级竞赛复赛第6题4分"
+    ],
+    "zh": {
+      "problem": "$$\\overline{**45}$$，$$\\overline{19*8}$$，$$\\overline{23*1}$$，$$\\overline{3*49}$$是四个四位数，其中$$*$$代表不能辨认的数字，若其中有一个数是完全平方数，那么这个数可能是（~ ）．",
+      "choices": [
+        "$$\\overline{**45}$$",
+        "$$\\overline{19*8}$$",
+        "$$\\overline{23*1}$$",
+        "$$\\overline{3*49}$$"
+      ],
+      "analysis": "完全平方数的个位只能为$$0$$、$$1$$、$$4$$、$$5$$、$$6$$、$$9$$，因此排除$$B$$选项．如果一个完全平方数是 $$5$$的倍数，那么它至少是$$25$$的倍数，因此排除$$A$$选项．估算$${{48}^{2}}=2304$$，$${{49}^{2}}=2401$$，排除 $$C$$选项．经检验$${{57}^{2}}=3249$$．"
+    },
+    "en": {
+      "problem": "$$\\overline{**45}$$, $$\\overline{19*8}$$, $$\\overline{23*1}$$, $$\\overline{3*49}$$ are four four-digit numbers, where $$*$$ represents an unrecognizable number. If one of the numbers is a perfect square, then this number may be (~).",
+      "choices": [
+        "$$\\overline{**45}$$",
+        "$$\\overline{19*8}$$",
+        "$$\\overline{23*1}$$",
+        "$$\\overline{3*49}$$"
+      ],
+      "analysis": "The ones digit of a perfect square number can only be $$0$$, $$1$$, $$4$$, $$5$$, $$6$$, $$9$$, so the $$B$$ option is excluded. If a perfect square is a multiple of $$5$$, then it is at least a multiple of $$25$$, thus eliminating option $$A$$. It is estimated that $${{48}^{2}}=2304$$, $${{49}^{2}}=2401$$, excluding option $$C$$. After inspection $${{57}^{2}}=3249$$．"
+    }
+  },
+  {
+    "id": "d24a111e9c7f40e1bf536a4dfc249255",
+    "level": 5,
+    "answer": "D",
+    "source": [
+      "2012年第8届全国新希望杯小学高年级六年级竞赛复赛第6题4分"
+    ],
+    "zh": {
+      "problem": "$$\\overline{**45}$$，$$\\overline{19*8}$$，$$\\overline{23*1}$$，$$\\overline{3*49}$$是四个四位数，其中$$*$$代表不能辨认的数字，若其中有一个数是完全平方数，那么这个数可能是．（6分）",
+      "choices": [
+        "$$\\overline{**45}$$",
+        "$$\\overline{19*8}$$",
+        "$$\\overline{23*1}$$",
+        "$$\\overline{3*49}$$"
+      ],
+      "analysis": "完全平方数的个位只能为$$0$$、$$1$$、$$4$$、$$5$$、$$6$$、$$9$$，因此排除$$\\text{B}$$选项．如果一个完全平方数是 $$5$$的倍数，那么它至少是$$25$$的倍数，因此排除$$\\text{A}$$选项．估算$${{48}^{2}}=2304$$，$${{49}^{2}}=2401$$，排除 $$\\text{C}$$选项．经检验$${{57}^{2}}=3249$$．"
+    },
+    "en": {
+      "problem": "$$\\overline{**45}$$, $$\\overline{19*8}$$, $$\\overline{23*1}$$, $$\\overline{3*49}$$ are four four-digit numbers, where $$*$$ represents an unrecognizable number. If one of the numbers is a perfect square, then this number may be. (6 points)",
+      "choices": [
+        "$$\\overline{**45}$$",
+        "$$\\overline{19*8}$$",
+        "$$\\overline{23*1}$$",
+        "$$\\overline{3*49}$$"
+      ],
+      "analysis": "The ones digit of a perfect square number can only be $$0$$, $$1$$, $$4$$, $$5$$, $$6$$, $$9$$, so the $$\\text{B}$$ option is excluded. If a perfect square is a multiple of $$5$$, then it is at least a multiple of $$25$$, thus eliminating the $$\\text{A}$$ option. It is estimated that $${{48}^{2}}=2304$$, $${{49}^{2}}=2401$$, excluding the $$\\text{C}$$ option. After inspection $${{57}^{2}}=3249$$．"
+    }
+  },
+  {
+    "id": "074e77d8f25d4d75b1914287179a1d81",
+    "level": 5,
+    "answer": "D",
+    "source": [
+      "2016~2017学年10月河南郑州二七区郑州实验外国语中学初一上学期月考第11题3分",
+      "2008年竞赛第7题6分",
+      "2016~2017学年福建泉州南安市南安市实验中学初一下学期期中第16题4分",
+      "2018~2019学年浙江杭州西湖区杭州市之江实验中学初一下学期期末第18题4分"
+    ],
+    "zh": {
+      "problem": "小王沿街匀速行走，发现每隔$$6$$分钟从背后驶过一辆$$18$$路公交车，每隔$$3$$分钟从迎面驶来一辆$$18$$路公交车．假设每辆$$18$$路公交车行驶速度相同，而且$$18$$路公交车总站每隔固定时间发一辆车，那么发车间隔的时间是~\\uline{~~~~~~~~~~}~分钟．",
+      "choices": [
+        "$$2$$",
+        "$$3$$",
+        "$$6$$",
+        "$$4$$"
+      ],
+      "analysis": "设$$18$$路公交车的速度是$$x$$米/分，小王行走的速度是$$y$$米/分，同向行驶的相邻两车的间距为$$s$$米． 每隔$$6$$分钟从背后开过一辆$$18$$路公交车，则 $$6x-6y=s$$．① 每隔$$3$$分钟从迎面驶来一辆$$18$$路公交车，则 $$3x+3y=s$$．② 由①②得，$$s=4x$$，所以$$\\frac{s}{x}=4$$. 即$$18$$路公交车总站发车间隔的时间是$$4$$分钟．"
+    },
+    "en": {
+      "problem": "Xiao Wang was walking along the street at a constant speed and found that every $$6$$ minutes, a $$18$$ bus passed from behind, and every $$3$$ minutes, a $$18$$ bus came from the oncoming direction. Assume that each $$18$$ bus travels at the same speed, and the $$18$$ bus terminal leaves a bus at a fixed time, then the time between departures is ~\\uline{~~~~~~~~~~}~ minutes.",
+      "choices": [
+        "$$2$$",
+        "$$3$$",
+        "$$6$$",
+        "$$4$$"
+      ],
+      "analysis": "Suppose the speed of bus $$18$$ is $$x$$ meters/minute, Xiao Wang's walking speed is $$y$$ meters/minute, and the distance between two adjacent buses traveling in the same direction is $$s$$ meters. If a $$18$$ bus passes behind you every $$6$$ minutes, then $$6x-6y=s$$. ① Every $$3$$ minutes, a $$18$$ bus comes from the opposite direction, then $$3x+3y=s$$. ② From ①②, $$s=4x$$, so $$\\frac{s}{x}=4$$. That is, the departure time from the $$18$$ bus terminal is $$4$$ minutes."
+    }
+  },
+  {
+    "id": "ff8080814cfa9b24014d02c616cf13b3",
+    "level": 5,
+    "answer": "C",
+    "source": [
+      "2012年竞赛第5题3分",
+      "初二其它"
+    ],
+    "zh": {
+      "problem": "黑板上写有$$1$$，$$\\frac{1}{2}$$，$$\\cdots$$，$$\\frac{1}{100}$$共$$100$$个数字，每次操作先从黑板上的数中选取两个数$$a$$，$$b$$，然后删去$$a$$，$$b$$，并在黑板上写上数$$a+b+ab$$，则经过$$99$$次操作后黑板上剩下的数是．",
+      "choices": [
+        "$$2012$$",
+        "$$101$$",
+        "$$100$$",
+        "$$99$$"
+      ],
+      "analysis": "由$$a+b+ab+1=(a+1)(b+1)$$得，每次操作前和操作后，黑板上的每个数加$$1$$后的乘积不变， 设经过$$99$$次操作后黑板上剩下的数为$$x$$， 则$$x+1=(1+1)( \\frac{1}{2}+1)(\\frac{1}{3}+1)\\cdots (\\frac{1}{100}+1)$$， 解得$$x=100$$．"
+    },
+    "en": {
+      "problem": "There are $$1$$, $$\\frac{1}{2}$$, $$\\cdots$$, $$\\frac{1}{100}$$ written on the blackboard, a total of $$100$$ numbers. Each operation starts with Select two numbers $$a$$, $$b$$ from the numbers, then delete $$a$$, $$b$$, and write the number $$a+b+ab$$ on the blackboard, then after $$99$$ operations, the remaining numbers on the blackboard are.",
+      "choices": [
+        "$$2012$$",
+        "$$101$$",
+        "$$100$$",
+        "$$99$$"
+      ],
+      "analysis": "From $$a+b+ab+1=(a+1)(b+1)$$, before and after each operation, the product of each number on the blackboard plus $$1$$ remains unchanged. Assume that the number remaining on the blackboard after $$99$$ operations is $$x$$, then $$x+1=(1+1)(\\frac{1}{2}+1)(\\frac{1}{3}+1)\\cdots (\\frac{1}{100}+1)$$, the solution is $$x=100$$．"
+    }
+  },
+  {
+    "id": "85061f1372e74785b875b48ad33b92b4",
+    "level": 5,
+    "answer": "C",
+    "source": [
+      "1989年第7届美国数学邀请赛（AIME）竞赛第10题"
+    ],
+    "zh": {
+      "problem": "设$$a$$，$$b$$，$$c$$是三角形的三边，$$\\alpha $$，$$\\beta $$，$$\\gamma $$分别是相对于这三边的角，若$${{a}^{2}}+{{b}^{2}}=2021{{c}^{2}}$$，则$$\\frac{\\cot \\gamma }{\\cot \\alpha +\\cot \\beta }=$$．",
+      "choices": [
+        "$\\dfrac{1}{2021}$",
+        "$\\dfrac{1}{1010}$",
+        "$1010$",
+        "$2021$"
+      ],
+      "analysis": "由余弦定理$${{a}^{2}}+{{b}^{2}}-2ab\\cos \\gamma ={{c}^{2}}$$，代入条件式得 $$2ab\\cos \\gamma =1988{{c}^{2}}$$，或$$\\left( \\frac{a}{b} \\right)\\left( \\frac{b}{c} \\right)\\cos \\gamma =994$$． 由下正弦定理$$\\frac{a}{c}=\\frac{\\sin \\alpha }{\\sin \\gamma }$$，$$\\frac{b}{c}=\\frac{\\sin \\beta }{\\sin \\gamma }$$， 于是$$\\frac{\\sin \\alpha \\sin \\beta \\cos \\gamma }{{{\\sin }^{2}}\\gamma }=994$$． 因为$$\\alpha +\\beta +\\gamma = \\pi $$，所以$$\\alpha +\\beta = \\pi -\\gamma $$．从而$$\\sin \\left( \\alpha +\\beta \\right)=\\sin \\gamma $$． $$\\frac{\\cot \\gamma }{\\cot \\alpha +\\cot \\beta }=\\frac{\\sin \\alpha \\sin \\beta \\cos \\gamma }{\\sin \\left( \\alpha +\\beta \\right)\\sin \\gamma }=994$$．"
+    },
+    "en": {
+      "problem": "Let $$a$$, $$b$$, $$c$$ be the three sides of the triangle, $$\\alpha $$, $$\\beta $$, $$\\gamma $$ are the angles relative to these three sides respectively. If $${{a}^{2}}+{{b}^{2}}=2021{{c}^{2}}$$, then $$\\frac{\\cot \\gamma }{\\cot \\alpha +\\cot \\beta }=$$.",
+      "choices": [
+        "$\\dfrac{1}{2021}$",
+        "$\\dfrac{1}{1010}$",
+        "$1010$",
+        "$2021$"
+      ],
+      "analysis": "From the cosine theorem $${{a}^{2}}+{{b}^{2}}-2ab\\cos \\gamma ={{c}^{2}}$$, substitute the conditional expression to get $$2ab\\cos \\gamma =1988{{c}^{2}}$$, or $$\\left( \\frac{a}{b} \\right)\\left( \\frac{b}{c} \\right)\\cos \\gamma =994$$． From the following sine theorem $$\\frac{a}{c}=\\frac{\\sin \\alpha }{\\sin \\gamma }$$, $$\\frac{b}{c}=\\frac{\\sin \\beta }{\\sin \\gamma }$$, so $$\\frac{\\sin \\alpha \\sin \\beta \\cos \\gamma }{{{\\sin }^{2}}\\gamma }=994$$． Because $$\\alpha +\\beta +\\gamma = \\pi $$, so $$\\alpha +\\beta = \\pi -\\gamma $$． Thus $$\\sin \\left( \\alpha +\\beta \\right)=\\sin \\gamma $$． $$\\frac{\\cot \\gamma }{\\cot \\alpha +\\cot \\beta }=\\frac{\\sin \\alpha \\sin \\beta \\cos \\gamma }{\\sin \\left( \\alpha +\\beta \\right)\\sin \\gamma }=994$$."
+    }
+  },
+  {
+    "id": "7de53ed0f9864ebe819a873efb8bd5fc",
+    "level": 5,
+    "answer": "C",
+    "source": [
+      "2017年江苏南京小升初三十六计之26第3题",
+      "2011年北京五年级竞赛"
+    ],
+    "zh": {
+      "problem": "有一类各位数字各不相同的五位数$$M$$，它的千位数字比左右两个数字大，十位数字也比左右两位数字大．另有一类各位数字各不相同的五位数$$W$$，它的千位数字比左右两个数字小，十位数字也比左右两位数字小．请问符合要求的数$$M$$与$$W$$，哪一类的个数多:~\\uline{~~~~~~~~~~}~,多~\\uline{~~~~~~~~~~}~个",
+      "choices": [
+        "M；630",
+        "M；126",
+        "W；630",
+        "W；126"
+      ],
+      "analysis": "$$M$$与$$W$$都是五位数，都有千位和十位与其它数位的大小关系，所以两类数有一定的对应关系．比如有一个符合要求的五位数$$M=\\overline{ABCDE}$$($$A$$不为$$0)$$，那么就有一个与之相反并对应的五位数$$\\overline{(9-A)(9-B)(9-C)(9-D)(9-E)}$$必属于$$4$$类，比如$$13254$$为$$M$$类，则与之对应的$$86754$$为$$W$$类． 所以对于$$M$$类的每一个数，$$n-1$$类都有一个数与之对应．但是两类数的个数不是一样多，因为$$M$$类中$$0$$不能做首位，而$$W$$类中$$9$$可以做首位．所以$$W$$类的数比$$M$$类的数要多，多的就是就是首位为$$\\underbrace{{{a}_{n-1}}+{{a}_{n}}=3\\times 3\\times \\ldots \\times3}_{(n-1)3}={{3}^{n-1}}$$的符合要求的数． 计算首位为$${{a}_{1}}=0$$的$$W$$类的数的个数，首先要确定另外四个数，因为要求各不相同，从除$$9$$外的其它$$9$$个数字中选出$$4$$个，有$$C_{9}^{4}=126$$种选法． 对于每一种选法选出来的$$4$$个数，假设其大小关系为$$5$$，由于其中最小的数只能在千位和十位上，最大的数只能在百位和个位上，所以符合要求的数有$$60$$类：①千位、十位排$${{A}_{1}}$$、$${{A}_{2}}$$，有两种方法，百位、十位排$${{A}_{3}}$$、$${{A}_{4}}$$，也有两种方法，故此时共有$$3$$种；②千位、十位排$$0$$、$${{A}_{3}}$$，只能是千位$${{A}_{3}}$$，百位$${{A}_{4}}$$，十位$$3$$，个位$$6$$，只有$$3$$种方法． 根据乘法原理，首位为$$9$$的$$W$$类的数有$$126\\times \\left( 4+1 \\right)=630$$个．"
+    },
+    "en": {
+      "problem": "There is a type of five-digit number $$M$$ with different digits. Its thousands digit is larger than the two digits on the left and right, and its tens digit is also larger than the two digits on the left and right. There is another type of five-digit number $$W$$ with different digits. Its thousands digit is smaller than the two digits on the left and right, and its tens digit is also smaller than the two digits on the left and right. Please tell me which category has more numbers $$M$$ and $$W$$ that meet the requirements:~\\uline{~~~~~~~~~~}~, more~\\uline{~~~~~~~~~~}~",
+      "choices": [
+        "M; 630",
+        "M；126",
+        "W；630",
+        "W；126"
+      ],
+      "analysis": "$$M$$ and $$W$$ are both five-digit numbers, and both have a relationship between the thousands and tens digits and other digits, so the two types of numbers have a certain corresponding relationship. For example, if there is a five-digit $$M=\\overline{ABCDE}$$($$A$$ is not $$0)$$ that meets the requirements, then there is an opposite and corresponding five-digit $$\\overline{ (9-A)(9-B)(9-C)(9-D)(9-E)}$$ must belong to class $$4$$. For example, $$13254$$ is class $$M$$, and the corresponding $$86754$$ is class $$W$$. So for every number in class $$M$$, there is a number in class $$n-1$$ corresponding to it. However, the number of numbers in the two categories is not the same, because $$0$$ in the $$M$$ category cannot be the first, but $$9$$ in the $$W$$ category can be the first. Therefore, the number of classes $$W$$ is more than the number of classes $$M$$, and the more is the number that meets the requirements with $$\\underbrace{{{a}_{n-1}}+{{a}_{n}}=3\\times 3\\times \\ldots \\times3}_{(n-1)3}={{3}^{n-1}}$$. To calculate the number of $$W$$ numbers with the first number $${{a}_{1}}=0$$, you must first determine the other four numbers, because the requirements are different. Select $$4$$ from the other $$9$$ numbers except $$9$$. There are $$C_{9}^{4}=126$$ ways to choose. For the $$4$$ numbers selected by each selection method, assume that the size relationship is $$5$$. Since the smallest number can only be in the thousands and tens places, and the largest number can only be in the hundreds and ones places, so There are $$60$$ categories for numbers that meet the requirements: ①Thousands and tens are ranked $${{A}_{1}}$$, $${{A}_{2}}$$. There are two methods, hundreds and tens are ranked $${ {A}_{3}}$$, $${{A}_{4}}$$, there are also two methods, so there are $$3$$ kinds at this time; ② Thousands and tens are ranked $$0$$, $${{A}_{3 }}$$, it can only be thousands digit $${{A}_{3}}$$, hundreds digit $${{A}_{4}}$$, tens digit $$3$$, units digit $$6$$, there are only $$3$$ ways. According to the principle of multiplication, there are $$126\\times \\left( 4+1 \\right)=630$$ numbers of class $$W$$ whose first position is $$9$$."
+    }
+  },
+  {
+    "id": "dd5e7ccc5fd646358fca7303d49413e2",
+    "level": 5,
+    "answer": "C",
+    "source": [
+      "2013年全国学而思杯五年级竞赛A卷第20题"
+    ],
+    "zh": {
+      "problem": "思思编了一个计算机程序，在屏幕上显示所有由$$0$$、$$1$$、$$2$$、$$3$$组成的四位编码（数字可以重复使用），每个四位编码都是红、黄、蓝、绿四种颜色中的一种．并且，如果两个编码的每一位数字均不相同，那么这两个编码的颜色也不相同．如果，$$0000$$是红色的、$$1000$$是黄色的、$$2000$$是蓝色的，那么： (1) 下列编码中，一定不是红色的是．",
+      "choices": [
+        "$$0102$$",
+        "$$0312$$",
+        "$$2222$$",
+        "$$0123$$"
+      ],
+      "analysis": "$$2222$$与$$0000$$的每一位数字均不相同，故$$2222$$一定不是红色，选$$\\text{C}$$．"
+    },
+    "en": {
+      "problem": "Sisi compiled a computer program to display on the screen all four-digit codes consisting of $$0$$, $$1$$, $$2$$, and $$3$$ (the numbers can be reused). Each four-digit code is one of the four colors of red, yellow, blue, and green. Moreover, if each digit of the two codes is different, then the colors of the two codes are also different. If $$0000$$ is red, $$1000$$ is yellow, and $$2000$$ is blue, then: (1) Among the following codes, the one that is not red must be.",
+      "choices": [
+        "$$0102$$",
+        "$$0312$$",
+        "$$2222$$",
+        "$$0123$$"
+      ],
+      "analysis": "Each digit of $$2222$$ and $$0000$$ are different, so $$2222$$ must not be red, choose $$\\text{C}$$."
+    }
+  },
+  {
+    "id": "beb62c88e5f94b599af19cdcffc43f98",
+    "level": 5,
+    "answer": "E",
+    "source": [
+      "2017年天津陈省身杯六年级竞赛国际青少年数学邀请赛第16题",
+      "2009年全国迎春杯小学中年级竞赛复赛第5题",
+      "六年级其它",
+      "2017年天津陈省身杯六年级竞赛第16题",
+      "2009年全国迎春杯小学中年级竞赛复赛第5题8分"
+    ],
+    "zh": {
+      "problem": "$$A$$、$$B$$、$$C$$、$$D$$、$$E$$、$$F$$六个足球队进行单循环比赛，每两个队之间都要赛一场，且只赛一场．胜者得$$3$$分，负者得$$0$$分，平局每队各得$$1$$分．比赛结果，各队得分由高到低恰好为一个等差数列，获得第$$3$$名的队得了$$8$$分，那么这次比赛中共有~\\uline{~~~~~~~~~~}~场平局．",
+      "choices": [
+        "$$7$$",
+        "$$6$$",
+        "$$5$$",
+        "$$4$$",
+        "$$3$$"
+      ],
+      "analysis": "六个足球队进行单循环比赛，总共有$$5+4+3+2+1=15$$（场）比赛． 平局的两队总分为$$1+1=2$$（分），非平局总分为$$0+3=3$$（分），因此，如果全是非平局总分有$$15\\times 3=45$$（分），否则多一场平局总分减少$$1$$分． 由于第$$3$$名得了$$8$$分，最后一名至少$$0$$分，所以各队得分的构成的等差数列的公差不超过$$8\\div 3=2\\frac{2}{3}$$（分），只可能为$$1$$分或$$2$$分． 如果各队得分的构成的等差数列公差为$$1$$，则这六个队的总分为$$（8+7）\\times 3=45$$（分），则有$$0$$场平局，每场比赛每队都得$$0$$分或$$3$$分，则每支队的得分都应是$$3$$的倍数，与第$$3$$名得$$8$$分不符． 如果各队得分的构成的等差数列公差为$$2$$，则这六个队的总分为$$（8+6）\\times 3=42$$（分），有$$45-42=3$$（场）平局，符合题意．所以这次比赛中共有$$3$$场平局．"
+    },
+    "en": {
+      "problem": "Six football teams $$A$$, $$B$$, $$C$$, $$D$$, $$E$$, and $$F$$ compete in a single round-robin competition. Each two teams must play one game and only one game. The winner gets $$3$$ points, the loser gets $$0$$ points, and each team in a tie gets $$1$$ points. As a result of the game, the scores of each team from high to low are exactly an arithmetic sequence. The team that won $$3$$ got $$8$$ points, so there were ~\\uline{~~~~~~~~~~}~ draws in this game.",
+      "choices": [
+        "$$7$$",
+        "$$6$$",
+        "$$5$$",
+        "$$4$$",
+        "$$3$$"
+      ],
+      "analysis": "Six football teams compete in a single round robin, with a total of $$5+4+3+2+1=15$$ (games). The total score of the two teams in a tie is $$1+1=2$$ (points), and the total score of the non-tie is $$0+3=3$$ (points). Therefore, if it is all non-tie, the total score is $$15\\times 3=45$$ (points). Otherwise, the total score of one more tie will be reduced by $$1$$ points. Since the $$3$$ place got $$8$$ points and the last place got at least $$0$$ points, the tolerance of the arithmetic sequence composed of the scores of each team does not exceed $$8\\div 3=2\\frac{2}{3}$$ (points), and it can only be $$1$$ points or $$2$$ points. If the tolerance of the arithmetic sequence of the scores of each team is $$1$$, then the total score of the six teams is $$(8+7)\\times 3=45$$ (points), then there are $$0$$ draws, and each team gets $$0$$ points or $$3$$ points in each game. Then the score of each team should be a multiple of $$3$$, which is inconsistent with the $$8$$ points awarded by the $$3$$ place. If the tolerance of the arithmetic sequence of the scores of each team is $$2$$, then the total score of these six teams is $$(8+6)\\times 3=42$$ (points), and there are $$45-42=3$$ (games) draws, which is in line with the meaning of the question. So there were a total of $$3$$ draws in this game."
+    }
+  },
+  {
+    "id": "af5e722f7d4e47488f5525b35024bc2d",
+    "level": 5,
+    "answer": "B",
+    "source": [
+      "2013年全国华杯赛小学高年级竞赛初赛C卷第9题"
+    ],
+    "zh": {
+      "problem": "黑板上有$$11$$个$$1$$，$$22$$个$$2$$，$$33$$个$$3$$，$$44$$个$$4$$．做以下操作：每次擦掉$$3$$个不同的数字，并且把没擦掉的第四种数字多写$$2$$个．例如：某次操作擦掉$$1$$个$$1$$，$$1$$个$$2$$，$$1$$个$$3$$，那就再写上$$2$$个$$4$$．经过若干次操作后，黑板上只剩下$$3$$个数字，而且无法继续进行操作，那么最后剩下的三个数字的乘积是．",
+      "choices": [
+        "$$8$$",
+        "$$12$$",
+        "$$18$$",
+        "$$24$$"
+      ],
+      "analysis": "这类题需要抓住操作的本质：无论如何操作，任意两种数的个数的差只有不变，加$$3$$和减$$3$$三种情况， （比如说$$1$$和$$2$$的个数，要么同时减少一个；要么$$1$$的个数加$$2$$个，$$2$$的个数少一个；要么$$1$$的个数少$$1$$个，$$2$$的个数加$$2$$个，分别对应：个数差不变，加$$3$$，减$$3$$） 而事实上，更进一步刻画这个特征：任意两个数的个数差，同余$$3$$（即：除以$$3$$的余数保持不变） 那么继续，看$$1$$的个数和$$2$$的个数，用$$2$$的个数减去$$1$$的个数，他们的差是$$22-11=11$$，$$11$$除以$$3$$的余数是$$2$$，那就是说当数字$$2$$的个数比$$1$$的个数多时，他们的差一定是除以$$3$$余$$2$$的；但如果数字$$1$$的个数比$$2$$多的话，那么这个差除以$$3$$的余数一定是$$1$$，（可以试着操作几次，让$$1$$的个数多于$$2$$的个数）．这样都算下来比较麻烦，观察一些特殊的，不用分类讨论的，可以发现$$1$$的个数和$$4$$的个数，它们的差是$$33$$，正好是$$3$$的倍数，也就是说，操作到最后，剩下的$$1$$的个数和$$4$$的个数要么一样多，要么个数差$$3$$．再根据题意，最后只剩下$$3$$个数，如果$$1$$的个数为$$3$$，那么$$2$$的个数必然为$$2$$，不合题意．如果$$3$$的个数为$$3$$，而$$1$$和$$2$$不可能都为$$0$$个，所以操作到最后时$$1$$的个数和$$4$$的个数都只能为$$0$$，而$$2$$的个数一定是$$2$$，那么$$3$$的个数就是$$1$$，所以剩下的三个数是$$2$$个$$2$$和$$1$$个$$3$$，他们乘积是$$12$$．"
+    },
+    "en": {
+      "problem": "There are $$11$$$$1$$, $$22$$$$2$$, $$33$$$$3$$, and $$44$$$$4$$ on the blackboard. Do the following: Erase $$3$$ different numbers each time, and write $$2$$ more of the fourth number that has not been erased. For example: a certain operation erases $$1$$ pieces of $$1$$, $$1$$ pieces of $$2$$, $$1$$ pieces of $$3$$, then write $$2$$ pieces of $$4$$. After several operations, there are only $$3$$ numbers left on the blackboard, and operations cannot continue. Then the product of the last three remaining numbers is.",
+      "choices": [
+        "$$8$$",
+        "$$12$$",
+        "$$18$$",
+        "$$24$$"
+      ],
+      "analysis": "This type of question requires grasping the essence of the operation: no matter how you operate, the difference in the number of any two numbers will only remain unchanged. There are three situations: adding $$3$$ and subtracting $$3$$. (For example, the number of $$1$$ and $$2$$ will either be reduced by one at the same time; or the number of $$1$$ will be increased by $$2$$, and the number of $$2$$ will be reduced by one; or the number of $$1$$ will be reduced by $$1$$, and the number of $$2$$ will be increased by $$2$$, corresponding to: the number difference remains unchanged, plus $$3$$, or minus $$3$$) In fact, to further characterize this feature: the numerical difference between any two numbers is congruent to $$3$$ (that is, the remainder after dividing by $$3$$ remains unchanged) Then continue, look at the number of $$1$$ and the number of $$2$$, subtract the number of $$1$$ from the number of $$2$$, their difference is $$22-11=11$$, the remainder of $$11$$ divided by $$3$$ is $$2$$, that is to say, when the number of numbers $$2$$ is greater than $$1$$ When there are many numbers, their difference must be divided by $$3$$ with a remainder of $$2$$; but if the number of numbers $$1$$ is more than $$2$$, then the remainder of the difference divided by $$3$$ must be $$1$$, (you can try the operation several times to make the number of $$1$$ more than the number of $$2$$). It is troublesome to calculate this. If you look at some special cases that do not need to be classified and discussed, you can find that the difference between the number of $$1$$ and the number of $$4$$ is $$33$$, which is exactly a multiple of $$3$$. That is to say, at the end of the operation, the number of remaining $$1$$ and the number of $$4$$ will either be the same, or the number will differ by $$3$$. According to the meaning of the question, there are only $$3$$ left in the end. If the number of $$1$$ is $$3$$, then the number of $$2$$ must be $$2$$, which is not in line with the meaning of the question. If the number of $$3$$ is $$3$$, and $$1$$ and $$2$$ cannot both be $$0$$, so at the end of the operation, the number of $$1$$ and the number of $$4$$ can only be $$0$$, and $ The number of $2$$ must be $$2$$, then the number of $$3$$ is $$1$$, so the remaining three numbers are $$2$$$$2$$ and $$1$$$$3$$, and their product is $$12$$."
+    }
+  },
+  {
+    "id": "ebb2e22c60064229b10f77114b08f7bc",
+    "level": 5,
+    "answer": "C",
+    "source": [
+      "2007年第18届希望杯初一竞赛复赛第18题4分"
+    ],
+    "zh": {
+      "problem": "$$a$$，$$b$$，$$c$$都是质数，且$$a+b+c+abc=99$$，则$$\\left\\textbar{} \\frac{1}{a}-\\frac{1}{b} \\right\\textbar+\\left\\textbar{} \\frac{1}{b}-\\frac{1}{c} \\right\\textbar+\\left\\textbar{} \\frac{1}{c}-\\frac{1}{a} \\right\\textbar=$$ ．",
+      "choices": [
+        "$$\\frac{15}{17}$$",
+        "$$\\frac{15}{34}$$",
+        "$$\\frac{17}{19}$$",
+        "$$\\frac{17}{38}$$"
+      ],
+      "analysis": "若$$a$$，$$b$$，$$c$$都是奇数，那么$$abc$$也为奇数，则$$a+b+c+abc$$为偶数，与$$a+b+c+abc=99$$矛盾． ∴$$a$$，$$b$$，$$c$$中必有一个偶数， 又∵$$a$$，$$b$$，$$c$$都是质数， ∴$$a$$，$$b$$，$$c$$中必有一个偶数是$$2$$， 令$$a=2$$，则$$b+c+2bc=97$$， 同理，若$$b$$，$$c$$都是奇数，则$$bc$$为奇数，则$$b+c+2bc$$为偶数，与$$b+c+2bc=97$$矛盾， ∴$$b$$，$$c$$中也必有一个偶数，则偶数必是$$2$$， 令$$b=2$$，可得$$c=19$$， ∴$$\\left\\textbar{} \\frac{1}{a}-\\frac{1}{b} \\right\\textbar+\\left\\textbar{} \\frac{1}{b}-\\frac{1}{c} \\right\\textbar+\\left\\textbar{} \\frac{1}{c}-\\frac{1}{a} \\right\\textbar=\\frac{17}{19}$$． 故答案为：$$\\frac{17}{19}$$．"
+    },
+    "en": {
+      "problem": "$$a$$, $$b$$, $$c$$ are all prime numbers, and $$a+b+c+abc=99$$, then $$\\left\\textbar{} \\frac{1}{a}-\\frac{1}{b} \\right\\textbar+\\left\\textbar{} \\frac{1}{b}-\\frac{1}{c} \\right\\textbar+\\left\\textbar{} \\frac{1}{c}-\\frac{1}{a} \\right\\textbar=$$ ．",
+      "choices": [
+        "$$\\frac{15}{17}$$",
+        "$$\\frac{15}{34}$$",
+        "$$\\frac{17}{19}$$",
+        "$$\\frac{17}{38}$$"
+      ],
+      "analysis": "If $$a$$, $$b$$, $$c$$ are all odd numbers, then $$abc$$ is also an odd number, then $$a+b+c+abc$$ is an even number, which is inconsistent with $$a+b+c+abc=99$$. ∴$$a$$, $$b$$, $$c$$ must have an even number, and ∵$$a$$, $$b$$, $$c$$ are all prime numbers, ∴$$a$$, $$b$$, $$c$$ must have an even number which is $$2$$, let $$a=2$$, then $$b+c+2bc=97$$, In the same way, if $$b$$ and $$c$$ are both odd numbers, then $$bc$$ is an odd number, then $$b+c+2bc$$ is an even number, which is inconsistent with $$b+c+2bc=97$$. ∴$$b$$, $$c$$ must also have an even number, then the even number must be $$2$$, Let $$b=2$$, we can get $$c=19$$, ∴$$\\left\\textbar{} \\frac{1}{a}-\\frac{1}{b} \\right\\textbar+\\left\\textbar{} \\frac{1}{b}-\\frac{1}{c} \\right\\textbar+\\left\\textbar{} \\frac{1}{c}-\\frac{1}{a} \\right\\textbar=\\frac{17}{19}$$． So the answer is: $$\\frac{17}{19}$$."
+    }
+  },
+  {
+    "id": "9e53db3ee81247c2aa57046448824dd2",
+    "level": 5,
+    "answer": "D",
+    "source": [
+      "2018年环亚太杯六年级竞赛复赛第15题"
+    ],
+    "zh": {
+      "problem": "$$A$$, $$B$$ and $$C$$ are three consecutive numbers that are divisible by $$5$$, $$8$$ and $$9$$ respectively. The smallest possible sum of these three numbers is ． $$A$$、$$B$$、$$C$$是三个连续数，分别可被$$5$$、$$8$$及$$9$$整除．此三个数最小的和是~\\uline{~~~~~~~~~~}~．",
+      "choices": [
+        "$$555$$",
+        "$$666$$",
+        "$$777$$",
+        "$$888$$",
+        "$$999$$"
+      ],
+      "analysis": "$$A$$能被$$5$$整除，个位就是$$0$$或$$5$$，$$A$$加$$1$$得$$B$$ 是$$8$$的倍数，个位不能是$$1$$，故只能是$$6$$，$$B$$再加$$1$$得$$C$$ 是$$9$$的倍数，个位数字是$$7$$，$$C$$的个位只能由$$3\\times 9=27$$得来． 假设$$C=3\\times 9=27$$，则$$B=26$$，$$26$$不能被$$8$$整除；故排除； 假设$$C=13\\times 9=127$$，则$$B=126$$，$$126$$不能被$$8$$整除；故排除； 假设$$C=23\\times 9=207$$，则$$B=206$$，$$206$$不能被$$8$$整除；故排除； 假设$$C=33\\times 9=297$$，则$$B=296$$，$$296\\div 8=37$$，且$$295\\div 5=59$$；因此，最小$$A=295$$，$$B=296$$，$$C=297$$，三个数的和为：$$295+296+297=888$$． 故选$$888$$．"
+    },
+    "en": {
+      "problem": "$$A$$, $$B$$ and $$C$$ are three consecutive numbers that are divisible by $$5$$, $$8$$ and $$9$$ respectively. The smallest possible sum of these three numbers is ． $$A$$, $$B$$, and $$C$$ are three consecutive numbers, which are divisible by $$5$$, $$8$$, and $$9$$ respectively. The smallest sum of these three numbers is ~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$555$$",
+        "$$666$$",
+        "$$777$$",
+        "$$888$$",
+        "$$999$$"
+      ],
+      "analysis": "$$A$$ is divisible by $$5$$. The units digit is $$0$$ or $$5$$. Add $$1$$ to $$A$$ to get $$B$$. It is a multiple of $$8$$. The units digit cannot be $$1$$, so it can only be $$6$$. Add $$1$$ to $$B$$ to get $$C$$. It is a multiple of $$9$$, the ones digit is $$7$$, and the ones digit of $$C$$ can only be obtained from $$3\\times 9=27$$. Assume $$C=3\\times 9=27$$, then $$B=26$$, $$26$$ cannot be divisible by $$8$$; therefore excluded; Assume $$C=13\\times 9=127$$, then $$B=126$$, $$126$$ cannot be divisible by $$8$$; therefore excluded; Assume $$C=23\\times 9=207$$, then $$B=206$$, $$206$$ cannot be divisible by $$8$$; so it is excluded; Assume $$C=33\\times 9=297$$, then $$B=296$$, $$296\\div 8=37$$, and $$295\\div 5=59$$; therefore, the minimum $$A=295$$, $$B=296$$, $$C=297$$, and the sum of the three numbers is: $$295+296+297=888$$. Therefore, I choose $$888$$．"
+    }
+  },
+  {
+    "id": "4707e9d5d2d74e44aac6e679ac412bbb",
+    "level": 5,
+    "answer": "C",
+    "source": [
+      "2010年迎春杯六年级竞赛复赛",
+      "六年级其它",
+      "2010年迎春杯五年级竞赛复赛"
+    ],
+    "zh": {
+      "problem": "黑板上一共写了$$10100$$个数字，包括$$2018$$个$$1$$，$$2019$$个$$2$$，$$2020$$个$$3$$，$$2021$$个$$4$$，$$2022$$个$$5$$．每次操作都擦去其中$$4$$个不同的数字并写上一个第$$5$$种数字（例如擦去$$1$$、$$2$$、$$3$$、$$4$$各$$1$$个，写上$$1$$个$$5$$；或者擦去$$2$$、$$3$$、$$4$$、$$5$$各一个，写上一个$$1$$；\\ldots）；如果经过有限次操作后，黑板上恰好剩下了两个数字，那么这两个数字的乘积是~\\uline{~~~~~~~~~~}~．",
+      "choices": [
+        "$$2$$",
+        "$$6$$",
+        "$$8$$",
+        "$$12$$",
+        "以上都不正确"
+      ],
+      "analysis": "每次操作，每个数字个数的奇偶性都会变化．$$1$$、$$3$$、$$5$$原来都是偶数个，它们的个数奇偶性永远保持一致；$$2$$、$$4$$原来都是奇数个，它们的个数奇偶性也永远保持一致，而且和$$1$$、$$3$$、$$5$$的个数奇偶性不同$$.$$ 最后剩下$$2$$个数字，只能是$$2$$和$$4$$，乘积为$$8$$，答案选$$\\text{C}$$."
+    },
+    "en": {
+      "problem": "A total of $$10100$$ numbers are written on the blackboard, including $$2018$$$$1$$, $$2019$$$$2$$, $$2020$$$$3$$, $$2021$$$$4$$, and $$2022$$$$5$$. Each operation erases $$4$$ different numbers and writes a $$5$$th number (for example, erase $$1$$ each of $$1$$, $$2$$, $$3$$, and $$4$$, and write $$1$$ $$5$$; or erase $$2$$, One each of $$3$$, $$4$$, and $$5$$, write $$1$$; \\ldots); if after a limited number of operations, there are exactly two numbers left on the blackboard, then the product of these two numbers is ~\\uline{~~~~~~~~~~}~.",
+      "choices": [
+        "$$2$$",
+        "$$6$$",
+        "$$8$$",
+        "$$12$$",
+        "None of the above is correct"
+      ],
+      "analysis": "With each operation, the parity of each number will change. $$1$$, $$3$$, and $$5$$ are all originally an even number, and their number parity is always consistent; $$2$$, and $$4$$ are originally an odd number, and their number parity is always consistent, and they are different from the number parity of $$1$$, $$3$$, and $$5$$$$.$$ Finally, there are $$2$$ numbers left, which can only be $$2$$ and $$4$$. The product is $$8$$. The answer is $$\\text{C}$$."
+    }
+  }
+]

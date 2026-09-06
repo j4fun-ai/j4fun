@@ -25,8 +25,8 @@
       href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/main.css" />
-    <script src="assets/site-nav.js" defer></script>
+    <link rel="stylesheet" href="assets/main.css?v=20260906d" />
+    <script src="assets/site-nav.js?v=20260906" defer></script>
   </head>
   <body class="page-sudoku">
     <div id="petals" aria-hidden="true"></div>
@@ -52,9 +52,9 @@
           ></span>
         </button>
         <nav class="top-links" id="site-navigation" aria-label="主导航">
-          <a href="poetry.html">诗词</a>
-          <a href="sudoku.html" aria-current="page">汉字数独</a>
-          <a href="strands.html">字踪</a>
+          <a href="fun.html" aria-current="page">中文小玩意</a>
+          <a href="games.html">随手玩</a>
+          <a href="quiz.html">知识挑战</a>
           <a href="about.html">关于</a>
           <a class="related-project" href="shiben/"
             ><img
@@ -68,7 +68,7 @@
     </header>
 
     <section class="hero wrap">
-      <p class="eyebrow">规则一样，字不一样</p>
+      <p class="eyebrow">Nine Characters. One Perfect Grid.</p>
       <h1>把 1-9 换成<span class="accent">汉字</span>的数独</h1>
       <p class="lede">
         数字大写、天干、生肖、吉祥语四组现成的字，也可以自己输入 9
@@ -149,7 +149,7 @@
     </section>
 
     <footer class="wrap">
-      <div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div>
+      <div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div>
       <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
     </footer>
 
@@ -158,10 +158,10 @@
         function randChoice(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
 
         /* petals */
-        var PETAL_CHARS = ['❀','✿','❁','☘'];
+        var PETAL_CHARS = ['一','二','三','四','五','六','七','八','九'];
         function spawnPetal(){
           var el = document.createElement('span');
-          el.className = 'petal';
+          el.className = 'petal sudoku-glyph';
           el.textContent = randChoice(PETAL_CHARS);
           el.style.left = (Math.random()*100) + 'vw';
           el.style.fontSize = (14 + Math.random()*14) + 'px';

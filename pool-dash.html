@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pool Dash · 随手玩 · j4fun</title>
+<meta name="description" content="在泳道中闪避泳者和浮标，看看你能游多远。" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/main.css?v=20260906g" />
+<script src="assets/site-nav.js?v=20260906" defer></script>
+</head>
+<body class="page-game page-pool-dash">
+<header class="site">
+  <div class="wrap topbar">
+    <a class="brand" href="index.html" aria-label="j4fun 首页"><img class="brand-logo" src="assets/images/logo.png?083026" alt="j4fun" /></a>
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <nav class="top-links" id="site-navigation" aria-label="主导航">
+      <a href="fun.html">中文小玩意</a>
+      <a href="games.html" aria-current="page">随手玩</a>
+      <a href="quiz.html">知识挑战</a>
+      <a href="about.html">关于</a>
+      <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap game-page-hero">
+  <p class="eyebrow">Dodge. Dash. Dive In.</p>
+  <div class="game-title-row">
+    <h1>Pool <span class="accent">Dash</span></h1>
+    <a id="gameLanguageLink" class="game-language-link" href="?lang=en">🌐 English</a>
+  </div>
+  <p class="lede" id="gameDesc">切换泳道，避开泳者和浮标，收集金色泳帽获得加速，看看你能游多远。</p>
+</section>
+
+<main class="wrap game-page-main">
+<div id="wrap" class="pool-game-shell">
+  <canvas id="game"></canvas>
+  <div id="hud">
+    <span><span id="distLabel">距离</span> <span id="distVal" class="big">0</span> <span id="distUnit">米</span></span>
+    <span><span id="bestLabel">最佳</span> <span id="bestVal">0</span> <span id="bestUnit">米</span></span>
+  </div>
+  <div class="hint" id="gameHint">← / → 或拖动切换泳道</div>
+  <div id="overlay">
+    <h1>POOL DASH</h1>
+    <p id="gameIntro">沿泳池尽量向前游，避开其他泳者和浮标。收集金色泳帽可以获得加速。</p>
+    <button id="startBtn">跳进泳池</button>
+  </div>
+  <button id="fullscreenBtn" class="game-fullscreen-button" type="button">⛶ 全屏</button>
+</div>
+</main>
+
+<footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+
+<script>
+(function(){
+  const language = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'zh';
+  const translations = {
+    zh: {
+      pageTitle: 'Pool Dash · 随手玩 · j4fun',
+      metaDescription: '在泳道中闪避泳者和浮标，看看你能游多远。',
+      description: '切换泳道，避开泳者和浮标，收集金色泳帽获得加速，看看你能游多远。',
+      distance: '距离',
+      best: '最佳',
+      unit: '米',
+      hint: '← / → 或拖动切换泳道 · 空格暂停',
+      intro: '沿泳池尽量向前游，避开其他泳者和浮标。收集金色泳帽可以获得加速。',
+      start: '跳进泳池',
+      paused: '暂停中',
+      pauseNote: '休息一下，准备好再继续。',
+      resume: '继续游',
+      crashed: '撞上了！',
+      newBest: '新的个人最佳成绩！',
+      bestSoFar: '目前最佳：',
+      retry: '再游一次',
+      fullscreen: '⛶ 全屏',
+      exitFullscreen: '✕ 退出全屏',
+      switchLabel: '🌐 English',
+      switchAria: 'Switch game to English'
+    },
+    en: {
+      pageTitle: 'Pool Dash · Quick Game · j4fun',
+      metaDescription: 'Dodge swimmers and buoys, collect golden caps, and see how far you can swim.',
+      description: 'Switch lanes, avoid swimmers and buoys, collect golden caps for a boost, and see how far you can swim.',
+      distance: 'DIST',
+      best: 'BEST',
+      unit: 'm',
+      hint: '← / → or drag to change lanes · Space to pause',
+      intro: 'Swim as far as you can. Dodge swimmers and lane buoys, and grab golden caps for a speed boost.',
+      start: 'DIVE IN',
+      paused: 'PAUSED',
+      pauseNote: 'Take a breath. Jump back in when you are ready.',
+      resume: 'KEEP SWIMMING',
+      crashed: 'WIPED OUT',
+      newBest: 'New personal best — nice split!',
+      bestSoFar: 'Best so far: ',
+      retry: 'SWIM AGAIN',
+      fullscreen: '⛶ Fullscreen',
+      exitFullscreen: '✕ Exit Fullscreen',
+      switchLabel: '🌐 中文',
+      switchAria: '切换游戏为中文'
+    }
+  };
+  const copy = translations[language];
+  const languageLink = document.getElementById('gameLanguageLink');
+  const languageUrl = new URL(window.location.href);
+  if (language === 'en') languageUrl.searchParams.delete('lang');
+  else languageUrl.searchParams.set('lang', 'en');
+  document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+  document.title = copy.pageTitle;
+  document.querySelector('meta[name="description"]').setAttribute('content', copy.metaDescription);
+  document.getElementById('gameDesc').textContent = copy.description;
+  document.getElementById('distLabel').textContent = copy.distance;
+  document.getElementById('bestLabel').textContent = copy.best;
+  document.getElementById('distUnit').textContent = copy.unit;
+  document.getElementById('bestUnit').textContent = copy.unit;
+  document.getElementById('gameHint').textContent = copy.hint;
+  document.getElementById('gameIntro').textContent = copy.intro;
+  document.getElementById('startBtn').textContent = copy.start;
+  languageLink.textContent = copy.switchLabel;
+  languageLink.setAttribute('aria-label', copy.switchAria);
+  languageLink.href = languageUrl.pathname + languageUrl.search + languageUrl.hash;
+
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  const gameShell = document.getElementById('wrap');
+  const overlay = document.getElementById('overlay');
+  const startBtn = document.getElementById('startBtn');
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+  const distVal = document.getElementById('distVal');
+  const bestVal = document.getElementById('bestVal');
+
+  function isFocusMode(){
+    return document.fullscreenElement === gameShell || gameShell.classList.contains('is-focus-mode');
+  }
+
+  function updateFullscreenButton(){
+    const active = isFocusMode();
+    fullscreenBtn.textContent = active ? copy.exitFullscreen : copy.fullscreen;
+    fullscreenBtn.setAttribute('aria-pressed', String(active));
+    document.body.classList.toggle('pool-focus-active', active);
+  }
+
+  async function toggleFullscreen(){
+    if (isFocusMode()) {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      gameShell.classList.remove('is-focus-mode');
+      updateFullscreenButton();
+      resize();
+      return;
+    }
+
+    if (gameShell.requestFullscreen) {
+      try {
+        await gameShell.requestFullscreen();
+      } catch (error) {
+        gameShell.classList.add('is-focus-mode');
+      }
+    } else {
+      gameShell.classList.add('is-focus-mode');
+    }
+    updateFullscreenButton();
+    resize();
+  }
+
+  let W, H, LANES = 4, laneW;
+  function resize(){
+    W = isFocusMode() ? gameShell.clientWidth : Math.min(window.innerWidth, 480);
+    H = gameShell.clientHeight;
+    canvas.width = W;
+    canvas.height = H;
+    laneW = W / LANES;
+  }
+  window.addEventListener('resize', resize);
+  document.addEventListener('fullscreenchange', function(){
+    if (!document.fullscreenElement) gameShell.classList.remove('is-focus-mode');
+    updateFullscreenButton();
+    resize();
+  });
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && gameShell.classList.contains('is-focus-mode')) {
+      gameShell.classList.remove('is-focus-mode');
+      updateFullscreenButton();
+      resize();
+    }
+  });
+  fullscreenBtn.addEventListener('click', toggleFullscreen);
+  updateFullscreenButton();
+  resize();
+
+  let best = 0;
+  try { best = parseInt(sessionStorage.getItem('poolDashBest') || '0', 10) || 0; } catch(e){ best = 0; }
+  bestVal.textContent = best;
+
+  let state = 'idle'; // idle, playing, paused, dead
+  let player, obstacles, particles, dist, speed, spawnTimer, boostTimer, t;
+
+  function laneCenter(i){ return i * laneW + laneW/2; }
+
+  function reset(){
+    player = { lane: 1, x: laneCenter(1), targetLane: 1, wobble:0, arm:0 };
+    obstacles = [];
+    particles = [];
+    dist = 0;
+    speed = 4.2;
+    spawnTimer = 0;
+    boostTimer = 0;
+    t = 0;
+  }
+
+  function spawnObstacle(){
+    const lane = Math.floor(Math.random()*LANES);
+    const kind = Math.random() < 0.18 ? 'boost' : (Math.random() < 0.5 ? 'buoy' : 'swimmer');
+    obstacles.push({ lane, y: -60, kind, phase: Math.random()*10 });
+  }
+
+  function update(){
+    t++;
+    dist += speed * 0.09;
+    speed = Math.min(9.5, 4.2 + dist/220);
+
+    // player easing toward target lane
+    player.lane += (player.targetLane - player.lane) * 0.18;
+    player.x = laneCenter(player.lane);
+    player.arm += 0.35 + speed*0.02;
+
+    spawnTimer -= 1;
+    if (spawnTimer <= 0){
+      spawnObstacle();
+      spawnTimer = Math.max(26, 52 - dist/40);
+    }
+
+    if (boostTimer > 0) boostTimer--;
+
+    for (let i = obstacles.length-1; i>=0; i--){
+      const o = obstacles[i];
+      o.y += speed * (boostTimer>0 ? 1.9 : 1.15);
+      o.phase += 0.06;
+      if (o.y > H + 60){ obstacles.splice(i,1); continue; }
+
+      const ox = laneCenter(o.lane);
+      const dx = Math.abs(ox - player.x);
+      const dy = Math.abs(o.y - (H*0.74));
+      if (dy < 34 && dx < laneW*0.42){
+        if (o.kind === 'boost'){
+          boostTimer = 70;
+          for(let k=0;k<10;k++) particles.push({x:player.x,y:H*0.74,vx:(Math.random()-0.5)*4,vy:(Math.random()-0.5)*4,life:24,c:'#ffc94d'});
+          obstacles.splice(i,1);
+        } else {
+          gameOver();
+          return;
+        }
+      }
+    }
+
+    for (let i = particles.length-1;i>=0;i--){
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy; p.life--;
+      if (p.life<=0) particles.splice(i,1);
+    }
+
+    distVal.textContent = Math.floor(dist);
+  }
+
+  function gameOver(){
+    state = 'dead';
+    const finalDist = Math.floor(dist);
+    const isNewBest = finalDist > best;
+    if (isNewBest){
+      best = finalDist;
+      try { sessionStorage.setItem('poolDashBest', String(best)); } catch(e){}
+    }
+    bestVal.textContent = best;
+    overlay.innerHTML = `
+      <h1>${copy.crashed}</h1>
+      <div class="score-final">${finalDist}${copy.unit}</div>
+      <p>${isNewBest ? copy.newBest : copy.bestSoFar + best + copy.unit}</p>
+      <button id="startBtn">${copy.retry}</button>
+    `;
+    overlay.style.display = 'flex';
+    const retryButton = document.getElementById('startBtn');
+    retryButton.addEventListener('click', startGame);
+    retryButton.focus();
+  }
+
+  function pauseGame(){
+    if (state !== 'playing') return;
+    state = 'paused';
+    overlay.innerHTML = `
+      <h1>${copy.paused}</h1>
+      <p>${copy.pauseNote}</p>
+      <button id="startBtn">${copy.resume}</button>
+    `;
+    overlay.style.display = 'flex';
+    const resumeButton = document.getElementById('startBtn');
+    resumeButton.addEventListener('click', resumeGame);
+    resumeButton.focus();
+  }
+
+  function resumeGame(){
+    if (state !== 'paused') return;
+    overlay.style.display = 'none';
+    state = 'playing';
+  }
+
+  function drawLaneLines(){
+    ctx.save();
+    ctx.strokeStyle = 'rgba(232,244,248,0.25)';
+    ctx.lineWidth = 3;
+    ctx.setLineDash([18, 16]);
+    ctx.lineDashOffset = -(dist*4 % 34);
+    for (let i=1;i<LANES;i++){
+      ctx.beginPath();
+      ctx.moveTo(i*laneW, 0);
+      ctx.lineTo(i*laneW, H);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawWaterTexture(){
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.lineWidth = 2;
+    for(let i=0;i<6;i++){
+      const yy = ((t*2 + i*90) % (H+80)) - 40;
+      ctx.beginPath();
+      ctx.moveTo(0, yy);
+      for(let x=0;x<=W;x+=20){
+        ctx.lineTo(x, yy + Math.sin((x*0.05)+t*0.05+i)*4);
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawSwimmerShape(x,y,scale,colorCap,arm){
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.scale(scale,scale);
+    // ripple
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';
+    ctx.beginPath();
+    ctx.ellipse(0, 18, 22, 7, 0, 0, Math.PI*2);
+    ctx.fill();
+    // arms
+    const flap = Math.sin(arm)*10;
+    ctx.strokeStyle = '#ffd7c9';
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(-6,-2); ctx.lineTo(-18, -6+flap); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(6,-2); ctx.lineTo(18, -6-flap); ctx.stroke();
+    // body
+    ctx.fillStyle = colorCap === '#ffc94d' ? '#173a52' : '#0f2c40';
+    ctx.beginPath();
+    ctx.ellipse(0, 4, 10, 16, 0, 0, Math.PI*2);
+    ctx.fill();
+    // cap
+    ctx.fillStyle = colorCap;
+    ctx.beginPath();
+    ctx.arc(0, -14, 10, 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawObstacle(o){
+    const x = laneCenter(o.lane);
+    const y = o.y;
+    if (o.kind === 'buoy'){
+      ctx.save();
+      ctx.translate(x,y);
+      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+      ctx.beginPath(); ctx.ellipse(0,10,18,6,0,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#ff6b5b';
+      ctx.beginPath(); ctx.arc(0,0,13,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(0,0,13,-0.5,0.5); ctx.arc(0,0,13,Math.PI-0.5,Math.PI+0.5); ctx.fill();
+      ctx.restore();
+    } else if (o.kind === 'swimmer'){
+      drawSwimmerShape(x,y,1, '#e8f4f8', o.phase*3);
+    } else if (o.kind === 'boost'){
+      ctx.save();
+      ctx.translate(x,y);
+      const glow = 1 + Math.sin(o.phase*3)*0.15;
+      ctx.fillStyle = 'rgba(255,201,77,0.35)';
+      ctx.beginPath(); ctx.ellipse(0,1,21*glow,16*glow,0,0,Math.PI*2); ctx.fill();
+
+      // A swim-cap silhouette: domed crown, snug band, and a curved highlight.
+      ctx.fillStyle = '#ffc94d';
+      ctx.beginPath();
+      ctx.moveTo(-15,5);
+      ctx.bezierCurveTo(-14,-9,-7,-15,0,-15);
+      ctx.bezierCurveTo(8,-15,14,-8,15,5);
+      ctx.quadraticCurveTo(0,9,-15,5);
+      ctx.fill();
+      ctx.fillStyle = '#d99e1f';
+      ctx.fillRect(-15,4,30,5);
+      ctx.strokeStyle = 'rgba(255,255,255,0.7)';
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.arc(-2,-2,8,3.55,5.15);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // gradient water
+    const g = ctx.createLinearGradient(0,0,0,H);
+    g.addColorStop(0, '#1a6f9c');
+    g.addColorStop(1, '#062a42');
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,W,H);
+
+    drawWaterTexture();
+    drawLaneLines();
+
+    obstacles.forEach(drawObstacle);
+
+    particles.forEach(p=>{
+      ctx.fillStyle = p.c;
+      ctx.globalAlpha = Math.max(0, p.life/24);
+      ctx.beginPath(); ctx.arc(p.x,p.y,3,0,Math.PI*2); ctx.fill();
+      ctx.globalAlpha = 1;
+    });
+
+    if (boostTimer > 0){
+      ctx.save();
+      ctx.fillStyle = 'rgba(255,201,77,0.12)';
+      ctx.fillRect(0,0,W,H);
+      ctx.restore();
+    }
+
+    drawSwimmerShape(player.x, H*0.74, 1.25, boostTimer>0 ? '#ffc94d' : '#4fb3d9', player.arm);
+  }
+
+  let raf;
+  function loop(){
+    if (state === 'playing'){
+      update();
+      if (state !== 'playing') { draw(); return; }
+    }
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+
+  function startGame(){
+    overlay.style.display = 'none';
+    reset();
+    state = 'playing';
+    cancelAnimationFrame(raf);
+    loop();
+  }
+
+  document.getElementById('startBtn').addEventListener('click', startGame);
+
+  // controls
+  function moveLeft(){ if(state==='playing') player.targetLane = Math.max(0, player.targetLane - 1); }
+  function moveRight(){ if(state==='playing') player.targetLane = Math.min(LANES-1, player.targetLane + 1); }
+
+  window.addEventListener('keydown', (e)=>{
+    if (e.code === 'Space' && !e.repeat && (state === 'playing' || state === 'paused')) {
+      e.preventDefault();
+      if (state === 'playing') pauseGame(); else resumeGame();
+      return;
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'a') moveLeft();
+    if (e.key === 'ArrowRight' || e.key === 'd') moveRight();
+  });
+
+  let touchStartX = null;
+  canvas.addEventListener('touchstart', (e)=>{
+    touchStartX = e.touches[0].clientX;
+  }, {passive:true});
+  canvas.addEventListener('touchend', (e)=>{
+    if (touchStartX === null) return;
+    const endX = e.changedTouches[0].clientX;
+    const delta = endX - touchStartX;
+    if (Math.abs(delta) > 24){
+      if (delta > 0) moveRight(); else moveLeft();
+    } else {
+      // tap: left half / right half
+      const rect = canvas.getBoundingClientRect();
+      const tapX = touchStartX - rect.left;
+      if (tapX < rect.width/2) moveLeft(); else moveRight();
+    }
+    touchStartX = null;
+  }, {passive:true});
+
+  // idle screen render
+  reset();
+  draw();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>趣味百科 · j4fun</title>
+    <meta name="description" content="从 Open Trivia Database 挑选题目，来一轮动物、历史、娱乐与世界常识问答。" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/main.css?v=20260906h" />
+    <script src="assets/site-nav.js?v=20260906" defer></script>
+  </head>
+  <body class="page-trivia">
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="index.html" aria-label="j4fun 首页"><img class="brand-logo" src="assets/images/logo.png?083026" alt="j4fun" /></a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="fun.html">中文小玩意</a><a href="games.html">随手玩</a><a href="quiz.html" aria-current="page">知识挑战</a><a href="about.html">关于</a>
+          <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap">
+      <p class="eyebrow">A Little Bit of Everything</p>
+      <div class="game-title-row"><h1 id="heroTitle">来一场<span class="accent">趣味百科</span>快问快答</h1><a id="triviaLanguageLink" class="game-language-link" href="?lang=en">🌐 English</a></div>
+      <p class="lede" id="heroDesc">动物、历史、影视、科学与世界常识，选好主题就开玩。想省心？直接交给手气。</p>
+    </section>
+
+    <main class="wrap">
+      <section class="panel trivia-panel">
+        <div class="panel-head">
+          <h2 id="setupHeading">挑选这一轮的题目</h2>
+          <p id="setupCopy">默认随机 5 题；也可以按分类、难度和题型自定义。题目目前为英文，适合顺便练练英文阅读。</p>
+        </div>
+        <details class="trivia-settings" id="triviaSettings" open>
+          <summary id="settingsSummary">题目设置</summary>
+          <form id="triviaSetup" class="trivia-setup">
+          <div class="trivia-controls">
+            <label id="labelAmount">题目数量<select id="amount" name="amount"><option value="5" selected>5 题</option><option value="10">10 题</option><option value="15">15 题</option><option value="20">20 题</option></select></label>
+            <label id="labelCategory">选择分类<select id="category" name="category"><option value="">任意分类</option><option value="9">综合常识</option><option value="10">娱乐：书籍</option><option value="11">娱乐：电影</option><option value="12">娱乐：音乐</option><option value="13">娱乐：音乐剧与戏剧</option><option value="14">娱乐：电视</option><option value="15">娱乐：电子游戏</option><option value="16">娱乐：桌游</option><option value="17">科学与自然</option><option value="18">科学：电脑</option><option value="19">科学：数学</option><option value="20">神话</option><option value="21">运动</option><option value="22">地理</option><option value="23">历史</option><option value="24">政治</option><option value="25">艺术</option><option value="26">名人</option><option value="27">动物</option><option value="28">交通工具</option><option value="29">娱乐：漫画</option><option value="30">科学：小玩意</option><option value="31">娱乐：日漫与漫画</option><option value="32">娱乐：卡通与动画</option></select></label>
+            <label id="labelDifficulty">选择难度<select id="difficulty" name="difficulty"><option value="">任意难度</option><option value="easy">简单</option><option value="medium">中等</option><option value="hard">困难</option></select></label>
+            <label id="labelType">选择题型<select id="type" name="type"><option value="">任意题型</option><option value="multiple">单项选择</option><option value="boolean">判断题</option></select></label>
+            <label id="labelEncoding">题目编码<select id="encoding" name="encoding"><option value="">默认编码</option><option value="urlLegacy">旧版 URL 编码</option><option value="url3986">URL 编码（RFC 3986）</option><option value="base64">Base64 编码</option></select></label>
+          </div>
+          <div class="trivia-actions"><button class="secondary" type="button" id="luckyStart">🍀 手气不错，随机 5 题</button><button type="submit" id="startButton">开始答题</button></div>
+          </form>
+        </details>
+        <p class="trivia-status" id="triviaStatus" aria-live="polite"></p>
+
+        <section class="trivia-game" id="triviaGame" hidden aria-live="polite">
+          <div class="trivia-progress"><span id="questionCount">第 1 / 5 题</span><span id="questionMeta"></span></div>
+          <div class="trivia-progress-track" aria-hidden="true"><span id="progressFill"></span></div>
+          <div class="trivia-card">
+            <p class="trivia-category" id="questionCategory"></p>
+            <h2 id="questionText"></h2>
+            <a class="trivia-ai-link" id="questionAiLink" target="_blank" rel="noopener noreferrer">AI 帮我了解更多 ↗</a>
+            <div class="trivia-choices" id="choices"></div>
+            <p class="trivia-feedback" id="feedback"></p>
+            <button id="nextQuestion" hidden>下一题</button>
+          </div>
+        </section>
+
+        <section class="trivia-results" id="triviaResults" hidden>
+          <div class="trivia-score" id="scoreText"></div>
+          <p id="scoreMessage"></p>
+          <div class="trivia-actions"><button id="playAgain">再来一轮</button><button class="secondary" id="backToSetup">重新设置</button></div>
+        </section>
+      </section>
+    </main>
+
+    <section class="about wrap">
+      <h2 id="aboutHeading">题目与隐私</h2>
+      <p id="aboutCopy">题目、分类与标准答案由 <a href="https://opentdb.com/" target="_blank" rel="noopener noreferrer">Open Trivia Database</a> 在开始时提供。本站不上传你的作答；本轮成绩仅显示在当前页面。题库的可用题量会随筛选条件而变化，若没有匹配题目，可以放宽条件后再试。</p>
+    </section>
+    <footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+
+    <script>
+      (function () {
+        var questions = [], current = 0, score = 0, answered = false;
+        var setup = document.getElementById('triviaSetup');
+        var game = document.getElementById('triviaGame');
+        var results = document.getElementById('triviaResults');
+        var status = document.getElementById('triviaStatus');
+        var next = document.getElementById('nextQuestion');
+        var settings = document.getElementById('triviaSettings');
+        var language = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'zh';
+        var copy = {
+          zh: { title: '趣味百科 · j4fun', hero: '来一场<span class="accent">趣味百科</span>快问快答', desc: '动物、历史、影视、科学与世界常识，选好主题就开玩。想省心？直接交给手气。', heading: '挑选这一轮的题目', setup: '默认随机 5 题；也可以按分类、难度和题型自定义。题目目前为英文，适合顺便练练英文阅读。', summary: '题目设置', labels: ['题目数量', '选择分类', '选择难度', '选择题型', '题目编码'], lucky: '🍀 手气不错，随机 5 题', start: '开始答题', preparing: '正在从题库挑选题目…', ready: '已准备好 {count} 题，祝你玩得开心！', empty: '这个筛选组合暂时没有足够题目，请放宽条件后再试。', unavailable: '暂时无法连接题库，请检查网络后重试。', question: '第 {current} / {total} 题', easy: '简单', medium: '中等', hard: '困难', boolean: '判断题', multiple: '单项选择', correct: '答对啦！', answer: '这题的答案是：', next: '下一题', results: '查看结果', again: '再来一轮', reset: '重新设置', perfect: '全对！这份知识面很厉害。', good: '不错哦，再来一轮试试？', warmup: '热身完成，换个主题继续玩吧。', ai: 'AI 双语讲解 ↗', aboutHeading: '题目与隐私', about: '题目、分类与标准答案由 <a href="https://opentdb.com/" target="_blank" rel="noopener noreferrer">Open Trivia Database</a> 在开始时提供。本站不上传你的作答；本轮成绩仅显示在当前页面。题库的可用题量会随筛选条件而变化，若没有匹配题目，可以放宽条件后再试。', switch: '🌐 English' },
+          en: { title: 'Trivia Time · j4fun', hero: 'Play a round of <span class="accent">Trivia</span>', desc: 'Animals, history, films, science, and world knowledge—pick a theme or leave it to luck.', heading: 'Set up your round', setup: 'Five random questions are ready by default. Or choose your own category, difficulty, and type.', summary: 'Question settings', labels: ['Number of questions', 'Category', 'Difficulty', 'Question type', 'Question encoding'], lucky: '🍀 Feeling lucky? Random 5', start: 'Start quiz', preparing: 'Picking questions from the trivia database…', ready: '{count} questions are ready. Have fun!', empty: 'There are not enough questions for that combination. Try broader settings.', unavailable: 'The trivia database is unavailable right now. Please check your connection and try again.', question: 'Question {current} of {total}', easy: 'Easy', medium: 'Medium', hard: 'Hard', boolean: 'True / False', multiple: 'Multiple choice', correct: 'Correct!', answer: 'The answer is: ', next: 'Next question', results: 'See results', again: 'Play again', reset: 'Change settings', perfect: 'Perfect score—impressive knowledge!', good: 'Nice work. Want another round?', warmup: 'A good warm-up. Try a different theme!', ai: 'AI bilingual explainer ↗', aboutHeading: 'Questions & privacy', about: 'Questions, categories, and answers are provided when you start by <a href="https://opentdb.com/" target="_blank" rel="noopener noreferrer">Open Trivia Database</a>. Your answers are never uploaded, and your score only appears on this page. Available questions vary by filters; if a combination has no matches, try broader settings.', switch: '🌐 中文' }
+        };
+        var categories = { '': ['任意分类', 'Any category'], '9': ['综合常识', 'General Knowledge'], '10': ['娱乐：书籍', 'Entertainment: Books'], '11': ['娱乐：电影', 'Entertainment: Film'], '12': ['娱乐：音乐', 'Entertainment: Music'], '13': ['娱乐：音乐剧与戏剧', 'Entertainment: Musicals & Theatres'], '14': ['娱乐：电视', 'Entertainment: Television'], '15': ['娱乐：电子游戏', 'Entertainment: Video Games'], '16': ['娱乐：桌游', 'Entertainment: Board Games'], '17': ['科学与自然', 'Science & Nature'], '18': ['科学：电脑', 'Science: Computers'], '19': ['科学：数学', 'Science: Mathematics'], '20': ['神话', 'Mythology'], '21': ['运动', 'Sports'], '22': ['地理', 'Geography'], '23': ['历史', 'History'], '24': ['政治', 'Politics'], '25': ['艺术', 'Art'], '26': ['名人', 'Celebrities'], '27': ['动物', 'Animals'], '28': ['交通工具', 'Vehicles'], '29': ['娱乐：漫画', 'Entertainment: Comics'], '30': ['科学：小玩意', 'Science: Gadgets'], '31': ['娱乐：日漫与漫画', 'Entertainment: Japanese Anime & Manga'], '32': ['娱乐：卡通与动画', 'Entertainment: Cartoon & Animations'] };
+        function tr(key) { return copy[language][key]; }
+        function format(text, values) { return text.replace(/\{(\w+)\}/g, function (_, key) { return values[key]; }); }
+        function setLabel(id, text) { document.getElementById(id).firstChild.nodeValue = text; }
+        function applyLanguage() {
+          var english = language === 'en'; document.documentElement.lang = english ? 'en' : 'zh-CN'; document.title = tr('title');
+          document.getElementById('heroTitle').innerHTML = tr('hero'); document.getElementById('heroDesc').textContent = tr('desc'); document.getElementById('setupHeading').textContent = tr('heading'); document.getElementById('setupCopy').textContent = tr('setup'); document.getElementById('settingsSummary').textContent = tr('summary');
+          ['labelAmount', 'labelCategory', 'labelDifficulty', 'labelType', 'labelEncoding'].forEach(function (id, index) { setLabel(id, tr('labels')[index]); });
+          document.getElementById('luckyStart').textContent = tr('lucky'); document.getElementById('startButton').textContent = tr('start'); document.getElementById('playAgain').textContent = tr('again'); document.getElementById('backToSetup').textContent = tr('reset'); document.getElementById('questionAiLink').textContent = tr('ai'); document.getElementById('aboutHeading').textContent = tr('aboutHeading'); document.getElementById('aboutCopy').innerHTML = tr('about');
+          document.getElementById('triviaLanguageLink').textContent = tr('switch'); document.getElementById('triviaLanguageLink').href = english ? '?lang=zh' : '?lang=en';
+          Array.prototype.forEach.call(document.querySelectorAll('#category option'), function (option) { option.textContent = categories[option.value][english ? 1 : 0]; });
+          var optionSets = { amount: english ? ['5 questions', '10 questions', '15 questions', '20 questions'] : ['5 题', '10 题', '15 题', '20 题'], difficulty: english ? ['Any difficulty', 'Easy', 'Medium', 'Hard'] : ['任意难度', '简单', '中等', '困难'], type: english ? ['Any type', 'Multiple choice', 'True / False'] : ['任意题型', '单项选择', '判断题'], encoding: english ? ['Default encoding', 'Legacy URL encoding', 'URL encoding (RFC 3986)', 'Base64 encoding'] : ['默认编码', '旧版 URL 编码', 'URL 编码（RFC 3986）', 'Base64 编码'] };
+          Object.keys(optionSets).forEach(function (id) { Array.prototype.forEach.call(document.getElementById(id).options, function (option, index) { option.textContent = optionSets[id][index]; }); });
+        }
+
+        function decode(value) { var area = document.createElement('textarea'); area.innerHTML = value; return area.value; }
+        function decodeValue(value, encoding) { if (encoding === 'base64') return decode(atob(value)); if (encoding === 'urlLegacy' || encoding === 'url3986') return decode(decodeURIComponent(value.replace(/\+/g, ' '))); return decode(value); }
+        function normalizeQuestion(item, encoding) { return { type: decodeValue(item.type, encoding), difficulty: decodeValue(item.difficulty, encoding), category: decodeValue(item.category, encoding), question: decodeValue(item.question, encoding), correct_answer: decodeValue(item.correct_answer, encoding), incorrect_answers: item.incorrect_answers.map(function (answer) { return decodeValue(answer, encoding); }) }; }
+        function shuffle(items) { for (var i = items.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var temp = items[i]; items[i] = items[j]; items[j] = temp; } return items; }
+        function setStatus(message, isError) { status.textContent = message; status.classList.toggle('error', !!isError); }
+
+        async function start(event) {
+          if (event) event.preventDefault();
+          var amount = document.getElementById('amount').value;
+          var params = new URLSearchParams({ amount: amount });
+          ['category', 'difficulty', 'type'].forEach(function (name) { var value = document.getElementById(name).value; if (value) params.set(name, value); });
+          var encoding = document.getElementById('encoding').value; if (encoding) params.set('encode', encoding);
+          setStatus(tr('preparing'));
+          game.hidden = true; results.hidden = true;
+          var button = setup.querySelector('[type="submit"]'); button.disabled = true;
+          try {
+            var response = await fetch('https://opentdb.com/api.php?' + params.toString());
+            if (!response.ok) throw new Error('network');
+            var data = await response.json();
+            if (data.response_code === 1) throw new Error('empty');
+            if (data.response_code !== 0 || !data.results || !data.results.length) throw new Error('unavailable');
+            questions = data.results.map(function (item) { return normalizeQuestion(item, encoding); }); current = 0; score = 0; answered = false;
+            setStatus(format(tr('ready'), { count: questions.length })); settings.open = false;
+            game.hidden = false; renderQuestion();
+          } catch (error) {
+            setStatus(error.message === 'empty' ? tr('empty') : tr('unavailable'), true);
+          } finally { button.disabled = false; }
+        }
+        function renderQuestion() {
+          var item = questions[current]; answered = false; next.hidden = true;
+          document.getElementById('questionCount').textContent = format(tr('question'), { current: current + 1, total: questions.length });
+          document.getElementById('questionMeta').textContent = tr(item.difficulty) + ' · ' + tr(item.type === 'boolean' ? 'boolean' : 'multiple');
+          document.getElementById('progressFill').style.width = (current / questions.length * 100) + '%';
+          document.getElementById('questionCategory').textContent = item.category;
+          document.getElementById('questionText').textContent = item.question;
+          var aiPrompt = 'Please help me learn the background knowledge and key concepts behind the trivia question below. Give a bilingual explanation in paired English and Simplified Chinese sections, using clear language suitable for a learner. Explain the related ideas first, and do not reveal the answer unless I ask directly.\n\n请用英文与简体中文逐段对应的方式，清楚解释下列题目涉及的背景知识和关键概念。请先讲相关知识；除非我明确要求，否则不要直接透露答案。\n\n' + item.question;
+          document.getElementById('questionAiLink').href = 'https://www.google.com/search?udm=50&q=' + encodeURIComponent(aiPrompt);
+          document.getElementById('feedback').textContent = '';
+          var choices = shuffle(item.incorrect_answers.concat([item.correct_answer]));
+          var box = document.getElementById('choices'); box.innerHTML = '';
+          choices.forEach(function (choice, index) { var button = document.createElement('button'); var letter = document.createElement('span'); button.type = 'button'; button.dataset.choice = choice; letter.textContent = String.fromCharCode(65 + index); button.appendChild(letter); button.appendChild(document.createTextNode(choice)); button.addEventListener('click', function () { answer(choice, item.correct_answer, box); }); box.appendChild(button); });
+        }
+        function answer(choice, correct, box) {
+          if (answered) return; answered = true;
+          var isCorrect = choice === correct;
+          if (isCorrect) score++;
+          Array.prototype.forEach.call(box.querySelectorAll('button'), function (button) { button.disabled = true; if (button.dataset.choice === correct) button.classList.add('correct'); else if (button.dataset.choice === choice) button.classList.add('wrong'); });
+          document.getElementById('feedback').textContent = isCorrect ? tr('correct') : tr('answer') + correct;
+          document.getElementById('feedback').className = 'trivia-feedback ' + (isCorrect ? 'correct' : 'wrong');
+          next.hidden = false; next.textContent = current === questions.length - 1 ? tr('results') : tr('next');
+          document.getElementById('progressFill').style.width = ((current + 1) / questions.length * 100) + '%';
+        }
+        next.addEventListener('click', function () { if (current < questions.length - 1) { current++; renderQuestion(); } else { game.hidden = true; results.hidden = false; document.getElementById('scoreText').textContent = score + ' / ' + questions.length; document.getElementById('scoreMessage').textContent = score === questions.length ? tr('perfect') : score >= Math.ceil(questions.length * 0.6) ? tr('good') : tr('warmup'); } });
+        setup.addEventListener('submit', start);
+        document.getElementById('luckyStart').addEventListener('click', function () { document.getElementById('amount').value = '5'; document.getElementById('category').value = ''; document.getElementById('difficulty').value = ''; document.getElementById('type').value = ''; document.getElementById('encoding').value = ''; start(); });
+        document.getElementById('playAgain').addEventListener('click', start);
+        document.getElementById('backToSetup').addEventListener('click', function () { results.hidden = true; settings.open = true; settings.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+        applyLanguage();
+      })();
+    </script>
+  </body>
+</html>

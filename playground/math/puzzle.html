@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>逻辑谜题 · PC-83K 每日挑战 · j4fun</title>
+    <meta name="description" content="每天一道可验证的逻辑谜题，普通与困难两档可选，并可挑战五题闯关。题目来自 PuzzleCloneData PC-83K。" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/main.css" />
+    <script src="../../assets/site-nav.js" defer></script>
+  </head>
+  <body class="page-math page-puzzle">
+    <div id="numbers" aria-hidden="true"></div>
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="../../index.html" aria-label="j4fun 首页"><img class="brand-logo" src="../../assets/images/logo.png?083026" alt="j4fun" /></a>
+        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="../../poetry.html">诗词</a><a href="math.html">数学</a><a href="../../sudoku.html">汉字数独</a><a href="../../strands.html">字踪</a><a href="../../about.html">关于</a>
+          <a class="related-project" href="../../shiben/"><img src="../../shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap">
+      <p class="eyebrow" data-i18n="eyebrow">PC-83K · 可验证逻辑谜题</p>
+      <h1 data-i18n="title">今天，你能解开这道<span class="accent">逻辑谜题</span>吗？</h1>
+      <p class="lede" data-i18n="lede">不靠记公式，靠条件、排除和推理。每天固定一题，也可以连续闯过普通与困难两关。</p>
+    </section>
+
+    <main class="wrap">
+      <div class="mode-tabs puzzle-mode-tabs" id="modeTabs" role="tablist" aria-label="游戏模式">
+        <button class="mode-tab active" type="button" data-mode="daily" role="tab" aria-selected="true" data-i18n="dailyTab">今日一题</button>
+        <button class="mode-tab" type="button" data-mode="challenge" role="tab" aria-selected="false" data-i18n="challengeTab">逻辑闯关</button>
+        <button class="mode-tab" type="button" data-mode="stats" role="tab" aria-selected="false" data-i18n="statsTab">我的战绩</button>
+        <a class="mode-tab mode-link" href="math-test.html" data-i18n="testTab">每日测试</a>
+      </div>
+
+      <section class="panel" id="panel-daily" role="tabpanel">
+        <div class="panel-head puzzle-daily-heading">
+          <h2 data-i18n="dailyTitle">今日一题</h2>
+          <p data-i18n="dailyCopy">同一天、同一难度的题目保持不变。</p>
+        </div>
+        <div class="puzzle-daily-toolbar">
+          <div class="daily-meta">
+            <time id="dailyDate" class="puzzle-date-label">
+              <span class="puzzle-date-month" aria-hidden="true"></span>
+              <span class="puzzle-date-day" aria-hidden="true"></span>
+            </time>
+            <span class="streak-pill"><span data-i18n="streakBefore">连续答对</span> <b id="dailyStreak">0</b> <span data-i18n="streakAfter">天</span></span>
+          </div>
+          <div class="puzzle-toolbar-control puzzle-level-picker" id="dailyLevelPicker" role="group" aria-label="选择难度">
+            <span class="puzzle-control-eyebrow" data-i18n="chooseLevel">选择难度</span>
+            <div class="grade-picker-options">
+              <button class="grade-option active" type="button" data-level="normal" aria-pressed="true" data-i18n="normal">普通</button>
+              <button class="grade-option" type="button" data-level="hard" aria-pressed="false" data-i18n="hard">困难</button>
+            </div>
+          </div>
+          <div class="puzzle-toolbar-control puzzle-language-control">
+            <span class="puzzle-control-eyebrow" data-i18n="languageLabel">题目语言</span>
+            <div class="puzzle-language-picker" role="group" aria-label="题目语言">
+              <button type="button" data-language="zh" aria-pressed="true">中文</button>
+              <button type="button" data-language="en" aria-pressed="false">English</button>
+            </div>
+          </div>
+        </div>
+        <article class="math-card puzzle-card">
+          <div class="puzzle-meta" id="dailyMeta"></div>
+          <div class="math-question puzzle-question" id="dailyQuestion"></div>
+          <div class="choice-list puzzle-choice-list" id="dailyChoices"></div>
+          <form class="puzzle-answer-form" id="dailyAnswerForm" hidden>
+            <label for="dailyAnswer" data-i18n="enterAnswer">输入答案</label>
+            <div><input id="dailyAnswer" type="text" autocomplete="off" /><button type="submit" data-i18n="submit">提交</button></div>
+          </form>
+          <div class="explain-box" id="dailyExplain"></div>
+          <div class="result-banner" id="dailyResult"></div>
+          <div class="done-note" id="dailyDoneNote" hidden data-i18n="doneNote">今天这一档已经作答，明天会换新题。</div>
+        </article>
+        <div class="week-strip" id="weekStrip"></div>
+        <p class="math-source-status puzzle-source-note" id="puzzleSourceStatus" aria-live="polite">正在载入本地题库…</p>
+      </section>
+
+      <section class="panel" id="panel-challenge" role="tabpanel" hidden>
+        <div id="challengeIntro">
+          <div class="panel-head"><h2 data-i18n="challengeTitle">逻辑闯关</h2><p data-i18n="challengeCopy">每关 5 题，答对至少 4 题进入困难关。</p></div>
+          <div class="challenge-ladder puzzle-ladder" id="challengeLadderIntro">
+            <div class="rung current"><span data-i18n="normal">普通</span><small data-i18n="normalDesc">条件推理</small></div>
+            <div class="rung"><span data-i18n="hard">困难</span><small data-i18n="hardDesc">复杂约束</small></div>
+          </div>
+          <div class="challenge-start"><button id="challengeStart" type="button" data-i18n="start">开始闯关</button></div>
+        </div>
+        <div id="challengePlay" hidden>
+          <div class="challenge-top"><span id="challengeLevel"></span><span id="challengeProgress"></span></div>
+          <div class="progress-bar"><span id="challengeProgressBar"></span></div>
+          <article class="math-card puzzle-card">
+            <div class="puzzle-meta" id="challengeMeta"></div>
+            <div class="math-question puzzle-question" id="challengeQuestion"></div>
+            <div class="choice-list puzzle-choice-list" id="challengeChoices"></div>
+            <form class="puzzle-answer-form" id="challengeAnswerForm" hidden>
+              <label for="challengeAnswer" data-i18n="enterAnswer">输入答案</label>
+              <div><input id="challengeAnswer" type="text" autocomplete="off" /><button type="submit" data-i18n="submit">提交</button></div>
+            </form>
+            <div class="explain-box" id="challengeExplain"></div>
+          </article>
+          <div class="challenge-next"><button id="challengeNext" type="button" hidden data-i18n="next">下一题</button></div>
+        </div>
+        <div id="challengeDone" hidden>
+          <div class="big-result"><div class="headline" id="challengeHeadline"></div><div class="sub" id="challengeSub"></div>
+            <div class="btn-row"><button id="challengeRetry" type="button" data-i18n="retry">再挑战一次</button><button class="secondary" id="challengeCopy" type="button" data-i18n="copy">复制结果</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-stats" role="tabpanel" hidden>
+        <div class="panel-head"><h2 data-i18n="statsTitle">我的战绩</h2><p data-i18n="statsCopy">数据只保存在当前浏览器，清除浏览器数据后会重置。</p></div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="num" id="statStreak">0</div><div class="label" data-i18n="statStreak">连续答对天数</div></div>
+          <div class="stat-card"><div class="num" id="statBest">—</div><div class="label" data-i18n="statBest">闯关最高水平</div></div>
+          <div class="stat-card"><div class="num" id="statTotal">0</div><div class="label" data-i18n="statTotal">累计答题数</div></div>
+          <div class="stat-card"><div class="num" id="statAccuracy">—</div><div class="label" data-i18n="statAccuracy">总正确率</div></div>
+        </div>
+        <div class="week-strip" id="statsWeekStrip"></div>
+      </section>
+    </main>
+
+    <section class="about wrap" id="details">
+      <h2 data-i18n="aboutTitle">玩法说明</h2>
+      <p data-i18n="aboutCopy">题目与 ground-truth solution 来自 <a href="https://github.com/puzzleclone/PuzzleCloneData" target="_blank" rel="noopener noreferrer">PuzzleCloneData（PC-83K）</a>。本站筛选无需图片、适合浏览器直接作答的单问题；判题和战绩记录都在本地完成，不上传输入内容。</p>
+      <div class="about-grid">
+        <div class="about-card"><h3 data-i18n="aboutDailyTitle">今日一题怎么玩</h3><p data-i18n="aboutDailyCopy">普通、困难各有一道每日题。日期和难度共同决定题目，答对可累计连胜。</p></div>
+        <div class="about-card"><h3 data-i18n="aboutChallengeTitle">逻辑闯关怎么玩</h3><p data-i18n="aboutChallengeCopy">先挑战 5 道普通题，答对 4 题进入困难关。选择题点选，简答与填空按题目格式输入。</p></div>
+        <div class="about-card"><h3 data-i18n="aboutDataTitle">数据与许可</h3><p data-i18n="aboutDataCopy">本地缓存 320 道，来自 PuzzleCloneData 项目公开的 normal / hard 验证集，覆盖 72 种 seed puzzle。原项目使用 <a href="https://github.com/puzzleclone/PuzzleCloneData/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0 License</a>。</p></div>
+      </div>
+    </section>
+
+    <footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />中文小玩意合集</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+
+    <script>
+      (function () {
+        var LOCAL_DATA_URL = 'puzzle_problems.json';
+        var REMOTE_DATA_URL = 'https://raw.githubusercontent.com/j4fun-ai/j4fun/main/puzzle_problems.json';
+        var DATA_CACHE_KEY = 'j4fun-pc83-data-v1';
+        var STORE_KEY = 'j4fun-puzzle-state-v1';
+        var LEVEL_NAMES = { normal: { zh: '普通', en: 'Normal' }, hard: { zh: '困难', en: 'Hard' } };
+        var LEVEL_ORDER = ['normal', 'hard'];
+        var I18N = {
+          zh: {
+            eyebrow: 'PC-83K · 可验证逻辑谜题', title: '今天，你能解开这道<span class="accent">逻辑谜题</span>吗？', lede: '不靠记公式，靠条件、排除和推理。每天固定一题，也可以连续闯过普通与困难两关。',
+            dailyTab: '今日一题', challengeTab: '逻辑闯关', statsTab: '我的战绩', testTab: '每日测试', dailyTitle: '今日一题', dailyCopy: '同一天、同一难度的题目保持不变。',
+            streakBefore: '连续答对', streakAfter: '天', chooseLevel: '选择挑战难度', normal: '普通', hard: '困难', languageLabel: '题目语言', enterAnswer: '输入答案', submit: '提交', doneNote: '今天这一档已经作答，明天会换新题。',
+            challengeTitle: '逻辑闯关', challengeCopy: '每关 5 题，答对至少 4 题进入困难关。', normalDesc: '条件推理', hardDesc: '复杂约束', start: '开始闯关', next: '下一题', retry: '再挑战一次', copy: '复制结果',
+            statsTitle: '我的战绩', statsCopy: '数据只保存在当前浏览器，清除浏览器数据后会重置。', statStreak: '连续答对天数', statBest: '闯关最高水平', statTotal: '累计答题数', statAccuracy: '总正确率', select: '选择', groundTruth: 'PC-83K 标准答案', correct: '✓ 答对了！逻辑成立。', wrong: '答案不一致，再对照条件检查一次。',
+            levelSuffix: '关', questionProgress: '第 {n} / 5 题', correctShort: '✓ 正确。', wrongShort: '✗ 本题答案不一致。', copied: '已复制', copyFailed: '复制失败',
+            qChoice: '单选题', qShort: '简答题', qBlank: '填空题', difficulty: '难度', localSource: '正在使用本地缓存 · {n} 题', remoteSource: '在线题库已更新 · 本地缓存可离线使用', hardCleared: '你闯过了困难逻辑关！', normalCleared: '普通关通过！', stageAlmost: '{level}关还差一点', resultCount: '本次共答对 {n} 题。',
+            aboutTitle: '玩法说明', aboutCopy: '题目与 ground-truth solution 来自 <a href="https://github.com/puzzleclone/PuzzleCloneData" target="_blank" rel="noopener noreferrer">PuzzleCloneData（PC-83K）</a>。本站筛选无需图片、适合浏览器直接作答的单问题；英文为同一批中文题目的机器翻译。判题和战绩记录均在本地完成。本页面由 j4fun 独立制作，与数据集作者或维护者没有隶属、合作或认可关系。', aboutDailyTitle: '今日一题怎么玩', aboutDailyCopy: '普通、困难各有一道每日题。日期和难度共同决定题目，切换语言不会换题。', aboutChallengeTitle: '逻辑闯关怎么玩', aboutChallengeCopy: '先挑战 5 道普通题，答对 4 题进入困难关。选择题点选，简答与填空按题目格式输入。', aboutDataTitle: '数据与许可', aboutDataCopy: '本地缓存 320 道，来自 PuzzleCloneData 项目公开的 normal / hard 验证集，覆盖 72 种 seed puzzle。原项目使用 <a href="https://github.com/puzzleclone/PuzzleCloneData/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0 License</a>。'
+          },
+          en: {
+            eyebrow: 'PC-83K · Verifiable logic puzzles', title: 'Can you solve today<span class="cute-apostrophe">’</span>s <span class="accent">logic puzzle</span>?', lede: 'No formulas to memorize—use constraints, elimination, and reasoning. Solve one fixed daily puzzle or clear both Normal and Hard stages.',
+            dailyTab: 'Daily Puzzle', challengeTab: 'Puzzle Challenge', statsTab: 'My Stats', testTab: 'Daily Math Test', dailyTitle: 'Daily Puzzle', dailyCopy: 'The same date and difficulty always produce the same puzzle.',
+            streakBefore: 'Correct streak', streakAfter: 'days', chooseLevel: 'Choose challenge difficulty', normal: 'Normal', hard: 'Hard', languageLabel: 'Puzzle language', enterAnswer: 'Enter your answer', submit: 'Submit', doneNote: 'You have answered this difficulty today. A new puzzle arrives tomorrow.',
+            challengeTitle: 'Puzzle Challenge', challengeCopy: 'Five puzzles per stage. Score at least 4 to advance to Hard.', normalDesc: 'Constraint reasoning', hardDesc: 'Complex constraints', start: 'Start challenge', next: 'Next puzzle', retry: 'Try again', copy: 'Copy result',
+            statsTitle: 'My Stats', statsCopy: 'Your progress stays in this browser and resets if browser data is cleared.', statStreak: 'Correct streak', statBest: 'Highest stage', statTotal: 'Total answered', statAccuracy: 'Accuracy', select: 'Choose', groundTruth: 'PC-83K ground-truth solution', correct: '✓ Correct! Your reasoning holds.', wrong: 'That does not match the answer. Check the constraints once more.',
+            levelSuffix: ' stage', questionProgress: 'Puzzle {n} / 5', correctShort: '✓ Correct.', wrongShort: '✗ That does not match.', copied: 'Copied', copyFailed: 'Copy failed',
+            qChoice: 'Multiple choice', qShort: 'Short answer', qBlank: 'Fill in the blank', difficulty: 'Difficulty', localSource: 'Using the local cache · {n} puzzles', remoteSource: 'Online bank updated · offline cache is ready', hardCleared: 'You cleared the Hard logic stage!', normalCleared: 'Normal stage cleared!', stageAlmost: 'Almost through the {level} stage', resultCount: '{n} correct in this run.',
+            aboutTitle: 'How it works', aboutCopy: 'Problems and ground-truth solutions come from <a href="https://github.com/puzzleclone/PuzzleCloneData" target="_blank" rel="noopener noreferrer">PuzzleCloneData (PC-83K)</a>. This site selects image-free single-query puzzles suitable for browser play. English is a machine translation paired with each original Chinese item. Answers and stats stay local. This page is independently made by j4fun and is not affiliated with, partnered with, or endorsed by the dataset authors or maintainers.', aboutDailyTitle: 'Daily puzzle', aboutDailyCopy: 'Normal and Hard each have one daily puzzle. Date and difficulty determine the item; switching language never changes it.', aboutChallengeTitle: 'Puzzle challenge', aboutChallengeCopy: 'Start with five Normal puzzles and score four to reach Hard. Click multiple-choice answers or follow the requested format for short answers.', aboutDataTitle: 'Data and license', aboutDataCopy: 'The 320-item local cache comes from PuzzleCloneData’s publicly released Normal and Hard validation sets and covers 72 seed puzzles. The source project uses the <a href="https://github.com/puzzleclone/PuzzleCloneData/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0 License</a>.'
+          }
+        };
+        var problems = [];
+        var byLevel = { normal: [], hard: [] };
+        var selectedLevel = 'normal';
+        var dailyProblem = null;
+        var challenge = null;
+        var state = loadState();
+        var language = state.language === 'en' ? 'en' : 'zh';
+
+        function loadState() {
+          try {
+            return Object.assign({ streak: 0, lastCorrectDate: null, history: {}, totalAnswered: 0, totalCorrect: 0, bestLevel: '', selectedLevel: 'normal', language: 'zh' }, JSON.parse(localStorage.getItem(STORE_KEY) || '{}'));
+          } catch (error) { return { streak: 0, history: {}, totalAnswered: 0, totalCorrect: 0, bestLevel: '', selectedLevel: 'normal' }; }
+        }
+        function saveState() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (error) { /* Storage may be unavailable. */ } }
+        function dateKey(date) { return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0'); }
+        function historyKey(date, level) { return dateKey(date) + '-' + level; }
+        function hash(text) { var value = 2166136261; for (var i = 0; i < text.length; i++) { value ^= text.charCodeAt(i); value = Math.imul(value, 16777619); } return value >>> 0; }
+        function seededSample(items, seed, count) {
+          var result = items.slice(); var value = hash(seed);
+          for (var i = result.length - 1; i > 0; i--) { value = (Math.imul(value, 1664525) + 1013904223) >>> 0; var j = value % (i + 1); var tmp = result[i]; result[i] = result[j]; result[j] = tmp; }
+          return result.slice(0, count);
+        }
+        function t(key, values) { var text = I18N[language][key] || key; Object.keys(values || {}).forEach(function (name) { text = text.replace('{' + name + '}', values[name]); }); return text; }
+        function localizedProblem(problem) { return problem.content ? problem.content[language] : problem.problem; }
+        function localizedAnswer(problem) { return problem.answers ? problem.answers[language] : problem.answer; }
+        function levelName(level) { return LEVEL_NAMES[level][language]; }
+        function isChoice(problem) { return problem.qtype === '单选题' && /^[A-F]$/i.test(problem.answer); }
+        function optionLetters(problem) {
+          var matches = localizedProblem(problem).match(/(?:^|\n)\s*([A-F])[\.、．]/g) || [];
+          var count = Math.max(2, Math.min(6, matches.length || 4));
+          return ['A', 'B', 'C', 'D', 'E', 'F'].slice(0, count);
+        }
+        function normalize(value, evalType) {
+          var text = String(value || '').trim().replace(/[“”"']/g, '').replace(/====/g, ',').replace(/[，；;]/g, ',').replace(/\s+/g, '').toLowerCase();
+          if (evalType === 'numeral') {
+            var number = Number(text.replace(/%$/, ''));
+            if (Number.isFinite(number)) return String(number) + (text.endsWith('%') ? '%' : '');
+          }
+          if (evalType === 'unordered array') return text.replace(/[\[\](){}]/g, '').split(',').filter(Boolean).sort().join(',');
+          return text.replace(/[\[\](){}]/g, '');
+        }
+        function correctAnswer(problem, answer) { return normalize(answer, problem.evalType) === normalize(localizedAnswer(problem), problem.evalType); }
+        function setDataset(payload) {
+          problems = payload.problems || [];
+          byLevel = { normal: [], hard: [] };
+          problems.forEach(function (problem) { if (byLevel[problem.level]) byLevel[problem.level].push(problem); });
+        }
+        function setSourceStatus(text, error) { var node = document.getElementById('puzzleSourceStatus'); node.textContent = text; node.classList.toggle('error', Boolean(error)); }
+        function applyLanguage() {
+          document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+          document.querySelectorAll('[data-i18n]').forEach(function (node) { var value = I18N[language][node.dataset.i18n]; if (value) node.innerHTML = value; });
+          document.querySelectorAll('[data-language]').forEach(function (button) { var active = button.dataset.language === language; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+          if (problems.length) {
+            renderDaily();
+            setSourceStatus(t('localSource', { n: problems.length }), false);
+            if (challenge && !document.getElementById('challengePlay').hidden) {
+              renderChallenge();
+              if (challenge.currentAnswer !== undefined) showChallengeAnswer(challenge.currentAnswer, challenge.currentCorrect);
+            }
+            if (!document.getElementById('panel-stats').hidden) renderStats();
+          }
+        }
+        async function fetchData(url) { var response = await fetch(url, { cache: 'no-cache' }); if (!response.ok) throw new Error('HTTP ' + response.status); var data = await response.json(); if (!data.problems || data.problems.length < 100) throw new Error('invalid data'); return data; }
+
+        function renderAnswerControl(problem, prefix, onAnswer, locked) {
+          var choices = document.getElementById(prefix + 'Choices');
+          var form = document.getElementById(prefix + 'AnswerForm');
+          choices.textContent = '';
+          form.hidden = isChoice(problem);
+          if (isChoice(problem)) {
+            optionLetters(problem).forEach(function (letter) {
+              var button = document.createElement('button'); button.type = 'button'; button.disabled = locked;
+              var badge = document.createElement('span'); badge.className = 'letter'; badge.textContent = letter;
+              var copy = document.createElement('span'); copy.textContent = t('select') + ' ' + letter;
+              button.append(badge, copy); button.addEventListener('click', function () { onAnswer(letter, button); }); choices.appendChild(button);
+            });
+          } else {
+            var input = form.querySelector('input'); input.value = ''; input.disabled = locked; form.querySelector('button').disabled = locked;
+            form.onsubmit = function (event) { event.preventDefault(); if (!input.value.trim()) { input.focus(); return; } onAnswer(input.value); };
+          }
+        }
+        function markChoice(prefix, problem, answer) {
+          if (!isChoice(problem)) return;
+          document.querySelectorAll('#' + prefix + 'Choices button').forEach(function (button) {
+            button.disabled = true;
+            var letter = button.querySelector('.letter').textContent;
+            if (letter === problem.answer.toUpperCase()) button.classList.add('correct');
+            if (letter === String(answer).toUpperCase() && letter !== problem.answer.toUpperCase()) button.classList.add('wrong');
+          });
+        }
+        function metaText(problem) {
+          var qtype = problem.qtype === '单选题' ? t('qChoice') : problem.qtype === '填空题' ? t('qBlank') : t('qShort');
+          return levelName(problem.level) + ' · ' + qtype + ' · ' + t('difficulty') + ' ' + Number(problem.difficulty).toFixed(3);
+        }
+
+        function renderDaily() {
+          var today = new Date(); var pool = byLevel[selectedLevel]; if (!pool.length) return;
+          dailyProblem = pool[hash(dateKey(today) + ':' + selectedLevel) % pool.length];
+          var key = historyKey(today, selectedLevel); var saved = state.history[key];
+          var dateFormatter = new Intl.DateTimeFormat(language === 'zh' ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric' });
+          var englishMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          var month = language === 'en' ? englishMonths[today.getMonth()] : String(today.getMonth() + 1) + '月';
+          var day = String(today.getDate());
+          var dateNode = document.getElementById('dailyDate');
+          dateNode.dateTime = dateKey(today);
+          dateNode.setAttribute('aria-label', dateFormatter.format(today));
+          dateNode.querySelector('.puzzle-date-month').textContent = month;
+          dateNode.querySelector('.puzzle-date-day').textContent = day;
+          document.getElementById('dailyStreak').textContent = state.streak;
+          document.getElementById('dailyMeta').textContent = metaText(dailyProblem);
+          document.getElementById('dailyQuestion').textContent = localizedProblem(dailyProblem);
+          document.getElementById('dailyExplain').className = 'explain-box';
+          document.getElementById('dailyResult').textContent = '';
+          document.getElementById('dailyDoneNote').hidden = saved === undefined;
+          renderAnswerControl(dailyProblem, 'daily', answerDaily, saved !== undefined);
+          if (saved !== undefined) showDailyResult(saved.answer, saved.correct);
+          renderWeekStrip('weekStrip', selectedLevel);
+        }
+        function answerDaily(answer) {
+          var today = new Date(); var key = historyKey(today, selectedLevel); if (state.history[key] !== undefined) return;
+          var correct = correctAnswer(dailyProblem, answer);
+          state.history[key] = { correct: correct, answer: String(answer) };
+          state.totalAnswered++; if (correct) state.totalCorrect++;
+          if (correct) {
+            var yesterday = new Date(today); yesterday.setDate(yesterday.getDate() - 1);
+            state.streak = state.lastCorrectDate === dateKey(yesterday) ? state.streak + 1 : state.lastCorrectDate === dateKey(today) ? state.streak : 1;
+            state.lastCorrectDate = dateKey(today);
+          } else { state.streak = 0; }
+          saveState(); showDailyResult(answer, correct); renderWeekStrip('weekStrip', selectedLevel);
+        }
+        function showDailyResult(answer, correct) {
+          markChoice('daily', dailyProblem, answer);
+          document.getElementById('dailyAnswerForm').querySelector('input').disabled = true;
+          document.getElementById('dailyAnswerForm').querySelector('button').disabled = true;
+          var explain = document.getElementById('dailyExplain'); explain.className = 'explain-box show'; explain.textContent = t('groundTruth') + '：' + localizedAnswer(dailyProblem);
+          document.getElementById('dailyResult').textContent = t(correct ? 'correct' : 'wrong');
+          document.getElementById('dailyDoneNote').hidden = false; document.getElementById('dailyStreak').textContent = state.streak;
+        }
+        function renderWeekStrip(id, level) {
+          var node = document.getElementById(id); node.textContent = ''; var today = new Date();
+          for (var i = 6; i >= 0; i--) {
+            var day = new Date(today); day.setDate(day.getDate() - i); var saved;
+            if (level) saved = state.history[historyKey(day, level)];
+            else saved = state.history[historyKey(day, 'normal')] || state.history[historyKey(day, 'hard')];
+            var cell = document.createElement('div'); cell.className = 'week-cell' + (saved && saved.correct ? ' ok' : saved ? ' bad' : '') + (i === 0 ? ' today' : '');
+            cell.textContent = saved ? (saved.correct ? '✓' : '✗') : (day.getMonth() + 1) + '/' + day.getDate(); node.appendChild(cell);
+          }
+        }
+
+        function startChallenge() {
+          challenge = { levelIndex: 0, questionIndex: 0, correct: 0, levelCorrect: 0, results: [], questions: seededSample(byLevel.normal, Date.now() + ':normal', 5) };
+          document.getElementById('challengeIntro').hidden = true; document.getElementById('challengeDone').hidden = true; document.getElementById('challengePlay').hidden = false; renderChallenge();
+        }
+        function renderChallenge() {
+          var problem = challenge.questions[challenge.questionIndex]; var level = LEVEL_ORDER[challenge.levelIndex];
+          document.getElementById('challengeLevel').textContent = levelName(level) + t('levelSuffix');
+          document.getElementById('challengeProgress').textContent = t('questionProgress', { n: challenge.questionIndex + 1 });
+          document.getElementById('challengeProgressBar').style.width = ((challenge.questionIndex + 1) * 20) + '%';
+          document.getElementById('challengeMeta').textContent = metaText(problem); document.getElementById('challengeQuestion').textContent = localizedProblem(problem);
+          document.getElementById('challengeExplain').className = 'explain-box'; document.getElementById('challengeNext').hidden = true;
+          renderAnswerControl(problem, 'challenge', answerChallenge, false);
+        }
+        function answerChallenge(answer) {
+          var problem = challenge.questions[challenge.questionIndex]; var correct = correctAnswer(problem, answer);
+          if (correct) { challenge.correct++; challenge.levelCorrect++; }
+          challenge.results.push(correct); challenge.currentAnswer = String(answer); challenge.currentCorrect = correct; state.totalAnswered++; if (correct) state.totalCorrect++; saveState(); showChallengeAnswer(answer, correct);
+        }
+        function showChallengeAnswer(answer, correct) {
+          var problem = challenge.questions[challenge.questionIndex]; markChoice('challenge', problem, answer);
+          document.getElementById('challengeAnswerForm').querySelector('input').disabled = true; document.getElementById('challengeAnswerForm').querySelector('button').disabled = true;
+          var explain = document.getElementById('challengeExplain'); explain.className = 'explain-box show'; explain.textContent = t(correct ? 'correctShort' : 'wrongShort') + ' ' + t('groundTruth') + '：' + localizedAnswer(problem);
+          document.getElementById('challengeNext').hidden = false;
+        }
+        function nextChallenge() {
+          challenge.questionIndex++; delete challenge.currentAnswer; delete challenge.currentCorrect;
+          if (challenge.questionIndex < 5) { renderChallenge(); return; }
+          var passed = challenge.levelCorrect >= 4; var level = LEVEL_ORDER[challenge.levelIndex];
+          if (passed) { state.bestLevel = level; saveState(); }
+          if (passed && level === 'normal') {
+            challenge.levelIndex = 1; challenge.questionIndex = 0; challenge.levelCorrect = 0; challenge.questions = seededSample(byLevel.hard, Date.now() + ':hard', 5); renderChallenge(); return;
+          }
+          finishChallenge(passed, level);
+        }
+        function finishChallenge(passed, level) {
+          document.getElementById('challengePlay').hidden = true; document.getElementById('challengeDone').hidden = false;
+          document.getElementById('challengeHeadline').textContent = passed && level === 'hard' ? t('hardCleared') : passed ? t('normalCleared') : t('stageAlmost', { level: levelName(level) });
+          document.getElementById('challengeSub').textContent = t('resultCount', { n: challenge.correct });
+        }
+        function renderStats() {
+          document.getElementById('statStreak').textContent = state.streak; document.getElementById('statBest').textContent = state.bestLevel ? levelName(state.bestLevel) : '—';
+          document.getElementById('statTotal').textContent = state.totalAnswered; document.getElementById('statAccuracy').textContent = state.totalAnswered ? Math.round(state.totalCorrect / state.totalAnswered * 100) + '%' : '—'; renderWeekStrip('statsWeekStrip');
+        }
+
+        document.getElementById('modeTabs').addEventListener('click', function (event) {
+          var button = event.target.closest('button[data-mode]'); if (!button) return;
+          ['daily', 'challenge', 'stats'].forEach(function (mode) { document.getElementById('panel-' + mode).hidden = button.dataset.mode !== mode; });
+          document.querySelectorAll('#modeTabs button').forEach(function (item) { var active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-selected', String(active)); });
+          if (button.dataset.mode === 'stats') renderStats();
+        });
+        document.getElementById('dailyLevelPicker').addEventListener('click', function (event) {
+          var button = event.target.closest('[data-level]'); if (!button) return; selectedLevel = button.dataset.level; state.selectedLevel = selectedLevel; saveState();
+          document.querySelectorAll('[data-level]').forEach(function (item) { var active = item.dataset.level === selectedLevel; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); }); renderDaily();
+        });
+        document.querySelectorAll('[data-language]').forEach(function (button) {
+          button.addEventListener('click', function () { language = button.dataset.language; state.language = language; saveState(); applyLanguage(); });
+        });
+        document.getElementById('challengeStart').addEventListener('click', startChallenge); document.getElementById('challengeRetry').addEventListener('click', startChallenge); document.getElementById('challengeNext').addEventListener('click', nextChallenge);
+        document.getElementById('challengeCopy').addEventListener('click', function () {
+          var text = language === 'zh' ? 'PC-83K 逻辑闯关：答对 ' + challenge.correct + ' 题 · j4fun' : 'PC-83K Puzzle Challenge: ' + challenge.correct + ' correct · j4fun';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { document.getElementById('challengeCopy').textContent = t('copied'); }).catch(function () { document.getElementById('challengeCopy').textContent = t('copyFailed'); });
+          } else { document.getElementById('challengeCopy').textContent = t('copyFailed'); }
+        });
+
+        var SYMBOLS = ['?', '∴', '→', '≠', '∑', '◇'];
+        function spawnSymbol() { var node = document.createElement('span'); node.className = 'numeral'; node.textContent = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)]; node.style.left = Math.random() * 100 + 'vw'; node.style.animationDuration = (8 + Math.random() * 6) + 's'; document.getElementById('numbers').appendChild(node); setTimeout(function () { node.remove(); }, 14500); }
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(spawnSymbol, 1800);
+
+        async function init() {
+          var payload;
+          try { payload = await fetchData(LOCAL_DATA_URL); }
+          catch (error) { try { payload = JSON.parse(localStorage.getItem(DATA_CACHE_KEY) || 'null'); } catch (ignored) { /* Ignore. */ } }
+          if (!payload) { setSourceStatus('本地题库载入失败，请刷新页面重试。', true); return; }
+          setDataset(payload); selectedLevel = byLevel[state.selectedLevel] && byLevel[state.selectedLevel].length ? state.selectedLevel : 'normal';
+          document.querySelectorAll('[data-level]').forEach(function (item) { var active = item.dataset.level === selectedLevel; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
+          renderDaily(); setSourceStatus(t('localSource', { n: problems.length }), false);
+          try { var remote = await fetchData(REMOTE_DATA_URL); setDataset(remote); localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(remote)); renderDaily(); setSourceStatus(t('remoteSource'), false); }
+          catch (error) { /* Bundled cache remains active. */ }
+        }
+        applyLanguage(); init();
+      })();
+    </script>
+  </body>
+</html>

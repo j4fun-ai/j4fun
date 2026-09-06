@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小学数学挑战 · j4fun</title>
+    <meta
+      name="description"
+      content="今日小学数学题、闯关挑战 —— 题目来自公开的 CMATH 中文小学数学数据集，看看你能通过几年级。"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/main.css?v=20260906j" />
+    <script src="assets/site-nav.js?v=20260906" defer></script>
+  </head>
+  <body class="page-math page-math-cn">
+    <div id="numbers" aria-hidden="true"></div>
+
+    <header class="site">
+      <div class="wrap topbar">
+        <a class="brand" href="index.html" aria-label="j4fun 首页">
+          <img
+            class="brand-logo"
+            src="assets/images/logo.png?083026"
+            alt="j4fun"
+          />
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span>菜单</span
+          ><span class="menu-icon" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
+        <nav class="top-links" id="site-navigation" aria-label="主导航">
+          <a href="fun.html">中文小玩意</a>
+          <a href="games.html">随手玩</a>
+          <a href="quiz.html" aria-current="page">知识挑战</a>
+          <a href="about.html">关于</a>
+          <a class="related-project" href="shiben/"
+            ><img
+              src="shiben/images/huawen-textbook-mark.svg"
+              alt=""
+              aria-hidden="true"
+            />识本</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero wrap">
+      <p class="eyebrow">One Question a Day. Six Grades to Conquer.</p>
+      <h1>今天，你能通过<span class="accent">几年级</span>数学？</h1>
+      <p class="lede">
+        每天一道题，看看能不能保持连胜；也可以直接挑战「数学闯关」，从一年级一路答到六年级，测测自己的真实水平。
+      </p>
+    </section>
+
+    <div class="wrap">
+      <div class="mode-tabs" id="modeTabs">
+        <button class="mode-tab active" data-mode="daily">今日一题</button>
+        <button class="mode-tab" data-mode="challenge">数学闯关</button>
+        <button class="mode-tab" data-mode="stats">我的战绩</button>
+      </div>
+    </div>
+
+    <main class="wrap">
+      <!-- 今日一题 -->
+      <section class="panel" id="panel-daily">
+        <div class="panel-head">
+          <h2>今日一题</h2>
+          <p>
+            每天固定一道题，全世界玩家看到的都是同一题，答对了就接着攒连胜吧。
+          </p>
+        </div>
+
+        <div class="daily-meta">
+          <span id="dailyDate" class="grade-tag"></span>
+          <span class="streak-pill">连续答对 <b id="dailyStreak">0</b> 天</span>
+        </div>
+
+        <fieldset class="grade-picker" id="dailyGradePicker">
+          <legend>选择今天的难度</legend>
+          <div class="grade-picker-options"></div>
+        </fieldset>
+        <p class="math-source-status" id="mathSourceStatus" aria-live="polite">
+          正在载入本地题库…
+        </p>
+
+        <div class="math-card">
+          <div class="math-question" id="dailyQuestion"></div>
+          <a class="ai-translate-link" id="dailyTranslate" target="_blank" rel="noopener noreferrer">用 AI 翻译成英文 ↗</a>
+          <div class="choice-list" id="dailyChoices"></div>
+          <div class="explain-box" id="dailyExplain"></div>
+          <div class="result-banner" id="dailyResult"></div>
+          <div class="done-note" id="dailyDoneNote" hidden>
+            今天已经挑战过啦，明天再来一题～
+          </div>
+        </div>
+
+        <div class="week-strip" id="weekStrip"></div>
+      </section>
+
+      <!-- 数学闯关 -->
+      <section class="panel" id="panel-challenge" hidden>
+        <div class="panel-head">
+          <h2>数学闯关</h2>
+          <p>
+            从一年级开始，每个年级 5 道题，答对 4
+            题及以上才能升到下一年级，看看你能闯到第几关。
+          </p>
+        </div>
+
+        <div id="challengeIntro">
+          <div class="ladder" id="challengeLadderIntro"></div>
+          <div class="btn-row">
+            <button id="challengeStart">开始闯关</button>
+          </div>
+        </div>
+
+        <div id="challengeRun" hidden>
+          <div class="ladder" id="challengeLadder"></div>
+          <div class="progress-row" id="challengeProgress"></div>
+          <div class="math-card">
+            <div class="math-question" id="challengeQuestion"></div>
+            <a class="ai-translate-link" id="challengeTranslate" target="_blank" rel="noopener noreferrer">用 AI 翻译成英文 ↗</a>
+            <div class="choice-list" id="challengeChoices"></div>
+            <div class="explain-box" id="challengeExplain"></div>
+          </div>
+        </div>
+
+        <div id="challengeDone" hidden>
+          <div class="big-result">
+            <div class="headline" id="challengeHeadline"></div>
+            <div class="sub" id="challengeSub"></div>
+            <div class="btn-row">
+              <button id="challengeRetry">再挑战一次</button>
+              <button class="secondary" id="challengeCopy">复制结果</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 我的战绩 -->
+      <section class="panel" id="panel-stats" hidden>
+        <div class="panel-head">
+          <h2>我的战绩</h2>
+          <p>所有数据保存在当前浏览器，清除浏览器数据后会重置。</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="num" id="statStreak">0</div>
+            <div class="label">连续答对天数</div>
+          </div>
+          <div class="stat-card">
+            <div class="num" id="statBestGrade">—</div>
+            <div class="label">闯关最高水平</div>
+          </div>
+          <div class="stat-card">
+            <div class="num" id="statTotal">0</div>
+            <div class="label">累计答题数</div>
+          </div>
+          <div class="stat-card">
+            <div class="num" id="statAccuracy">—</div>
+            <div class="label">总正确率</div>
+          </div>
+        </div>
+        <div class="week-strip" id="statsWeekStrip"></div>
+      </section>
+    </main>
+
+    <section class="about wrap" id="details">
+      <h2>玩法说明</h2>
+      <p>
+        题目与标准答案来自小米开源的
+        <a href="https://github.com/XiaoMi/cmath" target="_blank" rel="noopener noreferrer">CMATH 中文小学数学数据集</a>。选择年级时页面会从 GitHub 获取该年级的最新题目；网络不可用时使用站内附带的本地缓存。选择项生成、判题和战绩记录均在浏览器本地完成，不上传答题内容。本页面由 j4fun 独立制作，与 CMATH 作者或维护者没有隶属、合作或认可关系。
+      </p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>今日一题怎么玩</h3>
+          <p>
+            每天的题目按日期固定，答对可以累计连胜天数，答错也没关系，明天会换新题。
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>数学闯关怎么玩</h3>
+          <p>
+            从一年级开始，每关 5 题，答对 4
+            题以上才能进入下一年级，全部通过就是「小学数学满分水平」。
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>数据范围</h3>
+          <p>
+            本地缓存包含 CMATH 开放的 600 道题，一到六年级各 100 道。可在
+            <a href="https://github.com/XiaoMi/cmath/blob/main/datasets/cmath_dev.jsonl" target="_blank" rel="noopener noreferrer">GitHub 查看原始题库</a>。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap">
+      <div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
+
+    <script>
+      (function () {
+        var GRADE_NAMES = { 1: '一年级', 2: '二年级', 3: '三年级', 4: '四年级', 5: '五年级', 6: '六年级' };
+        var LETTERS = ['A', 'B', 'C', 'D'];
+        var STORE_KEY = 'j4fun-math-daily-v2';
+        var DATA_CACHE_KEY = 'j4fun-cmath-dataset-v1';
+        var problems = [];
+        var byGrade = {};
+        var datasetRows = [];
+        var selectedDailyGrade = 3;
+
+        var state = loadState();
+
+        function loadState() {
+          try {
+            var saved = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+            return Object.assign(
+              {
+                streak: 0,
+                lastCorrectDate: null,
+                history: {}, // dateKey + grade -> true/false
+                totalAnswered: 0,
+                totalCorrect: 0,
+                bestChallengeGrade: 0,
+                selectedDailyGrade: 3
+              },
+              saved
+            );
+          } catch (error) {
+            console.error(error);
+            return { streak: 0, lastCorrectDate: null, history: {}, totalAnswered: 0, totalCorrect: 0, bestChallengeGrade: 0 };
+          }
+        }
+        function saveState() {
+          try {
+            localStorage.setItem(STORE_KEY, JSON.stringify(state));
+            return true;
+          } catch (error) {
+            console.error(error);
+            return false;
+          }
+        }
+
+        function dateKey(d) {
+          return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        }
+        function daysSinceEpoch(d) {
+          return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+        }
+        function dailyHistoryKey(date, grade) {
+          return dateKey(date) + '-g' + grade;
+        }
+        function escapeHtml(text) {
+          return String(text).replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+          });
+        }
+        function randChoice(arr) {
+          return arr[Math.floor(Math.random() * arr.length)];
+        }
+        function shuffledIndexes(n) {
+          var arr = [];
+          for (var i = 0; i < n; i++) arr.push(i);
+          for (var i = arr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+          }
+          return arr;
+        }
+
+        function seededShuffle(values, seedText) {
+          var arr = values.slice();
+          var seed = 0;
+          for (var i = 0; i < seedText.length; i++) seed = (seed * 31 + seedText.charCodeAt(i)) >>> 0;
+          for (var j = arr.length - 1; j > 0; j--) {
+            seed = (seed * 1664525 + 1013904223) >>> 0;
+            var k = seed % (j + 1);
+            var temp = arr[j]; arr[j] = arr[k]; arr[k] = temp;
+          }
+          return arr;
+        }
+
+        function makeChoices(answer, seedText) {
+          var text = String(answer);
+          var candidates = [text];
+          if (text.indexOf('/') !== -1) {
+            var fraction = text.split('/').map(Number);
+            candidates.push((fraction[0] + 1) + '/' + fraction[1]);
+            candidates.push(Math.max(0, fraction[0] - 1) + '/' + fraction[1]);
+            candidates.push((fraction[0] + 2) + '/' + fraction[1]);
+          } else {
+            var isPercent = text.endsWith('%');
+            var numeric = Number(isPercent ? text.slice(0, -1) : text);
+            var decimals = (text.split('.')[1] || '').replace('%', '').length;
+            var step = isPercent ? 5 : numeric >= 1000 ? 100 : numeric >= 100 ? 10 : 1;
+            function format(value) {
+              var formatted = decimals ? value.toFixed(decimals) : String(Math.round(value));
+              return formatted + (isPercent ? '%' : '');
+            }
+            candidates.push(format(numeric + step));
+            candidates.push(format(Math.max(0, numeric - step)));
+            candidates.push(format(numeric + step * 2));
+          }
+          var unique = [];
+          candidates.forEach(function (choice) {
+            if (unique.indexOf(choice) === -1) unique.push(choice);
+          });
+          while (unique.length < 4) {
+            if (text.indexOf('/') !== -1) {
+              var parts = text.split('/').map(Number);
+              unique.push((parts[0] + unique.length + 1) + '/' + parts[1]);
+            } else {
+              unique.push(String(Number(text.replace('%', '')) + unique.length) + (text.endsWith('%') ? '%' : ''));
+            }
+          }
+          var shuffled = seededShuffle(unique.slice(0, 4), seedText + text);
+          return { choices: shuffled, answer: shuffled.indexOf(text) };
+        }
+
+        function normalizeDataset(rows) {
+          return rows.map(function (row) {
+            var generated = makeChoices(row.golden, row.input);
+            return {
+              grade: Number(row.grade),
+              q: row.input,
+              choices: generated.choices,
+              answer: generated.answer,
+              explain: 'CMATH 标准答案：' + row.golden + '。'
+            };
+          });
+        }
+
+        function setDataset(rows) {
+          datasetRows = rows;
+          problems = normalizeDataset(rows);
+          byGrade = {};
+          problems.forEach(function (p) {
+            (byGrade[p.grade] = byGrade[p.grade] || []).push(p);
+          });
+        }
+
+        /* falling numerals background */
+        var NUM_CHARS = ['+', '−', '×', '÷', '=', '%'];
+        function spawnNumeral() {
+          var el = document.createElement('span');
+          el.className = 'numeral';
+          el.textContent = randChoice(NUM_CHARS);
+          el.style.left = Math.random() * 100 + 'vw';
+          el.style.fontSize = 14 + Math.random() * 16 + 'px';
+          el.style.color = Math.random() > 0.5 ? 'rgba(227,178,60,0.55)' : 'rgba(214,68,79,0.4)';
+          var dur = 7 + Math.random() * 6;
+          el.style.animationDuration = dur + 's';
+          document.getElementById('numbers').appendChild(el);
+          setTimeout(function () { el.remove(); }, dur * 1000 + 200);
+        }
+        setInterval(spawnNumeral, 1500);
+        for (var i = 0; i < 4; i++) setTimeout(spawnNumeral, i * 400);
+
+        /* ---------- mode switching ---------- */
+        var modes = ['daily', 'challenge', 'stats'];
+        document.getElementById('modeTabs').addEventListener('click', function (e) {
+          var btn = e.target.closest('.mode-tab');
+          if (!btn) return;
+          var mode = btn.dataset.mode;
+          modes.forEach(function (m) {
+            document.getElementById('panel-' + m).hidden = m !== mode;
+          });
+          document.querySelectorAll('.mode-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+          if (mode === 'stats') renderStats();
+        });
+
+        /* ---------- week strip (shared render) ---------- */
+        function renderWeekStrip(elId, grade) {
+          var el = document.getElementById(elId);
+          el.innerHTML = '';
+          var today = new Date();
+          for (var i = 6; i >= 0; i--) {
+            var d = new Date(today);
+            d.setDate(d.getDate() - i);
+            var key = grade ? dailyHistoryKey(d, grade) : dateKey(d);
+            var status = state.history[key];
+            if (!grade && status === undefined) {
+              var dayStatuses = Object.keys(GRADE_NAMES).map(function (g) {
+                return state.history[dailyHistoryKey(d, Number(g))];
+              });
+              if (dayStatuses.indexOf(true) !== -1) status = true;
+              else if (dayStatuses.indexOf(false) !== -1) status = false;
+            }
+            var cell = document.createElement('div');
+            cell.className = 'week-cell' + (status === true ? ' ok' : status === false ? ' bad' : '') + (i === 0 ? ' today' : '');
+            cell.textContent = status === true ? '✓' : status === false ? '✗' : (d.getMonth() + 1) + '/' + d.getDate();
+            cell.title = key;
+            el.appendChild(cell);
+          }
+        }
+
+        /* ---------- 今日一题 ---------- */
+        function aiTranslationUrl(question) {
+          var prompt = '请把下面这道中文数学题准确翻译成自然的英文。保留所有数字、单位、数学符号和条件，只输出英文题目；不要解题、提示解法或透露答案。\n\n' + question;
+          return 'https://www.google.com/search?udm=50&q=' + encodeURIComponent(prompt);
+        }
+
+        function renderDaily() {
+          var today = new Date();
+          var key = dailyHistoryKey(today, selectedDailyGrade);
+          var pool = byGrade[selectedDailyGrade] || [];
+          var idx = daysSinceEpoch(today) % pool.length;
+          var p = pool[idx];
+
+          document.getElementById('dailyDate').textContent = (today.getMonth() + 1) + '月' + today.getDate() + '日';
+          document.getElementById('dailyStreak').textContent = state.streak;
+          document.getElementById('dailyQuestion').textContent = p.q;
+          document.getElementById('dailyTranslate').href = aiTranslationUrl(p.q);
+          document.getElementById('dailyExplain').className = 'explain-box';
+          document.getElementById('dailyExplain').textContent = '';
+          document.getElementById('dailyResult').textContent = '';
+
+          var choicesEl = document.getElementById('dailyChoices');
+          choicesEl.innerHTML = '';
+          var alreadyAnswered = key in state.history;
+
+          p.choices.forEach(function (choiceText, i) {
+            var btn = document.createElement('button');
+            btn.className = 'choice-btn';
+            btn.innerHTML = '<span class="letter">' + LETTERS[i] + '</span><span>' + escapeHtml(choiceText) + '</span>';
+            btn.disabled = alreadyAnswered;
+            btn.addEventListener('click', function () {
+              answerDaily(p, i, key);
+            });
+            choicesEl.appendChild(btn);
+          });
+
+          document.getElementById('dailyDoneNote').hidden = !alreadyAnswered;
+          if (alreadyAnswered) {
+            markChoiceStates(choicesEl, p.answer, null);
+            document.getElementById('dailyExplain').className = 'explain-box show';
+            document.getElementById('dailyExplain').textContent = p.explain;
+            document.getElementById('dailyResult').textContent = state.history[key]
+              ? '✓ 今天答对了，你达到了 ' + GRADE_NAMES[p.grade] + ' 水平！'
+              : '今天差一点点，明天再战！';
+          }
+
+          renderWeekStrip('weekStrip', selectedDailyGrade);
+        }
+
+        function markChoiceStates(container, correctIdx, pickedIdx) {
+          var buttons = container.querySelectorAll('.choice-btn');
+          buttons.forEach(function (btn, i) {
+            btn.disabled = true;
+            if (i === correctIdx) btn.classList.add('correct');
+            else if (i === pickedIdx) btn.classList.add('wrong');
+          });
+        }
+
+        function answerDaily(p, pickedIdx, key) {
+          if (key in state.history) return;
+          var correct = pickedIdx === p.answer;
+          state.history[key] = correct;
+          state.totalAnswered++;
+          if (correct) {
+            state.totalCorrect++;
+            // streak logic: check if yesterday was also correct (or no prior streak)
+            var y = new Date();
+            y.setDate(y.getDate() - 1);
+            var yKey = dailyHistoryKey(y, selectedDailyGrade);
+            state.streak = state.history[yKey] === true ? state.streak + 1 : 1;
+            state.lastCorrectDate = key;
+          } else {
+            state.streak = 0;
+          }
+          saveState();
+
+          var choicesEl = document.getElementById('dailyChoices');
+          markChoiceStates(choicesEl, p.answer, pickedIdx);
+          document.getElementById('dailyExplain').className = 'explain-box show';
+          document.getElementById('dailyExplain').textContent = p.explain;
+          document.getElementById('dailyStreak').textContent = state.streak;
+          document.getElementById('dailyResult').textContent = correct
+            ? '✓ 答对了！你达到了 ' + GRADE_NAMES[p.grade] + ' 水平 🎉'
+            : '✗ 差一点，正确答案是 ' + LETTERS[p.answer] + '。明天再来挑战！';
+          document.getElementById('dailyDoneNote').hidden = false;
+          renderWeekStrip('weekStrip', selectedDailyGrade);
+        }
+
+        function renderGradePicker() {
+          var container = document.querySelector('#dailyGradePicker .grade-picker-options');
+          container.innerHTML = '';
+          Object.keys(GRADE_NAMES).forEach(function (grade) {
+            var gradeNumber = Number(grade);
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'grade-option' + (gradeNumber === selectedDailyGrade ? ' active' : '');
+            btn.textContent = GRADE_NAMES[gradeNumber];
+            btn.setAttribute('aria-pressed', gradeNumber === selectedDailyGrade ? 'true' : 'false');
+            btn.addEventListener('click', function () {
+              selectedDailyGrade = gradeNumber;
+              state.selectedDailyGrade = gradeNumber;
+              saveState();
+              renderGradePicker();
+              renderDaily();
+              refreshGradeFromGithub(gradeNumber);
+            });
+            container.appendChild(btn);
+          });
+        }
+
+        /* ---------- 数学闯关 ---------- */
+        var challenge = null; // { gradeIdx, gradeList, questions, qi, correctCount, results }
+
+        function renderLadder(elId, currentGrade, resultsByGrade) {
+          var el = document.getElementById(elId);
+          el.innerHTML = '';
+          for (var g = 1; g <= 6; g++) {
+            var step = document.createElement('div');
+            var cls = 'ladder-step';
+            if (resultsByGrade && resultsByGrade[g] === true) cls += ' passed';
+            else if (resultsByGrade && resultsByGrade[g] === false) cls += ' failed';
+            else if (g === currentGrade) cls += ' current';
+            step.className = cls;
+            step.textContent = GRADE_NAMES[g];
+            el.appendChild(step);
+          }
+        }
+
+        function startChallenge() {
+          challenge = { grade: 1, results: {}, qi: 0, correctCount: 0, questions: [] };
+          document.getElementById('challengeIntro').hidden = true;
+          document.getElementById('challengeDone').hidden = true;
+          document.getElementById('challengeRun').hidden = false;
+          startChallengeGrade();
+        }
+
+        function startChallengeGrade() {
+          var pool = byGrade[challenge.grade] || [];
+          var order = shuffledIndexes(pool.length).slice(0, 5);
+          challenge.questions = order.map(function (i) { return pool[i]; });
+          challenge.qi = 0;
+          challenge.correctCount = 0;
+          renderLadder('challengeLadder', challenge.grade, challenge.results);
+          renderChallengeQuestion();
+        }
+
+        function renderProgress() {
+          var el = document.getElementById('challengeProgress');
+          el.innerHTML = '';
+          for (var i = 0; i < challenge.questions.length; i++) {
+            var dot = document.createElement('div');
+            var cls = 'progress-dot';
+            if (i < challenge.qi) cls += challenge.dotResults && challenge.dotResults[i] ? ' ok' : ' bad';
+            else if (i === challenge.qi) cls += ' filled';
+            dot.className = cls;
+            el.appendChild(dot);
+          }
+        }
+
+        function renderChallengeQuestion() {
+          challenge.dotResults = challenge.dotResults || [];
+          renderProgress();
+          var p = challenge.questions[challenge.qi];
+          document.getElementById('challengeQuestion').textContent = p.q;
+          document.getElementById('challengeTranslate').href = aiTranslationUrl(p.q);
+          document.getElementById('challengeExplain').className = 'explain-box';
+          document.getElementById('challengeExplain').textContent = '';
+          var choicesEl = document.getElementById('challengeChoices');
+          choicesEl.innerHTML = '';
+          p.choices.forEach(function (choiceText, i) {
+            var btn = document.createElement('button');
+            btn.className = 'choice-btn';
+            btn.innerHTML = '<span class="letter">' + LETTERS[i] + '</span><span>' + escapeHtml(choiceText) + '</span>';
+            btn.addEventListener('click', function () {
+              answerChallenge(p, i);
+            });
+            choicesEl.appendChild(btn);
+          });
+        }
+
+        function answerChallenge(p, pickedIdx) {
+          var correct = pickedIdx === p.answer;
+          if (correct) challenge.correctCount++;
+          challenge.dotResults[challenge.qi] = correct;
+          state.totalAnswered++;
+          if (correct) state.totalCorrect++;
+          saveState();
+
+          var choicesEl = document.getElementById('challengeChoices');
+          markChoiceStates(choicesEl, p.answer, pickedIdx);
+          document.getElementById('challengeExplain').className = 'explain-box show';
+          document.getElementById('challengeExplain').textContent = p.explain;
+
+          setTimeout(function () {
+            challenge.qi++;
+            if (challenge.qi < challenge.questions.length) {
+              renderChallengeQuestion();
+            } else {
+              finishChallengeGrade();
+            }
+          }, 900);
+        }
+
+        function finishChallengeGrade() {
+          var passed = challenge.correctCount >= 4;
+          challenge.results[challenge.grade] = passed;
+          if (passed && challenge.grade > state.bestChallengeGrade) {
+            state.bestChallengeGrade = challenge.grade;
+            saveState();
+          }
+          if (passed && challenge.grade < 6) {
+            challenge.grade++;
+            renderLadder('challengeLadder', challenge.grade, challenge.results);
+            setTimeout(startChallengeGrade, 600);
+          } else {
+            endChallenge(passed);
+          }
+        }
+
+        function endChallenge(lastPassed) {
+          document.getElementById('challengeRun').hidden = true;
+          document.getElementById('challengeDone').hidden = false;
+          var finalGrade = 0;
+          for (var g = 1; g <= 6; g++) {
+            if (challenge.results[g]) finalGrade = g;
+          }
+          var headline, sub;
+          if (finalGrade === 6 && lastPassed) {
+            headline = '🎉 满分闯关，六年级全部通过！';
+            sub = '你的数学水平：小学毕业水平';
+          } else if (finalGrade === 0) {
+            headline = '一年级还差一点点';
+            sub = '你的数学水平：学前 / 一年级练习中，再来一次试试？';
+          } else {
+            headline = '你通过到了 ' + GRADE_NAMES[finalGrade] + '！';
+            sub = '你的数学水平：小学' + GRADE_NAMES[finalGrade].replace('年级', '') + '年级 😄';
+          }
+          document.getElementById('challengeHeadline').textContent = headline;
+          document.getElementById('challengeSub').textContent = sub;
+          challenge.finalGrade = finalGrade;
+          challenge.headlineText = headline;
+          challenge.subText = sub;
+        }
+
+        document.getElementById('challengeStart').addEventListener('click', startChallenge);
+        document.getElementById('challengeRetry').addEventListener('click', function () {
+          document.getElementById('challengeDone').hidden = true;
+          document.getElementById('challengeIntro').hidden = false;
+          renderLadder('challengeLadderIntro', 0, null);
+        });
+        document.getElementById('challengeCopy').addEventListener('click', function () {
+          var text = '我在 j4fun 数学闯关：' + (challenge.headlineText || '') + '\n' + (challenge.subText || '') + '\n你能通过几年级？';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+              var btn = document.getElementById('challengeCopy');
+              var original = btn.textContent;
+              btn.textContent = '已复制！';
+              setTimeout(function () { btn.textContent = original; }, 1500);
+            }).catch(function () {});
+          }
+        });
+
+        /* ---------- 我的战绩 ---------- */
+        function renderStats() {
+          document.getElementById('statStreak').textContent = state.streak;
+          document.getElementById('statBestGrade').textContent = state.bestChallengeGrade
+            ? GRADE_NAMES[state.bestChallengeGrade]
+            : '—';
+          document.getElementById('statTotal').textContent = state.totalAnswered;
+          document.getElementById('statAccuracy').textContent = state.totalAnswered
+            ? Math.round((state.totalCorrect / state.totalAnswered) * 100) + '%'
+            : '—';
+          renderWeekStrip('statsWeekStrip');
+        }
+
+        /* ---------- init ---------- */
+        var REMOTE_PROBLEMS_URL = 'https://raw.githubusercontent.com/XiaoMi/cmath/main/datasets/cmath_dev.jsonl';
+
+        function parseDataset(text) {
+          var trimmed = text.trim();
+          if (trimmed.charAt(0) === '[') return JSON.parse(trimmed);
+          return trimmed.split(/\r?\n/).filter(Boolean).map(JSON.parse);
+        }
+
+        function fetchDataset(url) {
+          return fetch(url).then(function (response) {
+            if (!response.ok) throw new Error('题库载入失败：' + url);
+            return response.text();
+          }).then(parseDataset);
+        }
+
+        function setSourceStatus(message, isError) {
+          var status = document.getElementById('mathSourceStatus');
+          status.textContent = message;
+          status.classList.toggle('error', Boolean(isError));
+        }
+
+        function cacheDataset(rows) {
+          try {
+            localStorage.setItem(DATA_CACHE_KEY, JSON.stringify(rows));
+          } catch (error) {
+            console.warn('浏览器题库缓存写入失败。', error);
+          }
+        }
+
+        function refreshGradeFromGithub(grade) {
+          setSourceStatus('正在从 GitHub 更新' + GRADE_NAMES[grade] + '题库…', false);
+          return fetchDataset(REMOTE_PROBLEMS_URL).then(function (remoteRows) {
+            var remoteGradeRows = remoteRows.filter(function (row) { return Number(row.grade) === grade; });
+            if (!remoteGradeRows.length) throw new Error('远程题库没有该年级');
+            datasetRows = datasetRows.filter(function (row) { return Number(row.grade) !== grade; }).concat(remoteGradeRows);
+            setDataset(datasetRows);
+            cacheDataset(datasetRows);
+            if (selectedDailyGrade === grade) renderDaily();
+            setSourceStatus(GRADE_NAMES[grade] + '已从 GitHub 更新 · ' + remoteGradeRows.length + ' 题', false);
+          }).catch(function (error) {
+            console.warn('GitHub 题库不可用，继续使用本地缓存。', error);
+            var count = (byGrade[grade] || []).length;
+            setSourceStatus('GitHub 暂时不可用，正在使用' + GRADE_NAMES[grade] + '本地缓存 · ' + count + ' 题', true);
+          });
+        }
+
+        fetchDataset('math_problems.json')
+          .then(function (bundledRows) {
+            var cachedRows = null;
+            try { cachedRows = JSON.parse(localStorage.getItem(DATA_CACHE_KEY) || 'null'); } catch (error) {}
+            setDataset(Array.isArray(cachedRows) && cachedRows.length ? cachedRows : bundledRows);
+            selectedDailyGrade = byGrade[state.selectedDailyGrade] ? Number(state.selectedDailyGrade) : 3;
+            renderGradePicker();
+            renderDaily();
+            renderLadder('challengeLadderIntro', 0, null);
+            setSourceStatus('正在使用本地缓存 · ' + problems.length + ' 题', false);
+            refreshGradeFromGithub(selectedDailyGrade);
+          })
+          .catch(function (error) {
+            console.error(error);
+            document.getElementById('dailyQuestion').textContent = '题库载入失败，请刷新页面重试。';
+            setSourceStatus('本地题库载入失败，请刷新页面重试。', true);
+          });
+      })();
+    </script>
+  </body>
+</html>
