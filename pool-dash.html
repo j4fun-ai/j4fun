@@ -160,6 +160,7 @@
   }
 
   async function toggleFullscreen(){
+    const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
     if (isFocusMode()) {
       if (document.fullscreenElement) await document.exitFullscreen();
       gameShell.classList.remove('is-focus-mode');
@@ -168,7 +169,9 @@
       return;
     }
 
-    if (gameShell.requestFullscreen) {
+    if (touchLayout) {
+      gameShell.classList.add('is-focus-mode');
+    } else if (gameShell.requestFullscreen) {
       try {
         await gameShell.requestFullscreen();
       } catch (error) {
