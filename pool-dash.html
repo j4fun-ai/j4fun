@@ -53,6 +53,7 @@
   <button id="fullscreenBtn" class="game-fullscreen-button" type="button">⛶ 全屏</button>
   <div class="game-touch-controls dash-touch-controls" aria-label="泳道控制">
     <button id="dashLeft" type="button" data-move="left" aria-label="向左移动">←</button>
+    <button id="dashPause" class="touch-pause-button" type="button" data-action="pause" aria-label="暂停">Ⅱ</button>
     <button id="dashRight" type="button" data-move="right" aria-label="向右移动">→</button>
   </div>
 </div>
@@ -71,7 +72,8 @@
       distance: '距离',
       best: '最佳',
       unit: '米',
-      hint: '点击下方按钮或使用 ← / → 切换泳道 · 空格暂停',
+      hint: '← / → 切换泳道 · 空格暂停',
+      touchHint: '点击下方 ← / → 切换泳道 · 点击 Ⅱ 暂停',
       intro: '沿泳池尽量向前游，避开其他泳者和浮标。收集金色泳帽可以获得加速。',
       start: '跳进泳池',
       paused: '暂停中',
@@ -93,7 +95,8 @@
       distance: 'DIST',
       best: 'BEST',
       unit: 'm',
-      hint: 'Tap the buttons below or use ← / → · Space to pause',
+      hint: '← / → to change lanes · Space to pause',
+      touchHint: 'Tap ← / → to change lanes · Tap Ⅱ to pause',
       intro: 'Swim as far as you can. Dodge swimmers and lane buoys, and grab golden caps for a speed boost.',
       start: 'DIVE IN',
       paused: 'PAUSED',
@@ -122,10 +125,15 @@
   document.getElementById('bestLabel').textContent = copy.best;
   document.getElementById('distUnit').textContent = copy.unit;
   document.getElementById('bestUnit').textContent = copy.unit;
-  document.getElementById('gameHint').textContent = copy.hint;
+  function updateControlHint() {
+    const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
+    document.getElementById('gameHint').textContent = touchLayout ? copy.touchHint : copy.hint;
+  }
+  updateControlHint();
   document.getElementById('gameIntro').textContent = copy.intro;
   document.getElementById('startBtn').textContent = copy.start;
   document.getElementById('dashLeft').setAttribute('aria-label', language === 'en' ? 'Move left' : '向左移动');
+  document.getElementById('dashPause').setAttribute('aria-label', language === 'en' ? 'Pause game' : '暂停游戏');
   document.getElementById('dashRight').setAttribute('aria-label', language === 'en' ? 'Move right' : '向右移动');
   languageLink.textContent = copy.switchLabel;
   languageLink.setAttribute('aria-label', copy.switchAria);
@@ -175,13 +183,14 @@
 
   let W, H, LANES = 4, laneW;
   function resize(){
-    W = canvas.clientWidth || (isFocusMode() ? gameShell.clientWidth : Math.min(window.innerWidth, 480));
-    H = canvas.clientHeight || gameShell.clientHeight;
+    const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
+    W = isFocusMode() ? gameShell.clientWidth : Math.min(window.innerWidth, 480);
+    H = touchLayout ? canvas.clientHeight : gameShell.clientHeight;
     canvas.width = W;
     canvas.height = H;
     laneW = W / LANES;
   }
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', function(){ resize(); updateControlHint(); });
   document.addEventListener('fullscreenchange', function(){
     if (!document.fullscreenElement) gameShell.classList.remove('is-focus-mode');
     updateFullscreenButton();
@@ -314,6 +323,8 @@
     overlay.style.display = 'none';
     state = 'playing';
     gameShell.classList.add('controls-active');
+    lastFrameTime = performance.now();
+    frameAccumulator = 0;
   }
 
   function drawLaneLines(){
@@ -449,11 +460,24 @@
     drawSwimmerShape(player.x, H*0.74, 1.25, boostTimer>0 ? '#ffc94d' : '#4fb3d9', player.arm);
   }
 
-  let raf;
-  function loop(){
+  const FIXED_STEP_MS = 1000 / 60;
+  let raf = 0;
+  let lastFrameTime = 0;
+  let frameAccumulator = 0;
+  function loop(now){
     if (state === 'playing'){
-      update();
-      if (state !== 'playing') { draw(); return; }
+      const elapsed = Math.min(100, Math.max(0, now - lastFrameTime));
+      lastFrameTime = now;
+      frameAccumulator += elapsed;
+      while (frameAccumulator >= FIXED_STEP_MS && state === 'playing') {
+        update();
+        frameAccumulator -= FIXED_STEP_MS;
+      }
+      if (state !== 'playing') {
+        draw();
+        raf = 0;
+        return;
+      }
     }
     draw();
     raf = requestAnimationFrame(loop);
@@ -465,7 +489,9 @@
     state = 'playing';
     gameShell.classList.add('controls-active');
     cancelAnimationFrame(raf);
-    loop();
+    lastFrameTime = performance.now();
+    frameAccumulator = 0;
+    raf = requestAnimationFrame(loop);
   }
 
   document.getElementById('startBtn').addEventListener('click', startGame);
@@ -474,10 +500,11 @@
   function moveLeft(){ if(state==='playing') player.targetLane = Math.max(0, player.targetLane - 1); }
   function moveRight(){ if(state==='playing') player.targetLane = Math.min(LANES-1, player.targetLane + 1); }
 
-  document.querySelector('.dash-touch-controls').addEventListener('pointerdown', (e)=>{
-    const button = e.target.closest('button[data-move]');
+  document.querySelector('.dash-touch-controls').addEventListener('click', (e)=>{
+    const button = e.target.closest('button');
     if (!button) return;
     e.preventDefault();
+    if (button.dataset.action === 'pause') { pauseGame(); return; }
     if (button.dataset.move === 'left') moveLeft(); else moveRight();
   });
 
