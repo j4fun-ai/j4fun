@@ -182,6 +182,37 @@ nav.top-links a:hover {
   min-height: 100%;
 }
 
+.page-home .home-daily-strands {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 22px;
+  padding: 22px 26px;
+  border: 1px solid rgba(227, 178, 60, 0.38);
+  border-radius: 18px;
+  background: linear-gradient(110deg, #133f38, #174b42);
+  box-shadow: 0 16px 38px rgba(5, 24, 21, 0.22);
+  color: #f3efe4;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.page-home .home-daily-strands:hover { transform: translateY(-3px); border-color: var(--gold); }
+.page-home .home-daily-mark { display: grid; place-items: center; width: 82px; height: 82px; border: 2px solid var(--gold); border-radius: 50%; line-height: 1.05; }
+.page-home .home-daily-mark span { font-size: 12px; color: #9fc0b7; letter-spacing: .18em; }
+.page-home .home-daily-mark strong { font-family: var(--display); font-size: 25px; color: var(--gold); font-weight: 400; }
+.page-home .home-daily-kicker { margin: 0 0 3px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.page-home .home-daily-strands h2 { margin: 0 0 4px; font-family: var(--display); font-weight: 400; font-size: 24px; }
+.page-home .home-daily-strands p:last-child { margin: 0; color: #b9cec8; font-size: 14px; }
+.page-home .home-daily-cta { color: var(--gold); font-weight: 700; white-space: nowrap; }
+
+@media (max-width: 680px) {
+  .page-home .home-daily-strands { grid-template-columns: auto 1fr; padding: 18px; gap: 15px; }
+  .page-home .home-daily-mark { width: 66px; height: 66px; }
+  .page-home .home-daily-mark strong { font-size: 21px; }
+  .page-home .home-daily-cta { grid-column: 2; }
+}
+
 .page-quiz-hub .quiz-coming-soon {
   cursor: default;
   opacity: 0.72;
@@ -3585,6 +3616,79 @@ body.page-strands {
   position: relative;
   z-index: 2;
   padding-bottom: 60px;
+}
+
+.page-strands .daily-strands-callout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  max-width: 680px;
+  margin: 12px auto 22px;
+  padding: 14px 18px;
+  border: 1px solid rgba(227, 178, 60, .42);
+  border-radius: 16px;
+  background: rgba(227, 178, 60, .08);
+  text-decoration: none;
+}
+.page-strands .daily-strands-calendar { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--gold); color: var(--ink); font-family: var(--display); font-size: 20px; }
+.page-strands .daily-strands-callout strong, .page-strands .daily-strands-callout small { display: block; }
+.page-strands .daily-strands-callout small { margin-top: 2px; color: var(--text-dim); font-size: 12px; }
+.page-strands .daily-strands-callout b { color: var(--gold); font-size: 13px; white-space: nowrap; }
+
+/* daily-strands.html */
+.page-daily-strands .daily-strands-main { padding-top: 22px; }
+.page-daily-strands .daily-title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 22px; }
+.page-daily-strands .daily-title-row .eyebrow { margin: 0 0 2px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: .18em; }
+.page-daily-strands .daily-title-row h1 { margin: 0; font-family: var(--display); font-size: clamp(36px, 7vw, 58px); font-weight: 400; line-height: 1.15; }
+.page-daily-strands .daily-title-row h1 span { color: var(--gold); }
+.page-daily-strands .archive-button, .page-daily-strands .archive-heading button { padding: 9px 16px; border: 1px solid rgba(227,178,60,.45); border-radius: 999px; background: transparent; color: var(--gold); cursor: pointer; }
+.page-daily-strands .week-picker { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: stretch; gap: 8px; margin-bottom: 18px; }
+.page-daily-strands .week-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px; }
+.page-daily-strands .week-day { min-width: 0; padding: 10px 4px 8px; border: 1px solid rgba(159,192,183,.24); border-radius: 13px; background: var(--bg-card); color: var(--text-dim); cursor: pointer; }
+.page-daily-strands .week-day span, .page-daily-strands .week-day strong, .page-daily-strands .week-day i { display: block; }
+.page-daily-strands .week-day span { font-size: 12px; }
+.page-daily-strands .week-day strong { color: var(--text); font-size: 14px; }
+.page-daily-strands .week-day i { height: 13px; color: var(--gold); font-size: 11px; font-style: normal; }
+.page-daily-strands .week-day.active { border-color: var(--gold); background: var(--gold); color: var(--ink); }
+.page-daily-strands .week-day.active strong, .page-daily-strands .week-day.active i { color: var(--ink); }
+.page-daily-strands .week-day.locked { opacity: .38; cursor: not-allowed; }
+.page-daily-strands .week-arrow { width: 38px; border: 0; border-radius: 12px; background: rgba(159,192,183,.1); color: var(--text); cursor: pointer; }
+.page-daily-strands .week-arrow:disabled { opacity: .2; cursor: not-allowed; }
+.page-daily-strands .archive-panel { margin: 0 0 18px; padding: 18px; border: 1px solid rgba(227,178,60,.25); border-radius: 16px; background: rgba(19,63,56,.96); }
+.page-daily-strands .archive-heading { display: flex; align-items: center; justify-content: space-between; }
+.page-daily-strands .archive-heading h2 { margin: 0; font-family: var(--display); font-weight: 400; color: var(--gold); }
+.page-daily-strands .archive-list { display: grid; gap: 8px; margin-top: 14px; }
+.page-daily-strands .archive-list button { display: grid; grid-template-columns: 90px 1fr auto; gap: 12px; padding: 12px 14px; border: 0; border-radius: 10px; background: rgba(246,239,224,.07); color: var(--text); text-align: left; cursor: pointer; }
+.page-daily-strands .archive-list time, .page-daily-strands .archive-list span { color: var(--text-dim); }
+.page-daily-strands .puzzle-daily-heading { display: flex; justify-content: space-between; align-items: end; gap: 15px; margin: 26px 0 10px; }
+.page-daily-strands .puzzle-daily-heading p { margin: 0; color: var(--gold); font-size: 12px; font-weight: 700; }
+.page-daily-strands .puzzle-daily-heading h2 { margin: 0; font-family: var(--display); font-size: 28px; font-weight: 400; }
+.page-daily-strands .puzzle-daily-heading time { color: var(--text-dim); font-size: 14px; }
+.page-daily-strands .daily-clue { display: flex; align-items: center; gap: 12px; margin: 0; padding: 14px 18px; border-radius: 14px 14px 0 0; background: var(--paper); color: var(--ink); }
+.page-daily-strands .daily-clue span { color: var(--red-deep); font-size: 12px; font-weight: 800; white-space: nowrap; }
+.page-daily-strands .daily-clue strong { font-family: var(--serif); font-size: 16px; }
+.page-daily-strands .daily-puzzle .panel { margin-top: 0; border-radius: 0 0 18px 18px; }
+.page-daily-strands .daily-loading, .page-daily-strands .daily-unavailable { padding: 60px 20px; border: 1px solid rgba(227,178,60,.18); border-radius: 18px; background: var(--bg-card); color: var(--text-dim); text-align: center; }
+.page-daily-strands .daily-unavailable h2 { margin: 8px 0 4px; font-family: var(--display); color: var(--text); font-weight: 400; }
+.page-daily-strands .daily-unavailable p { margin: 0; }
+.page-daily-strands .lock-mark { display: grid; place-items: center; width: 54px; height: 54px; margin: 0 auto; border: 1px solid var(--text-faint); border-radius: 50%; color: var(--gold); }
+.page-daily-strands .classic-strands-link { margin-top: 22px; color: var(--text-dim); font-size: 13px; text-align: center; }
+.page-daily-strands .classic-strands-link a { color: var(--gold); }
+.page-daily-strands .cell { border: 0; padding: 0; }
+
+@media (max-width: 620px) {
+  .page-strands .daily-strands-callout { grid-template-columns: auto 1fr; }
+  .page-strands .daily-strands-callout b { grid-column: 2; }
+  .page-daily-strands .daily-title-row { align-items: center; }
+  .page-daily-strands .week-picker { gap: 4px; }
+  .page-daily-strands .week-days { gap: 3px; }
+  .page-daily-strands .week-day { padding-inline: 1px; border-radius: 9px; }
+  .page-daily-strands .week-day span { font-size: 11px; }
+  .page-daily-strands .week-day strong { font-size: 12px; }
+  .page-daily-strands .week-arrow { width: 28px; }
+  .page-daily-strands .archive-list button { grid-template-columns: 74px 1fr; }
+  .page-daily-strands .archive-list span { grid-column: 2; }
 }
 
 .page-strands .level-tabs {
