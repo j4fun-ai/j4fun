@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/main.css?v=20260906g" />
+<link rel="stylesheet" href="assets/main.css?v=20260907a" />
 <script src="assets/site-nav.js?v=20260906" defer></script>
 </head>
 <body class="page-game page-pool-dash">
@@ -125,8 +125,9 @@
   document.getElementById('bestLabel').textContent = copy.best;
   document.getElementById('distUnit').textContent = copy.unit;
   document.getElementById('bestUnit').textContent = copy.unit;
+  const touchLayoutQuery = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)');
   function updateControlHint() {
-    const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
+    const touchLayout = touchLayoutQuery.matches;
     document.getElementById('gameHint').textContent = touchLayout ? copy.touchHint : copy.hint;
   }
   updateControlHint();
@@ -220,11 +221,12 @@
   function laneCenter(i){ return i * laneW + laneW/2; }
 
   function reset(){
+    const mobilePace = touchLayoutQuery.matches;
     player = { lane: 1, x: laneCenter(1), targetLane: 1, wobble:0, arm:0 };
     obstacles = [];
     particles = [];
     dist = 0;
-    speed = 4.2;
+    speed = mobilePace ? 3.5 : 4.2;
     spawnTimer = 0;
     boostTimer = 0;
     t = 0;
@@ -237,9 +239,12 @@
   }
 
   function update(){
+    const mobilePace = touchLayoutQuery.matches;
     t++;
     dist += speed * 0.09;
-    speed = Math.min(9.5, 4.2 + dist/220);
+    speed = mobilePace
+      ? Math.min(8, 3.5 + dist/270)
+      : Math.min(9.5, 4.2 + dist/220);
 
     // player easing toward target lane
     player.lane += (player.targetLane - player.lane) * 0.18;
@@ -503,7 +508,7 @@
   function moveLeft(){ if(state==='playing') player.targetLane = Math.max(0, player.targetLane - 1); }
   function moveRight(){ if(state==='playing') player.targetLane = Math.min(LANES-1, player.targetLane + 1); }
 
-  document.querySelector('.dash-touch-controls').addEventListener('click', (e)=>{
+  document.querySelector('.dash-touch-controls').addEventListener('pointerdown', (e)=>{
     const button = e.target.closest('button');
     if (!button) return;
     e.preventDefault();
@@ -529,7 +534,7 @@
     if (touchStartX === null) return;
     const endX = e.changedTouches[0].clientX;
     const delta = endX - touchStartX;
-    if (Math.abs(delta) > 24){
+    if (Math.abs(delta) > 14){
       if (delta > 0) moveRight(); else moveLeft();
     } else {
       // tap: left half / right half

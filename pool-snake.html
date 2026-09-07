@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/main.css?v=20260906h" />
+    <link rel="stylesheet" href="assets/main.css?v=20260907a" />
     <script src="assets/site-nav.js?v=20260906" defer></script>
   </head>
   <body class="page-game page-pool-snake">
@@ -119,8 +119,9 @@
         document.getElementById('gameDesc').textContent = copy.description;
         document.getElementById('cleanLabel').textContent = copy.clean;
         document.getElementById('bestLabel').textContent = copy.best;
+        const touchLayoutQuery = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)');
         function updateControlHint() {
-          const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
+          const touchLayout = touchLayoutQuery.matches;
           document.getElementById('gameHint').textContent = touchLayout ? copy.touchHint : copy.hint;
         }
         updateControlHint();
@@ -435,7 +436,9 @@
         }
 
         function loop(now) {
-          if (state === 'playing' && now - lastStep >= Math.max(72, 145 - cleaned * 4)) {
+          const mobilePace = touchLayoutQuery.matches;
+          const stepDelay = mobilePace ? Math.max(105, 175 - cleaned * 3) : Math.max(72, 145 - cleaned * 4);
+          if (state === 'playing' && now - lastStep >= stepDelay) {
             step();
             lastStep = now;
           }
@@ -474,7 +477,7 @@
           }
         });
 
-        document.querySelector('.snake-touch-controls').addEventListener('click', function (event) {
+        document.querySelector('.snake-touch-controls').addEventListener('pointerdown', function (event) {
           const button = event.target.closest('button');
           if (!button) return;
           event.preventDefault();
@@ -490,7 +493,7 @@
           if (!touchStart) return;
           const dx = event.clientX - touchStart.x;
           const dy = event.clientY - touchStart.y;
-          if (Math.max(Math.abs(dx), Math.abs(dy)) > 18) {
+          if (Math.max(Math.abs(dx), Math.abs(dy)) > 12) {
             if (Math.abs(dx) > Math.abs(dy)) turn(dx > 0 ? 1 : -1, 0);
             else turn(0, dy > 0 ? 1 : -1);
           }

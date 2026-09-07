@@ -13,6 +13,7 @@
   var foundWords = [];
   var pointerActive = false;
   var isDragging = false;
+  var previewMode = false;
 
   function pad(value) { return String(value).padStart(2, '0'); }
   function dateKey(date) { return date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate()); }
@@ -23,12 +24,45 @@
   function entryFor(key) { return manifest.puzzles.find(function (item) { return item.date === key; }); }
   function key(r, c) { return r + ',' + c; }
   function formatDate(keyText) { var d = parseDate(keyText); return (d.getMonth() + 1) + '月' + d.getDate() + '日'; }
+  function sameCell(a, b) { return a[0] === b[0] && a[1] === b[1]; }
+  function pathMatches(actual, expected) {
+    if (actual.length !== expected.length) return false;
+    var forward = actual.every(function (cell, index) { return sameCell(cell, expected[index]); });
+    var reverse = actual.every(function (cell, index) { return sameCell(cell, expected[expected.length - 1 - index]); });
+    return forward || reverse;
+  }
+  function validatePuzzle(data) {
+    if (!data || !Number.isInteger(data.width) || !Number.isInteger(data.height) || !Array.isArray(data.words)) throw new Error('Invalid puzzle structure');
+    var used = {};
+    var spangrams = data.words.filter(function (word) { return word.spangram; });
+    if (spangrams.length > 1) throw new Error('A puzzle can have at most one spangram');
+    data.words.forEach(function (word) {
+      if (Array.from(word.text).length !== word.path.length) throw new Error('Word/path length mismatch: ' + word.text);
+      word.path.forEach(function (cell, index) {
+        var r = cell[0], c = cell[1], cellKey = key(r, c);
+        if (r < 0 || r >= data.height || c < 0 || c >= data.width || used[cellKey]) throw new Error('Invalid or duplicate cell: ' + cellKey);
+        if (index && Math.max(Math.abs(r - word.path[index - 1][0]), Math.abs(c - word.path[index - 1][1])) !== 1) throw new Error('Disconnected path: ' + word.text);
+        used[cellKey] = true;
+      });
+    });
+    if (Object.keys(used).length !== data.width * data.height) throw new Error('Puzzle does not cover the board');
+    if (spangrams.length) {
+      var span = spangrams[0].path;
+      var touchesTop = span.some(function (cell) { return cell[0] === 0; });
+      var touchesBottom = span.some(function (cell) { return cell[0] === data.height - 1; });
+      var touchesLeft = span.some(function (cell) { return cell[1] === 0; });
+      var touchesRight = span.some(function (cell) { return cell[1] === data.width - 1; });
+      if (!((touchesTop && touchesBottom) || (touchesLeft && touchesRight))) throw new Error('Spangram must touch opposite edges');
+    }
+  }
 
   function loadProgress() {
+    if (previewMode) return [];
     try { return JSON.parse(localStorage.getItem(STORE_PREFIX + selectedDate) || '[]'); }
     catch (error) { return []; }
   }
   function saveProgress() {
+    if (previewMode) return;
     try { localStorage.setItem(STORE_PREFIX + selectedDate, JSON.stringify(foundWords)); }
     catch (error) { document.getElementById('saveStatus').textContent = '无法保存进度'; }
   }
@@ -88,7 +122,7 @@
     history.replaceState(null, '', url);
     renderWeek();
     var entry = entryFor(value);
-    if (isFuture(value)) { showUnavailable('这一天还没有开放', '每天零点解锁一道新字踪，' + formatDate(value) + ' 再来吧。'); return; }
+    if (isFuture(value) && !previewMode) { showUnavailable('这一天还没有开放', '每天零点解锁一道新字踪，' + formatDate(value) + ' 再来吧。'); return; }
     if (!entry) { showUnavailable('这一天暂无字踪', value < manifest.startDate ? '每日字踪从 ' + formatDate(manifest.startDate) + ' 开始。' : '这一天的谜题还没有发布。'); return; }
     document.getElementById('loadingState').hidden = false;
     document.getElementById('puzzlePanel').hidden = true;
@@ -100,6 +134,7 @@
   }
 
   function loadPuzzle(data) {
+    validatePuzzle(data);
     puzzle = data;
     grid = {};
     selected = [];
@@ -111,6 +146,7 @@
     document.getElementById('puzzleDate').dateTime = puzzle.date;
     document.getElementById('puzzleClue').textContent = puzzle.clue;
     document.getElementById('totalCount').textContent = puzzle.words.length;
+    document.getElementById('saveStatus').textContent = previewMode ? '预览模式 · 不保存进度' : '进度保存在本机';
     document.getElementById('loadingState').hidden = true;
     document.getElementById('puzzlePanel').hidden = false;
     renderBoard(); renderFoundList(); updateCount(); renderSelection(); setFeedback('', foundWords.length === puzzle.words.length ? '🎉 已完成今天的字踪！' : '');
@@ -137,7 +173,7 @@
   function setFeedback(kind, text) { var el = document.getElementById('feedback'); el.className = 'feedback' + (kind ? ' ' + kind : ''); el.textContent = text; }
   function submit() {
     var text = selected.map(function (rc) { return grid[key(rc[0], rc[1])]; }).join('');
-    var match = puzzle.words.find(function (word) { return word.text === text && foundWords.indexOf(text) === -1; });
+    var match = puzzle.words.find(function (word) { return pathMatches(selected, word.path) && foundWords.indexOf(word.text) === -1; });
     if (match) { foundWords.push(match.text); saveProgress(); clearSelection(); applyFoundStyles(); renderFoundList(); updateCount(); renderWeek(); setFeedback(match.spangram ? 'win' : 'ok', match.spangram ? '✨ 找到通关词：「' + match.text + '」' : '找到了：「' + match.text + '」'); if (foundWords.length === puzzle.words.length) setTimeout(function () { setFeedback('win', '🎉 今天的字踪全部找到！'); }, 250); }
     else { selected.forEach(function (rc) { cellEls[key(rc[0], rc[1])].classList.add('wrong'); }); setFeedback('bad', text.length > 1 ? '「' + text + '」不对，再试试' : ''); setTimeout(clearSelection, 350); }
   }
@@ -158,7 +194,11 @@
 
   fetch(MANIFEST_URL, { cache: 'no-store' }).then(function (response) { if (!response.ok) throw new Error('Manifest unavailable'); return response.json(); }).then(function (data) {
     manifest = data;
-    var requested = new URLSearchParams(location.search).get('date');
+    var params = new URLSearchParams(location.search);
+    var previewDate = params.get('preview');
+    var isLocalPreview = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.hostname === '[::1]';
+    previewMode = isLocalPreview && /^\d{4}-\d{2}-\d{2}$/.test(previewDate || '');
+    var requested = previewMode ? previewDate : params.get('date');
     var today = dateKey(new Date());
     selectedDate = requested && /^\d{4}-\d{2}-\d{2}$/.test(requested) ? requested : (today < manifest.startDate ? manifest.startDate : today);
     visibleWeekStart = mondayOf(parseDate(selectedDate));
