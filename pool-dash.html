@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/main.css?v=20260907a" />
+<link rel="stylesheet" href="assets/main.css?v=20260907b" />
 <script src="assets/site-nav.js?v=20260906" defer></script>
 </head>
 <body class="page-game page-pool-dash">
@@ -160,6 +160,20 @@
     document.body.classList.toggle('pool-focus-active', active);
   }
 
+  function enterMobilePlayMode(){
+    if (!touchLayoutQuery.matches) return;
+    gameShell.classList.add('is-focus-mode', 'mobile-play-mode');
+    updateFullscreenButton();
+    requestAnimationFrame(resize);
+  }
+
+  function exitMobilePlayMode(){
+    if (!gameShell.classList.contains('mobile-play-mode')) return;
+    gameShell.classList.remove('is-focus-mode', 'mobile-play-mode');
+    updateFullscreenButton();
+    requestAnimationFrame(resize);
+  }
+
   async function toggleFullscreen(){
     const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
     if (isFocusMode()) {
@@ -292,6 +306,7 @@
   function gameOver(){
     state = 'dead';
     gameShell.classList.remove('controls-active');
+    exitMobilePlayMode();
     const finalDist = Math.floor(dist);
     const isNewBest = finalDist > best;
     if (isNewBest){
@@ -315,6 +330,7 @@
     if (state !== 'playing') return;
     state = 'paused';
     gameShell.classList.remove('controls-active');
+    exitMobilePlayMode();
     overlay.innerHTML = `
       <h1>${copy.paused}</h1>
       <p>${copy.pauseNote}</p>
@@ -331,6 +347,7 @@
     overlay.style.display = 'none';
     state = 'playing';
     gameShell.classList.add('controls-active');
+    enterMobilePlayMode();
     lastFrameTime = performance.now();
     frameAccumulator = 0;
   }
@@ -496,6 +513,7 @@
     reset();
     state = 'playing';
     gameShell.classList.add('controls-active');
+    enterMobilePlayMode();
     cancelAnimationFrame(raf);
     lastFrameTime = performance.now();
     frameAccumulator = 0;
@@ -514,6 +532,13 @@
     e.preventDefault();
     if (button.dataset.action === 'pause') { pauseGame(); return; }
     if (button.dataset.move === 'left') moveLeft(); else moveRight();
+  });
+
+  gameShell.addEventListener('contextmenu', (event)=>{
+    if (gameShell.classList.contains('controls-active')) event.preventDefault();
+  });
+  gameShell.addEventListener('selectstart', (event)=>{
+    if (gameShell.classList.contains('controls-active')) event.preventDefault();
   });
 
   window.addEventListener('keydown', (e)=>{

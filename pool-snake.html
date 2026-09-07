@@ -181,6 +181,20 @@
           document.body.classList.toggle('pool-focus-active', active);
         }
 
+        function enterMobilePlayMode() {
+          if (!touchLayoutQuery.matches) return;
+          gameShell.classList.add('is-focus-mode', 'mobile-play-mode');
+          updateFullscreenButton();
+          requestAnimationFrame(resize);
+        }
+
+        function exitMobilePlayMode() {
+          if (!gameShell.classList.contains('mobile-play-mode')) return;
+          gameShell.classList.remove('is-focus-mode', 'mobile-play-mode');
+          updateFullscreenButton();
+          requestAnimationFrame(resize);
+        }
+
         async function toggleFullscreen() {
           const touchLayout = window.matchMedia('(max-width: 560px), (hover: none) and (pointer: coarse)').matches;
           if (isFocusMode()) {
@@ -227,6 +241,7 @@
           reset();
           state = 'playing';
           gameShell.classList.add('controls-active');
+          enterMobilePlayMode();
           overlay.style.display = 'none';
           lastStep = performance.now();
           cancelAnimationFrame(raf);
@@ -236,6 +251,7 @@
         function finish(won) {
           state = won ? 'won' : 'dead';
           gameShell.classList.remove('controls-active');
+          exitMobilePlayMode();
           if (cleaned > best) {
             best = cleaned;
             try { localStorage.setItem('poolSnakeBest', String(best)); } catch (error) {}
@@ -256,6 +272,7 @@
           if (state !== 'playing') return;
           state = 'paused';
           gameShell.classList.remove('controls-active');
+          exitMobilePlayMode();
           overlay.innerHTML = `<h1>${copy.paused}</h1><p>${copy.pauseNote}</p><button id="startBtn">${copy.resume}</button>`;
           overlay.style.display = 'flex';
           const resumeButton = document.getElementById('startBtn');
@@ -267,6 +284,7 @@
           if (state !== 'paused') return;
           state = 'playing';
           gameShell.classList.add('controls-active');
+          enterMobilePlayMode();
           overlay.style.display = 'none';
           lastStep = performance.now();
         }
@@ -483,6 +501,13 @@
           event.preventDefault();
           if (button.dataset.action === 'pause') { pauseGame(); return; }
           turn(Number(button.dataset.x), Number(button.dataset.y));
+        });
+
+        gameShell.addEventListener('contextmenu', function (event) {
+          if (gameShell.classList.contains('controls-active')) event.preventDefault();
+        });
+        gameShell.addEventListener('selectstart', function (event) {
+          if (gameShell.classList.contains('controls-active')) event.preventDefault();
         });
 
         let touchStart = null;

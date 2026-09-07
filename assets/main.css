@@ -293,6 +293,13 @@ nav.top-links a:hover {
 .page-pool-dash.pool-focus-active {
   overflow: hidden;
 }
+.page-pool-dash.pool-focus-active,
+.page-pool-snake.pool-focus-active {
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
 .page-pool-dash .pool-game-shell.controls-active,
 .page-pool-dash .pool-game-shell.controls-active canvas {
   touch-action: none;
@@ -414,13 +421,13 @@ nav.top-links a:hover {
 @media (max-width: 560px) {
   .page-pool-dash .pool-game-shell {
     width: 100%;
-    height: 100dvh;
-    min-height: 0;
+    height: 68vh;
+    min-height: 480px;
     border-radius: 16px;
   }
   .page-pool-dash .pool-game-shell canvas {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 72px);
   }
   .page-pool-dash .hint { bottom: 88px; }
   .page-pool-dash .game-fullscreen-button { top: 48px; bottom: auto; }
@@ -595,9 +602,9 @@ nav.top-links a:hover {
 @media (max-width: 560px) {
   .page-pool-snake .pool-snake-shell {
     width: 100%;
-    height: calc(100dvh - 24px);
-    max-height: 760px;
-    min-height: 0;
+    height: 68vh;
+    max-height: none;
+    min-height: 500px;
     border-radius: 16px;
   }
   .page-pool-snake .pool-snake-shell canvas {
@@ -624,7 +631,8 @@ nav.top-links a:hover {
     height: 100%;
   }
   .page-pool-dash .pool-game-shell canvas { width: 100%; }
-  .page-pool-dash .hint { bottom: 88px; }
+  .page-pool-dash .pool-game-shell.is-focus-mode canvas { height: calc(100% - 108px); }
+  .page-pool-dash .hint { bottom: 82px; }
   .page-pool-snake .hint {
     bottom: 142px;
     padding: 0 16px;
