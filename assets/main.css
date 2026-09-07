@@ -576,6 +576,10 @@ nav.top-links a:hover {
 }
 
 @media (max-width: 560px), (hover: none) and (pointer: coarse) {
+  .page-pool-dash .game-fullscreen-button,
+  .page-pool-snake .game-fullscreen-button {
+    display: none;
+  }
   .page-pool-dash .pool-game-shell canvas,
   .page-pool-snake .pool-snake-shell canvas {
     height: calc(100% - 72px);
