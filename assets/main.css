@@ -612,10 +612,10 @@ nav.top-links a:hover {
     border-radius: 16px;
   }
   .page-pool-snake .pool-snake-shell canvas {
-    height: calc(100% - 176px);
+    height: calc(100% - 154px);
   }
   .page-pool-snake .hint {
-    bottom: 142px;
+    bottom: 126px;
     padding: 0 16px;
     color: rgba(232, 244, 248, 0.82);
     font-size: 14px;
@@ -631,9 +631,12 @@ nav.top-links a:hover {
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
+  .page-pool-snake .pool-snake-shell.is-focus-mode {
+    padding-top: calc(20px + env(safe-area-inset-top, 0px));
+  }
   .page-pool-dash .pool-game-shell.is-focus-mode #hud,
   .page-pool-snake .pool-snake-shell.is-focus-mode #snakeHud {
-    top: calc(12px + env(safe-area-inset-top, 0px));
+    top: calc(28px + env(safe-area-inset-top, 0px));
   }
   .page-pool-dash .game-fullscreen-button,
   .page-pool-snake .game-fullscreen-button {
@@ -647,7 +650,7 @@ nav.top-links a:hover {
   .page-pool-dash .pool-game-shell.is-focus-mode canvas { height: calc(100% - 108px); }
   .page-pool-dash .hint { bottom: 82px; }
   .page-pool-snake .hint {
-    bottom: calc(142px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(126px + env(safe-area-inset-bottom, 0px));
     padding: 0 16px;
     color: rgba(232, 244, 248, 0.82);
     font-size: 14px;
@@ -670,10 +673,11 @@ nav.top-links a:hover {
   .controls-active .snake-touch-controls {
     right: auto;
     left: 50%;
-    width: min(320px, calc(100% - 20px));
-    height: 128px;
-    grid-template-columns: repeat(3, minmax(60px, 1fr));
-    grid-template-rows: repeat(2, 58px);
+    width: min(276px, calc(100% - 24px));
+    height: 112px;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(52px, 1fr));
+    grid-template-rows: repeat(2, 52px);
     transform: translateX(-50%);
   }
   .snake-touch-controls button:nth-child(1) { grid-column: 1; grid-row: 2; }
@@ -681,7 +685,7 @@ nav.top-links a:hover {
   .snake-touch-controls button:nth-child(3) { grid-column: 2; grid-row: 2; }
   .snake-touch-controls button:nth-child(4) { grid-column: 3; grid-row: 2; }
   .snake-touch-controls button:nth-child(5) { grid-column: 3; grid-row: 1; }
-  .page-pool-snake .pool-snake-shell.controls-active canvas { height: calc(100% - 176px); }
+  .page-pool-snake .pool-snake-shell.controls-active canvas { height: calc(100% - 154px); }
   .game-touch-controls button {
     min-width: 60px;
     min-height: 60px;
@@ -700,6 +704,12 @@ nav.top-links a:hover {
     border-color: #ffc94d;
     color: #ffc94d;
     box-shadow: 0 1px 0 rgba(2, 25, 38, 0.7);
+  }
+  .snake-touch-controls button {
+    min-width: 52px;
+    min-height: 52px;
+    border-radius: 14px;
+    font-size: 25px;
   }
 }
 

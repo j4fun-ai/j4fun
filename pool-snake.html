@@ -2,28 +2,67 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Pool Snake · 随手玩 · j4fun</title>
-    <meta name="description" content="落叶掉进泳池了，用不断变长的泳道绳把它们全部清走。" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <meta
+      name="description"
+      content="落叶掉进泳池了，用不断变长的泳道绳把它们全部清走。"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/main.css?v=20260907c" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/main.css?v=20260907d" />
     <script src="assets/site-nav.js?v=20260906" defer></script>
   </head>
   <body class="page-game page-pool-snake">
     <header class="site">
       <div class="wrap topbar">
-        <a class="brand" href="index.html" aria-label="j4fun 首页"><img class="brand-logo" src="assets/images/logo.png?083026" alt="j4fun" /></a>
-        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+        <a class="brand" href="index.html" aria-label="j4fun 首页"
+          ><img
+            class="brand-logo"
+            src="assets/images/logo.png?083026"
+            alt="j4fun"
+        /></a>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span>菜单</span
+          ><span class="menu-icon" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
         <nav class="top-links" id="site-navigation" aria-label="主导航">
           <a href="fun.html">中文小玩意</a>
           <a href="games.html" aria-current="page">随手玩</a>
           <a href="quiz.html">知识挑战</a>
           <a href="about.html">关于</a>
-          <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+          <a class="related-project" href="shiben/"
+            ><img
+              src="shiben/images/huawen-textbook-mark.svg"
+              alt=""
+              aria-hidden="true"
+            />识本</a
+          >
         </nav>
       </div>
     </header>
@@ -32,36 +71,73 @@
       <p class="eyebrow">Clean the Pool. Grow the Rope.</p>
       <div class="game-title-row">
         <h1>Pool <span class="accent">Snake</span></h1>
-        <a id="gameLanguageLink" class="game-language-link" href="?lang=en">🌐 English</a>
+        <a id="gameLanguageLink" class="game-language-link" href="?lang=en"
+          >🌐 English</a
+        >
       </div>
-      <p class="lede" id="gameDesc">落叶掉进泳池了！转动泳道绳把它们全部清走，但别让绳子撞墙或缠到自己。</p>
+      <p class="lede" id="gameDesc">
+        落叶掉进泳池了！转动泳道绳把它们全部清走，但别让绳子撞墙或缠到自己。
+      </p>
     </section>
 
     <main class="wrap game-page-main">
       <div id="wrap" class="pool-snake-shell">
         <canvas id="game" role="img" aria-label="Pool Snake 游戏区"></canvas>
         <div id="snakeHud">
-          <span><span id="cleanLabel">已清理</span> <strong id="cleanVal">0</strong>/<span id="goalVal">12</span></span>
-          <span><span id="bestLabel">最佳</span> <strong id="bestVal">0</strong></span>
+          <span
+            ><span id="cleanLabel">已清理</span>
+            <strong id="cleanVal">0</strong>/<span id="goalVal">12</span></span
+          >
+          <span
+            ><span id="bestLabel">最佳</span>
+            <strong id="bestVal">0</strong></span
+          >
         </div>
         <div class="hint" id="gameHint">方向键 / WASD / 滑动 · 空格暂停</div>
         <div id="overlay">
           <h1>POOL SNAKE</h1>
-          <p id="gameIntro">控制泳道绳收走 12 片落叶。每清理一片，绳子就会更长一点。</p>
+          <p id="gameIntro">
+            控制泳道绳收走 12 片落叶。每清理一片，绳子就会更长一点。
+          </p>
           <button id="startBtn">开始清理</button>
         </div>
-        <button id="fullscreenBtn" class="game-fullscreen-button" type="button">⛶ 全屏</button>
-        <div class="game-touch-controls snake-touch-controls" aria-label="方向控制">
-          <button type="button" data-x="-1" data-y="0" aria-label="向左">←</button>
-          <button type="button" data-x="0" data-y="-1" aria-label="向上">↑</button>
-          <button type="button" data-x="0" data-y="1" aria-label="向下">↓</button>
-          <button type="button" data-x="1" data-y="0" aria-label="向右">→</button>
-          <button class="touch-pause-button" type="button" data-action="pause" aria-label="暂停">Ⅱ</button>
+        <button id="fullscreenBtn" class="game-fullscreen-button" type="button">
+          ⛶ 全屏
+        </button>
+        <div
+          class="game-touch-controls snake-touch-controls"
+          aria-label="方向控制"
+        >
+          <button type="button" data-x="-1" data-y="0" aria-label="向左">
+            ←
+          </button>
+          <button type="button" data-x="0" data-y="-1" aria-label="向上">
+            ↑
+          </button>
+          <button type="button" data-x="0" data-y="1" aria-label="向下">
+            ↓
+          </button>
+          <button type="button" data-x="1" data-y="0" aria-label="向右">
+            →
+          </button>
+          <button
+            class="touch-pause-button"
+            type="button"
+            data-action="pause"
+            aria-label="暂停"
+          >
+            Ⅱ
+          </button>
         </div>
       </div>
     </main>
 
-    <footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+    <footer class="wrap">
+      <div class="footer-brand">
+        j4fun - Just For Fun<br />Play, Learn &amp; Discover
+      </div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
 
     <script>
       (function () {
@@ -87,7 +163,7 @@
             description: 'Leaves fell into the pool! Steer the lane rope to clear them all, but do not hit the wall or tangle the rope.',
             clean: 'CLEANED', best: 'BEST',
             hint: 'Arrow keys / WASD to turn · Space to pause',
-            touchHint: 'Tap the direction pad to turn · Tap Ⅱ to pause, or swipe the game area',
+            touchHint: 'Swipe or use the pad to turn · Tap Ⅱ to pause',
             canvasLabel: 'Pool Snake game area',
             intro: 'Guide the lane rope through 12 fallen leaves. The rope grows longer with every leaf you collect.',
             start: 'START CLEANING', paused: 'PAUSED', pauseNote: 'The water is still. Continue when you are ready.', resume: 'KEEP CLEANING',
