@@ -41,6 +41,7 @@ cp "$PROJECT_DIR/poems.json" "$DEPLOY_DIR/"
 for data_file in math_problems.json; do
   cp "$PROJECT_DIR/$data_file" "$DEPLOY_DIR/$data_file"
 done
+cp -R "$PROJECT_DIR/strands-data" "$DEPLOY_DIR/strands-data"
 cp -R "$PROJECT_DIR/assets" "$DEPLOY_DIR/assets"
 
 echo "Adding Google Analytics to production HTML…"
