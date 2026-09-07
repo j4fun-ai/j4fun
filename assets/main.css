@@ -373,6 +373,9 @@ nav.top-links a:hover {
   border-color: var(--gold);
   color: var(--gold);
 }
+.game-touch-controls {
+  display: none;
+}
 @media (max-width: 560px) {
   .page-pool-dash .pool-game-shell {
     width: 100%;
@@ -380,6 +383,12 @@ nav.top-links a:hover {
     min-height: 480px;
     border-radius: 16px;
   }
+  .page-pool-dash .pool-game-shell canvas {
+    width: 100%;
+    height: calc(100% - 72px);
+  }
+  .page-pool-dash .hint { bottom: 78px; }
+  .page-pool-dash .game-fullscreen-button { top: 48px; bottom: auto; }
 }
 
 /* Pool Snake turns a lane rope into the growing game trail. */
@@ -550,6 +559,54 @@ nav.top-links a:hover {
     height: 68vh;
     min-height: 500px;
     border-radius: 16px;
+  }
+  .page-pool-snake .pool-snake-shell canvas {
+    height: calc(100% - 72px);
+  }
+  .page-pool-snake .hint { bottom: 78px; }
+  .page-pool-snake .game-fullscreen-button { top: 48px; bottom: auto; }
+}
+
+@media (max-width: 560px), (hover: none) and (pointer: coarse) {
+  .page-pool-dash .pool-game-shell canvas,
+  .page-pool-snake .pool-snake-shell canvas {
+    height: calc(100% - 72px);
+  }
+  .page-pool-dash .pool-game-shell canvas { width: 100%; }
+  .page-pool-dash .hint,
+  .page-pool-snake .hint { bottom: 78px; }
+  .page-pool-dash .game-fullscreen-button,
+  .page-pool-snake .game-fullscreen-button { top: 48px; bottom: auto; }
+  .controls-active .game-touch-controls {
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    left: 10px;
+    z-index: 4;
+    display: grid;
+    gap: 8px;
+    height: 54px;
+  }
+  .dash-touch-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .snake-touch-controls { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .game-touch-controls button {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    border: 1px solid rgba(232, 244, 248, 0.5);
+    border-radius: 14px;
+    background: rgba(5, 45, 64, 0.88);
+    color: #fff;
+    box-shadow: 0 3px 0 rgba(2, 25, 38, 0.7);
+    font: 800 25px/1 var(--sans);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .game-touch-controls button:active {
+    transform: translateY(2px);
+    border-color: #ffc94d;
+    color: #ffc94d;
+    box-shadow: 0 1px 0 rgba(2, 25, 38, 0.7);
   }
 }
 

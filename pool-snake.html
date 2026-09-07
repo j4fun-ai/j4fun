@@ -51,6 +51,12 @@
           <button id="startBtn">开始清理</button>
         </div>
         <button id="fullscreenBtn" class="game-fullscreen-button" type="button">⛶ 全屏</button>
+        <div class="game-touch-controls snake-touch-controls" aria-label="方向控制">
+          <button type="button" data-x="-1" data-y="0" aria-label="向左">←</button>
+          <button type="button" data-x="0" data-y="-1" aria-label="向上">↑</button>
+          <button type="button" data-x="0" data-y="1" aria-label="向下">↓</button>
+          <button type="button" data-x="1" data-y="0" aria-label="向右">→</button>
+        </div>
       </div>
     </main>
 
@@ -65,7 +71,7 @@
             metaDescription: '落叶掉进泳池了，用不断变长的泳道绳把它们全部清走。',
             description: '落叶掉进泳池了！转动泳道绳把它们全部清走，但别让绳子撞墙或缠到自己。',
             clean: '已清理', best: '最佳',
-            hint: '方向键 / WASD / 滑动 · 空格暂停',
+            hint: '点击下方方向键或使用键盘 · 空格暂停',
             canvasLabel: 'Pool Snake 游戏区',
             intro: '控制泳道绳收走 12 片落叶。每清理一片，绳子就会更长一点。',
             start: '开始清理', paused: '暂停中', pauseNote: '泳池很安静，准备好再继续。', resume: '继续清理',
@@ -78,7 +84,7 @@
             metaDescription: 'Use a growing lane rope to clear every fallen leaf from the pool.',
             description: 'Leaves fell into the pool! Steer the lane rope to clear them all, but do not hit the wall or tangle the rope.',
             clean: 'CLEANED', best: 'BEST',
-            hint: 'Arrow keys / WASD / swipe · Space to pause',
+            hint: 'Tap the direction buttons or use the keyboard · Space to pause',
             canvasLabel: 'Pool Snake game area',
             intro: 'Guide the lane rope through 12 fallen leaves. The rope grows longer with every leaf you collect.',
             start: 'START CLEANING', paused: 'PAUSED', pauseNote: 'The water is still. Continue when you are ready.', resume: 'KEEP CLEANING',
@@ -114,6 +120,10 @@
         document.getElementById('gameIntro').textContent = copy.intro;
         document.getElementById('startBtn').textContent = copy.start;
         canvas.setAttribute('aria-label', copy.canvasLabel);
+        const directionLabels = language === 'en' ? ['Left', 'Up', 'Down', 'Right'] : ['向左', '向上', '向下', '向右'];
+        document.querySelectorAll('.snake-touch-controls button').forEach(function (button, index) {
+          button.setAttribute('aria-label', directionLabels[index]);
+        });
         languageLink.textContent = copy.switchLabel;
         languageLink.setAttribute('aria-label', copy.switchAria);
         languageLink.href = languageUrl.pathname + languageUrl.search + languageUrl.hash;
@@ -144,8 +154,8 @@
 
         function resize() {
           const ratio = Math.min(window.devicePixelRatio || 1, 2);
-          width = gameShell.clientWidth;
-          height = gameShell.clientHeight;
+          width = canvas.clientWidth || gameShell.clientWidth;
+          height = canvas.clientHeight || gameShell.clientHeight;
           canvas.width = Math.max(1, Math.round(width * ratio));
           canvas.height = Math.max(1, Math.round(height * ratio));
           ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -204,6 +214,7 @@
         function startGame() {
           reset();
           state = 'playing';
+          gameShell.classList.add('controls-active');
           overlay.style.display = 'none';
           lastStep = performance.now();
           cancelAnimationFrame(raf);
@@ -212,6 +223,7 @@
 
         function finish(won) {
           state = won ? 'won' : 'dead';
+          gameShell.classList.remove('controls-active');
           if (cleaned > best) {
             best = cleaned;
             try { localStorage.setItem('poolSnakeBest', String(best)); } catch (error) {}
@@ -231,6 +243,7 @@
         function pauseGame() {
           if (state !== 'playing') return;
           state = 'paused';
+          gameShell.classList.remove('controls-active');
           overlay.innerHTML = `<h1>${copy.paused}</h1><p>${copy.pauseNote}</p><button id="startBtn">${copy.resume}</button>`;
           overlay.style.display = 'flex';
           const resumeButton = document.getElementById('startBtn');
@@ -241,6 +254,7 @@
         function resumeGame() {
           if (state !== 'paused') return;
           state = 'playing';
+          gameShell.classList.add('controls-active');
           overlay.style.display = 'none';
           lastStep = performance.now();
         }
@@ -447,6 +461,13 @@
             updateFullscreenButton();
             resize();
           }
+        });
+
+        document.querySelector('.snake-touch-controls').addEventListener('pointerdown', function (event) {
+          const button = event.target.closest('button[data-x]');
+          if (!button) return;
+          event.preventDefault();
+          turn(Number(button.dataset.x), Number(button.dataset.y));
         });
 
         let touchStart = null;

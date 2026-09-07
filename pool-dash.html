@@ -51,6 +51,10 @@
     <button id="startBtn">跳进泳池</button>
   </div>
   <button id="fullscreenBtn" class="game-fullscreen-button" type="button">⛶ 全屏</button>
+  <div class="game-touch-controls dash-touch-controls" aria-label="泳道控制">
+    <button id="dashLeft" type="button" data-move="left" aria-label="向左移动">←</button>
+    <button id="dashRight" type="button" data-move="right" aria-label="向右移动">→</button>
+  </div>
 </div>
 </main>
 
@@ -67,7 +71,7 @@
       distance: '距离',
       best: '最佳',
       unit: '米',
-      hint: '← / → 或拖动切换泳道 · 空格暂停',
+      hint: '点击下方按钮或使用 ← / → 切换泳道 · 空格暂停',
       intro: '沿泳池尽量向前游，避开其他泳者和浮标。收集金色泳帽可以获得加速。',
       start: '跳进泳池',
       paused: '暂停中',
@@ -89,7 +93,7 @@
       distance: 'DIST',
       best: 'BEST',
       unit: 'm',
-      hint: '← / → or drag to change lanes · Space to pause',
+      hint: 'Tap the buttons below or use ← / → · Space to pause',
       intro: 'Swim as far as you can. Dodge swimmers and lane buoys, and grab golden caps for a speed boost.',
       start: 'DIVE IN',
       paused: 'PAUSED',
@@ -121,6 +125,8 @@
   document.getElementById('gameHint').textContent = copy.hint;
   document.getElementById('gameIntro').textContent = copy.intro;
   document.getElementById('startBtn').textContent = copy.start;
+  document.getElementById('dashLeft').setAttribute('aria-label', language === 'en' ? 'Move left' : '向左移动');
+  document.getElementById('dashRight').setAttribute('aria-label', language === 'en' ? 'Move right' : '向右移动');
   languageLink.textContent = copy.switchLabel;
   languageLink.setAttribute('aria-label', copy.switchAria);
   languageLink.href = languageUrl.pathname + languageUrl.search + languageUrl.hash;
@@ -169,8 +175,8 @@
 
   let W, H, LANES = 4, laneW;
   function resize(){
-    W = isFocusMode() ? gameShell.clientWidth : Math.min(window.innerWidth, 480);
-    H = gameShell.clientHeight;
+    W = canvas.clientWidth || (isFocusMode() ? gameShell.clientWidth : Math.min(window.innerWidth, 480));
+    H = canvas.clientHeight || gameShell.clientHeight;
     canvas.width = W;
     canvas.height = H;
     laneW = W / LANES;
@@ -268,6 +274,7 @@
 
   function gameOver(){
     state = 'dead';
+    gameShell.classList.remove('controls-active');
     const finalDist = Math.floor(dist);
     const isNewBest = finalDist > best;
     if (isNewBest){
@@ -290,6 +297,7 @@
   function pauseGame(){
     if (state !== 'playing') return;
     state = 'paused';
+    gameShell.classList.remove('controls-active');
     overlay.innerHTML = `
       <h1>${copy.paused}</h1>
       <p>${copy.pauseNote}</p>
@@ -305,6 +313,7 @@
     if (state !== 'paused') return;
     overlay.style.display = 'none';
     state = 'playing';
+    gameShell.classList.add('controls-active');
   }
 
   function drawLaneLines(){
@@ -454,6 +463,7 @@
     overlay.style.display = 'none';
     reset();
     state = 'playing';
+    gameShell.classList.add('controls-active');
     cancelAnimationFrame(raf);
     loop();
   }
@@ -463,6 +473,13 @@
   // controls
   function moveLeft(){ if(state==='playing') player.targetLane = Math.max(0, player.targetLane - 1); }
   function moveRight(){ if(state==='playing') player.targetLane = Math.min(LANES-1, player.targetLane + 1); }
+
+  document.querySelector('.dash-touch-controls').addEventListener('pointerdown', (e)=>{
+    const button = e.target.closest('button[data-move]');
+    if (!button) return;
+    e.preventDefault();
+    if (button.dataset.move === 'left') moveLeft(); else moveRight();
+  });
 
   window.addEventListener('keydown', (e)=>{
     if (e.code === 'Space' && !e.repeat && (state === 'playing' || state === 'paused')) {
