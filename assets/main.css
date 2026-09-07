@@ -300,6 +300,10 @@ nav.top-links a:hover {
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
+.page-pool-dash.pool-focus-active .game-page-main,
+.page-pool-snake.pool-focus-active .game-page-main {
+  z-index: 1001;
+}
 .page-pool-dash .pool-game-shell.controls-active,
 .page-pool-dash .pool-game-shell.controls-active canvas {
   touch-action: none;
@@ -622,6 +626,15 @@ nav.top-links a:hover {
 }
 
 @media (max-width: 560px), (hover: none) and (pointer: coarse) {
+  .page-pool-dash .pool-game-shell.is-focus-mode,
+  .page-pool-snake .pool-snake-shell.is-focus-mode {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .page-pool-dash .pool-game-shell.is-focus-mode #hud,
+  .page-pool-snake .pool-snake-shell.is-focus-mode #snakeHud {
+    top: calc(12px + env(safe-area-inset-top, 0px));
+  }
   .page-pool-dash .game-fullscreen-button,
   .page-pool-snake .game-fullscreen-button {
     display: none;
@@ -634,7 +647,7 @@ nav.top-links a:hover {
   .page-pool-dash .pool-game-shell.is-focus-mode canvas { height: calc(100% - 108px); }
   .page-pool-dash .hint { bottom: 82px; }
   .page-pool-snake .hint {
-    bottom: 142px;
+    bottom: calc(142px + env(safe-area-inset-bottom, 0px));
     padding: 0 16px;
     color: rgba(232, 244, 248, 0.82);
     font-size: 14px;
@@ -646,7 +659,7 @@ nav.top-links a:hover {
   .controls-active .game-touch-controls {
     position: absolute;
     right: 10px;
-    bottom: 9px;
+    bottom: calc(9px + env(safe-area-inset-bottom, 0px));
     left: 10px;
     z-index: 5;
     display: grid;
