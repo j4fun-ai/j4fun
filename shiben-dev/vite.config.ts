@@ -150,12 +150,65 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+function vitePluginPdfJsWasm(): Plugin {
+  const wasmDir = path.resolve(import.meta.dirname, "node_modules", "pdfjs-dist", "wasm");
+  let outDir = "";
+
+  return {
+    name: "pdfjs-wasm-assets",
+    configResolved(config) {
+      outDir = config.build.outDir;
+    },
+    configureServer(server) {
+      server.middlewares.use("/pdfjs-wasm", (req, res, next) => {
+        const fileName = decodeURIComponent((req.url ?? "").split("?")[0]).replace(/^\/+/, "");
+        if (!fileName || fileName !== path.basename(fileName)) return next();
+        const filePath = path.join(wasmDir, fileName);
+        if (!fs.existsSync(filePath)) return next();
+        res.setHeader("Content-Type", fileName.endsWith(".wasm") ? "application/wasm" : "text/javascript; charset=utf-8");
+        res.end(fs.readFileSync(filePath));
+      });
+    },
+    closeBundle() {
+      fs.cpSync(wasmDir, path.join(outDir, "pdfjs-wasm"), { recursive: true });
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginPdfJsWasm()];
+
+/**
+ * Cloudflare Pages falls back to the repository root index for unknown paths.
+ * Emit a real entry file for the client-side /browse route so a hard refresh
+ * loads 识本 instead of the unstyled j4fun homepage fallback.
+ */
+function vitePluginStaticRouteEntries(): Plugin {
+  let outDir = "";
+
+  return {
+    name: "static-route-entries",
+    apply: "build",
+    configResolved(config) {
+      outDir = config.build.outDir;
+    },
+    closeBundle() {
+      const indexPath = path.join(outDir, "index.html");
+      const browseDir = path.join(outDir, "browse");
+
+      if (!fs.existsSync(indexPath)) {
+        throw new Error("Could not generate the /browse static route: index.html is missing");
+      }
+
+      fs.mkdirSync(browseDir, { recursive: true });
+      fs.copyFileSync(indexPath, path.join(browseDir, "index.html"));
+    },
+  };
+}
 
 export default defineConfig(({ mode }) => ({
   // The static build is served by the parent j4fun site from this subdirectory.
   base: mode === "static" ? (process.env.SHIBEN_BASE_PATH ?? "/j4fun/shiben/") : "/",
-  plugins,
+  plugins: mode === "static" ? [...plugins, vitePluginStaticRouteEntries()] : plugins,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

@@ -16,5 +16,5 @@ declare module "pdfjs-dist/build/pdf.mjs" {
     destroy: () => Promise<void>;
   };
   export const GlobalWorkerOptions: { workerSrc: string };
-  export function getDocument(options: { url?: string; data?: Uint8Array; disableRange?: boolean; disableStream?: boolean; disableAutoFetch?: boolean }): PDFLoadingTask;
+  export function getDocument(options: { url?: string; data?: Uint8Array; wasmUrl?: string; disableRange?: boolean; disableStream?: boolean; disableAutoFetch?: boolean }): PDFLoadingTask;
 }

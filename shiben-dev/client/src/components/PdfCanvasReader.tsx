@@ -7,6 +7,7 @@ import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import { ChevronLeft, ChevronRight, Download, Keyboard, Loader2, Minus, Plus, RotateCcw } from "lucide-react";
 
 GlobalWorkerOptions.workerSrc = workerUrl;
+const wasmUrl = `${import.meta.env.BASE_URL}pdfjs-wasm/`;
 
 type PdfCanvasReaderProps = {
   fileName: string;
@@ -37,8 +38,8 @@ export default function PdfCanvasReader({ fileName, url, data, downloadUrl, init
   useEffect(() => {
     let active = true;
     const task = data
-      ? getDocument({ data: data.slice() })
-      : getDocument({ url: url ?? "", disableRange: false, disableStream: false, disableAutoFetch: false });
+      ? getDocument({ data: data.slice(), wasmUrl })
+      : getDocument({ url: url ?? "", wasmUrl, disableRange: false, disableStream: false, disableAutoFetch: false });
     setDocumentProxy(null);
     setPageNumber(Math.max(1, initialPage));
     setProgress({ loaded: 0, total: 0 });
