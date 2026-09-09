@@ -2,14 +2,32 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>每日字踪 · j4fun</title>
-    <meta name="description" content="每天一道中文藏字连线游戏。找出所有主题词，让字正好铺满整个棋盘。" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <meta
+      name="description"
+      content="每天一道中文藏字连线游戏。找出所有主题词，让字正好铺满整个棋盘。"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/apple-touch-icon.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/main.css?v=20260907a" />
     <script src="assets/site-nav.js?v=20260906" defer></script>
     <script src="assets/daily-strands.js?v=20260907a" defer></script>
@@ -18,58 +36,161 @@
     <div id="petals" aria-hidden="true"></div>
     <header class="site">
       <div class="wrap topbar">
-        <a class="brand" href="index.html" aria-label="j4fun 首页"><img class="brand-logo" src="assets/images/logo.png?083026" alt="j4fun" /></a>
-        <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+        <a class="brand" href="index.html" aria-label="j4fun 首页"
+          ><img
+            class="brand-logo"
+            src="assets/images/logo.png?083026"
+            alt="j4fun"
+        /></a>
+        <button
+          class="mobile-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+        >
+          <span>菜单</span
+          ><span class="menu-icon" aria-hidden="true"
+            ><i></i><i></i><i></i
+          ></span>
+        </button>
         <nav class="top-links" id="site-navigation" aria-label="主导航">
-          <a href="fun.html" aria-current="page">中文小玩意</a><a href="games.html">随手玩</a><a href="quiz.html">知识挑战</a><a href="about.html">关于</a>
-          <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a>
+          <a href="fun.html" aria-current="page">中文小玩意</a
+          ><a href="games.html">随手玩</a><a href="quiz.html">知识挑战</a
+          ><a href="about.html">关于</a>
+          <!-- <a class="related-project" href="shiben/"><img src="shiben/images/huawen-textbook-mark.svg" alt="" aria-hidden="true" />识本</a> -->
         </nav>
       </div>
     </header>
 
     <main class="wrap daily-strands-main">
       <div class="daily-title-row">
-        <div><p class="eyebrow">A NEW PUZZLE EVERY DAY</p><h1>每日<span>字踪</span></h1></div>
-        <button class="archive-button" id="archiveButton" type="button" aria-expanded="false" aria-controls="archivePanel">往期字踪</button>
+        <div>
+          <p class="eyebrow">A NEW PUZZLE EVERY DAY</p>
+          <h1>每日<span class="accent">字踪</span></h1>
+        </div>
+        <button
+          class="archive-button"
+          id="archiveButton"
+          type="button"
+          aria-expanded="false"
+          aria-controls="archivePanel"
+        >
+          往期字踪
+        </button>
       </div>
 
       <section class="week-picker" aria-label="本周字踪">
-        <button class="week-arrow" id="previousWeek" type="button" aria-label="上一周">←</button>
+        <button
+          class="week-arrow"
+          id="previousWeek"
+          type="button"
+          aria-label="上一周"
+        >
+          ←
+        </button>
         <div class="week-days" id="weekDays"></div>
-        <button class="week-arrow" id="nextWeek" type="button" aria-label="下一周">→</button>
+        <button
+          class="week-arrow"
+          id="nextWeek"
+          type="button"
+          aria-label="下一周"
+        >
+          →
+        </button>
       </section>
 
-      <section class="archive-panel" id="archivePanel" hidden aria-labelledby="archiveTitle">
-        <div class="archive-heading"><h2 id="archiveTitle">往期字踪</h2><button id="closeArchive" type="button" aria-label="关闭往期字踪">关闭</button></div>
+      <section
+        class="archive-panel"
+        id="archivePanel"
+        hidden
+        aria-labelledby="archiveTitle"
+      >
+        <div class="archive-heading">
+          <h2 id="archiveTitle">往期字踪</h2>
+          <button id="closeArchive" type="button" aria-label="关闭往期字踪">
+            关闭
+          </button>
+        </div>
         <div class="archive-list" id="archiveList"></div>
       </section>
 
-      <div class="daily-loading" id="loadingState" role="status">正在摆好今天的字……</div>
-      <section class="daily-puzzle" id="puzzlePanel" hidden aria-labelledby="puzzleTitle">
+      <div class="daily-loading" id="loadingState" role="status">
+        正在摆好今天的字……
+      </div>
+      <section
+        class="daily-puzzle"
+        id="puzzlePanel"
+        hidden
+        aria-labelledby="puzzleTitle"
+      >
         <div class="puzzle-daily-heading">
-          <div><p id="puzzleNumber"></p><h2 id="puzzleTitle"></h2></div>
+          <div>
+            <p id="puzzleNumber"></p>
+            <h2 id="puzzleTitle"></h2>
+          </div>
           <time id="puzzleDate"></time>
         </div>
-        <p class="daily-clue"><span>今日提示</span><strong id="puzzleClue"></strong></p>
+        <p class="daily-clue">
+          <span>今日提示</span><strong id="puzzleClue"></strong>
+        </p>
         <div class="panel">
-          <div class="status-row"><span>已找到 <b id="foundCount">0</b> / <span id="totalCount">0</span></span><span id="saveStatus">进度保存在本机</span></div>
-          <div class="compose-bar" id="composeBar"><span class="ph">点击或拖动连字</span></div>
+          <div class="status-row">
+            <span
+              >已找到 <b id="foundCount">0</b> /
+              <span id="totalCount">0</span></span
+            ><span id="saveStatus">进度保存在本机</span>
+          </div>
+          <div class="compose-bar" id="composeBar">
+            <span class="ph">点击或拖动连字</span>
+          </div>
           <div class="board" id="board"></div>
-          <div class="helper-row"><button class="ghost-btn" id="btnClear" type="button">清空选择</button><button class="ghost-btn" id="btnHint" type="button">提示一个字</button><button class="ghost-btn" id="btnReset" type="button">重新开始</button></div>
+          <div class="helper-row">
+            <button class="ghost-btn" id="btnClear" type="button">
+              清空选择</button
+            ><button class="ghost-btn" id="btnHint" type="button">
+              提示一个字</button
+            ><button class="ghost-btn" id="btnReset" type="button">
+              重新开始
+            </button>
+          </div>
           <div class="feedback" id="feedback" aria-live="polite"></div>
           <div class="found-list" id="foundList"></div>
         </div>
       </section>
       <section class="daily-unavailable" id="unavailableState" hidden>
-        <div class="lock-mark" aria-hidden="true">锁</div><h2 id="unavailableTitle">这一天还没有开放</h2><p id="unavailableCopy">每天零点解锁一道新字踪，明天再来看看吧。</p>
+        <div class="lock-mark" aria-hidden="true">锁</div>
+        <h2 id="unavailableTitle">这一天还没有开放</h2>
+        <p id="unavailableCopy">每天零点解锁一道新字踪，明天再来看看吧。</p>
       </section>
-      <p class="classic-strands-link">想一次多玩几关？<a href="strands.html">前往经典字踪 →</a></p>
+      <p class="classic-strands-link">
+        想一次多玩几关？<a href="strands.html">前往经典字踪 →</a>
+      </p>
     </main>
 
     <section class="about wrap">
       <h2>怎么玩</h2>
-      <div class="about-grid"><div class="about-card"><h3>连出主题词</h3><p>横、竖、斜方向都可以相连；每个字只属于一个答案。</p></div><div class="about-card"><h3>留意通关词</h3><p>有些题目会有金色通关词，它会横跨棋盘并揭示共同主题；并非每天都有。</p></div><div class="about-card"><h3>每天回来</h3><p>每日只开放一道。完成记录只保存在你的浏览器里，不会上传。</p></div></div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>连出主题词</h3>
+          <p>横、竖、斜方向都可以相连；每个字只属于一个答案。</p>
+        </div>
+        <div class="about-card">
+          <h3>留意通关词</h3>
+          <p>
+            有些题目会有金色通关词，它会横跨棋盘并揭示共同主题；并非每天都有。
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>每天回来</h3>
+          <p>每日只开放一道。完成记录只保存在你的浏览器里，不会上传。</p>
+        </div>
+      </div>
     </section>
-    <footer class="wrap"><div class="footer-brand">j4fun - Just For Fun<br />Play, Learn &amp; Discover</div><div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div></footer>
+    <footer class="wrap">
+      <div class="footer-brand">
+        j4fun - Just For Fun<br />Play, Learn &amp; Discover
+      </div>
+      <div class="footer-made">© 2026 J4FUN · Made with ❤️ (AI) · v1.0</div>
+    </footer>
   </body>
 </html>
