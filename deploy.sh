@@ -44,6 +44,23 @@ done
 cp -R "$PROJECT_DIR/strands-data" "$DEPLOY_DIR/strands-data"
 cp -R "$PROJECT_DIR/assets" "$DEPLOY_DIR/assets"
 
+echo "Generating sitemap…"
+SITEMAP_LASTMOD="$(date -u +%F)"
+{
+  printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>'
+  printf '%s\n' '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  for source_page in "$PROJECT_DIR"/*.html; do
+    page="$(basename "$source_page")"
+    if [[ "$page" == "index.html" ]]; then
+      page_url="https://j4fun.com/"
+    else
+      page_url="https://j4fun.com/${page%.html}"
+    fi
+    printf '  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n  </url>\n' "$page_url" "$SITEMAP_LASTMOD"
+  done
+  printf '%s\n' '</urlset>'
+} > "$DEPLOY_DIR/sitemap.xml"
+
 echo "Adding Google Analytics to production HTML…"
 node "$PROJECT_DIR/scripts/inject-analytics.js" "$DEPLOY_DIR"
 
