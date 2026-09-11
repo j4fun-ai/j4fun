@@ -27,6 +27,7 @@ function prettyBytes(value: number) {
 
 export default function PdfCanvasReader({ fileName, url, data, downloadUrl, initialPage = 1, onPageChange, immersive = false, onToggleFocus }: PdfCanvasReaderProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const [documentProxy, setDocumentProxy] = useState<PDFDocumentProxy | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1.3);
@@ -131,6 +132,27 @@ export default function PdfCanvasReader({ fileName, url, data, downloadUrl, init
 
   const readerHeight = immersive ? "h-full min-h-0" : "min-h-[470px]";
   const fileDownloadUrl = downloadUrl ?? url;
+  const goToPreviousPage = () => setPageNumber((page) => Math.max(1, page - 1));
+  const goToNextPage = () => setPageNumber((page) => Math.min(documentProxy?.numPages ?? page, page + 1));
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.changedTouches[0];
+    touchStartRef.current = touch ? { x: touch.clientX, y: touch.clientY } : null;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    const start = touchStartRef.current;
+    const touch = event.changedTouches[0];
+    touchStartRef.current = null;
+    if (!start || !touch) return;
+
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    const isHorizontalSwipe = Math.abs(deltaX) >= 56 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5;
+    if (!isHorizontalSwipe) return;
+    if (deltaX < 0) goToNextPage();
+    else goToPreviousPage();
+  };
 
   if (state === "loading") {
     const percent = progress.total ? Math.min(100, Math.round((progress.loaded / progress.total) * 100)) : 0;
@@ -176,13 +198,13 @@ export default function PdfCanvasReader({ fileName, url, data, downloadUrl, init
         <span><kbd>Esc</kbd> 退出</span>
         <span><kbd>H</kbd> 显示/隐藏提示</span>
       </div>}
-      <div className="min-h-0 flex-1 overflow-auto p-4 sm:p-5">
+      <div className="min-h-0 flex-1 overflow-auto touch-pan-y p-4 sm:p-5" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <canvas ref={canvasRef} className="mx-auto block max-w-full bg-white shadow-[0_10px_28px_rgba(23,47,57,0.23)]" aria-label={`${fileName} 第 ${pageNumber} 页`} />
       </div>
       <div className="flex items-center justify-between border-t border-[#17303b]/10 bg-[#faf7ef] p-2.5">
-        <button type="button" onClick={() => setPageNumber((page) => Math.max(1, page - 1))} disabled={pageNumber === 1} className="reader-page-control"><ChevronLeft size={16} /> 上一页</button>
-        <span className="font-serif text-sm text-[#167b78]">{pageNumber} / {documentProxy.numPages}</span>
-        <button type="button" onClick={() => setPageNumber((page) => Math.min(documentProxy.numPages, page + 1))} disabled={pageNumber === documentProxy.numPages} className="reader-page-control">下一页 <ChevronRight size={16} /></button>
+        <button type="button" onClick={goToPreviousPage} disabled={pageNumber === 1} className="reader-page-control"><ChevronLeft size={16} /> 上一页</button>
+        <span className="text-center font-serif text-sm text-[#167b78]"><span className="block">{pageNumber} / {documentProxy.numPages}</span><span className="mt-0.5 block font-sans text-[10px] font-medium text-[#6b8080] sm:hidden">左右轻扫翻页</span></span>
+        <button type="button" onClick={goToNextPage} disabled={pageNumber === documentProxy.numPages} className="reader-page-control">下一页 <ChevronRight size={16} /></button>
       </div>
     </div>
   );

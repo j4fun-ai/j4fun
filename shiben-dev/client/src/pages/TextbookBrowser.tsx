@@ -105,6 +105,7 @@ export default function TextbookBrowser() {
   const [focusMode, setFocusMode] = useState(false);
   const [localPdf, setLocalPdf] = useState<LocalPdf | null>(null);
   const [readingEntries, setReadingEntries] = useState<ReadingEntry[]>(loadReadingEntries);
+  const [shouldRevealReader, setShouldRevealReader] = useState(false);
   const readerRef = useRef<HTMLElement>(null);
 
   useEffect(() => () => {
@@ -187,6 +188,12 @@ export default function TextbookBrowser() {
     return () => document.removeEventListener("fullscreenchange", syncFullscreenState);
   }, []);
 
+  useEffect(() => {
+    if (!shouldRevealReader) return;
+    readerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setShouldRevealReader(false);
+  }, [shouldRevealReader, selectedFile?.path]);
+
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase();
     return normalized ? items.filter((item) => item.name.toLocaleLowerCase().includes(normalized)) : items;
@@ -243,6 +250,8 @@ export default function TextbookBrowser() {
     setActivePage(1);
     setPendingFilePath(item.path);
     setSelectedFile(item);
+    setShowFiles(false);
+    setShouldRevealReader(true);
   };
 
   const toggleFavorite = () => {
@@ -271,6 +280,11 @@ export default function TextbookBrowser() {
   const exitFocusMode = () => {
     setFocusMode(false);
     if (document.fullscreenElement) void document.exitFullscreen();
+  };
+
+  const openShortcut = (shortcutPath: string) => {
+    setShowFiles(true);
+    void loadDirectory(shortcutPath);
   };
 
   const desktopGrid = showFiles ? "lg:grid-cols-[minmax(340px,0.9fr)_minmax(460px,1.25fr)]" : "lg:grid-cols-1";
@@ -303,7 +317,7 @@ export default function TextbookBrowser() {
               <button
                 type="button"
                 key={shortcut.path}
-                onClick={() => void loadDirectory(shortcut.path)}
+                onClick={() => openShortcut(shortcut.path)}
                 className={`relative border p-3 text-left transition ${active ? "border-[#167b78] bg-[#167b78] text-white shadow-[4px_4px_0_#c9523e]" : "border-[#17303b]/15 bg-white/45 hover:border-[#167b78]/60 hover:bg-white"}`}
               >
                 <span className={`block font-serif text-lg font-semibold ${active ? "text-white" : "text-[#172f39]"}`}>{shortcut.label}</span>
@@ -350,7 +364,7 @@ export default function TextbookBrowser() {
                 <div className="min-w-0"><p className="eyebrow text-[#167b78]">{focusMode ? "专注阅读 / 只保留教材" : localPdf ? "本地合并完成 / 站内阅读" : "站内阅读窗"}</p><h2 className="mt-2 truncate font-serif text-lg font-semibold sm:text-xl">{pdfSource?.name ?? selectedFile?.name ?? "先从目录选择一本教材"}</h2></div>
                 <div className="flex items-center gap-1.5">
                   {!focusMode && <>
-                    <button type="button" onClick={() => setShowFiles((visible) => !visible)} className="reader-layout-control" aria-label={showFiles ? "收起文件列表" : "展开文件列表"} title={showFiles ? "收起文件列表" : "展开文件列表"}>{showFiles ? <PanelRightClose size={17} /> : <PanelRightOpen size={17} />}<span className="hidden xl:inline">文件</span></button>
+                    <button type="button" onClick={() => setShowFiles((visible) => !visible)} className={`reader-layout-control ${showFiles ? "border-[#167b78] bg-[#167b78] text-white hover:bg-[#0e6562]" : "border-[#167b78] bg-white text-[#167b78] hover:bg-[#e4f3ef]"}`} aria-label={showFiles ? "关闭目录" : "打开目录"} title={showFiles ? "关闭目录" : "打开目录"}>{showFiles ? <PanelRightClose size={17} /> : <PanelRightOpen size={17} />}<span>{showFiles ? "关闭目录" : "打开目录"}</span></button>
                     {hasPreviewablePdf && <button type="button" onClick={enterFocusMode} className="reader-layout-control bg-[#167b78] text-white hover:bg-[#0e6562]" aria-label="进入专注阅读模式"><Focus size={17} /><span className="hidden sm:inline">专注阅读</span><kbd className="shortcut-key shortcut-key-inverse">F</kbd></button>}
                   </>}
                   {focusMode && hasPreviewablePdf && <button type="button" onClick={exitFocusMode} className="reader-layout-control bg-[#172f39] text-white hover:bg-[#294650]" aria-label="退出专注阅读模式"><X size={17} /><span>退出阅读</span><kbd className="shortcut-key shortcut-key-inverse">Esc</kbd></button>}
@@ -366,9 +380,9 @@ export default function TextbookBrowser() {
                 ) : selectedFile ? (
                   <div className="flex h-full min-h-[470px] flex-col justify-center border border-dashed border-[#17303b]/25 bg-white/50 p-7 text-center"><FileText className="mx-auto text-[#167b78]" size={38} /><h2 className="mt-5 font-serif text-2xl font-semibold">此文件暂不支持预览</h2><p className="mt-3 text-sm leading-6 text-[#53686b]">可前往原始项目查看文件详情或下载。</p>{selectedFile.html_url && <a href={selectedFile.html_url} target="_blank" rel="noreferrer" className="action-button mx-auto mt-6 border border-[#167b78] bg-white text-[#167b78] hover:bg-[#e4f3ef]">查看原始文件 <ArrowUpRight size={17} /></a>}</div>
                 ) : path === "" ? (
-                  <div className="flex h-full min-h-[470px] flex-col justify-center border border-dashed border-[#167b78]/35 bg-[#f0f7f4] p-7 text-center"><LibraryBig className="mx-auto text-[#167b78]" size={42} /><h2 className="mt-5 font-serif text-2xl font-semibold">选择一个学段</h2><p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#53686b]">然后按学科、年级和教材版本继续查找。</p><div className="mx-auto mt-6 flex max-w-md flex-wrap justify-center gap-2">{shortcuts.map((shortcut) => <button type="button" key={`root-${shortcut.path}`} onClick={() => void loadDirectory(shortcut.path)} className="border border-[#167b78]/25 bg-white px-3 py-2 text-sm font-semibold text-[#167b78] hover:bg-[#e3f2ed]">{shortcut.label}</button>)}</div></div>
+                  <div className="flex h-full min-h-[470px] flex-col justify-center border border-dashed border-[#167b78]/35 bg-[#f0f7f4] p-7 text-center"><LibraryBig className="mx-auto text-[#167b78]" size={42} /><h2 className="mt-5 font-serif text-2xl font-semibold">选择一个学段</h2><p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#53686b]">然后按学科、年级和教材版本继续查找。</p><div className="mx-auto mt-6 flex max-w-md flex-wrap justify-center gap-2">{shortcuts.map((shortcut) => <button type="button" key={`root-${shortcut.path}`} onClick={() => openShortcut(shortcut.path)} className="border border-[#167b78]/25 bg-white px-3 py-2 text-sm font-semibold text-[#167b78] hover:bg-[#e3f2ed]">{shortcut.label}</button>)}</div></div>
                 ) : (
-                  <div className="flex h-full min-h-[470px] flex-col justify-center border border-dashed border-[#17303b]/25 bg-white/50 p-7 text-center"><BookOpenCheck className="mx-auto text-[#167b78]" size={42} /><h2 className="mt-5 font-serif text-2xl font-semibold">从左侧目录选择一本书</h2><p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#53686b]">真实 PDF 文件会在这里直接展开；文件夹则会带你继续进入教材目录。</p></div>
+                  <div className="flex h-full min-h-[470px] flex-col justify-center border border-dashed border-[#17303b]/25 bg-white/50 p-7 text-center"><BookOpenCheck className="mx-auto text-[#167b78]" size={42} /><h2 className="mt-5 font-serif text-2xl font-semibold">从目录选择一本书</h2><p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#53686b]">真实 PDF 文件会在这里直接展开；文件夹则会带你继续进入教材目录。</p></div>
                 )}
               </div>
             </section>
