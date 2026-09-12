@@ -13,6 +13,26 @@
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/main.css?v=20260907c" />
 <script src="assets/site-nav.js?v=20260906" defer></script>
+<style>
+  #muteBtn{
+    appearance:none;
+    border:1px solid rgba(255,255,255,0.35);
+    background:rgba(6,42,66,0.4);
+    color:#eaf6fb;
+    font-size:14px;
+    line-height:1;
+    padding:4px 8px;
+    border-radius:999px;
+    cursor:pointer;
+    margin-left:8px;
+    vertical-align:middle;
+    pointer-events:auto;
+    position:relative;
+    z-index:5;
+  }
+  #muteBtn:hover{ background:rgba(6,42,66,0.65); }
+  #muteBtn:active{ transform:scale(0.94); }
+</style>
 </head>
 <body class="page-game page-pool-dash">
 <header class="site">
@@ -43,7 +63,7 @@
   <canvas id="game"></canvas>
   <div id="hud">
     <span><span id="distLabel">距离</span> <span id="distVal" class="big">0</span> <span id="distUnit">米</span></span>
-    <span><span id="bestLabel">最佳</span> <span id="bestVal">0</span> <span id="bestUnit">米</span></span>
+    <span><span id="bestLabel">最佳</span> <span id="bestVal">0</span> <span id="bestUnit">米</span><button id="muteBtn" type="button" aria-pressed="false">🔊</button></span>
   </div>
   <div class="hint" id="gameHint">← / → 或拖动切换泳道</div>
   <div id="overlay">
@@ -87,7 +107,9 @@
       fullscreen: '⛶ 全屏',
       exitFullscreen: '✕ 退出全屏',
       switchLabel: '🌐 English',
-      switchAria: 'Switch game to English'
+      switchAria: 'Switch game to English',
+      mute: '静音',
+      unmute: '取消静音'
     },
     en: {
       pageTitle: 'Pool Dash · Quick Game · j4fun',
@@ -110,7 +132,9 @@
       fullscreen: '⛶ Fullscreen',
       exitFullscreen: '✕ Exit Fullscreen',
       switchLabel: '🌐 中文',
-      switchAria: '切换游戏为中文'
+      switchAria: '切换游戏为中文',
+      mute: 'Mute',
+      unmute: 'Unmute'
     }
   };
   const copy = translations[language];
@@ -230,6 +254,140 @@
   try { best = parseInt(sessionStorage.getItem('poolDashBest') || '0', 10) || 0; } catch(e){ best = 0; }
   bestVal.textContent = best;
 
+  // ---------- Audio (synthesized, no external files) ----------
+  const muteBtn = document.getElementById('muteBtn');
+  let muted = false;
+  try { muted = localStorage.getItem('poolDashMuted') === '1'; } catch(e){ muted = false; }
+
+  let audioCtx = null, masterGain = null, musicGain = null, sfxGain = null;
+  let musicTimerId = null, nextStepTime = 0, melodyPos = 0;
+
+  const SCALE = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25]; // C D E G A c d e (pentatonic + octave)
+  const MELODY = [0,2,4,2, 3,5,4,2, 0,2,4,5, 4,2,0,-1];
+  const MUSIC_STEP_SEC = 0.42;
+
+  function ensureAudio(){
+    if (audioCtx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    audioCtx = new AC();
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = muted ? 0 : 1;
+    masterGain.connect(audioCtx.destination);
+    musicGain = audioCtx.createGain();
+    musicGain.gain.value = 0.22;
+    musicGain.connect(masterGain);
+    sfxGain = audioCtx.createGain();
+    sfxGain.gain.value = 0.4;
+    sfxGain.connect(masterGain);
+  }
+
+  function resumeAudio(){
+    ensureAudio();
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function playTone(freq, time, dur, dest, type, peak){
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.setValueAtTime(freq, time);
+    g.gain.setValueAtTime(0, time);
+    g.gain.linearRampToValueAtTime(peak || 0.5, time + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.001, time + dur);
+    osc.connect(g); g.connect(dest);
+    osc.start(time); osc.stop(time + dur + 0.05);
+  }
+
+  function scheduleMusic(){
+    if (!audioCtx) return;
+    while (nextStepTime < audioCtx.currentTime + 0.6){
+      const idx = MELODY[melodyPos % MELODY.length];
+      if (idx >= 0){
+        playTone(SCALE[idx], nextStepTime, MUSIC_STEP_SEC*0.9, musicGain, 'triangle', 0.16);
+        if (melodyPos % 4 === 0){
+          playTone(SCALE[idx]/2, nextStepTime, MUSIC_STEP_SEC*3.6, musicGain, 'sine', 0.09);
+        }
+      }
+      melodyPos++;
+      nextStepTime += MUSIC_STEP_SEC;
+    }
+    musicTimerId = setTimeout(scheduleMusic, 150);
+  }
+
+  function startMusic(){
+    if (muted) return;
+    ensureAudio();
+    if (!audioCtx || musicTimerId) return;
+    resumeAudio();
+    nextStepTime = audioCtx.currentTime + 0.05;
+    melodyPos = 0;
+    scheduleMusic();
+  }
+
+  function stopMusic(){
+    if (musicTimerId){ clearTimeout(musicTimerId); musicTimerId = null; }
+  }
+
+  function playBoostSound(){
+    if (!audioCtx || muted) return;
+    const now = audioCtx.currentTime;
+    [0,3,5].forEach((idx,i)=>{
+      playTone(SCALE[idx]*2, now + i*0.05, 0.18, sfxGain, 'triangle', 0.3);
+    });
+  }
+
+  function playCrashSound(){
+    if (!audioCtx || muted) return;
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(220, now);
+    osc.frequency.exponentialRampToValueAtTime(40, now + 0.4);
+    g.gain.setValueAtTime(0.4, now);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+    osc.connect(g); g.connect(sfxGain);
+    osc.start(now); osc.stop(now + 0.5);
+
+    const bufferSize = Math.floor(audioCtx.sampleRate * 0.3);
+    const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i=0;i<bufferSize;i++) data[i] = (Math.random()*2-1) * (1 - i/bufferSize);
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+    const ng = audioCtx.createGain();
+    ng.gain.setValueAtTime(0.3, now);
+    ng.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass'; filter.frequency.value = 1200;
+    noise.connect(filter); filter.connect(ng); ng.connect(sfxGain);
+    noise.start(now);
+  }
+
+  function updateMuteButton(){
+    if (!muteBtn) return;
+    muteBtn.textContent = muted ? '🔇' : '🔊';
+    muteBtn.setAttribute('aria-pressed', String(muted));
+    muteBtn.setAttribute('aria-label', muted ? copy.unmute : copy.mute);
+  }
+
+  function setMuted(val){
+    muted = val;
+    try { localStorage.setItem('poolDashMuted', muted ? '1' : '0'); } catch(e){}
+    if (masterGain) masterGain.gain.value = muted ? 0 : 1;
+    if (muted) stopMusic(); else if (state === 'playing') startMusic();
+    updateMuteButton();
+  }
+
+  updateMuteButton();
+  if (muteBtn){
+    muteBtn.addEventListener('click', function(){
+      resumeAudio();
+      setMuted(!muted);
+    });
+  }
+
   let state = 'idle'; // idle, playing, paused, dead
   let player, obstacles, particles, dist, speed, spawnTimer, boostTimer, t;
 
@@ -286,6 +444,7 @@
       if (dy < 34 && dx < laneW*0.42){
         if (o.kind === 'boost'){
           boostTimer = 70;
+          playBoostSound();
           for(let k=0;k<10;k++) particles.push({x:player.x,y:H*0.74,vx:(Math.random()-0.5)*4,vy:(Math.random()-0.5)*4,life:24,c:'#ffc94d'});
           obstacles.splice(i,1);
         } else {
@@ -308,6 +467,8 @@
     state = 'dead';
     gameShell.classList.remove('controls-active');
     exitMobilePlayMode();
+    stopMusic();
+    playCrashSound();
     const finalDist = Math.floor(dist);
     const isNewBest = finalDist > best;
     if (isNewBest){
@@ -332,6 +493,7 @@
     state = 'paused';
     gameShell.classList.remove('controls-active');
     exitMobilePlayMode();
+    stopMusic();
     overlay.innerHTML = `
       <h1>${copy.paused}</h1>
       <p>${copy.pauseNote}</p>
@@ -349,6 +511,7 @@
     state = 'playing';
     gameShell.classList.add('controls-active');
     enterMobilePlayMode();
+    startMusic();
     lastFrameTime = performance.now();
     frameAccumulator = 0;
   }
@@ -515,6 +678,8 @@
     state = 'playing';
     gameShell.classList.add('controls-active');
     enterMobilePlayMode();
+    resumeAudio();
+    startMusic();
     cancelAnimationFrame(raf);
     lastFrameTime = performance.now();
     frameAccumulator = 0;
