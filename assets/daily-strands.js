@@ -2,7 +2,7 @@
   'use strict';
 
   var MANIFEST_URL = 'strands-data/index.json';
-  var STORE_PREFIX = 'j4fun-daily-strands-';
+  var STORE_PREFIX = 'j4fun-daily-strands-monthly-';
   var manifest;
   var puzzle;
   var selectedDate;
@@ -21,7 +21,11 @@
   function addDays(date, days) { var copy = new Date(date); copy.setDate(copy.getDate() + days); return copy; }
   function mondayOf(date) { var copy = new Date(date); var day = copy.getDay() || 7; copy.setDate(copy.getDate() - day + 1); copy.setHours(0, 0, 0, 0); return copy; }
   function isFuture(key) { return key > dateKey(new Date()); }
-  function entryFor(key) { return manifest.puzzles.find(function (item) { return item.date === key; }); }
+  function entryFor(key) {
+    if (key < manifest.startDate) return undefined;
+    var day = parseDate(key).getDate();
+    return manifest.puzzles.find(function (item) { return item.day === day; });
+  }
   function key(r, c) { return r + ',' + c; }
   function formatDate(keyText) { var d = parseDate(keyText); return (d.getMonth() + 1) + '月' + d.getDate() + '日'; }
   function sameCell(a, b) { return a[0] === b[0] && a[1] === b[1]; }
@@ -90,7 +94,12 @@
 
   function renderArchive() {
     var box = document.getElementById('archiveList');
-    var released = manifest.puzzles.filter(function (item) { return item.date >= manifest.startDate && !isFuture(item.date); }).slice().reverse();
+    var released = [];
+    for (var date = parseDate(dateKey(new Date())); dateKey(date) >= manifest.startDate; date = addDays(date, -1)) {
+      var currentKey = dateKey(date);
+      var entry = entryFor(currentKey);
+      if (entry) released.push({ date: currentKey, title: entry.title });
+    }
     box.innerHTML = '';
     released.forEach(function (item) {
       var button = document.createElement('button');
@@ -130,7 +139,10 @@
     fetch('strands-data/' + entry.file, { cache: 'no-store' }).then(function (response) {
       if (!response.ok) throw new Error('Puzzle unavailable');
       return response.json();
-    }).then(loadPuzzle).catch(function () { showUnavailable('字踪暂时没有摆好', '请稍后刷新页面再试。'); });
+    }).then(function (data) {
+      if (selectedDate !== value) return;
+      loadPuzzle(Object.assign({}, data, { date: value, number: entry.day }));
+    }).catch(function () { if (selectedDate !== value) return; showUnavailable('字踪暂时没有摆好', '请稍后刷新页面再试。'); });
   }
 
   function loadPuzzle(data) {
